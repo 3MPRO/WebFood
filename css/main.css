@@ -180,6 +180,7 @@ height: 500px;
 /* CATEGORY*/
 #category {
     width: 100%;
+    padding-bottom: 50px;
 }
 
 .category-title {
@@ -212,3 +213,329 @@ height: 500px;
 .category-item__name {
     text-align: center;
 }
+
+/* populator */
+
+#populator {
+
+}
+
+.populator__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.populator__head > p{
+    font-size: 15px;
+    color: var(--cl-green);
+}
+.populator__head-title {
+    font-size: 22px;
+    
+}
+.populator__head-title a {
+    color: #000;
+}
+.populator__head-all {
+    display: flex;
+    background: var(--cl-green);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 15px;
+}
+
+.populator__head-all p {
+    margin-right: 10px;
+}
+.populator__head-all:hover,.button-add-product:hover {
+    color: #fff;
+    background: var(--cl-orange);
+    transition: 0.3s linear;
+}
+
+h2.tilte-name-product {
+    padding: 5px 10px 20px 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--cl-title);
+}
+.item_product_main{
+    display: flex;
+    box-shadow: 0px 0px 6px rgb(79 95 120 / 10%);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.populator__product {
+   position: relative;
+}
+.populator__head-desc {
+    color: var(--cl-green);
+}
+.populator__product-link {
+    color: #000;
+    font-size: 20px;
+}
+
+.populator__product-link span{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+}
+
+.text-hover {
+    color: var(--cl-title);
+    margin-bottom: 15px;
+}
+
+.text-hover:hover {
+    color: var(--cl-orange);
+    transition: 0.2s ease;
+}
+
+.populator__product-link img {
+    width: 180px;
+    height: 180px;
+}
+
+.populator__product-content {
+    padding-left: 15px;
+}
+.populator__product-content p {
+    font-size: 14px;
+    color: var(--cl-text);
+    margin-bottom: 20px;
+}
+.item_product_main:hover {
+    cursor: pointer;
+    
+}
+
+.item_product_main:hover .button-add-product
+{
+    visibility: visible;
+    right: 0;
+}
+
+.populator__product-right:hover .button-add-product {
+    visibility: visible;
+    right: -105px;
+}
+
+.product-main:hover .button-add-product {
+    visibility: visible;
+    right: -100px;
+}
+
+.button-add-product {
+    outline: none;
+    border: none;
+    padding: 8px 15px;
+    background: var(--cl-green);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    right: -230px;
+    visibility: hidden;
+    transition: all ease 0.3s;
+}
+.populator__product-right {
+    margin-bottom: 25px;
+}
+.populator__product-right-link {
+    
+}
+.populator__product-right-link img{
+    width: 100%;
+}
+
+.price-text {
+    font-size: 20px;
+    color: var(--cl-red);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.populator__product-right{ 
+    box-shadow: 0px 0px 6px rgb(79 95 120 / 10%);
+    overflow: hidden;
+}
+.populator__product-right-link h2{ 
+    padding-left: 20px;
+}
+.populator__product-right-link img{ 
+    width: 100%;
+    height: 270px;
+}
+
+.product__price-box{
+    padding: 10px 20px;
+ }
+ .product__price-box button {
+     position: relative;
+     right: -300px;
+     width: 60%;
+ }
+.price-new{ 
+    color: var(--cl-red);
+    font-weight: 500;
+}
+.price-old{ 
+    text-decoration: line-through;
+    font-size: 13px;
+}
+
+/* product-fruits */
+#product-fruits .owl-nav, #product-dry .owl-nav {
+    display: none;
+}
+#product-fruits ,#product-dry{
+    margin-bottom: 30px;
+}
+.product-fruits__list{
+    display: flex;
+    /* flex-wrap: wrap; */
+ }
+.product-main{
+    width: 212px;
+    margin-right: 10px;
+    overflow: hidden;
+ }
+.product-fruits__thumb{ }
+.product-fruits__thumb img{ 
+    width: 100%;
+    height: 230px;
+}
+
+/* BLOG */
+.news {
+    margin-bottom: 40px;
+}
+.news-blog-list{ }
+.news-blog__base{margin-bottom: 40px;}
+.news-blog__base-link{ }
+.news-blog__base-feature{ 
+    width: 100%;
+}
+.news-blog__base-feature img{ 
+    width: 100%;
+}
+.news-blog__base-title{ }
+.news-blog__desc{ }
+.news-blog-list__new li:first-child {
+    border-top: 1px solid #c1c1c1;
+}
+.news-blog-list__new li{
+    padding: 12px 0;
+    border-bottom: 1px solid #c1c1c1;
+    display: block;
+ }
+.blog-list-box{ }
+.news-blog-video{ }
+.news-blog-video__post{
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.news-blog-video__thumb{
+    height: 145px;
+    display: inline-block;
+    margin-right: 15px;
+ }
+ .news-blog-video__thumb img{
+   width: 100%;
+   height: 100%;
+   border-radius: 8px;
+ }
+.news-blog-video__cont{width: 84%;}
+.blog__title{ 
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+}
+.news-blog__base-desc{
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+ }
+
+ /* FOOTER */
+ .footer-top{
+     border-bottom: 1px solid #c1c1c1;
+     border-top: 1px solid #c1c1c1;
+     padding: 20px 0;
+ }
+.footer-top__logo{ 
+    width: 180px;
+    height: 70px;
+    display: block;
+}
+.footer-top__logo img {
+    width: 100%;
+    height: 100%;
+}
+.box-item-info{
+    display: flex;
+    align-items: center;
+}
+.content-info h3{margin-bottom: 5px;}
+.content-info span{font-size: 14px;}
+.box-item-info img{
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+ }
+
+ .title-menu {
+     padding: 15px 0;
+     font-weight: 600;
+ }
+
+ .list-address {
+
+ }
+ .list-address li{
+     display: flex;
+     padding: 12px 0;
+}
+
+.list-address li i{
+    color: var(--cl-green);
+    margin-right: 8px;
+}
+
+.list-service li {
+    padding-bottom: 12px;
+}
+input.seed-mail {
+    background: var(--cl-green);
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.list-service li a:hover {
+   color: var(--cl-orange);
+}
+.footer-center,.footer-bottom {margin-bottom: 40px;}
+
+.footer-nav ul{
+    display: flex;
+}
+
+.footer-nav ul li {margin-right: 14px;}
+
+.footer-nav ul li a:hover {color: var(--cl-orange);}
