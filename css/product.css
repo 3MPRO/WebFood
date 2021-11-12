@@ -1,0 +1,25 @@
+.product{
+    width: 100%;
+}
+
+.nav-left{
+   
+}
+.content{
+    
+    width: 100%;
+}
+.product-list{
+  
+}
+
+.product-breadcrumb__item a{
+    color: var(--cl-title)
+}
+
+.product-breadcrumb__item--active a{
+    color: var(--cl-red);
+}
+.category__item a{
+   color: var(--cl-text);
+}
