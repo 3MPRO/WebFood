@@ -15,75 +15,11 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/product.css">
+    <link rel="stylesheet" href="./css/login.css">
 </head>
 
 <body>
-    <header id="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2">
-                    <a href="" class="header__logo">
-                        <img src="./images/logo.webp" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-8">
-                    <div class="search-box">
-                        <div class="header__search">
-                            <form action="">
-                                <span class="input-group">
-                                    <button class="search-submit" type="button">
-                                        <img src="https://img.icons8.com/material-outlined/24/000000/search--v1.png" />
-                                    </button>
-                                </span>
-                                <input type="text" placeholder="Tìm kiếm sản phẩm..." class="search-text">
-                            </form>
-                            <div class="result__box">
-                            </div>
-                        </div>
-                        <div class="group__contact">
-                            <div class="contact__phone">
-                                <p>Hỗ trợ online</p>
-                                <a href="">0947895039</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="group__account">
-                        <ul class="group__account-list">
-                            <li>
-                                <div class="heart__icon">
-                                    <a href="">
-                                        <i class="far fa-heart"></i>
-                                        <span class="cart-icon__count">2</span>
-                                    </a>
-                                </div>
-
-                            </li>
-                            <li>
-                                <div class="cart-icon">
-                                    <a href="">
-                                        <i class="fas fa-cart-arrow-down"></i>
-                                        <span class="cart-icon__count">2</span>
-                                    </a>
-                                </div>
-                                <div class="cart-down">
-
-                                </div>
-                            </li>
-                            <li>
-                                <div class="user">
-                                    <a href="">
-                                        <i class="fas fa-user"></i>
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <?php include('./header.php'); ?>
 
     <nav id="nav">
         <div class="container">
@@ -111,18 +47,26 @@
     </nav>
     <section id="product">
         <div class="container">
-           
-           <nav aria-label="product__breadcrumb breadcrumb">
-                    <ol class="breadcrumb">
-                      <li class="product-breadcrumb__item breadcrumb-item"><a href="#">Trang chủ</a></li>
-                      <li class="product-breadcrumb__item--active breadcrumb-item active" aria-current="page">Hít kẹo</li>
-                    </ol>
-            </nav>
+            <div class="break-crumb">
+                <div class="break-crumb__head">
+                    <div class="home">
+                        <a href="#">
+                            <span>Trang chủ</span>
+                        </a>
+                            <span class="mr_lr">&nbsp;/ &nbsp;</span>
+                    </div>
+                    <div>
+                        <strong>
+                            <span>Hít kẹo</span>
+                        </strong>
+                    </div>
+                </div>
+            </div>
             <div class="content">
                 <div class="container">
                     <div class="row">
                         <div class="nav-left col-lg-3">
-                            <div class ="nav-left__category">
+                            <div class="nav-left__category">
                                 <h1>Danh mục</h1>
                                 <ul class="nav-left-category__list">
                                     <li class="category__item"><a href="">Trang chủ</a> </li>
@@ -135,7 +79,7 @@
                                 </ul>
                             </div>
 
-                            <div class ="nav-left__filter-product">
+                            <div class="nav-left__filter-product">
                                 <div class="filter-product__collocation">
                                     <h1>Sắp xếp</h1>
                                     <ul class="filter-product__collocation">
@@ -147,9 +91,9 @@
                                         <li class="filter-collocation__item"><a href="">Cũ nhất</a></li>
                                     </ul>
                                 </div>
-                                
+
                             </div>
-                            <div class ="nav-left__filter-product">
+                            <div class="nav-left__filter-product">
                                 <div class="filter-product__origin">
                                     <h1>Nguồn gốc</h1>
                                     <ul class="filter-product__origin">
@@ -158,9 +102,9 @@
                                         <li class="filter-origin__item"><a href="">Trong nước</a> </li>
                                     </ul>
                                 </div>
-                                
+
                             </div>
-                            <div class ="nav-left__filter-product">
+                            <div class="nav-left__filter-product">
                                 <div class="filter-product__price">
                                     <h1>Theo mức giá</h1>
                                     <ul class="filter-product__price">
@@ -175,9 +119,9 @@
 
                                     </ul>
                                 </div>
-                                
+
                             </div>
-                            <div class ="nav-left__filter-product">
+                            <div class="nav-left__filter-product">
                                 <div class="filter-product__category">
                                     <h1>Loại</h1>
                                     <ul class="filter-product__category">
@@ -186,50 +130,95 @@
                                         <li class="filter-category__item"><a href="">Trong nước</a> </li>
                                     </ul>
                                 </div>
-                                
+
                             </div>
 
 
                         </div>
                         <div class="product-list col-lg-9">
-                            <h1>Hít kẹo</h1>
-                            <div class="product-main">
-                                <form action="">
-                                    <div class="product-fruits__thumb">
-                                        <a href="">
-                                            <img src="./images/images-dry/sp28.jpg" alt="">
-                                        </a>
+                            <div class="container">
+                                <div class="row">
+                                    <h1>Hít kẹo</h1>
+                                </div>
+                                <div class="row"> 
+                                    <div class="col col-product__item">
+                                        <form action="">
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <img src="./images/images-dry/sp28.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="product-fruits__infos">
+                                                <h2 class="tilte-name-product">500g cá khô sạch con to</h2>
+                                                <span class="price-text">60.000đ</span>
+                                                <button class="button-add-product">Cho vào giỏ</button>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <div class="product-fruits__infos">
-                                        <h2 class="tilte-name-product">500g cá khô sạch con to</h2>
-                                        <span class="price-text">60.000đ</span>
-                                        <button class="button-add-product">Cho vào giỏ</button>
+                                    <div class="col col-product__item">
+                                        <form action="">
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <img src="./images/images-dry/sp28.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="product-fruits__infos">
+                                                <h2 class="tilte-name-product">500g cá khô sạch con to</h2>
+                                                <span class="price-text">60.000đ</span>
+                                                <button class="button-add-product">Cho vào giỏ</button>
+                                            </div>
+                                        </form>
                                     </div>
-                                </form>
+                                    <div class="col col-product__item">
+                                        <form action="">
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <img src="./images/images-dry/sp28.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="product-fruits__infos">
+                                                <h2 class="tilte-name-product">500g cá khô sạch con to</h2>
+                                                <span class="price-text">60.000đ</span>
+                                                <button class="button-add-product">Cho vào giỏ</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col col-product__item">
+                                        <form action="">
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <img src="./images/images-dry/sp28.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="product-fruits__infos">
+                                                <h2 class="tilte-name-product">500g cá khô sạch con to</h2>
+                                                <span class="price-text">60.000đ</span>
+                                                <button class="button-add-product button-add-product--view">Cho vào giỏ</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    
+                                    
+
+
+                                </div>
                             </div>
-                                <div class="">
-                                    <h1>lll</h1>
-                                </div>
-                                <div class="">
-                                    <h1>lll</h1>
-                                </div>
-                                <div class="">
-                                    <h1>lll</h1>
-                                </div>
-                            </div>
-                            
+
                         </div>
-            
+
                     </div>
+
                 </div>
-                
-    
             </div>
-    
-    
+
+
         </div>
-       
+
+
+        </div>
+
     </section>
+    <?php include('./footer.php'); ?>
 </body>
 
 </html>

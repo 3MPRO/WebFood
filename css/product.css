@@ -60,4 +60,22 @@
 .container-infor__name{
     margin: 10px;
 }
-
+.col-product__item{
+    max-width: 200px;
+    max-height: 250px;
+}
+.product-img img{
+    height: 184px;
+}
+ .button-add-product:hover {
+    color: #fff;
+    background: var(--cl-orange);
+    transition: 0.3s linear;
+}
+.button-add-product--view{
+    
+}
+.col-product__item:hover .button-add-product {
+    visibility: visible;
+    right: -100px;
+}
