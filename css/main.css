@@ -412,6 +412,9 @@ h2.tilte-name-product {
 }
 
 /* BLOG */
+.news {
+    margin-bottom: 40px;
+}
 .news-blog-list{ }
 .news-blog__base{margin-bottom: 40px;}
 .news-blog__base-link{ }
@@ -466,3 +469,73 @@ h2.tilte-name-product {
     overflow: hidden;
     text-overflow: ellipsis;
  }
+
+ /* FOOTER */
+ .footer-top{
+     border-bottom: 1px solid #c1c1c1;
+     border-top: 1px solid #c1c1c1;
+     padding: 20px 0;
+ }
+.footer-top__logo{ 
+    width: 180px;
+    height: 70px;
+    display: block;
+}
+.footer-top__logo img {
+    width: 100%;
+    height: 100%;
+}
+.box-item-info{
+    display: flex;
+    align-items: center;
+}
+.content-info h3{margin-bottom: 5px;}
+.content-info span{font-size: 14px;}
+.box-item-info img{
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+ }
+
+ .title-menu {
+     padding: 15px 0;
+     font-weight: 600;
+ }
+
+ .list-address {
+
+ }
+ .list-address li{
+     display: flex;
+     padding: 12px 0;
+}
+
+.list-address li i{
+    color: var(--cl-green);
+    margin-right: 8px;
+}
+
+.list-service li {
+    padding-bottom: 12px;
+}
+input.seed-mail {
+    background: var(--cl-green);
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.list-service li a:hover {
+   color: var(--cl-orange);
+}
+.footer-center,.footer-bottom {margin-bottom: 40px;}
+
+.footer-nav ul{
+    display: flex;
+}
+
+.footer-nav ul li {margin-right: 14px;}
+
+.footer-nav ul li a:hover {color: var(--cl-orange);}
