@@ -83,26 +83,35 @@ inputSearchPr.addEventListener('keyup', (e) => {
 
 const resultBox = document.querySelector('.search-results')
 const renderResults = (results,lengthRs) => {
-    console.log(results);
-    var itemsHtml = results.map((result) =>{
-        return `
-        <a href="" class="search-results__link">
-            <img src="${result.thumbnail}" alt="">
-            <div class="box-desc">
-                <p class="title-name-result">
-                    ${result.name}
-                </p>
-                <p class="price-name-result">${result.price}đ</p>
-            </div>
-        </a>
-        `
-    }).join('')
+    console.log(lengthRs);
     let countResult = `
     <a href="" class="result-count">
         Xem tất cả
         <span class="count-item">(${lengthRs})</span>
     </a>`
-    resultBox.innerHTML = itemsHtml+countResult
+    if(lengthRs == 0) {
+        let noResults = `
+            <p style="text-align:center; padding: 12px 0;">Không có kết quả tìm kiếm</p>
+        `
+        resultBox.innerHTML = noResults
+    }
+    else {
+        var itemsHtml = results.map((result) =>{
+            return `
+            <a href="" class="search-results__link">
+                <img src="${result.thumbnail}" alt="">
+                <div class="box-desc">
+                    <p class="title-name-result">
+                        ${result.name}
+                    </p>
+                    <p class="price-name-result">${result.price}đ</p>
+                </div>
+            </a>
+            `
+        }).join('')
+        resultBox.innerHTML = itemsHtml+countResult
+    }
+    
     if(resultBox.style.display == 'none'){
         resultBox.style.display = 'block'
     }

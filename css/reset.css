@@ -43,6 +43,10 @@ table {
 a:hover {
 	text-decoration: none;
 }
+button {
+	outline: none;
+	border: none;
+}
 button:focus, input:focus {
 	outline: none;
 }
