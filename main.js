@@ -1,5 +1,8 @@
 let productListFruits = document.getElementById('owl-fruilt-slider')
 let inputSearchPr = document.querySelector('.search-text-product')
+let headerEl = document.getElementById('header')
+var sticky = headerEl.offsetTop+200;
+console.log(sticky);
 
 // let productListDry = document.getElementById('owl-fruilt-slider')
 // console.log(productList);
@@ -78,8 +81,8 @@ inputSearchPr.addEventListener('keyup', (e) => {
     
 })
 
+const resultBox = document.querySelector('.search-results')
 const renderResults = (results,lengthRs) => {
-    const resultBox = document.querySelector('.search-results')
     console.log(results);
     var itemsHtml = results.map((result) =>{
         return `
@@ -100,7 +103,22 @@ const renderResults = (results,lengthRs) => {
         <span class="count-item">(${lengthRs})</span>
     </a>`
     resultBox.innerHTML = itemsHtml+countResult
+    if(resultBox.style.display == 'none'){
+        resultBox.style.display = 'block'
+    }
+    headerEl.addEventListener('click', ()=> {
+        resultBox.style.display = "none"
+    })
 }
+
+window.addEventListener('scroll',()=> {
+    if (window.pageYOffset >= sticky) {
+        headerEl.classList.add("sticky")
+      } else {
+        headerEl.classList.remove("sticky");
+    }
+})
+
 
 renderProducts()
 loadProducts()
