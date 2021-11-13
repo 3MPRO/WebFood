@@ -141,8 +141,87 @@
                                     <h1>Hít kẹo</h1>
                                 </div>
                                 <div class="row"> 
-                                    <div class="col ">
-                                        <form action="" class="col-product__item">
+                                    <div class="col col-product__item">
+                                        <form action="" >
+                                            <div>
+                                        <div class="product-item__sale-off">
+                                                <span class="home-product-item__percent">10%</span>
+                                                <label class ="home-product-item__label" for="">Giảm</label>
+                                        </div>
+                                        <a href=""><i class="product-item-icon far fa-heart"></i></a>
+                                        </div>
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <span class ="img--hover"></span> 
+                                                    <img src="./images/pro20-grande.webp" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="product-fruits__infos">
+                                                <h2 class="tilte-name-product-t">500g cá khô sạch con to</h2>
+                                                <div>
+                                                <span class="price-new">60.000đ</span>
+                                                <button class="button-add-product button-add-product--view">Cho vào giỏ</button>
+                                                <span class="price-old">60.000đ</span>
+                
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col col-product__item">
+                                        <form action="" >
+                                            <div>
+                                        <div class="product-item__sale-off">
+                                                <span class="home-product-item__percent">10%</span>
+                                                <label class ="home-product-item__label" for="">Giảm</label>
+                                        </div>
+                                        <a href=""><i class="product-item-icon far fa-heart"></i></a>
+                                        </div>
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <span class ="img--hover"></span> 
+                                                    <img src="./images/pro20-grande.webp" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="product-fruits__infos">
+                                                <h2 class="tilte-name-product-t">500g cá khô sạch con to</h2>
+                                                <div>
+                                                <span class="price-new">60.000đ</span>
+                                                <button class="button-add-product button-add-product--view">Cho vào giỏ</button>
+                                                <span class="price-old">60.000đ</span>
+                
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col col-product__item">
+                                        <form action="" >
+                                            <div>
+                                        <div class="product-item__sale-off">
+                                                <span class="home-product-item__percent">10%</span>
+                                                <label class ="home-product-item__label" for="">Giảm</label>
+                                        </div>
+                                        <a href=""><i class="product-item-icon far fa-heart"></i></a>
+                                        </div>
+                                            <div class="product-img">
+                                                <a href="">
+                                                    <span class ="img--hover"></span> 
+                                                    <img src="./images/pro20-grande.webp" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="product-fruits__infos">
+                                                <h2 class="tilte-name-product-t">500g cá khô sạch con to</h2>
+                                                <div>
+                                                <span class="price-new">60.000đ</span>
+                                                <button class="button-add-product button-add-product--view">Cho vào giỏ</button>
+                                                <span class="price-old">60.000đ</span>
+                
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="col col-product__item">
+                                        <form action="" >
                                             <div>
                                         <div class="product-item__sale-off">
                                                 <span class="home-product-item__percent">10%</span>
