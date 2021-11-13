@@ -61,10 +61,19 @@
     margin: 10px;
 }
 .col-product__item{
+    margin: 0 5px;
+    position: relative;
+    overflow: hidden;
     max-width: 200px;
-    max-height: 250px;
+    max-height: 290px;
+}
+.product-img{
+    position: relative;
+    width: 100%;
+    text-align: center;
 }
 .product-img img{
+    width: 100%;
     height: 184px;
 }
  .button-add-product:hover {
@@ -73,9 +82,94 @@
     transition: 0.3s linear;
 }
 .button-add-product--view{
+   
+    display: inline-block;
+    cursor: pointer;
+    right: -200px;
+    top : 10px;
+}
+
+.col-product__item:hover .button-add-product {
+        visibility: visible;
+        right: -10px;
+    } 
+
+.img--hover{
+    content: "";
+    width: 100%;
+    height: 184px;
+    background: #333;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+   
+    transition: all 0.5s;
+}
+.col-product__item:hover .img--hover{ 
+    opacity: 0.6;
+}
+.product-item-icon{
+
+    transition: ease-in 0.2s;
+    color: var(--cl-text);
+    font-weight: 400;
+    font-size: 20px;
+    position: absolute;
+    z-index: 2;
+    top :3px;
+    right: -30px;
+    visibility: hidden;
     
 }
-.col-product__item:hover .button-add-product {
+.col-product__item:hover .product-item-icon{
     visibility: visible;
-    right: -100px;
+    right: 3px;
+}
+
+.home-product-item__percent{
+   padding-top: 5px;
+}
+
+.product-item__sale-off{
+    
+    font-size: 14px;
+    color: #fff;
+    position : absolute;
+    text-align: center;
+    z-index: 1;
+    left : 0;
+    top : 0;
+    background-color: var(--cl-red);
+    width : 40px; 
+    height : 36px;
+}
+.col-product__item::after{
+    content : "";
+    border-width : 0 20px 6px;
+    position : absolute;
+    color :var(--cl-red);
+    top : 36px;
+    left: 0;
+    border-style : solid ;
+    border-color:  transparent currentColor transparent currentColor;
+
+}
+
+.tilte-name-product-t{
+    font-weight: bold;
+    font-size: 14px;
+    width: 100%;
+    margin: 10px 0px;
+}
+.price-new{
+    display: inline-block;
+    font-weight: bold;
+    color: var(--cl-red);
+    margin-top: 5px;
+    margin-bottom: 0px;
+    padding: 0;
+}
+.price-old{
+    padding: 0;
+    margin: 0;
 }
