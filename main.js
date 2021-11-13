@@ -1,11 +1,9 @@
 let productListFruits = document.getElementById('owl-fruilt-slider')
 let inputSearchPr = document.querySelector('.search-text-product')
 let headerEl = document.getElementById('header')
-var sticky = headerEl.offsetTop+200;
+var sticky = headerEl.offsetTop+400;
 console.log(sticky);
 
-// let productListDry = document.getElementById('owl-fruilt-slider')
-// console.log(productList);
 let arrayProducts = []
 const renderProducts = () => {
     var listProductAPI = 'http://localhost:3000/product'
@@ -43,6 +41,9 @@ const renderProducts = () => {
                                 <a href="">
                                     <img src="${product.thumbnail}" alt="">
                                 </a>
+                                <div class="icon-heart-product">
+                                    <i class="far fa-heart"></i>
+                                </div>
                             </div>
                             <div class="product-fruits__infos">
                                 <h2 class="tilte-name-product">${product.name}</h2>
@@ -57,7 +58,7 @@ const renderProducts = () => {
             sliderProducts()
         })
         .catch(function (err) {
-            alert('Error: ' + err.message)
+            // alert('Error: ' + err.message)
         })
 }
 
@@ -82,6 +83,8 @@ inputSearchPr.addEventListener('keyup', (e) => {
 })
 
 const resultBox = document.querySelector('.search-results')
+
+// Create function render Result when data return
 const renderResults = (results,lengthRs) => {
     console.log(lengthRs);
     let countResult = `
@@ -120,6 +123,7 @@ const renderResults = (results,lengthRs) => {
     })
 }
 
+// Scroll fixed header nav
 window.addEventListener('scroll',()=> {
     if (window.pageYOffset >= sticky) {
         headerEl.classList.add("sticky")
@@ -128,6 +132,44 @@ window.addEventListener('scroll',()=> {
     }
 })
 
+// Slider thumb detail
+const productDetailSlider = () => {
+    const listThumbnailDetails = document.querySelectorAll('.product-detail-left__list-thumb ul li')
+    const listThumbnails = document.querySelectorAll('.product-detail-left__list-thumb ul li img')
+    const productThumbnail = document.querySelector('.product-detail-left__thumbnail img')
+    listThumbnailDetails.forEach((itemThumbnail, index) => {
+        console.log(itemThumbnail.className);
+        itemThumbnail.addEventListener('click', () => {
+            for (let index = 0; index < listThumbnailDetails.length; index++) {
+                listThumbnailDetails[index].classList.remove('active')
+            }
+            itemThumbnail.classList.add('active')
+            productThumbnail.src = listThumbnails[index].src
+            console.log(listThumbnails[index].src);
+        })
+    });
+}
+
+// Create function quantity cart
+const quantityCart = () => {
+    const btnMinus = document.querySelector('.custom-quantity .btn-minus')
+    const btnPlus = document.querySelector('.custom-quantity .btn-plus')
+    let qtyInputEl = document.querySelector('.qty-input')
+    let valueInput = qtyInputEl.value
+    btnMinus.addEventListener('click', function(e) {
+        e.preventDefault()
+        valueInput == 1 ? valueInput = 1 : valueInput--
+        
+        qtyInputEl.value = valueInput
+    })
+    btnPlus.addEventListener('click', function(e) {
+        e.preventDefault()
+        valueInput == 10 ? valueInput = 10 : valueInput++
+        qtyInputEl.value = valueInput
+    })
+}
 
 renderProducts()
 loadProducts()
+productDetailSlider()
+quantityCart()
