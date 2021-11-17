@@ -1,4 +1,5 @@
 let productListFruits = document.getElementById('owl-fruilt-slider')
+let productListDry = document.getElementById('owl-slider-dry')
 let inputSearchPr = document.querySelector('.search-text-product')
 let headerEl = document.getElementById('header')
 var sticky = headerEl.offsetTop+400;
@@ -8,11 +9,29 @@ let arrayProducts = []
 const renderProducts = () => {
     var listProductAPI = 'http://localhost:3000/product'
 
-    const sliderProducts = () => {
+    const sliderProductsFruits = () => {
         var $sliderFruilt = $('#owl-fruilt-slider')
         $sliderFruilt.trigger('destroy.owl.carousel');
         $sliderFruilt.owlCarousel({
-            loop:true,
+            margin:10,
+            nav:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:5
+                }
+            }
+    });
+    }
+    const sliderProductsDry = () => {
+        var $sliderDry = $('#owl-slider-dry')
+        $sliderDry.trigger('destroy.owl.carousel');
+        $sliderDry.owlCarousel({
             margin:10,
             nav:true,
             responsive:{
@@ -55,7 +74,33 @@ const renderProducts = () => {
                 `
             }).join('')
             productListFruits.innerHTML = html
-            sliderProducts()
+            sliderProductsFruits()
+            return products.filter(product => product.type === 'dry')
+        })
+        .then((productsDry) => {
+            var html = productsDry.map((product)=>{
+                return `
+                    <div class="product-main">
+                        <form action="">
+                            <div class="product-fruits__thumb">
+                                <a href="">
+                                    <img src="${product.thumbnail}" alt="">
+                                </a>
+                                <div class="icon-heart-product">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                            </div>
+                            <div class="product-fruits__infos">
+                                <h2 class="tilte-name-product">${product.name}</h2>
+                                <span class="price-text">${product.price}đ</span>
+                                <button class="button-add-product">Cho vào giỏ</button>
+                            </div>
+                        </form>
+                    </div>
+                `
+            }).join('')
+            productListDry.innerHTML = html
+            sliderProductsDry()
         })
         .catch(function (err) {
             // alert('Error: ' + err.message)
