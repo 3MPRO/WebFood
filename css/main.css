@@ -350,9 +350,16 @@
 }
 .slider-list {
     position: relative;
+    overflow-x: hidden;
+}
+.slider-list .owl-stage {
+    display: flex;
+}
+.slider-list .owl-nav {
+    display: none;
 }
 .slider-list__item {
-    position: absolute;
+    
 }
 .slider-list__item a {
     width: 100%;

@@ -119,11 +119,16 @@ const loadProducts = async () => {
 
 inputSearchPr.addEventListener('keyup', (e) => {
     const searchString = e.target.value;
-    let filterResults = arrayProducts.filter((product) => {
-        return product.name.includes(searchString)
-    })
-    const lengthRs = filterResults.length;
-    renderResults(filterResults, lengthRs)
+    if(searchString == '') {
+        // filterResults = []
+    } else {
+        let filterResults = arrayProducts.filter((product) => {
+            return product.name.includes(searchString)
+        })
+        console.log(searchString);
+        const lengthRs = filterResults.length;
+        renderResults(filterResults, lengthRs)
+    }
     
 })
 
@@ -146,7 +151,7 @@ const renderResults = (results,lengthRs) => {
     else {
         var itemsHtml = results.map((result) =>{
             return `
-            <a href="" class="search-results__link">
+            <a href="detailPr.html" class="search-results__link">
                 <img src="${result.thumbnail}" alt="">
                 <div class="box-desc">
                     <p class="title-name-result">

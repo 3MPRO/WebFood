@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-2 col col-md-4 col-ms-6">
-                        <a href="" class="header__logo">
+                        <a href="trangchu.html" class="header__logo">
                             <img src="./images/logo.webp" alt="">
                         </a>
                     </div>
@@ -126,7 +126,7 @@
                                         <div class="group-login">
                                             <ul class="group-login__list">
                                                 <li class="group-login__list-item">
-                                                    <a href="">Đăng nhập</a>
+                                                    <a href="login.html">Đăng nhập</a>
                                                 </li>
                                                 <li class="group-login__list-item">
                                                     <a href="">Đăng ký</a>
@@ -169,7 +169,7 @@
         <section id="slider">
             <div class="container">
                 <ul class="slider-list">
-                    <li class="slider-list__item active">
+                    <li class="slider-list__item">
                         <a href="">
                             <img src="./images/slider_1.webp" alt="">
                         </a>
@@ -697,6 +697,19 @@
             }
         })
     </script>
-    <script src="./main.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        var $sliderBanner = $('.slider-list')
+        $sliderBanner.owlCarousel({
+            margin:10,
+            loop: true,
+            nav:true,
+            responsive:{
+                1000:{
+                    items:1
+                }
+            }
+    });
+    </script>
 </body>
 </html>
