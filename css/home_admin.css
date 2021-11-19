@@ -3,7 +3,6 @@ html, body {
     height: 100%;
 }
 
-
 .main-wrap {
     display: flex;
     height: 100%;
@@ -19,7 +18,7 @@ html, body {
 
 .main-nav {
     top: 0;
-    width: 20%;
+    width: 16%;
     height: 100%;
     background: var(--cl-green);
     box-shadow: 0 0.125rem 9.375rem rgb(90 97 105 / 10%), 
@@ -43,7 +42,7 @@ html, body {
 .main-nav > .nav-header > .nav-header__logo > img {
     width: 92%;
     height: 89%;
-    padding: 2px 18px;
+    margin: 2px 18px;
 }
 
 .main-nav > .nav-container > ul {   
@@ -71,7 +70,7 @@ html, body {
 /* Main Box */
 
 .main-box {
-    width: 80%;
+    width: 84%;
 }
 
 .main-box > .box-info {
