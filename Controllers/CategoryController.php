@@ -1,5 +1,5 @@
 <?php
-require_once("../Models/model.php");
+require_once("./Models/model.php");
     class CategoryController {
         var $Cate_model;
         public function __construct()
@@ -31,14 +31,12 @@ require_once("../Models/model.php");
             $data_sanpham2 = $this->Cate_model->sanpham_danhmuc(0,8,2);
             $data_sanpham3 = $this->Cate_model->sanpham_danhmuc(0,8,3);
     
-            require_once('../Views/product.php');
+            require_once('./Views/indexview.php');
+            
         }
 
     }
-        $objCate = new CategoryController();
-        $objCate->list();
-        if($data_sanpham2 == NULL){
-            echo "sai ở file categoryController";
-        }
+       
+      
     
 ?>
