@@ -133,17 +133,17 @@
                         </a>
                         <i class="fas fa-chevron-down"></i>
                         <ul class="nav-item__down">
-                            <li class="nav-item__down-item"><a href="?act=category&xuli=account">Gia vi</a></li>
-                            <li class="nav-item__down-item"><a href="?act=category&xuli=account">Dầu ăn</a></li>
-                            <li class="nav-item__down-item"><a href="?act=category&xuli=account">Bánh kẹo</a></li>
-                            <li class="nav-item__down-item"><a href="?act=category&xuli=account">Rau củ quả</a></li>
-                            <li class="nav-item__down-item"><a href="?act=category&xuli=account">Sữa uống</a></li>
+                            <li class="nav-item__down-item"><a href="?act=product">Gia vi</a></li>
+                            <li class="nav-item__down-item"><a href="?act=product">Dầu ăn</a></li>
+                            <li class="nav-item__down-item"><a href="?act=product">Bánh kẹo</a></li>
+                            <li class="nav-item__down-item"><a href="?act=product">Rau củ quả</a></li>
+                            <li class="nav-item__down-item"><a href="?act=product">Sữa uống</a></li>
                         </ul>
                     </li>
-                    <li class="nav-list__item"><a href="?act=category&xuli=account">Bánh kẹo</a></li>
-                    <li class="nav-list__item"><a href="?act=category&xuli=account">Đồ khô, gạo</a></li>
-                    <li class="nav-list__item"><a href="?act=category&xuli=account">Liên hệ</a></li>
-                    <li class="nav-list__item"><a href="?act=category&xuli=account">Tin tức</a></li>
+                    <li class="nav-list__item"><a href="?act=product&cate=2">Bánh kẹo</a></li>
+                    <li class="nav-list__item"><a href="?act=product&cate=3">Đồ khô, gạo</a></li>
+                    <li class="nav-list__item"><a href="?act=">Liên hệ</a></li>
+                    <li class="nav-list__item"><a href="?act=">Tin tức</a></li>
                 </ul>
             </div>
         </nav>

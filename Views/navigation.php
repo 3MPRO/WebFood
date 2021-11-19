@@ -4,7 +4,7 @@
         case "home":
             require_once("home.php");
             break;
-        case "category":
+        case "product":
             require_once("product.php");
             break;
         case "login":
