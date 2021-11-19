@@ -24,7 +24,7 @@ require_once("./Models/model.php");
             $data_random = $this->Cate_model->random(2);
     
             //$data_banner = $this->Cate_model->banner(0,2);
-            
+
             if(isset($_GET['cate']))
             {   $category = $_GET['cate'];
                 $data_sanpham = $this->Cate_model->sanpham_danhmuc(0,8,$category);

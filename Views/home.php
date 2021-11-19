@@ -4,12 +4,12 @@
                 <ul class="slider-list">
                     <li class="slider-list__item">
                         <a href="">
-                            <img src="./images/slider_1.webp" alt="">
+                            <img src="./public/images/slider_1.webp" alt="">
                         </a>
                     </li>
                     <li class="slider-list__item">
                         <a href="">
-                            <img src="./images/slider_2.webp" alt="">
+                            <img src="./public/images/slider_2.webp" alt="">
                         </a>
                     </li>
                 </ul>
@@ -21,49 +21,49 @@
                 <div class="category-list">
                     <div class="category-list__item">
                         <a href="" class="category-list__item-link">
-                            <img src="./images/icon1.webp" alt="">
+                            <img src="./public/images/icon1.webp" alt="">
                         </a>
                         <h3 class="category-item__name">Đồ khô, gạo</h3>
                     </div>
                     <div class="category-list__item">
                         <a href="" class="category-list__item-link">
-                            <img src="./images/icon2.webp" alt="">
+                            <img src="./public/images/icon2.webp" alt="">
                         </a>
                         <h3 class="category-item__name">Gia vị, dầu ăn</h3>
                     </div>
                     <div class="category-list__item">
                         <a href="" class="category-list__item-link">
-                            <img src="./images/icon3.png" alt="">
+                            <img src="./public/images/icon3.png" alt="">
                         </a>
                         <h3 class="category-item__name">Bánh kẹo</h3>
                     </div>
                     <div class="category-list__item">
                         <a href="" class="category-list__item-link">
-                            <img src="./images/icon4.png" alt="">
+                            <img src="./public/images/icon4.png" alt="">
                         </a>
                         <h3 class="category-item__name">Mì, cháo, phở</h3>
                     </div>
                     <div class="category-list__item">
                         <a href="" class="category-list__item-link">
-                            <img src="./images/icon5.png" alt="">
+                            <img src="./public/images/icon5.png" alt="">
                         </a>
                         <h3 class="category-item__name">Nước giải khát</h3>
                     </div>
                     <div class="category-list__item">
                         <a href="" class="category-list__item-link">
-                            <img src="./images/icon6.png" alt="">
+                            <img src="./public/images/icon6.png" alt="">
                         </a>
                         <h3 class="category-item__name">Mì, cháo, phở</h3>
                     </div>
                     <div class="category-list__item">
                         <a href="" class="category-list__item-link">
-                            <img src="./images/icon7.png" alt="">
+                            <img src="./public/images/icon7.png" alt="">
                         </a>
                         <h3 class="category-item__name">Nước giải khát</h3>
                     </div>
                     <div class="category-list__item">
                         <a href="" class="category-list__item-link">
-                            <img src="./images/icon8.png" alt="">
+                            <img src="./public/images/icon8.png" alt="">
                         </a>
                         <h3 class="category-item__name">Nước giải khát</h3>
                     </div>
@@ -91,7 +91,7 @@
                                 <div class="item_product_main">
                                     <div class="populator__product">
                                         <a href="" class="populator__product-link">
-                                            <img src="./images/pro20-grande.webp" alt="">
+                                            <img src="./public/images/pro20-grande.webp" alt="">
                                             <span><i class="far fa-heart"></i></span>
                                         </a>
                                     </div>
@@ -111,7 +111,7 @@
                                 <div class="item_product_main">
                                     <div class="populator__product">
                                         <a href="" class="populator__product-link">
-                                            <img src="./images/pro35-grande.webp" alt="">
+                                            <img src="./public/images/pro35-grande.webp" alt="">
                                             <span><i class="far fa-heart"></i></span>
                                         </a>
                                     </div>
@@ -132,7 +132,7 @@
                             <div class="col col-6">
                                 <div class="populator__product-right">
                                     <a href="" class="populator__product-right-link">
-                                        <img src="./images/pro57-grande.webp" alt="">
+                                        <img src="./public/images/pro57-grande.webp" alt="">
                                         <h2 class="tilte-name-product">
                                             Dâu tây đà lạt loại 1kg
                                         </h2>
@@ -150,7 +150,7 @@
                                     <div class="item_product_main">
                                         <div class="populator__product">
                                             <a href="" class="populator__product-link">
-                                                <img src="./images/pro20-grande.webp" alt="">
+                                                <img src="./public/images/pro20-grande.webp" alt="">
                                                 <span><i class="far fa-heart"></i></span>
                                             </a>
                                         </div>
@@ -172,7 +172,7 @@
                                     <div class="item_product_main">
                                         <div class="populator__product">
                                             <a href="" class="populator__product-link">
-                                                <img src="./images/pro20-grande.webp" alt="">
+                                                <img src="./public/images/pro20-grande.webp" alt="">
                                                 <span><i class="far fa-heart"></i></span>
                                             </a>
                                         </div>
@@ -195,7 +195,7 @@
                     <div class="col-lg-4 col">
                         <div class="populator__product-right ">
                             <a href="" class="populator__product-right-link">
-                                <img src="./images/pro57-grande.webp" alt="">
+                                <img src="./public/images/pro57-grande.webp" alt="">
                                 <h2 class="tilte-name-product">
                                     Dâu tây đà lạt loại 1kg
                                 </h2>
@@ -211,7 +211,7 @@
                                 <div class="item_product_main">
                                     <div class="populator__product">
                                         <a href="" class="populator__product-link">
-                                            <img src="./images/pro20-grande.webp" alt="">
+                                            <img src="./public/images/pro20-grande.webp" alt="">
                                             <span><i class="far fa-heart"></i></span>
                                         </a>
                                     </div>
@@ -286,7 +286,7 @@
                             <div class="news-blog__base">
                                 <a href="" class="news-blog__base-link">
                                     <feature class="news-blog__base-feature">
-                                        <img src="./images/news-base.jpg" alt="">
+                                        <img src="./public/images/news-base.jpg" alt="">
                                     </feature>
                                     <h2 class="news-blog__base-title text-hover">
                                         Mẹo giúp chọn một số hoa quả nhập khẩu tươi ngon
@@ -326,7 +326,7 @@
                             <div class="news-blog-video">
                                 <div class="news-blog-video__post">
                                     <a href="" class="news-blog-video__thumb">
-                                        <img src="./images/news-base.jpg" alt="">
+                                        <img src="./public/images/news-base.jpg" alt="">
                                     </a>
                                     <div class="news-blog-video__cont">
                                         <a href="" class="blog__title text-hover">
@@ -339,7 +339,7 @@
                                 </div>
                                 <div class="news-blog-video__post">
                                     <a href="" class="news-blog-video__thumb">
-                                        <img src="./images/news-base.jpg" alt="">
+                                        <img src="./public/images/news-base.jpg" alt="">
                                     </a>
                                     <div class="news-blog-video__cont">
                                         <a href="" class="blog__title text-hover">
@@ -352,7 +352,7 @@
                                 </div>
                                 <div class="news-blog-video__post">
                                     <a href="" class="news-blog-video__thumb">
-                                        <img src="./images/news-base.jpg" alt="">
+                                        <img src="./public/images/news-base.jpg" alt="">
                                     </a>
                                     <div class="news-blog-video__cont">
                                         <a href="" class="blog__title text-hover">
@@ -365,7 +365,7 @@
                                 </div>
                                 <div class="news-blog-video__post">
                                     <a href="" class="news-blog-video__thumb">
-                                        <img src="./images/news-base.jpg" alt="">
+                                        <img src="./public/images/news-base.jpg" alt="">
                                     </a>
                                     <div class="news-blog-video__cont">
                                         <a href="" class="blog__title text-hover">

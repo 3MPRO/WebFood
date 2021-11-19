@@ -3,7 +3,7 @@
                 <div class="row">
                     <div class="col-lg-2 col col-md-4 col-ms-6">
                         <a href="trangchu.html" class="header__logo">
-                            <img src="./images/logo.webp" alt="">
+                            <img src="./public/images/logo.webp" alt="">
                         </a>
                     </div>
                     <div class="col-lg-8 col col-md-4 col-ms-6">
@@ -51,7 +51,7 @@
                                         </a>
                                         <div class="cart-down">
                                             <!-- <div class="cart-down-empty">
-                                                <img src="./images/empy-icon.PNG" alt="">
+                                                <img src="./public/images/empy-icon.PNG" alt="">
                                                 <p>Không có sản phẩm nào trong giỏ hàng của bạn</p>
                                             </div> -->
                                             <div class="cart-content">
@@ -59,7 +59,7 @@
                                                     <div class="cart-content-inner__item">
                                                         <div class="cart-content-inner__item-row">
                                                             <a href="" class="cart-content-inner__item-link">
-                                                                <img src="./images/pro20-grande.webp" alt="">
+                                                                <img src="./public/images/pro20-grande.webp" alt="">
                                                             </a>
                                                             <div class="cart-content-inner__info">
                                                                 <a href="">
