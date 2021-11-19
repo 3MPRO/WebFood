@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/product.css">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
@@ -205,119 +205,46 @@
                                 <div class="product-list__title row">
                                     <h1 >Hít kẹo</h1>
                                 </div>
-                                <div class="row"> 
-                                    <div class="col col-product__item">
-                                        <form action="" >
-                                            <div>
-                                        <div class="product-item__sale-off">
-                                                <span class="home-product-item__percent">10%</span>
-                                                <label class ="home-product-item__label" for="">Giảm</label>
-                                        </div>
-                                        <a href=""><i class="product-item-icon far fa-heart"></i></a>
-                                        </div>
-                                            <div class="product-img">
-                                                <a href="">
-                                                    <span class ="img--hover"></span> 
-                                                    <img src="./images/pro20-grande.webp" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="product-fruits__infos">
-                                                <h2 class="tilte-name-product-t">500g cá khô sạch con to</h2>
-                                                <div>
-                                                <span class="price-new">60.000đ</span>
-                                                <button class="button-add-product button-add-product--view">Cho vào giỏ</button>
-                                                <span class="price-old">60.000đ</span>
-                
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="col col-product__item">
-                                        <form action="" >
-                                            <div>
-                                        <div class="product-item__sale-off">
-                                                <span class="home-product-item__percent">10%</span>
-                                                <label class ="home-product-item__label" for="">Giảm</label>
-                                        </div>
-                                        <a href=""><i class="product-item-icon far fa-heart"></i></a>
-                                        </div>
-                                            <div class="product-img">
-                                                <a href="">
-                                                    <span class ="img--hover"></span> 
-                                                    <img src="./images/pro20-grande.webp" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="product-fruits__infos">
-                                                <h2 class="tilte-name-product-t">500g cá khô sạch con to</h2>
-                                                <div>
-                                                <span class="price-new">60.000đ</span>
-                                                <button class="button-add-product button-add-product--view">Cho vào giỏ</button>
-                                                <span class="price-old">60.000đ</span>
-                
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="col col-product__item">
-                                        <form action="" >
-                                            <div>
-                                        <div class="product-item__sale-off">
-                                                <span class="home-product-item__percent">10%</span>
-                                                <label class ="home-product-item__label" for="">Giảm</label>
-                                        </div>
-                                        <a href=""><i class="product-item-icon far fa-heart"></i></a>
-                                        </div>
-                                            <div class="product-img">
-                                                <a href="">
-                                                    <span class ="img--hover"></span> 
-                                                    <img src="./images/pro20-grande.webp" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="product-fruits__infos">
-                                                <h2 class="tilte-name-product-t">500g cá khô sạch con to</h2>
-                                                <div>
-                                                <span class="price-new">60.000đ</span>
-                                                <button class="button-add-product button-add-product--view">Cho vào giỏ</button>
-                                                <span class="price-old">60.000đ</span>
-                
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
 
-                                    <div class="col col-product__item">
-                                        <form action="" >
-                                            <div>
-                                        <div class="product-item__sale-off">
-                                                <span class="home-product-item__percent">10%</span>
-                                                <label class ="home-product-item__label" for="">Giảm</label>
-                                        </div>
-                                        <a href=""><i class="product-item-icon far fa-heart"></i></a>
-                                        </div>
-                                            <div class="product-img">
-                                                <a href="">
-                                                    <span class ="img--hover"></span> 
-                                                    <img src="./images/pro20-grande.webp" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="product-fruits__infos">
-                                                <h2 class="tilte-name-product-t">500g cá khô sạch con to</h2>
+                                <div class="row">
+                                    
+                                    <?php
+                                    if($data_sanpham2 != NULL)
+                                    {
+                                     for($i=0 ;$i <4; $i++){ ?>
+                                        <div class="col col-product__item">
+                                            <form action="" >
                                                 <div>
-                                                <span class="price-new">60.000đ</span>
-                                                <button class="button-add-product button-add-product--view">Cho vào giỏ</button>
-                                                <span class="price-old">60.000đ</span>
-                
-                                                </div>
+                                            <div class="product-item__sale-off">
+                                                    <span class="home-product-item__percent">10%</span>
+                                                    <label class ="home-product-item__label" for="">Giảm</label>
                                             </div>
-                                        </form>
-                                    </div>
-                                 
+                                            <a href=""><i class="product-item-icon far fa-heart"></i></a>
+                                            </div>
+                                                <div class="product-img">
+                                                    <a href="">
+                                                        <span class ="img--hover"></span> 
+                                                        <img src="<?php echo $data_sanpham2[$i]['HinhAnh1'] ?>" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="product-fruits__infos">
+                                                    <h2 class="tilte-name-product-t">500g cá khô sạch con to</h2>
+                                                    <div>
+                                                    <span class="price-new">60.000đ</span>
+                                                    <button class="button-add-product button-add-product--view">Cho vào giỏ</button>
+                                                    <span class="price-old">60.000đ</span>
+                    
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                   <?php } 
+                                    }
+                                    else 
+                                        echo "Không lấy dc dữ liệu";
                                    
-                                    
-                                    
-                                    
-
-
+                                   ?>
+                                   
                                 </div>
                             </div>
 

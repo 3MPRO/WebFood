@@ -55,6 +55,70 @@
             "description": "Chuối tiêu xanh tại Dũng Hà được lựa chọn kỹ càng, đảm bảo chuối xanh luôn tươi sạch và giữ lại hàm lượng dinh dưỡng cao nhất. Sản phẩm chuối tiêu xanh của chúng tôi, cam kết không chứa các hóa chất, chất kích thích tăng trưởng gây hại, đảm bảo an toàn cho sức khỏe người tiêu dùng. Do đó, bạn hoàn toàn có thể yên tâm khi lựa chọn mua chuối xanh cho của gia đình nhé. Món chuối xanh sẽ làm đa dạng thêm hương vị cho các món ăn của gia đình bạn đó!",
             "price": "50.000",
             "thumbnail": "./images/pro49-grande.webp"
+        },
+        {
+            "id" : 8,
+            "type": "dry",
+            "name": "Bò khô que hộp 250g",
+            "description": "Chuối tiêu xanh tại Dũng Hà được lựa chọn kỹ càng, đảm bảo chuối xanh luôn tươi sạch và giữ lại hàm lượng dinh dưỡng cao nhất. Sản phẩm chuối tiêu xanh của chúng tôi, cam kết không chứa các hóa chất, chất kích thích tăng trưởng gây hại, đảm bảo an toàn cho sức khỏe người tiêu dùng. Do đó, bạn hoàn toàn có thể yên tâm khi lựa chọn mua chuối xanh cho của gia đình nhé. Món chuối xanh sẽ làm đa dạng thêm hương vị cho các món ăn của gia đình bạn đó!",
+            "price": "50.000",
+            "thumbnail": "./images/images-dry/sp27.jpg"
+        },
+        {
+            "id" : 9,
+            "type": "dry",
+            "name": "500g cá khô sạch con to",
+            "description": "Chuối tiêu xanh tại Dũng Hà được lựa chọn kỹ càng, đảm bảo chuối xanh luôn tươi sạch và giữ lại hàm lượng dinh dưỡng cao nhất. Sản phẩm chuối tiêu xanh của chúng tôi, cam kết không chứa các hóa chất, chất kích thích tăng trưởng gây hại, đảm bảo an toàn cho sức khỏe người tiêu dùng. Do đó, bạn hoàn toàn có thể yên tâm khi lựa chọn mua chuối xanh cho của gia đình nhé. Món chuối xanh sẽ làm đa dạng thêm hương vị cho các món ăn của gia đình bạn đó!",
+            "price": "50.000",
+            "thumbnail": "./images/images-dry/sp28.jpg"
+        },
+        {
+            "id" : 10,
+            "type": "dry",
+            "name": "Trứng gà",
+            "description": "Chuối tiêu xanh tại Dũng Hà được lựa chọn kỹ càng, đảm bảo chuối xanh luôn tươi sạch và giữ lại hàm lượng dinh dưỡng cao nhất. Sản phẩm chuối tiêu xanh của chúng tôi, cam kết không chứa các hóa chất, chất kích thích tăng trưởng gây hại, đảm bảo an toàn cho sức khỏe người tiêu dùng. Do đó, bạn hoàn toàn có thể yên tâm khi lựa chọn mua chuối xanh cho của gia đình nhé. Món chuối xanh sẽ làm đa dạng thêm hương vị cho các món ăn của gia đình bạn đó!",
+            "price": "20.000",
+            "thumbnail": "./images/images-dry/sp29.webp"
+        },
+        {
+            "id" : 11,
+            "type": "dry",
+            "name": "Kỷ tử khô đỏ - loại đẹp 100g",
+            "description": "Chuối tiêu xanh tại Dũng Hà được lựa chọn kỹ càng, đảm bảo chuối xanh luôn tươi sạch và giữ lại hàm lượng dinh dưỡng cao nhất. Sản phẩm chuối tiêu xanh của chúng tôi, cam kết không chứa các hóa chất, chất kích thích tăng trưởng gây hại, đảm bảo an toàn cho sức khỏe người tiêu dùng. Do đó, bạn hoàn toàn có thể yên tâm khi lựa chọn mua chuối xanh cho của gia đình nhé. Món chuối xanh sẽ làm đa dạng thêm hương vị cho các món ăn của gia đình bạn đó!",
+            "price": "20.000",
+            "thumbnail": "./images/images-dry/sp26.jpg"
+        },
+        {
+            "id" : 12,
+            "type": "dry",
+            "name": "Khoai tây",
+            "description": "Chuối tiêu xanh tại Dũng Hà được lựa chọn kỹ càng, đảm bảo chuối xanh luôn tươi sạch và giữ lại hàm lượng dinh dưỡng cao nhất. Sản phẩm chuối tiêu xanh của chúng tôi, cam kết không chứa các hóa chất, chất kích thích tăng trưởng gây hại, đảm bảo an toàn cho sức khỏe người tiêu dùng. Do đó, bạn hoàn toàn có thể yên tâm khi lựa chọn mua chuối xanh cho của gia đình nhé. Món chuối xanh sẽ làm đa dạng thêm hương vị cho các món ăn của gia đình bạn đó!",
+            "price": "20.000",
+            "thumbnail": "./images/images-dry/sp30.webp"
+        },
+        {
+            "id" : 12,
+            "type": "dry",
+            "name": "Gạo lứt",
+            "description": "Chuối tiêu xanh tại Dũng Hà được lựa chọn kỹ càng, đảm bảo chuối xanh luôn tươi sạch và giữ lại hàm lượng dinh dưỡng cao nhất. Sản phẩm chuối tiêu xanh của chúng tôi, cam kết không chứa các hóa chất, chất kích thích tăng trưởng gây hại, đảm bảo an toàn cho sức khỏe người tiêu dùng. Do đó, bạn hoàn toàn có thể yên tâm khi lựa chọn mua chuối xanh cho của gia đình nhé. Món chuối xanh sẽ làm đa dạng thêm hương vị cho các món ăn của gia đình bạn đó!",
+            "price": "20.000",
+            "thumbnail": "./images/images-dry/sp31.webp"
+        },
+        {
+            "id" : 13,
+            "type": "dry",
+            "name": "Bơ nấu ăn",
+            "description": "Chuối tiêu xanh tại Dũng Hà được lựa chọn kỹ càng, đảm bảo chuối xanh luôn tươi sạch và giữ lại hàm lượng dinh dưỡng cao nhất. Sản phẩm chuối tiêu xanh của chúng tôi, cam kết không chứa các hóa chất, chất kích thích tăng trưởng gây hại, đảm bảo an toàn cho sức khỏe người tiêu dùng. Do đó, bạn hoàn toàn có thể yên tâm khi lựa chọn mua chuối xanh cho của gia đình nhé. Món chuối xanh sẽ làm đa dạng thêm hương vị cho các món ăn của gia đình bạn đó!",
+            "price": "20.000",
+            "thumbnail": "./images/images-dry/sp32.webp"
+        },
+        {
+            "id" : 14,
+            "type": "dry",
+            "name": "Bánh mỳ đen",
+            "description": "Chuối tiêu xanh tại Dũng Hà được lựa chọn kỹ càng, đảm bảo chuối xanh luôn tươi sạch và giữ lại hàm lượng dinh dưỡng cao nhất. Sản phẩm chuối tiêu xanh của chúng tôi, cam kết không chứa các hóa chất, chất kích thích tăng trưởng gây hại, đảm bảo an toàn cho sức khỏe người tiêu dùng. Do đó, bạn hoàn toàn có thể yên tâm khi lựa chọn mua chuối xanh cho của gia đình nhé. Món chuối xanh sẽ làm đa dạng thêm hương vị cho các món ăn của gia đình bạn đó!",
+            "price": "20.000",
+            "thumbnail": "./images/images-dry/sp32.webp"
         }
     ]
 }
