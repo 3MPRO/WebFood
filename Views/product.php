@@ -116,7 +116,7 @@
                                                 <div class="product-img">
                                                     <a href="">
                                                         <span class ="img--hover"></span> 
-                                                        <img src="<?php echo $data_sanpham[$i]['hinhanh'] ?>" alt="">
+                                                        <img src="./public/images/Product-img/<?php echo $data_sanpham[$i]['hinhanh'] ?>" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="product-fruits__infos">
