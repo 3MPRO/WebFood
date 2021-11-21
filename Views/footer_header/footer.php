@@ -3,12 +3,12 @@
             <div class="footer-top row">
                 <div class="col col-lg-3">
                     <a href="" class="footer-top__logo">
-                        <img src="./images/logo.webp" alt="">
+                        <img src="./public/images/logo.webp" alt="">
                     </a>
                 </div>
                 <div class="col col-lg-3">
                     <div class="box-item-info">
-                        <img src="./images/ser_1.webp" alt="">
+                        <img src="./public/images/ser_1.webp" alt="">
                         <div class="content-info">
                             <h3>Tiết kiệm hơn</h3>
                             <span>Tiết kiệm hơn nhờ giảm giá thường xuyên</span>
@@ -17,7 +17,7 @@
                 </div>
                 <div class="col col-lg-3">
                     <div class="box-item-info">
-                        <img src="./images/ser_2.png" alt="">
+                        <img src="./public/images/ser_2.png" alt="">
                         <div class="content-info">
                             <h3>Khách hàng VIP</h3>
                             <span>Đăng kí thành viên để nhận thẻ ưu đãi riêng</span>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="col col-lg-3">
                     <div class="box-item-info">
-                        <img src="./images/ser_3.png" alt="">
+                        <img src="./public/images/ser_3.png" alt="">
                         <div class="content-info">
                             <h3>Chất lượng cao</h3>
                             <span>Sản phẩm chất lượng là ưu tiên hàng đầu</span>
@@ -105,7 +105,7 @@
                         <li><a href="">Hệ thống bán hàng</a></li>
                         <li><a href="">Tin tức</a></li>
                     </ul>
-                    <img src="./images/payment_method.webp" alt="">
+                    <img src="./public/images/payment_method.webp" alt="">
                 </div>
       
             </div>

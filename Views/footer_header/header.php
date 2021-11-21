@@ -3,7 +3,7 @@
                 <div class="row">
                     <div class="col-lg-2 col col-md-4 col-ms-6">
                         <a href="trangchu.html" class="header__logo">
-                            <img src="./images/logo.webp" alt="">
+                            <img src="./public/images/logo.webp" alt="">
                         </a>
                     </div>
                     <div class="col-lg-8 col col-md-4 col-ms-6">
@@ -51,7 +51,7 @@
                                         </a>
                                         <div class="cart-down">
                                             <!-- <div class="cart-down-empty">
-                                                <img src="./images/empy-icon.PNG" alt="">
+                                                <img src="./public/images/empy-icon.PNG" alt="">
                                                 <p>Không có sản phẩm nào trong giỏ hàng của bạn</p>
                                             </div> -->
                                             <div class="cart-content">
@@ -59,7 +59,7 @@
                                                     <div class="cart-content-inner__item">
                                                         <div class="cart-content-inner__item-row">
                                                             <a href="" class="cart-content-inner__item-link">
-                                                                <img src="./images/pro20-grande.webp" alt="">
+                                                                <img src="./public/images/pro20-grande.webp" alt="">
                                                             </a>
                                                             <div class="cart-content-inner__info">
                                                                 <a href="">
@@ -133,17 +133,17 @@
                         </a>
                         <i class="fas fa-chevron-down"></i>
                         <ul class="nav-item__down">
-                            <li class="nav-item__down-item"><a href="?act=category&xuli=account">Gia vi</a></li>
-                            <li class="nav-item__down-item"><a href="?act=category&xuli=account">Dầu ăn</a></li>
-                            <li class="nav-item__down-item"><a href="?act=category&xuli=account">Bánh kẹo</a></li>
-                            <li class="nav-item__down-item"><a href="?act=category&xuli=account">Rau củ quả</a></li>
-                            <li class="nav-item__down-item"><a href="?act=category&xuli=account">Sữa uống</a></li>
+                            <li class="nav-item__down-item"><a href="?act=product">Gia vi</a></li>
+                            <li class="nav-item__down-item"><a href="?act=product">Dầu ăn</a></li>
+                            <li class="nav-item__down-item"><a href="?act=product">Bánh kẹo</a></li>
+                            <li class="nav-item__down-item"><a href="?act=product">Rau củ quả</a></li>
+                            <li class="nav-item__down-item"><a href="?act=product">Sữa uống</a></li>
                         </ul>
                     </li>
-                    <li class="nav-list__item"><a href="?act=category&xuli=account">Bánh kẹo</a></li>
-                    <li class="nav-list__item"><a href="?act=category&xuli=account">Đồ khô, gạo</a></li>
-                    <li class="nav-list__item"><a href="?act=category&xuli=account">Liên hệ</a></li>
-                    <li class="nav-list__item"><a href="?act=category&xuli=account">Tin tức</a></li>
+                    <li class="nav-list__item"><a href="?act=product&cate=2">Bánh kẹo</a></li>
+                    <li class="nav-list__item"><a href="?act=product&cate=3">Đồ khô, gạo</a></li>
+                    <li class="nav-list__item"><a href="?act=">Liên hệ</a></li>
+                    <li class="nav-list__item"><a href="?act=">Tin tức</a></li>
                 </ul>
             </div>
         </nav>

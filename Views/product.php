@@ -101,7 +101,7 @@
                                 <div class="row">
                                     
                                     <?php
-                                    if($data_sanpham2 != NULL)
+                                    if($data_sanpham != NULL)
                                     {
                                      for($i=0 ;$i <4; $i++){ ?>
                                         <div class="col col-product__item">
@@ -116,7 +116,7 @@
                                                 <div class="product-img">
                                                     <a href="">
                                                         <span class ="img--hover"></span> 
-                                                        <img src="<?php echo $data_sanpham2[$i]['HinhAnh1'] ?>" alt="">
+                                                        <img src="./public/images/Product-img/<?php echo $data_sanpham[$i]['hinhanh'] ?>" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="product-fruits__infos">

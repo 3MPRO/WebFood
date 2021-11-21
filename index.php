@@ -7,9 +7,9 @@ switch ($mod) {
         $objCate = new CategoryController();
         $objCate->list();
         break;
-    case 'category':    
-        require_once('./Controllers/CategoryController.php');
-        $objCate = new CategoryController();
+    case 'product':    
+        require_once('./Controllers/ProductController.php');
+        $objCate = new ProductController();
         $objCate->list();
         break;
     case 'login': 
