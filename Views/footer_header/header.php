@@ -122,10 +122,11 @@
                     </ul>
                 </div>
             </div>
-<<<<<<< HEAD
+
         </div>
     </div>
 </header>
+
 <nav id="nav">
     <div class="container">
         <ul class="nav-list">
@@ -136,37 +137,13 @@
                 </a>
                 <i class="fas fa-chevron-down"></i>
                 <ul class="nav-item__down">
-                    <li class="nav-item__down-item"><a href="?act=product">Gia vi</a></li>
-                    <li class="nav-item__down-item"><a href="?act=product">Dầu ăn</a></li>
-                    <li class="nav-item__down-item"><a href="?act=product">Bánh kẹo</a></li>
-                    <li class="nav-item__down-item"><a href="?act=product">Rau củ quả</a></li>
-                    <li class="nav-item__down-item"><a href="?act=product">Sữa uống</a></li>
-=======
-        </header>
-        <nav id="nav">
-            <div class="container">
-                <ul class="nav-list">
-                    <li class="nav-list__item active"><a href="?act=home">Trang chủ</a></li>
-                    <li class="nav-list__item">
-                        <a href="">
-                            Sản phẩm
-                        </a>
-                        <i class="fas fa-chevron-down"></i>
-                        <ul class="nav-item__down">
-                            <?php foreach($data_danhmuc as $row) { ?>
+                    <?php foreach($data_danhmuc as $row) { ?>
 
-                                 <li class="nav-item__down-item"><a href="?act=product&cate=<?=$row['MaDM'] ?>"><?=$row['TenDM']?></a></li>
+                            <li class="nav-item__down-item"><a href="?act=product&cate=<?=$row['MaDM'] ?>"><?=$row['TenDM']?></a></li>
 
-                                 <?php  } ?>
-                            
-                           
-                        </ul>
-                    </li>
-                    <li class="nav-list__item"><a href="?act=product&cate=2">Bánh kẹo</a></li>
-                    <li class="nav-list__item"><a href="?act=product&cate=3">Đồ khô, gạo</a></li>
-                    <li class="nav-list__item"><a href="?act=">Liên hệ</a></li>
-                    <li class="nav-list__item"><a href="?act=">Tin tức</a></li>
->>>>>>> 6a411e87896b9e4068f892064ed3694ad151d8c8
+                            <?php  } ?>
+                    
+                    
                 </ul>
             </li>
             <li class="nav-list__item"><a href="?act=product&cate=2">Bánh kẹo</a></li>

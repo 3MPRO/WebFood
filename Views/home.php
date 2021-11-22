@@ -248,7 +248,7 @@
         </div>
         <div class="owl-carousel owl-theme" id="owl-fruilt-slider">
             <?php 
-                for ($i = 1; $i < (count($data_sanpham1)); $i++) {
+                for ($i = 0; $i < (count($data_sanpham1)); $i++) {
                     ?>
                     <div class="product-main">
                         <form action="">
@@ -286,6 +286,27 @@
             </a>
         </div>
         <div class="owl-carousel owl-theme" id="owl-slider-dry">
+        <?php 
+            for ($i = 0; $i < (count($data_sanpham2)); $i++) {
+                    ?>
+                    <div class="product-main">
+                        <form action="">
+                            <div class="product-fruits__thumb">
+                                <a href="">
+                                    <img src="./public/images/<?=$data_sanpham2[$i]['hinhanh'] ?>" alt="Product Title">
+                                </a>
+                                <div class="icon-heart-product">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                            </div>
+                            <div class="product-fruits__infos">
+                                <h2 class="tilte-name-product"><?= $data_sanpham2[$i]['TenSP'] ?></h2>
+                                <span class="price-text"><?= number_format($data_sanpham2[$i]['DonGia']) ?> VNĐ</span>
+                                <button class="button-add-product">Cho vào giỏ</button>
+                            </div>
+                        </form>
+                    </div>
+            <?php }?>
         </div>
     </div>
 </section>

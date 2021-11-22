@@ -20,6 +20,8 @@ require_once("./Models/productModel.php");
             {   $category = $_GET['cate'];
                 $data_sanpham = $this->product_model->sanpham_danhmuc(0,8,$category);
             }
+            $data_sanpham1 = $this->product_model->sanpham_danhmuc(0,10,1);
+            $data_sanpham2 = $this->product_model->sanpham_danhmuc(0,10,3);
             require_once('./Views/indexview.php');  
             require_once('./Views/indexview.php');  
         }

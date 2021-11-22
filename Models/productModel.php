@@ -21,6 +21,11 @@
             require("result.php");
             return $data; 
         }
+        function searchData($key) {
+            $query = "SELECT * FROM sanpham, hinhanh WHERE sanpham.MaSP = hinhanh.masp and TenSP LIKE '$key%' GROUP by sanpham.MaSP";
+            require("result.php");
+            return $data;
+        }
     }
 
 ?>

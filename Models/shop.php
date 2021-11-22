@@ -75,4 +75,9 @@ class Shop extends Model
 
         return $this->conn->query($query)->fetch_assoc();
     }
+
+    function searchData($key) {
+        $query = "SELECT * FROM sanpham, hinhanh WHERE sanpham.MaSP = hinhanh.masp and TenSP LIKE '$key%' GROUP by sanpham.MaSP";
+        return $this->conn->query($query)->fetch_assoc();
+    }
 }

@@ -8,8 +8,8 @@ switch ($mod) {
         $objCate->list();
         break;
     case "search":
-        require_once('./Controllers/SearchController.php');
-        $objCate = new SearchController();
+        require_once('./Controllers/ProductController.php');
+        $objCate = new ProductController();
         $objCate->list();
         break;
     case 'product':    

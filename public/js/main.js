@@ -107,10 +107,10 @@ let arrayProducts = []
 //         })
 // }
 const App = {
-    sliderProducts: function() {
-      var $sliderFruilt = $('#owl-fruilt-slider')
-        $sliderFruilt.trigger('destroy.owl.carousel');
-        $sliderFruilt.owlCarousel({
+    sliderProducts: function(element) {
+      var $sliderList = $(`${element}`)
+        $sliderList.trigger('destroy.owl.carousel');
+        $sliderList.owlCarousel({
             margin:10,
             nav:true,
             responsive:{
@@ -127,24 +127,18 @@ const App = {
         });
     },
     eventDom: function() {
-        // let inputSearchPr = document.querySelector('.search-text-product')
-        // inputSearchPr.addEventListener('keyup', (e) => {
-        // const searchString = e.target.value;
-        // if(searchString == '') {
-        //     // filterResults = []
-        // } else {
-        //     let filterResults = arrayProducts.filter((product) => {
-        //         return product.name.includes(searchString)
-        //     })
-        //     console.log(searchString);
-        //     const lengthRs = filterResults.length;
-        //     renderResults(filterResults, lengthRs)
-        // }
-        // })
+        window.addEventListener('scroll',()=> {
+        if (window.pageYOffset >= sticky) {
+            headerEl.classList.add("sticky")
+        } else {
+            headerEl.classList.remove("sticky");
+        }
+})
     },
     start: function() {
-        this.sliderProducts()
-        // this.eventDom()
+        this.sliderProducts('#owl-fruilt-slider')
+        this.sliderProducts('#owl-slider-dry')
+        this.eventDom()
     }  
 }
  
