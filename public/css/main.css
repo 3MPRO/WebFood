@@ -618,6 +618,17 @@ h2.tilte-name-product {
     transition: all ease 0.2s;
     right: -100%;
 }
+#owl-fruilt-slider, #owl-slider-dry {
+    overflow-x: hidden;
+}
+
+#owl-fruilt-slider .owl-stage, #owl-slider-dry .owl-stage{
+    display: flex;
+}
+
+.product-fruits__thumb {
+    position: relative;
+}
 
 .product-fruits__thumb img{ 
     width: 100%;

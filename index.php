@@ -9,6 +9,11 @@ switch ($mod) {
         $objCate = new homeController();
         $objCate->list();
         break;
+    case "search":
+        require_once('./Controllers/ProductController.php');
+        $objCate = new ProductController();
+        $objCate->list();
+        break;
     case 'product':    
         require_once('./Controllers/HomeController.php');
         $objCate = new homeController();

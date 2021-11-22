@@ -4,6 +4,9 @@
         case "home":
             require_once("home.php");
             break;
+        case "search":
+            require_once("Search/list-search.php");
+            break;
         case "product":
             require_once("product.php");
             break;
