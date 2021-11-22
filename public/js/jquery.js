@@ -3,12 +3,9 @@ $(document).ready(function(){
     $('.search-box-action input[type="text"]').on("keyup input", function(){
         var inputVal= $(this).val();
         var resultDropdown= $(".search-results");
-        console.log(resultDropdown);
         if(inputVal.length){
             $.get("Views/backend-search.php", {term: inputVal}).done(function(data){
-                console.log(resultDropdown);
                 resultDropdown.html(data);
-                console.log('vap data',data);
             });
         }else{
             resultDropdown.empty();
