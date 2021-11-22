@@ -45,6 +45,13 @@
          		    ORDER BY ThoiGian DESC limit $a,$b";
              require("result.php");
              return $data;  
+             echo $data;
+        }
+
+        function searchData($key) {
+            $query = "SELECT * FROM sanpham, hinhanh WHERE sanpham.MaSP = hinhanh.masp and TenSP LIKE '$key%' GROUP by sanpham.MaSP";
+            require("result.php");
+            return $data;
         }
     }
 ?>

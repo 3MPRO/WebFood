@@ -7,6 +7,11 @@ switch ($mod) {
         $objCate = new CategoryController();
         $objCate->list();
         break;
+    case "search":
+        require_once('./Controllers/SearchController.php');
+        $objCate = new SearchController();
+        $objCate->list();
+        break;
     case 'product':    
         require_once('./Controllers/ProductController.php');
         $objCate = new ProductController();

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,11 +10,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./public/css/main.css">
     <link rel="stylesheet" href="./public/css/style.css">
     <link rel="stylesheet" href="./public/css/reset.css">
     <link rel="stylesheet" href="./public/css/product.css">
     <link rel="stylesheet" href="./public/css/login.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./public/js/jquery.js"></script>
 </head>
 <body>
     <?php
@@ -28,27 +34,9 @@
    <?php
      require_once("footer_header/footer.php");
     ?>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./public/lib/owl.carousel.min.js"></script>
-    <script>
-        $('#owl-slider-dry').owlCarousel({
-            loop:true,
-            margin:10,
-            nav:true,
-            responsive:{
-                0:{
-                    items:1
-                },
-                600:{
-                    items:2
-                },
-                1000:{
-                    items:5
-                }
-            }
-        })
-    </script>
+        <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./public/js/main.js"></script>
     <script>
         var $sliderBanner = $('.slider-list')
@@ -61,7 +49,8 @@
                     items:1
                 }
             }
-    });
+        });
+        
     </script>
 </body>
 </html>
