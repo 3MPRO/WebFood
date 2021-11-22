@@ -133,11 +133,13 @@
                         </a>
                         <i class="fas fa-chevron-down"></i>
                         <ul class="nav-item__down">
-                            <li class="nav-item__down-item"><a href="?act=product">Gia vi</a></li>
-                            <li class="nav-item__down-item"><a href="?act=product">Dầu ăn</a></li>
-                            <li class="nav-item__down-item"><a href="?act=product">Bánh kẹo</a></li>
-                            <li class="nav-item__down-item"><a href="?act=product">Rau củ quả</a></li>
-                            <li class="nav-item__down-item"><a href="?act=product">Sữa uống</a></li>
+                            <?php foreach($data_danhmuc as $row) { ?>
+
+                                 <li class="nav-item__down-item"><a href="?act=product&cate=<?=$row['MaDM'] ?>"><?=$row['TenDM']?></a></li>
+
+                                 <?php  } ?>
+                            
+                           
                         </ul>
                     </li>
                     <li class="nav-list__item"><a href="?act=product&cate=2">Bánh kẹo</a></li>
