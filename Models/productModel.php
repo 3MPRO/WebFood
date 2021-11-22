@@ -14,10 +14,17 @@
              require("result.php");
              return $data;  
         }
+        public function sanpham($masp)
+        {
+            $query ="SELECT * from sanpham
+                        where MaSP = '$masp'";
+            require("result.php");
+            return $data;
+        }
         public function loaisp_danhmuc($danhmuc)
         {
             $query ="SELECT * from danhmuc, loaisanpham
-                        where danhmuc.MaDM = loaisanpham.MaDM";
+                     where danhmuc.MaDM = loaisanpham.MaDM";
             require("result.php");
             return $data; 
         }

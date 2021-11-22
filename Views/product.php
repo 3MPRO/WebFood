@@ -108,9 +108,11 @@
                                    if($data_sanpham != NULL)
                                    {
                                      for($i=0 ;$i <4; $i++){ ?>
+                                     <a href="?act=detail&sp=<?=$data_sanpham[$i]['MaSP']?>">
                                         <div class="col col-product__item">
-                                            <form action="" >
-                                                <div>
+                                            
+                                            
+                                            <div>
                                             <div class="product-item__sale-off">
                                                     <span class="home-product-item__percent">10%</span>
                                                     <label class ="home-product-item__label" for="">Giảm</label>
@@ -118,7 +120,7 @@
                                             <a href=""><i class="product-item-icon far fa-heart"></i></a>
                                             </div>
                                                 <div class="product-img">
-                                                    <a href="">
+                                                    <a href="?act=detail&sp=<?=$data_sanpham[$i]['MaSP']?>">
                                                         <span class ="img--hover"></span> 
                                                         <img src="./public/images/Product-img/<?php echo $data_sanpham[$i]['hinhanh'] ?>" alt="">
                                                     </a>
@@ -129,11 +131,13 @@
                                                     <span class="price-new">60.000đ</span>
                                                     <button class="button-add-product button-add-product--view">Cho vào giỏ</button>
                                                     <span class="price-old">60.000đ</span>
-                    
+
                                                     </div>
                                                 </div>
-                                            </form>
+                                            
+                                           
                                         </div>
+                                        </a>
                                    <?php } 
                                     }
                                     else 

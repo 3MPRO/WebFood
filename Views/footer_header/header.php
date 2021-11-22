@@ -69,7 +69,8 @@
                                                                     <div class="cart-content-inner__qty">
                                                                         <label for="">Số lượng</label>
                                                                         <div class="group-btn-qty">
-                                                                            <a class="btn-qty-minus">
+                                                                            <!-- Ví dụ id user = 1 / đợi Huy đăng nhập sửa sau ::@@ -->
+                                                                            <a href="?act=user&iduser=1" class="btn-qty-minus">
                                                                                 <i class="fas fa-minus"></i>
                                                                             </a>
                                                                             <input type="text" class="cart-input" value="1">
@@ -102,7 +103,8 @@
                                 </li>
                                 <li>
                                     <div class="user">
-                                        <a href="">
+                                        <!-- Ví dụ id user = 1 / đợi Huy đăng nhập sửa sau ::@@ -->
+                                        <a href="?act=user&iduser=1">
                                             <i class="fas fa-user"></i>
                                         </a>
                                         <div class="group-login">

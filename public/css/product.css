@@ -29,13 +29,16 @@
 }
 .container-infor__item{
     margin: 14px 15px;
-    font-size: 1rem;
+    
 }
 .container-infor__item input{
     margin-top: 3px;
     height: 30px;
+    
 }
-
+.container-infor__item .edit{
+    font-size: 14px !important;
+}
 .btn-edit{
     
     background-color: var(--cl-green);
