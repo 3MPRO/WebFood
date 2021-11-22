@@ -1,4 +1,11 @@
 
+<<<<<<< HEAD
+=======
+
+
+    <?php if(isset($_GET['cate']) )
+           $cate = $_GET['cate'];?>
+>>>>>>> 6a411e87896b9e4068f892064ed3694ad151d8c8
     <section id="product">
         <div class="container">
             <div class="break-crumb">
@@ -11,7 +18,9 @@
                     </div>
                     <div>
                         <strong>
-                            <span>Hít kẹo</span>
+                            <span> <?php 
+                                    echo $data_danhmuc[$cate- 1]['TenDM'] 
+                            ?></span>
                         </strong>
                     </div>
                 </div>
@@ -91,15 +100,16 @@
                         </div>
                         <div class="product-list col-lg-9">
                             <div class="container">
+                           
                                 <div class="product-list__title row">
-                                    <h1 >Hít kẹo</h1>
+                                    <h1 ><?= $data_danhmuc[$cate -1]['TenDM'] ?></h1>
                                 </div>
 
                                 <div class="row">
                                     
-                                    <?php
-                                    if($data_sanpham != NULL)
-                                    {
+                                   <?php 
+                                   if($data_sanpham != NULL)
+                                   {
                                      for($i=0 ;$i <4; $i++){ ?>
                                         <div class="col col-product__item">
                                             <form action="" >
@@ -117,7 +127,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="product-fruits__infos">
-                                                    <h2 class="tilte-name-product-t">500g cá khô sạch con to</h2>
+                                                    <h2 class="tilte-name-product-t"><?= $data_sanpham[$i]['TenSP']?></h2>
                                                     <div>
                                                     <span class="price-new">60.000đ</span>
                                                     <button class="button-add-product button-add-product--view">Cho vào giỏ</button>

@@ -25,7 +25,7 @@
         }
         function danhmuc()
         {
-            $query =  "SELECT * from DanhMuc ";
+            $query =  "SELECT * from DanhMuc";
     
             require("result.php");
             
@@ -33,6 +33,7 @@
         }
 
 
+<<<<<<< HEAD
         function sanpham_danhmuc($a,$b,$danhmuc)
         {  
              $query ="SELECT * from sanpham , loaisanpham, danhmuc, hinhanh
@@ -53,5 +54,8 @@
             require("result.php");
             return $data;
         }
+=======
+        
+>>>>>>> 6a411e87896b9e4068f892064ed3694ad151d8c8
     }
 ?>
