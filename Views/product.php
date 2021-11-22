@@ -120,7 +120,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="product-fruits__infos">
-                                                    <h2 class="tilte-name-product-t">500g cá khô sạch con to</h2>
+                                                    <h2 class="tilte-name-product-t"><?= $data_sanpham[$i]['TenSP']?></h2>
                                                     <div>
                                                     <span class="price-new">60.000đ</span>
                                                     <button class="button-add-product button-add-product--view">Cho vào giỏ</button>

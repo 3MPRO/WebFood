@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 19, 2021 lúc 06:50 PM
+-- Thời gian đã tạo: Th10 20, 2021 lúc 01:52 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.12
 
@@ -106,38 +106,38 @@ CREATE TABLE `hinhanh` (
 --
 
 INSERT INTO `hinhanh` (`mahinh`, `masp`, `hinhanh`) VALUES
-(1, 2, 'https://bizweb.dktcdn.net/thumb/large/100/439/653/products/products-0013s-0002-3.jpg?v=1634266801473'),
-(2, 2, 'https://bizweb.dktcdn.net/thumb/large/100/439/653/products/products-0013s-0001-3b-1.jpg?v=1634266801057'),
-(3, 3, 'https://bizweb.dktcdn.net/thumb/large/100/439/653/products/pro49-grande.jpg?v=1634206944893'),
-(4, 3, 'https://bizweb.dktcdn.net/thumb/large/100/439/653/products/pro50-grande.jpg?v=1634206945323'),
-(5, 3, 'https://bizweb.dktcdn.net/thumb/large/100/439/653/products/pro51-grande.jpg?v=1634206946413'),
-(6, 4, 'https://bizweb.dktcdn.net/thumb/large/100/439/653/products/pro16-grande.jpg?v=1634206473713'),
-(7, 4, 'https://bizweb.dktcdn.net/thumb/large/100/439/653/products/pro17-grande.jpg?v=1634206474517'),
-(8, 5, 'https://bizweb.dktcdn.net/100/439/653/themes/838421/assets/frame4.png?1635678921397'),
-(9, 5, 'https://product.hstatic.net/1000282430/product/ca-chua-beef_534552a9e4db4d9f90678b4593a96de0.jpg'),
-(10, 5, 'https://img.sosanhgia.com/images/500x0/cf8972f20f3346218af6d85b9997b6b0/ca-chua-beef.jpeg'),
-(11, 6, 'https://bizweb.dktcdn.net/100/439/653/themes/838421/assets/frame4.png?1635678921397'),
-(12, 6, 'https://thuonghieuvaphapluat.vn/Images/dinhhai/2021/10/07/le_han_quoc_singo__3__1288140c49734873a6acdc9e9eac7057.jpg'),
-(13, 6, 'https://vcdn-giadinh.vnecdn.net/2021/04/28/511-1618387705-8400-1619603902.png'),
-(14, 7, 'https://lh3.googleusercontent.com/proxy/daz2nvPvnXgAJl7Q6JBB0EkAsXHP_9Z5sA-		joMgIms5gK9yY2mHk10AQ_CV2HLoO0NXkIv2ixkpbUnayvvssBlwfTAcqiinFCBEak8N9CFK7SkfjiOJH30wcHUCRk6jGTZCvreMSE8iwpg'),
-(15, 7, 'https://lh3.googleusercontent.com/proxy/Oju6P_18CgOG4JjemDvIZ-oAvnWiokSorZNcjeUL-D1Z0TFvldMfY-lIr5JzKq696H-	x7dG_e2DI5hxYd3sPmWVSUc8q0i0fXcfVQiGT2mJHgaXCXQ5EN1edlxb7QRI3WVnb3r5_TRUI4mTbF2s'),
-(16, 7, 'https://timlathay.vn/Attachs/Items/2021-08-24/Si%C3%AAu%20ch%E1%BB%A3%20Th%E1%BA%ADt%20T%E1%BB%91t/281563-073449064.jpg'),
-(17, 8, 'https://cdn.tgdd.vn/Products/Images/8788/202932/bhx/tao-gala-nhap-khau-new-zealand-tui-1kg-6-7-trai-202101271720530567.jpg'),
-(18, 8, 'https://cdn.tgdd.vn/Products/Images/7578/202932/bhx/tao-gala-new-zealand-nhap-khau-hop-1kg-6-7-trai-201910261118388477.jpg'),
-(19, 8, 'http://img.websosanh.vn/v2/users/wss/images/tao-gala-new-100g/vrb7g1uvgw0gt.jpg'),
-(20, 9, 'https://storage.googleapis.com/ifarmer-vn/be28752203434b8e844628a1d5133e53/trai-cam-mat-loai-xuat-khau-trong-luong-1-kg.jpg'),
-(21, 10, 'https://thucphamplaza.com/tpplaza_content/uploads/products_img/Nho-xanh-Thaco-hop-vang-140g-247x296.jpg'),
-(22, 10, 'https://thucphamplaza.com/tpplaza_content/uploads/products_img/Thaco-Raisins-140g-do-247x296.jpg'),
-(23, 11, 'https://viamclinic.vn/upload/banner/mbd1610330667.jpg'),
-(24, 11, 'https://vn-test-11.slatic.net/p/23652a8da74e801fcc3f74926af327ed.jpg'),
-(25, 12, 'https://salt.tikicdn.com/cache/w1200/ts/product/7b/85/b0/f19429872b739039f86dba049aa9471c.jpg'),
-(26, 12, 'https://cdn.tgdd.vn/Products/Images/3237/77106/bhx/ca-nuc-xot-ca-3-co-gai-hop-190g-201905220355494058.jpg'),
-(27, 13, 'https://vinmec-prod.s3.amazonaws.com/images/20200217_173841_298450_Dau-oliu-duoc-su-du.max-1800x1800.jpg'),
-(28, 13, 'https://toshiko.vn/wp-content/uploads/2021/07/dau-oliu-co-tac-dung-gi-1.jpeg'),
-(29, 14, 'https://lh3.googleusercontent.com/proxy/bZv7rXJpbqpDtQ1EC3BY7Vfwd3T_1hsOQwZCv_-JP6VhhHl1q0_cYn5gWhv7ChpFM3rLEpGGaNujipq2h-lcRgdo6La_zRGjKBPtjHeH_28ncdwu-kvb42m3Rc4SXqGbrQrTMMB5IF7LXN1DX1BcMNk26sDE5dTVqeaurGK1bFOvzkuKDA'),
-(30, 15, 'https://suckhoedoisong.qltns.mediacdn.vn/thumb_w/1200/324455921873985536/2021/8/24/banh-trung-thu-1629769530136945795794-47-0-460-660-crop-1629769537341793257055.jpg'),
-(31, 16, 'https://xoichecohoa.com/wp-content/uploads/2019/09/banh-phu-the.jpg'),
-(32, 17, 'https://mocchautourism.com/uploads/news/2021_01/banh-san-moc-chau-copy.jpg');
+(1, 2, 'products-0013s-0002-3.webp'),
+(2, 2, 'products-0013s-0001-3b-1.webp'),
+(3, 3, 'pro49-grande.webp'),
+(4, 3, 'pro50-grande.webp'),
+(5, 3, 'pro51-grande.webp'),
+(6, 4, 'pro16-grande.webp'),
+(7, 4, 'pro17-grande.webp'),
+(8, 5, '5a4acb179b272745b7c2980d84b2b359.png'),
+(9, 5, 'ca-chua-beef_534552a9e4db4d9f90678b4593a96de0.webp'),
+(10, 5, 'cachuanhapkhau.jpeg'),
+(11, 6, 'le_han_quoc_singo__3__1288140c49734873a6acdc9e9eac7057.jpg'),
+(12, 6, 'le_han_quoc_singo__3__1288140c49734873a6acdc9e9eac7057.jpg'),
+(13, 6, '511-1618387705-8400-1619603902.png'),
+(14, 7, '543044b729073c87197aecf11127838a.jpg_1200x1200q80.jpg_.webp'),
+(15, 7, '291bb1fb6c492a2240cd186bce0950f6.jfif'),
+(16, 7, '281563-073449064.jpg'),
+(17, 8, 'tao-gala-nhap-khau-new-zealand-tui-1kg-6-7-trai-202101271720530567.jpg'),
+(18, 8, 'tao-gala-new-zealand-nhap-khau-hop-1kg-6-7-trai-201910261118388477.jpg'),
+(19, 8, 'vrb7g1uvgw0gt.jpg'),
+(20, 9, 'trai-cam-mat-loai-xuat-khau-trong-luong-1-kg.jpg'),
+(21, 10, 'keonhoxanh.jpg'),
+(22, 10, 'Thaco-Raisins-140g-do-247x296.jpg'),
+(23, 11, 'mbd1610330667.jpg'),
+(24, 11, '23652a8da74e801fcc3f74926af327ed.jpg'),
+(25, 12, 'f19429872b739039f86dba049aa9471c.jpg'),
+(26, 12, 'cahop3cogai.jpg'),
+(27, 13, '20200217_173841_298450_Dau-oliu-duoc-su-du.max-1800x1800.jpg'),
+(28, 13, 'dau-oliu-co-tac-dung-gi-1.jpeg'),
+(29, 14, 'cach-luoc-bun-kho.jpg'),
+(30, 15, 'banh-trung-thu-1629769530136945795794-47-0-460-660-crop-1629769537341793257055.jpg'),
+(31, 16, 'banh-phu-the.jpg'),
+(32, 17, 'banh-san-moc-chau-copy.jpg');
 
 -- --------------------------------------------------------
 

@@ -4,7 +4,7 @@ $mod = isset($_GET['act']) ? $_GET['act'] : "home";
 switch ($mod) {
     case 'home':
         require_once('./Controllers/HomeController.php');
-        $objCate = new CategoryController();
+        $objCate = new homeController();
         $objCate->list();
         break;
     case 'product':    
@@ -14,7 +14,7 @@ switch ($mod) {
         break;
     case 'login': 
         require_once('./Controllers/LoginController.php');
-        $objCate = new CategoryController();
+        $objCate = new LoginController();
         $objCate->list();
         break;
     default : 
