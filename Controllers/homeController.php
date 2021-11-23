@@ -8,7 +8,7 @@ require_once("./Models/productModel.php");
              $this->product_model = new productModel();  
         }
         function list()
-        {   
+        {  
             $data_danhmuc = $this->product_model->danhmuc();
             $data_loaisp = array();
             for($i=1; $i <=count($data_danhmuc);$i++){
