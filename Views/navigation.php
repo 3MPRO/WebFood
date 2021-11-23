@@ -49,6 +49,9 @@
             }
             break;
         }
+        case "dangky":
+            require_once("register.php");
+            break;
         case "detail":
             require_once("detailPr.php");
             break;
