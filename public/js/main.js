@@ -128,12 +128,20 @@ const App = {
     },
     eventDom: function() {
         window.addEventListener('scroll',()=> {
-        if (window.pageYOffset >= sticky) {
-            headerEl.classList.add("sticky")
-        } else {
-            headerEl.classList.remove("sticky");
-        }
-})
+            if (window.pageYOffset >= sticky) {
+                headerEl.classList.add("sticky")
+            } else {
+                headerEl.classList.remove("sticky");
+            }
+        })
+
+        // const navElements = document.querySelectorAll('li.nav-list__item')
+        // navElements.forEach(navElement => {
+        //     console.log(navElement);
+        //     navElement.onclick = (e) => {
+        //         navElement.classList.add('active')
+        //     }
+        // });
     },
     start: function() {
         this.sliderProducts('#owl-fruilt-slider')

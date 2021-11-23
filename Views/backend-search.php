@@ -34,7 +34,7 @@ function getKey() {
                                 </div>
                         </a>
                     <?php } ?>
-                    <a href="?act=search" class="result-count">
+                    <a href="?act=search&keyword=<?php echo $param_term ?>" class="result-count">
                         Xem tất cả
                         <span class="count-item">(<?php echo mysqli_num_rows($result) ?>)</span>
                     </a>

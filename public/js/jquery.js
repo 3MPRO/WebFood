@@ -11,8 +11,4 @@ $(document).ready(function(){
             resultDropdown.empty();
         }
     });
-    $(document).on("click", ".search-results p", function(){
-        $(this).parents(".search-box-action").find('input[type="text"]').val($(this).text());
-        $(this).parent(".search-results").empty();
-    });
 });
