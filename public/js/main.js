@@ -128,17 +128,36 @@ const App = {
     },
     eventDom: function() {
         window.addEventListener('scroll',()=> {
-        if (window.pageYOffset >= sticky) {
-            headerEl.classList.add("sticky")
-        } else {
-            headerEl.classList.remove("sticky");
-        }
-})
+            if (window.pageYOffset >= sticky) {
+                headerEl.classList.add("sticky")
+            } else {
+                headerEl.classList.remove("sticky");
+            }
+        })
+
+    },
+    // Slider thumb detail
+    productDetailSlider: function() {
+        const listThumbnailDetails = document.querySelectorAll('.product-detail-left__list-thumb ul li')
+        const listThumbnails = document.querySelectorAll('.product-detail-left__list-thumb ul li img')
+        const productThumbnail = document.querySelector('.product-detail-left__thumbnail img')
+        listThumbnailDetails.forEach((itemThumbnail, index) => {
+            listThumbnailDetails[0].classList.add('active')
+            itemThumbnail.addEventListener('click', () => {
+                for (let index = 0; index < listThumbnailDetails.length; index++) {
+                    listThumbnailDetails[index].classList.remove('active')
+                }
+                itemThumbnail.classList.add('active')
+                productThumbnail.src = listThumbnails[index].src
+                console.log(listThumbnails[index].src);
+            })
+        });
     },
     start: function() {
         this.sliderProducts('#owl-fruilt-slider')
         this.sliderProducts('#owl-slider-dry')
         this.eventDom()
+        this.productDetailSlider()
     }  
 }
  

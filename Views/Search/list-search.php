@@ -38,7 +38,9 @@
                 </div>
             </div>
         <?php }}else{
-            echo '<p> KHÔNG CÓ DỮ LIỆU </p>';}?>
+            echo '<p style="padding: 40px 15px;
+                font-size: 40px;
+                color: red;"> KHÔNG CÓ DỮ LIỆU </p>';}?>
         <!-- single product end -->
     </div>
 </div>

@@ -25,7 +25,10 @@ require_once("./Models/productModel.php");
             $data_limit4 = $this->product_model->limit(12,4);
             $data_arr = array($data_limit1,$data_limit2,$data_limit3,$data_limit4);
             $data_random = $this->product_model->random(2);
-            $data = $this->product_model->searchData('ca');
+            if(isset($_GET['keyword'])) {
+                $key = $_GET['keyword'];
+                $data = $this->product_model->searchData($key);
+            }
 
             require_once('./Views/indexview.php');  
         }

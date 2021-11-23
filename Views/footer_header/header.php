@@ -2,23 +2,23 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-2 col col-md-4 col-ms-6">
-                <a href="trangchu.html" class="header__logo">
+                <a href="?act=home" class="header__logo">
                     <img src="./public/images/logo.webp" alt="">
                 </a>
             </div>
             <div class="col-lg-8 col col-md-4 col-ms-6">
                 <div class="search-box">
                     <div class="header__search">
-                        <form action="?act=search" class="search-box-action">
+                        <form action="?act=search" class="search-box-action" method="GET">
+                            <input type="hidden" name="act" value="search">
                             <span class="input-group">
-                                <button class="search-submit" type="button">
-                                    <a href="?act=search">
-                                        <img src="https://img.icons8.com/material-outlined/24/000000/search--v1.png"/>
-                                    </a>
+                                <button class="search-submit" type="submit" name="">
+                                    <img src="https://img.icons8.com/material-outlined/24/000000/search--v1.png"/>
                                 </button>
                             </span>
-                            <input type="text" placeholder="Tìm kiếm sản phẩm..." class="search-text-product">
+                            <input type="text" placeholder="Tìm kiếm sản phẩm..." class="search-text-product" name="keyword" autocomplete="off">
                         </form>
+                        <input type="hidden" name="action" value="tim-kiem">
                         <div class="result__box">
                             <div class="search-results">
                                 
@@ -124,27 +124,9 @@
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="user">
-                                <a href="">
-                                    <i class="fas fa-user"></i>
-                                </a>
-                                <div class="group-login">
-                                    <ul class="group-login__list">
-                                        <li class="group-login__list-item">
-                                            <a href="?act=login">Đăng nhập</a>
-                                        </li>
-                                        <li class="group-login__list-item">
-                                            <a href="">Đăng ký</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </div>
-
         </div>
     </div>
 </header>
