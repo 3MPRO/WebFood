@@ -32,7 +32,18 @@ switch ($mod) {
     case "user":
         require_once('./Controllers/inforController.php');
         $objCate = new infor();
-        $objCate->list();
+        $act = isset($_GET['check']) ? $_GET['check'] : "list";
+        switch ($act) {
+            case 'list':
+                $objCate->list();
+                break;
+            case 'updateinfo':
+               $objCate->updateinfo();
+              
+               break;
+           default : 
+           $objCate->list();     
+        }
         break;
     default : 
         require_once('home.php');

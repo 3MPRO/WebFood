@@ -1,11 +1,5 @@
 <?php
-// /* Cố gắng kết nối đến MySQL server. Giả sử bạn đang chạy MySQL server mặc đinh (user là 'root' và không có mật khẩu */
 
-// // Kiểm tra kết nối
-// if($link === false){
-    //     die("ERROR: Không thể kết nối. " . mysqli_connect_error());
-    // }
-    
 function getKey() {
     $link = mysqli_connect("localhost", "root", "", "webfood");
     if(isset($_REQUEST["term"])){
