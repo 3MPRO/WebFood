@@ -90,59 +90,6 @@
                             </div>
 
                         </div>
-<<<<<<< HEAD
-                        <div class="product-list col-lg-9">
-                            <div class="container">
-                           
-                                <div class="product-list__title row">
-                                    <h1 ><?= $data_danhmuc[$cate -1]['TenDM'] ?></h1>
-                                </div>
-
-                                <div class="row">
-                                    
-                                   <?php 
-                                   if($data_sanpham != NULL)
-                                   {
-                                     for($i=0 ;$i <4; $i++){ ?>
-                                     <a href="?act=detail&sp=<?=$data_sanpham[$i]['MaSP']?>">
-                                        <div class="col col-product__item">
-                                            
-                                            
-                                            <div>
-                                            <div class="product-item__sale-off">
-                                                    <span class="home-product-item__percent">10%</span>
-                                                    <label class ="home-product-item__label" for="">Giảm</label>
-                                            </div>
-                                            <a href=""><i class="product-item-icon far fa-heart"></i></a>
-                                            </div>
-                                                <div class="product-img">
-                                                    <a href="?act=detail&sp=<?=$data_sanpham[$i]['MaSP']?>">
-                                                        <span class ="img--hover"></span> 
-                                                        <img src="./public/images/Product-img/<?php echo $data_sanpham[$i]['hinhanh'] ?>" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-fruits__infos">
-                                                    <h2 class="tilte-name-product-t"><?= $data_sanpham[$i]['TenSP']?></h2>
-                                                    <div>
-                                                    <span class="price-new">60.000đ</span>
-                                                    <button class="button-add-product button-add-product--view">Cho vào giỏ</button>
-                                                    <span class="price-old">60.000đ</span>
-
-                                                    </div>
-                                                </div>
-                                            
-                                           
-                                        </div>
-                                        </a>
-                                   <?php } 
-                                    }
-                                    else 
-                                        echo "Không lấy dc dữ liệu";
-                                   
-                                   ?>
-                                   
-                                </div>
-=======
 
 
                     </div>
@@ -169,7 +116,7 @@
                                         <a href=""><i class="product-item-icon far fa-heart"></i></a>
                                         </div>
                                             <div class="product-img">
-                                                <a href="">
+                                                <a href="?act=detail&sp=<?=$data_sanpham[$i]['MaSP']?>">
                                                     <span class ="img--hover"></span> 
                                                     <img src="./public/images/<?php echo $data_sanpham[$i]['hinhanh'] ?>" alt="">
                                                 </a>
@@ -192,7 +139,6 @@
                                 
                                 ?>
                                 
->>>>>>> 013c1eb98b7156da341c0c14d8cd0b563bf692d7
                             </div>
                         </div>
 

@@ -25,60 +25,6 @@
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
-                    <div class="col-lg-2 col col-md-4 col-ms-12">
-                        <div class="group__account">
-                            <ul class="group__account-list">
-                                <li>
-                                    <div class="heart__icon">
-                                        <a href="">
-                                            <i class="far fa-heart"></i>
-                                            <span class="cart-icon__count">2</span>
-                                        </a>
-                                    </div>
-                                    
-                                </li>
-                                <li>
-                                    <div class="cart-icon">
-                                        <a href="">
-                                            <i class="fas fa-cart-arrow-down"></i>
-                                            <span class="cart-icon__count">0</span>
-                                        </a>
-                                        <div class="cart-down">
-                                            <!-- <div class="cart-down-empty">
-                                                <img src="./public/images/empy-icon.PNG" alt="">
-                                                <p>Không có sản phẩm nào trong giỏ hàng của bạn</p>
-                                            </div> -->
-                                            <div class="cart-content">
-                                                <form action="">
-                                                    <div class="cart-content-inner__item">
-                                                        <div class="cart-content-inner__item-row">
-                                                            <a href="" class="cart-content-inner__item-link">
-                                                                <img src="./public/images/pro20-grande.webp" alt="">
-                                                            </a>
-                                                            <div class="cart-content-inner__info">
-                                                                <a href="">
-                                                                    Chuối Tiêu Quê Loại To
-                                                                </a>
-                                                                <div class="cart-content-inner__info-box">
-                                                                    <div class="cart-content-inner__qty">
-                                                                        <label for="">Số lượng</label>
-                                                                        <div class="group-btn-qty">
-                                                                            <!-- Ví dụ id user = 1 / đợi Huy đăng nhập sửa sau ::@@ -->
-                                                                            <a href="?act=user&iduser=1" class="btn-qty-minus">
-                                                                                <i class="fas fa-minus"></i>
-                                                                            </a>
-                                                                            <input type="text" class="cart-input" value="1">
-                                                                            <a class="btn-qty-plus">
-                                                                                <i class="fas fa-plus"></i>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="cart-content-inner__prices">
-                                                                        <p class="cart-price">60.000đ</p>
-                                                                        <a href="" class="btn-remove-cart">Xóa</a>
-                                                                    </div>
-=======
                     <div class="group__contact">
                         <div class="contact__phone">
                             <p>Hỗ trợ online</p>
@@ -132,7 +78,6 @@
                                                                     <a class="btn-qty-plus">
                                                                         <i class="fas fa-plus"></i>
                                                                     </a>
->>>>>>> 013c1eb98b7156da341c0c14d8cd0b563bf692d7
                                                                 </div>
                                                             </div>
                                                             <div class="cart-content-inner__prices">
@@ -152,7 +97,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-<<<<<<< HEAD
+
                                         </div>
                                     </div>
                                 </li>
@@ -172,9 +117,9 @@
                                                 </li>
                                             </ul>
                                         </div>
-=======
+
                                         </form>
->>>>>>> 013c1eb98b7156da341c0c14d8cd0b563bf692d7
+
                                     </div>
                                 </div>
                             </div>
