@@ -1,3 +1,11 @@
+<div class="model-add-cart">
+    <span>Tuyệt vời</span>
+    <p>Bạn đã thêm sản phẩm vào giỏ hàng thành công bấm
+        <a href="">Vào đây</a>
+        để đi tới giỏ hàng
+    </p>
+</div>
+
 <header id="header">
     <div class="container">
         <div class="row">

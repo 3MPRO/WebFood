@@ -290,7 +290,7 @@
             for ($i = 0; $i < (count($data_sanpham2)); $i++) {
                     ?>
                     <div class="product-main">
-                        <form action="">
+                        <form action="" method="post" enctype="multipart/form-data">
                             <div class="product-fruits__thumb">
                                 <a href="?act=detail&sp=<?=$data_sanpham2[$i]['MaSP']?>">
                                     <img src="./public/images/<?=$data_sanpham2[$i]['hinhanh'] ?>" alt="Product Title">

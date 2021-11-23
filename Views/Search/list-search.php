@@ -22,7 +22,7 @@
                 <div class="product-main" style="margin-bottom: 20px;">
                     <form action="">
                         <div class="product-fruits__thumb">
-                            <a href="">
+                            <a href="?act=detail&sp=<?=$data[$i]['MaSP']?>">
                                 <img src="./public/images/<?=$data[$i]['hinhanh'] ?>" alt="Product Title">
                             </a>
                             <div class="icon-heart-product">
