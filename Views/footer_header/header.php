@@ -133,7 +133,7 @@
                                                 </li>
                                                 <?php } ?>
                                                 <li class="group-login__list-item">
-                                                    <a href="">Đăng ký</a>
+                                                    <a href="?act=dangky">Đăng ký</a>
                                                 </li>
                                     </ul>
                                         </div>
