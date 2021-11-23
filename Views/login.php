@@ -39,6 +39,7 @@
                                         <span class="required">*</span>
                                         <input type="password" name="matkhau" class="form-control form-control-lg" placeholder="Password"/>
                                     </fieldset>
+                                    
                                     <button class="btn-login" name="submit" type="submit" form="form1" >Đăng nhập</button>
                                 </form> 
                             </div>      
@@ -71,7 +72,7 @@
                                 <p>Tích điểm đổi quà</p>
                                 <p>Được giảm giá cho lần mua tiếp theo lên đến 10%</p>
                             </div>
-                            <a class="btn-register-default" href="#">Đăng ký</a>
+                            <a class="btn-register-default" href="?act=dangky">Đăng ký</a>
                         </div>
                     </div>
                 </div>

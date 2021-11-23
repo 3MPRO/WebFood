@@ -31,7 +31,6 @@
             
             return $data;
         }
-        
 
         function chitietdanhmuc($id)
             {
@@ -41,7 +40,6 @@
                 
                 return $data;
             }
-
 
     }
 ?>
