@@ -18,7 +18,10 @@
                     </div>
                 </div>
                 <div class="container-infor">
-                  <?php if(isset($data_info)) {  ?>
+                  <?php if(isset($data_info)) { 
+                  
+                      ?>
+                    
                     <form class ="" action="?act=user&check=updateinfo&iduser=<?= $data_info[0]['MaND']?>" method="post">
                         <label class="container-infor__title" >Thông Tin Tài Khoản</label>
                         <h2 class ="container-infor__name">Khách hàng: <span><?= $data_info[0]['Ho']. " ".$data_info[0]['Ten'] ?></span></h2>

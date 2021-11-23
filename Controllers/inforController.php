@@ -10,11 +10,13 @@ require_once("./Models/inforModel.php");
         {   
             // data_danhmuc để gọi lại thanh nav .  :v
             $data_danhmuc = $this->info_model->danhmuc();
-
+           
             if(isset($_GET['iduser']))
             {   
+               
                 $MaND = $_GET['iduser'];
                 $data_info = $this->info_model->infor($MaND);
+               
             }
             else {
                 echo "Lỗi  từ controler rồi";
@@ -40,7 +42,7 @@ require_once("./Models/inforModel.php");
                     }
                 }
                 $this->info_model->updateInfor($data_info,$MaND);
-                
+              
             }
             else {
                 echo "Lỗi  từ controler rồi";

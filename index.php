@@ -39,7 +39,6 @@ switch ($mod) {
                 break;
             case 'updateinfo':
                $objCate->updateinfo();
-              
                break;
            default : 
            $objCate->list();     
