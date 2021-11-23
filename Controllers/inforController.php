@@ -26,7 +26,7 @@ require_once("./Models/inforModel.php");
         function updateinfo(){
            
             if(isset($_GET['iduser']))
-            {   
+            {  
                 $MaND = $_GET['iduser'];
                 $data_info = array(
                     'Ho' =>    $_POST['Ho'],
