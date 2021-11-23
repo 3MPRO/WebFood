@@ -16,8 +16,7 @@
         }
         public function sanpham($masp)
         {
-            $query ="SELECT * from sanpham
-                        where MaSP = '$masp'";
+            $query ="SELECT * from sanpham,hinhanh where sanpham.MaSP = hinhanh.masp and sanpham.MaSP = '$masp'";
             require("result.php");
             return $data;
         }

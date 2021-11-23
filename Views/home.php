@@ -253,7 +253,7 @@
                     <div class="product-main">
                         <form action="">
                             <div class="product-fruits__thumb">
-                                <a href="">
+                                <a href="?act=detail&sp=<?=$data_sanpham1[$i]['MaSP']?>">
                                     <img src="./public/images/<?=$data_sanpham1[$i]['hinhanh'] ?>" alt="Product Title">
                                 </a>
                                 <div class="icon-heart-product">
@@ -292,7 +292,7 @@
                     <div class="product-main">
                         <form action="">
                             <div class="product-fruits__thumb">
-                                <a href="">
+                                <a href="?act=detail&sp=<?=$data_sanpham2[$i]['MaSP']?>">
                                     <img src="./public/images/<?=$data_sanpham2[$i]['hinhanh'] ?>" alt="Product Title">
                                 </a>
                                 <div class="icon-heart-product">
