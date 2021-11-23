@@ -23,17 +23,24 @@
                         <div class="left-col">
                             <div class="d-group__login">
                                 <h1>Đăng nhập tài khoản</h1>
-                                <fieldset class="form-group">
-                                    <label>Email</label>
-                                    <span class="required">*</span>
-                                    <input type="email" class="form-control form-control-lg" placeholder="Email"/>
-                                </fieldset>
-                                <fieldset class="form-group">
-                                    <label>Mật khẩu</label>
-                                    <span class="required">*</span>
-                                    <input type="password" class="form-control form-control-lg" placeholder="Password"/>
-                                </fieldset>
-                                <button class="btn-login" type="submit" value="Đăng nhập">Đăng nhập</button>
+                                <?php if (isset($_COOKIE['msg1'])) { ?>
+								<div class="alert alert-success">
+									<strong>Thông báo</strong> <?= $_COOKIE['msg1'] ?>
+								</div>
+							    <?php } ?>
+                                <form action="?act=taikhoan&xuli=dangnhap" method="post" id="form1">
+                                    <fieldset class="form-group">
+                                        <label>Tài khoản</label>
+                                        <span class="required">*</span>
+                                        <input type="text" name="taikhoan" class="form-control form-control-lg" placeholder="Tài khoản"/>
+                                    </fieldset>
+                                    <fieldset class="form-group">
+                                        <label>Mật khẩu</label>
+                                        <span class="required">*</span>
+                                        <input type="password" name="matkhau" class="form-control form-control-lg" placeholder="Password"/>
+                                    </fieldset>
+                                    <button class="btn-login" name="submit" type="submit" form="form1" >Đăng nhập</button>
+                                </form> 
                             </div>      
                             <div class="social-login">
                                 <p class="social-login-center">

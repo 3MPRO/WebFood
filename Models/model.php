@@ -31,6 +31,15 @@
             
             return $data;
         }
+        
+        function chitietdanhmuc($id)
+            {
+                $query =  "SELECT d.TenDM as Ten, l.* FROM danhmuc as d, loaisanpham as l WHERE d.MaDM = l.MaDM and d.MaDM = $id";
+
+                require("result.php");
+                
+                return $data;
+            }
 
     }
 ?>

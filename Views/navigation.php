@@ -10,9 +10,45 @@
         case "product":
             require_once("product.php");
             break;
-        case "login":
-            require_once("login.php");
+        case "taikhoan":
+        $act = isset($_GET['xuli']) ? $_GET['xuli'] : "login";
+        if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
+            switch ($act) {
+                case 'login':
+                    require_once("login.php");
+                    break;
+                case 'account':
+                    require_once("infoedit.php");
+                    break;
+                default:
+                    require_once("login.php");
+                    break;
+            }
+        } else {
+            if ((isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) || (isset($_SESSION['isLogin_Nhanvien']) && $_SESSION['isLogin_Nhanvien'] == true)) {
+                switch ($act) {
+                    case 'login':
+                        require_once("login.php");
+                        break;
+                    case 'account':
+                        require_once("infoedit.php");
+                        break;
+                    default:
+                        require_once("login.php");
+                        break;
+                }
+            } else {
+                switch ($act) {
+                    case 'login':
+                        require_once("login.php");
+                        break;
+                    default:
+                        require_once("login.php");
+                        break;
+                }
+            }
             break;
+        }
         case "detail":
             require_once("detailPr.php");
             break;
