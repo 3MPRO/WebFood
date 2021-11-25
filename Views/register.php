@@ -26,7 +26,7 @@
                                         <strong>Thông báo</strong> <?= $_COOKIE['msg'] ?>
                                     </div>
 					            <?php } ?>
-                                <form action="?act=taikhoan&xuli=dangky" method="post" id="form2">
+                                <form action="?act=taikhoan&xuli=dangky_action" method="post" id="form2">
                                 <fieldset class="form-group">
                                     <label>Họ</label>
                                     <span class="required">*</span>
@@ -90,7 +90,7 @@
                                 <p>Tích điểm đổi quà</p>
                                 <p>Được giảm giá cho lần mua tiếp theo lên đến 10%</p>
                             </div>
-                            <a class="btn-register-default" href="?act=taikhoan">Đăng nhập</a>
+                            <a class="btn-register-default" href="?act=taikhoan&xuli=login">Đăng nhập</a>
                         </div>
                     </div>
                 </div>

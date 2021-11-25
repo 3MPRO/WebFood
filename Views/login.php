@@ -72,7 +72,7 @@
                                 <p>Tích điểm đổi quà</p>
                                 <p>Được giảm giá cho lần mua tiếp theo lên đến 10%</p>
                             </div>
-                            <a class="btn-register-default" href="?act=dangky">Đăng ký</a>
+                            <a class="btn-register-default" href="?act=taikhoan&xuli=dangky">Đăng ký</a>
                         </div>
                     </div>
                 </div>

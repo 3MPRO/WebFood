@@ -12,23 +12,23 @@
                         </div>
                         <div>
                             <strong>
-                                <span>Chỉnh sửa thông tin</span>
+                                <span>Thông tin cá nhân</span>
                             </strong>
                         </div>
                     </div>
                 </div>
                 <div class="container-infor">
-                  <?php if(isset($data_info)) { 
+                  <?php if(isset($data)) { 
                   
                       ?>
                     
-                    <form class ="" action="?act=user&check=updateinfo&iduser=<?= $data_info[0]['MaND']?>" method="post">
+                    <form  action="?act=taikhoan&xuli=updateinfo" method="POST">
                         <label class="container-infor__title" >Thông Tin Tài Khoản</label>
-                        <h2 class ="container-infor__name">Khách hàng: <span><?= $data_info[0]['Ho']. " ".$data_info[0]['Ten'] ?></span></h2>
+                        <h2 class ="container-infor__name">Khách hàng: <span><?= $data['Ho']. " ".$data['Ten'] ?></span></h2>
                         <fieldset class="container-infor__item name-login">
                             <label>Tên Đăng nhập</label>
                             <span class="required">*</span>
-                            <input name = "TaiKhoan" type="text" value="<?= $data_info[0]['TaiKhoan']?>" class="form-control form-control-lg edit  " placeholder=""/>
+                            <input name = "TaiKhoan" type="text" value="<?= $data['TaiKhoan']?>" class="form-control form-control-lg edit  " placeholder=""/>
                             <div class="search-result"></div>
                         </fieldset>
                     
@@ -37,30 +37,34 @@
                         <fieldset class="container-infor__item">
                             <label>Họ </label>
                             <span class="required">*</span>
-                            <input type="text" name ="Ho" value ="<?= $data_info[0]['Ho'] ?>"class="form-control form-control-lg edit" placeholder=""/>
+                            <input type="text" name ="Ho" value ="<?= $data['Ho'] ?>"class="form-control form-control-lg edit" placeholder=""/>
                         </fieldset>
                         <fieldset class="container-infor__item">
                             <label>Tên </label>
                             <span class="required">*</span>
-                            <input type="text" name ="Ten" value ="<?= $data_info[0]['Ten'] ?>"class="form-control form-control-lg edit" placeholder=""/>
+                            <input type="text" name ="Ten" value ="<?= $data['Ten'] ?>"class="form-control form-control-lg edit" placeholder=""/>
                         </fieldset>
     
                         <fieldset class="container-infor__item">
                             <label>Số điện thoại </label>
                             <span class="required">*</span>
-                            <input type="tel" name ="SDT" value="<?= $data_info[0]['SDT']?>" class="form-control form-control-lg edit" placeholder=""/>
+                            <input type="tel" name ="SDT" value="<?= $data['SDT']?>" class="form-control form-control-lg edit" placeholder=""/>
                         </fieldset>
-    
+                        <fieldset class="container-infor__item">
+                            <label>Email </label>
+                            <span class="required">*</span>
+                            <input type="email" name ="Email" value="<?= $data['Email']?>" class="form-control form-control-lg edit" placeholder=""/>
+                        </fieldset>
                         <fieldset class="container-infor__item">
                             <label>Địa chỉ </label>
                             <span class="required">*</span>
-                            <input type="text" name = "DiaChi" value="<?= $data_info[0]['DiaChi']?>" class="form-control form-control-lg edit" placeholder=""/>
+                            <input type="text" name = "DiaChi" value="<?= $data['DiaChi']?>" class="form-control form-control-lg edit" placeholder=""/>
                         </fieldset>
-
+                        <a href="?act=taikhoan&xuli=updateinfo">
                         <div class="container-infor__item">
                             <input class="btn-edit" type="submit" value="Cập Nhật">
                         </div>
-                       
+                         </a>
                     </form>
                   <?php } 
                   else {

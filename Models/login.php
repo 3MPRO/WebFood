@@ -8,11 +8,16 @@ class Login extends Model
         $conn_obj = new connection();
         $this->conn = $conn_obj->conn;
     }
-
+    public function infor($maND){
+        $query = "SELECT *from nguoidung where MaND = $maND";
+        require("result.php");
+        return $data;
+    }
+   
     function login_action($data)
     {
         $query = "SELECT * from nguoidung  WHERE taikhoan = '" . $data['taikhoan'] . "' AND matkhau = '" . $data['matkhau'] . "' AND trangthai = 1";
-
+        echo $query;
         $login = $this->conn->query($query)->fetch_assoc();
         if ($login !== NULL) {
             if($login['MaQuyen'] == 2){
@@ -90,9 +95,22 @@ class Login extends Model
     function account()
     {
         $id = $_SESSION['login']['MaND'];
+        echo $id;
         return $this->conn->query("SELECT * from NguoiDung where MaND = $id")->fetch_assoc();
+        
     }
-    function update_account($data)
+    function updateInfor($data){
+        $v = "";
+        foreach ($data as $key => $value) {
+            $v .= $key . "='" . $value . "',";
+        }
+        $v = trim($v, ",");
+       
+        $query = "UPDATE NguoiDung SET $v  WHERE MaND = ". $_SESSION['login']['MaND'];
+        echo $query;
+        $result = $this->conn->query($query);
+      }
+    /* function update_account($data)
     {
         $v = "";
         foreach ($data as $key => $value) {
@@ -111,7 +129,7 @@ class Login extends Model
             setcookie('doimk', 'Mật khẩu xác nhận không đúng', time() + 2);
             header('Location: ?act=taikhoan&xuli=account#doitk');
         }
-    }
+    } */
     function error()
     {
         header('location: ?act=errors');

@@ -162,6 +162,7 @@
     position: relative;
 }
 .user:hover > .group-login {
+    z-index: 2;
     display: block;
 }
 .cart-icon:hover > .cart-down {

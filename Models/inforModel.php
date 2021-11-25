@@ -13,8 +13,8 @@
       }
       $v = trim($v, ",");
      
-      $query = "UPDATE NguoiDung SET $v  WHERE MaND = $MaND";
-    
+      $query = "UPDATE NguoiDung SET $v  WHERE MaND = ". $_SESSION['login']['MaND'];
+      echo $query;
       $result = $this->conn->query($query);
     }
 }
