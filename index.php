@@ -65,10 +65,10 @@ switch ($mod) {
                         $controller_obj->login_action();
                         break;
                     case 'dangky':
-                        require_once("Views/indexview.php");
+                        $controller_obj->dangky();
                         break;
                     case 'dangky_action':
-                        $controller_obj->dangky();
+                        $controller_obj->dangky_action();
                         break;
                     default:
                          $controller_obj->login();
@@ -76,14 +76,15 @@ switch ($mod) {
                 }
                 break;
             }
-            
+            break;
         }
-   
+        break;
     case "detail":
         require_once('./Controllers/ProductController.php');
         $objCate = new ProductController();
         $objCate->list();
         break;
+<<<<<<< HEAD
     case "user":
         require_once('./Controllers/inforController.php');
         $objCate = new infor();
@@ -99,6 +100,8 @@ switch ($mod) {
            $objCate->list();     
         }
         break;
+=======
+>>>>>>> b060ad85fcd1b597112e0169dcc0f1741630ca74
     case 'cart':
             $act = isset($_GET['xuli']) ? $_GET['xuli'] : "list";
             require_once('Controllers/CartController.php');

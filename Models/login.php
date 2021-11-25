@@ -95,7 +95,6 @@ class Login extends Model
     function account()
     {
         $id = $_SESSION['login']['MaND'];
-        echo $id;
         return $this->conn->query("SELECT * from NguoiDung where MaND = $id")->fetch_assoc();
         
     }
