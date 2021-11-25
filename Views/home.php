@@ -1,4 +1,3 @@
-
 <section id="slider">
     <div class="container">
         <ul class="slider-list">
@@ -251,7 +250,7 @@
                 for ($i = 0; $i < (count($data_sanpham1)); $i++) {
                     ?>
                     <div class="product-main">
-                        <form action="">
+                        <form action="" method="post">
                             <div class="product-fruits__thumb">
                                 <a href="?act=detail&sp=<?=$data_sanpham1[$i]['MaSP']?>">
                                     <img src="./public/images/<?=$data_sanpham1[$i]['hinhanh'] ?>" alt="Product Title">
@@ -263,7 +262,11 @@
                             <div class="product-fruits__infos">
                                 <h2 class="tilte-name-product"><?= $data_sanpham1[$i]['TenSP'] ?></h2>
                                 <span class="price-text"><?= number_format($data_sanpham1[$i]['DonGia']) ?> VNĐ</span>
-                                <button class="button-add-product">Cho vào giỏ</button>
+                                <a  href="?act=cart&xuli=add&id=<?=$data_sanpham1[$i]['MaSP']?>"
+                                    class="button-add-product" 
+                                    value="<?php echo $data_sanpham1[$i]['MaSP'] ?>"
+                                    name="add-button"
+                                >Cho vào giỏ</a>
                             </div>
                         </form>
                     </div>
@@ -288,25 +291,29 @@
         <div class="owl-carousel owl-theme" id="owl-slider-dry">
         <?php 
             for ($i = 0; $i < (count($data_sanpham2)); $i++) {
-                    ?>
-                    <div class="product-main">
-                        <form action="" method="post" enctype="multipart/form-data">
-                            <div class="product-fruits__thumb">
-                                <a href="?act=detail&sp=<?=$data_sanpham2[$i]['MaSP']?>">
-                                    <img src="./public/images/<?=$data_sanpham2[$i]['hinhanh'] ?>" alt="Product Title">
-                                </a>
-                                <div class="icon-heart-product">
-                                    <i class="far fa-heart"></i>
-                                </div>
+                ?>
+                <div class="product-main">
+                    <form action="" method="post">
+                        <div class="product-fruits__thumb">
+                            <a href="?act=detail&sp=<?=$data_sanpham2[$i]['MaSP']?>">
+                                <img src="./public/images/<?=$data_sanpham2[$i]['hinhanh'] ?>" alt="Product Title">
+                            </a>
+                            <div class="icon-heart-product">
+                                <i class="far fa-heart"></i>
                             </div>
-                            <div class="product-fruits__infos">
-                                <h2 class="tilte-name-product"><?= $data_sanpham2[$i]['TenSP'] ?></h2>
-                                <span class="price-text"><?= number_format($data_sanpham2[$i]['DonGia']) ?> VNĐ</span>
-                                <button class="button-add-product">Cho vào giỏ</button>
-                            </div>
-                        </form>
-                    </div>
-            <?php }?>
+                        </div>
+                        <div class="product-fruits__infos">
+                            <h2 class="tilte-name-product"><?= $data_sanpham2[$i]['TenSP'] ?></h2>
+                            <span class="price-text"><?= number_format($data_sanpham2[$i]['DonGia']) ?> VNĐ</span>
+                            <a  href="?act=cart&xuli=add&id=<?=$data_sanpham2[$i]['MaSP']?>"
+                                class="button-add-product" 
+                                value="<?php echo $data_sanpham2[$i]['MaSP'] ?>"
+                                name="add-button"
+                            >Cho vào giỏ</a>
+                        </div>
+                    </form>
+                </div>
+        <?php }?>
         </div>
     </div>
 </section>
