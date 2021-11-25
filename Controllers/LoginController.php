@@ -32,6 +32,7 @@ class LoginController
         
     function login()
     {
+       
         $data_danhmuc = $this->login_model->danhmuc();
 
         $data_chitietDM = array();
@@ -44,6 +45,7 @@ class LoginController
     }
     function login_action()
     {
+
         $taikhoan = $_POST['taikhoan'];
         $matkhau = md5($_POST['matkhau']);
         if (strpos($taikhoan, "'") != false) {
@@ -55,9 +57,13 @@ class LoginController
         );
         $this->login_model->login_action($data);
     }
-
-    function dangky()
+    function dangky(){
+        $data_danhmuc = $this->login_model->danhmuc();
+        require_once("Views/indexview.php");
+    }
+    function dangky_action()
     {
+        $data_danhmuc = $this->login_model->danhmuc();
         echo "thien";
         $check1 = 0;
         $check2 = 0;

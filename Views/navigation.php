@@ -20,9 +20,6 @@
                 case 'account':
                     require_once("infoedit.php");
                     break;
-                case 'updateinfo':
-                    require_once("infoedit.php");
-                    break;
                 default:
                     require_once("login.php");
                     break;
@@ -58,7 +55,7 @@
             }
             break;
         }
-        
+        break;
         case "detail":
             require_once("detailPr.php");
             break;

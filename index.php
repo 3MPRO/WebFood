@@ -65,10 +65,10 @@ switch ($mod) {
                         $controller_obj->login_action();
                         break;
                     case 'dangky':
-                        require_once("Views/indexview.php");
+                        $controller_obj->dangky();
                         break;
                     case 'dangky_action':
-                        $controller_obj->dangky();
+                        $controller_obj->dangky_action();
                         break;
                     default:
                          $controller_obj->login();
@@ -76,9 +76,9 @@ switch ($mod) {
                 }
                 break;
             }
-            
+            break;
         }
-   
+        break;
     case "detail":
         require_once('./Controllers/ProductController.php');
         $objCate = new ProductController();
