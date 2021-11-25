@@ -3,10 +3,6 @@ session_start();
 // unset($_SESSION['product']);
 $mod = isset($_GET['act']) ? $_GET['act'] : "home";
 switch ($mod) {
-<<<<<<< HEAD
-=======
-   
->>>>>>> 0393071f1a1759f85aa119a62b9cf87137bfae41
     case 'home':
         require_once('./Controllers/HomeController.php');
         $objCate = new homeController();
@@ -88,7 +84,6 @@ switch ($mod) {
         $objCate = new ProductController();
         $objCate->list();
         break;
-<<<<<<< HEAD
     case "user":
         require_once('./Controllers/inforController.php');
         $objCate = new infor();
@@ -116,8 +111,6 @@ switch ($mod) {
                     $controller_obj->add_cart();
                     break;
                 }
-=======
->>>>>>> 0393071f1a1759f85aa119a62b9cf87137bfae41
     default : 
         require_once('home.php');
 }

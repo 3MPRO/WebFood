@@ -20,7 +20,7 @@ function getKey() {
                 if(mysqli_num_rows($result) > 0){
                     // Tìm nạp các hàng kết quả dưới dạng mảng kết hợp
                     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){ ?>
-                        <a href="detailPr.html" class="search-results__link">
+                        <a href="?act=detail&sp=<?php echo $row["MaSP"]?>" class="search-results__link">
                             <img src="./public/images/<?php echo $row["hinhanh"]?>" alt="">
                                 <div class="box-desc">
                                 <p class="title-name-result"><?php echo $row["TenSP"] ?></p>
