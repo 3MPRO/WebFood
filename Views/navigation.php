@@ -20,6 +20,9 @@
                 case 'account':
                     require_once("infoedit.php");
                     break;
+                case 'updateinfo':
+                    require_once("infoedit.php");
+                    break;
                 default:
                     require_once("login.php");
                     break;
@@ -42,6 +45,12 @@
                     case 'login':
                         require_once("login.php");
                         break;
+                    case 'dangky_action':
+                        require_once("login.php");
+                        break;
+                    case 'dangky':
+                        require_once("register.php");
+                        break;
                     default:
                         require_once("login.php");
                         break;
@@ -49,15 +58,11 @@
             }
             break;
         }
-        case "dangky":
-            require_once("register.php");
-            break;
+        
         case "detail":
             require_once("detailPr.php");
             break;
-        case "user":
-            require_once("infoedit.php");
-            break;
+       
         default :
         require_once("error-404.php");
         break;

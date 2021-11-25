@@ -33,7 +33,8 @@ require_once("./Models/inforModel.php");
                     'Ten'  =>   $_POST['Ten'],
                     'TaiKhoan' => $_POST['TaiKhoan'],
                     'SDT' => $_POST['SDT'],
-                    'DiaChi'  =>   $_POST['DiaChi'],
+                    'Email' =>$_POST['Email'],
+                    'DiaChi'  =>   $_POST['DiaChi']
                 );
                 foreach ($data_info as $key => $value) {
                     if (strpos($value, "'") != false) {

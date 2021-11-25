@@ -112,7 +112,7 @@
                                 <li>
                                     <div class="user">
                                         <!-- Ví dụ id user = 1 / đợi Huy đăng nhập sửa sau ::@@ -->
-                                        <a href="?act=user&iduser=1">
+                                        <a href="">
                                             <i class="fas fa-user"></i>
                                         </a>
                                         <div class="group-login">
@@ -129,11 +129,11 @@
                                                 <?php }}else{ ?>
                                                 <li class="group-login__list-item"><b>Khách hàng</b></li>
                                                 <li class="group-login__list-item">
-                                                    <a href="?act=taikhoan">Đăng nhập</a>
+                                                    <a href="?act=taikhoan&xuli=login">Đăng nhập</a>
                                                 </li>
                                                 <?php } ?>
                                                 <li class="group-login__list-item">
-                                                    <a href="?act=dangky">Đăng ký</a>
+                                                    <a href="?act=taikhoan&xuli=dangky">Đăng ký</a>
                                                 </li>
                                     </ul>
                                         </div>
