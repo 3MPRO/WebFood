@@ -209,7 +209,7 @@
 input[type="radio"]:checked  {
    content: '';
    color: var(--cl-green);
-    background:var(--cl-green);
+   background:var(--cl-green);
 }
 .filter-origin__item ,.filter-price__item , .filter-collocation__item, .filter-category__item{
     margin: 10px 0;
@@ -217,4 +217,11 @@ input[type="radio"]:checked  {
 .swich-icon{
     margin-right: 5px;
     color: var(--cl-green);
+}
+
+.container-inforChange{
+    margin: 20px;
+}
+.infoChange-type{
+    margin-right: 5px;
 }
