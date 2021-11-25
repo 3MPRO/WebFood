@@ -36,9 +36,6 @@
 
   <div class="navbar_right">
     <ul class="navbar_nav">
-      <li class="nav-item"></li>
-      <li class="nav-item"></li>
-      <li class="nav-item"></li>
       <li class="nav-item">
         <a class="nav-link" href="#">
           <span>admin</span>
