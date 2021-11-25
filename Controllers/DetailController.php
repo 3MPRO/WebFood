@@ -22,7 +22,6 @@ require_once("./Models/productModel.php");
             $data_arr = array($data_limit1,$data_limit2,$data_limit3,$data_limit4);
             $data_random = $this->product_model->random(2);
     
-           
             require_once('./Views/indexview.php');  
         }
 

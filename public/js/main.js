@@ -63,7 +63,8 @@ const App = {
         console.log(modelAddCart);
         listbtnAddCart.forEach(btnAddCart => {
             btnAddCart.addEventListener('click',function(e){
-               e.preventDefault()
+
+                // e.preventDefault()
                 setTimeout(function(){
                     modelAddCart.style = style
                },1000)
