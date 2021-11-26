@@ -118,15 +118,15 @@
                                             <div class="product-img">
                                                 <a href="?act=detail&sp=<?=$data_sanpham[$i]['MaSP']?>">
                                                     <span class ="img--hover"></span> 
-                                                    <img src="./public/images/<?php echo $data_sanpham[$i]['hinhanh'] ?>" alt="">
+                                                    <img src="./public/images/<?php $data_sanpham[$i]['hinhanh'] ?>" alt="">
                                                 </a>
                                             </div>
                                             <div class="product-fruits__infos">
                                                 <h2 class="tilte-name-product-t"><?= $data_sanpham[$i]['TenSP']?></h2>
                                                 <div>
-                                                <span class="price-new"><?= $data_sanpham[$i]['DonGia']?></span>
+                                                <span class="price-new"><?= number_format( $data_sanpham[$i]['DonGia']) ?>đ</span>
                                                 <button class="button-add-product button-add-product--view">Cho vào giỏ</button>
-                                                <span class="price-old"><?php echo ($data_sanpham[$i]['DonGia'] + 20000 ) ?></span>
+                                                <span class="price-old"><?php echo number_format($data_sanpham[$i]['DonGia']+ 20000) ?>đ</span>
                 
                                                 </div>
                                             </div>
