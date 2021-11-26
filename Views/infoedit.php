@@ -22,19 +22,19 @@
                   
                       ?>
                     
-                    <form  action="?act=taikhoan&xuli=updateinfo" method="POST">
-                        <label class="container-infor__title" >Thông Tin Tài Khoản</label>
+                    
+                        <label class="container-infor__title">Thông Tin Tài Khoản</label>
                         <h2 class ="container-infor__name">Khách hàng: <span><?= $data['Ho']. " ".$data['Ten'] ?></span></h2>
-                        <span><input class= "infoChange-type" type="radio" name="radio-changeInfor" id="radio-changeInfor">Thông tin cá nhân </span>
-                        <div class="container-inforChange">
+                        <input checked="true" class= "infoChange-type" type="radio" name="radio-changeInfor" id="radio-changeInfor"><span>Thông tin cá nhân </span>
+                        <div class="div"></div>
+                        <form  action="?act=taikhoan&xuli=updateinfo" class="container-inforChange  container-inforp" method="POST">
+                        
                             <fieldset class="container-infor__item name-login">
                                 <label>Tên Đăng nhập</label>
                                 <span class="required">*</span>
                                 <input name = "TaiKhoan" type="text" value="<?= $data['TaiKhoan']?>" class="form-control form-control-lg edit  " placeholder=""/>
                                 <div class="search-result"></div>
                             </fieldset>
-                        
-                                
                             </fieldset>
                             <fieldset class="container-infor__item">
                                 <label>Họ </label>
@@ -62,36 +62,42 @@
                                 <span class="required">*</span>
                                 <input type="text" name = "DiaChi" value="<?= $data['DiaChi']?>" class="form-control form-control-lg edit" placeholder=""/>
                             </fieldset>
-                        </div>
                         
+                        <div class="container-infor__item">
+                            <input class="btn-edit" type="submit" value="Cập Nhật">
+                        </div>
+                    </form>
                         <!-- Đổi mật khẩu -->
-                        <span><input class= "infoChange-type" type="radio" name="radio-changeInfor" id="radio-changeInfor"> Đổi mật khẩu </span>
-                        <div class="container-inforChange">
+                        
+                        <input class= "infoChange-type" type="radio" name="radio-changeInfor" id="radio-changePass"  <?php if (isset($_COOKIE['doimk'])) { echo 'checked="true"';}?>><span> Đổi mật khẩu </span>
+                        <div class="div"></div>
+                        <?php if (isset($_COOKIE['doimk'])) { ?>
+                                    <div class="alert alert-success">
+                                        <strong>Thông báo</strong> <?= $_COOKIE['doimk'] ?>
+                                    </div>
+                                    <?php }?>
+                        <form action="?act=taikhoan&xuli=updateinfo" class="container-inforChange container-pass" method="POST">
                                  <fieldset class="container-infor__item">
                                     <label>Mật khẩu củ</label>
                                   
-                                    <input type="password" name="MatKhau" class="form-control form-control-lg edit" placeholder="Password"/>
+                                    <input type="password" name="MatKhau" class="form-control form-control-lg edit" placeholder="Password" required/>
                                 </fieldset>
                                 <fieldset class="container-infor__item">
                                     <label>Mật khẩu mới</label>
                                    
-                                    <input type="password" name="MatKhau" class="form-control form-control-lg edit" placeholder="Password"/>
+                                    <input type="password" name="MatKhauMoi" class="form-control form-control-lg edit" placeholder="Password"/>
                                 </fieldset>
                                 <fieldset class="container-infor__item">
                                     <label>Nhập lại mật khẩu</label>
                                     
-                                    <input type="password" name="check_password" class="form-control form-control-lg edit" placeholder="Password"/>
+                                    <input type="password" name="MatKhauXN" class="form-control form-control-lg edit" placeholder="Password"/>
                                 </fieldset>
-                        </div>
-
-                       
-                        <div class="container-infor__item">
-                            <input class="btn-edit" type="submit" value="Cập Nhật">
-                        </div>
-                         
+                                <div class="container-infor__item">
+                                     <input class="btn-edit" type="submit" value="Cập Nhật">
+                                </div>
+                        </form>
                         
-                        
-                    </form>
+                    
                   <?php } 
                   else {
                       echo "khong lay dc ";

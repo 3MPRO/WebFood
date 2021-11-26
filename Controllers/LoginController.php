@@ -64,7 +64,8 @@ class LoginController
     function dangky_action()
     {
         $data_danhmuc = $this->login_model->danhmuc();
-        echo "thien";
+        
+        //echo "thien";
         $check1 = 0;
         $check2 = 0;
         $data_check = $this->login_model->check_account();
@@ -114,10 +115,9 @@ class LoginController
     
     // Cập nhật 
     function updateinfo(){
-        
-        if(isset($_POST['Ho']))  
+        echo "<script>console.log('Đã zô controller' );</script>";
+        if(isset($_POST['Ho']))
         {  
-            
             $data = array(
                 'Ho' =>    $_POST['Ho'],
                 'Ten'  =>   $_POST['Ten'],
@@ -135,7 +135,7 @@ class LoginController
             $this->login_model->updateInfor($data);
           
         }
-        else  {
+        else{
             if ($_POST['MatKhauMoi'] == $_POST['MatKhauXN']) {
                 if (md5($_POST['MatKhau']) == $_SESSION['login']['MatKhau']) {
                     $data = array(

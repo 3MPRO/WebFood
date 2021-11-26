@@ -32,7 +32,7 @@
                         break;
                     case 'account':
                         require_once("infoedit.php");
-                        break;
+                        break; 
                     default:
                         require_once("login.php");
                         break;
@@ -42,9 +42,9 @@
                     case 'login':
                         require_once("login.php");
                         break;
-                    case 'dangky_action':
+                    /* case 'dangky_action':
                         require_once("login.php");
-                        break;
+                        break; */
                     case 'dangky':
                         require_once("register.php");
                         break;
