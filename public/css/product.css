@@ -206,7 +206,7 @@
 .filter-collocation__item input{
     margin-right: 5px;
 }
-input[type="radio"]:checked  {
+input[type="radio"]:checked {
    content: '';
    color: var(--cl-green);
    background:var(--cl-green);
@@ -224,4 +224,18 @@ input[type="radio"]:checked  {
 }
 .infoChange-type{
     margin-right: 5px;
+}
+.container-pass,.container-inforp {
+    border: var(--cl-green) 1px solid;
+    border-radius: 4px;
+    display: none;
+}
+#radio-changeInfor:checked ~ .container-inforp{
+    display: block;
+}
+#radio-changePass:checked ~ .container-pass{
+    display: block;
+}
+#radio-changeInfor ~ div{
+    margin: 10px;
 }

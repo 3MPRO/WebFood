@@ -99,7 +99,7 @@ class Login extends Model
         return $this->conn->query("SELECT * from NguoiDung where MaND = $id")->fetch_assoc();
         
     }
-    function updateInfor($data){
+    function updateInfor($data,$passOrinfo){
         $v = "";
         foreach ($data as $key => $value) {
             $v .= $key . "='" . $value . "',";
@@ -109,27 +109,20 @@ class Login extends Model
         $query = "UPDATE NguoiDung SET $v  WHERE MaND = ". $_SESSION['login']['MaND'];
         echo $query;
         $result = $this->conn->query($query);
-      }
-    /* function update_account($data)
-    {
-        $v = "";
-        foreach ($data as $key => $value) {
-            $v .= $key . "='" . $value . "',";
-        }
-        $v = trim($v, ",");
-
-        $query = "UPDATE NguoiDung SET  $v   WHERE  MaND = " . $_SESSION['login']['MaND'];
-
-        $result = $this->conn->query($query);
         
-        if ($result == true) {
-            setcookie('doimk', 'Cập nhật tài khoản thành công', time() + 2);
-            header('Location: ?act=taikhoan&xuli=account#doitk');
-        } else {
-            setcookie('doimk', 'Mật khẩu xác nhận không đúng', time() + 2);
-            header('Location: ?act=taikhoan&xuli=account#doitk');
+        if($passOrinfo=="pass")
+        {
+            if ($result == true) {
+                setcookie('doimk', 'Cập nhật mật khẩu thành công', time() + 2);
+                 header('Location: ?act=taikhoan&xuli=account#doitk');
+             }else {
+                 setcookie('doimk', 'Mật khẩu xác nhận không đúng', time() + 2);
+                 header('Location: ?act=taikhoan&xuli=account#doitk');
+             }
         }
-    } */
+       
+      }
+    
     function error()
     {
         header('location: ?act=errors');

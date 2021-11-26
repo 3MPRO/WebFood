@@ -110,3 +110,17 @@ App.start()
 // loadProducts()
 // productDetailSlider()
 // quantityCart()
+
+
+/* Change password js */
+var checkbox = document.getElementById("radio-changePass")
+  
+    checkbox.onchange = function()
+    {
+        var container_inforC
+        hange_show = document.getElementsByClassName("container-inforChange--show");
+        container_inforChange_show.style = "hidden"; 
+    }
+
+
+
