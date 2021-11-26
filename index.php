@@ -84,24 +84,6 @@ switch ($mod) {
         $objCate = new ProductController();
         $objCate->list();
         break;
-<<<<<<< HEAD
-    case "user":
-        require_once('./Controllers/inforController.php');
-        $objCate = new infor();
-        $act = isset($_GET['check']) ? $_GET['check'] : "list";
-        switch ($act) {
-            case 'list':
-                $objCate->list();
-                break;
-            case 'updateinfo':
-               $objCate->updateinfo();
-               break;
-           default : 
-           $objCate->list();     
-        }
-        break;
-=======
->>>>>>> b060ad85fcd1b597112e0169dcc0f1741630ca74
     case 'cart':
             $act = isset($_GET['xuli']) ? $_GET['xuli'] : "list";
             require_once('Controllers/CartController.php');

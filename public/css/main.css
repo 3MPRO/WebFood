@@ -635,8 +635,26 @@ h2.tilte-name-product {
 }
 
 /* product-fruits */
+#product-fruits button.owl-dot, #product-dry button.owl-dot{
+    width: 100px;
+    margin-right: 10px;
+    height: 6px;
+}
+
+#product-fruits button.owl-dot.active ,#product-dry button.owl-dot.active{
+    background: var(--cl-green);
+}
 #product-fruits .owl-nav, #product-dry .owl-nav {
-    display: none;
+    /* display: none; */
+    font-size: 31px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -263px;
+}
+
+#product-fruits .owl-nav button, #product-dry .owl-nav button {
+    cursor: pointer;
 }
 #product-fruits ,#product-dry{
     margin-bottom: 30px;
