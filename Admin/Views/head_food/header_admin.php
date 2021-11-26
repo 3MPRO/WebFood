@@ -27,8 +27,8 @@
                     </li>
                   </div>
                   <div class="profile_info">
-                  <i class="fas fa-user-tie"></i>
-                </div>
+                    <i class="fas fa-user-tie"></i>
+                  </div>
                 </div>
               </div>
             </div>
