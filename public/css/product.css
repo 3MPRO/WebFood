@@ -239,3 +239,8 @@ input[type="radio"]:checked {
 #radio-changeInfor ~ div{
     margin: 10px;
 }
+/* ----------------------- Trang ADMIN----------------------- */
+.product-table{
+    border-radius: 2px;
+    border: solid 1px #333;
+}
