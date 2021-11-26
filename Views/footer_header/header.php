@@ -138,21 +138,18 @@
                                             <?php
                                             if(isset($_SESSION['login'])){
                                             ?>
-                                                <li class="group-login__list-item"><b>Chào <?=$_SESSION['login']['Ho']?> <?=$_SESSION['login']['Ten']?></b></li>
-                                                <li><a href="?act=taikhoan&xuli=account">Tài khoản</a></li>
-                                                <li><a href="?act=taikhoan&xuli=dangxuat">Đăng xuất</a></li>
+                                                <li class="group-login__list-item"><b>Chào <?=$_SESSION['login']['Ten']?></b></li>
+                                                <li class="group-login__list-item"><a href="?act=taikhoan&xuli=account">Tài khoản</a></li>
+                                                <li class="group-login__list-item"><a href="?act=taikhoan&xuli=dangxuat">Đăng xuất</a></li>
                                                 <?php
                                                 if(isset($_SESSION['isLogin_Admin']) || isset($_SESSION['isLogin_Nhanvien'])){ ?>
-                                                <li><a href="admin/?mod=login">Trang quản lý</a></li>
+                                                <li class="group-login__list-item"><a href="admin/?mod=login">Trang quản lý</a></li>
                                                 <?php }}else{ ?>
                                                 <li class="group-login__list-item"><b>Khách hàng</b></li>
                                                 <li class="group-login__list-item">
                                                     <a href="?act=taikhoan&xuli=login">Đăng nhập</a>
                                                 </li>
                                                 <?php } ?>
-                                                <li class="group-login__list-item">
-                                                    <a href="?act=taikhoan&xuli=dangky">Đăng ký</a>
-                                                </li>
                                     </ul>
                                         </div>
 
