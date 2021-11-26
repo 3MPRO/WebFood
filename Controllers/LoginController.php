@@ -115,9 +115,11 @@ class LoginController
     
     // Cập nhật 
     function updateinfo(){
-        echo "<script>console.log('Đã zô controller' );</script>";
+       
         if(isset($_POST['Ho']))
         {  
+            
+            setcookie( "doimk", "", time()- 60, "/","", 0);
             $data = array(
                 'Ho' =>    $_POST['Ho'],
                 'Ten'  =>   $_POST['Ten'],
@@ -132,16 +134,18 @@ class LoginController
                     $data[$key] = $value;
                 }
             }
-            $this->login_model->updateInfor($data);
+            $passOrinfo = "info";
+            $this->login_model->updateInfor($data,$passOrinfo);
           
         }
         else{
+            $passOrinfo = "pass";
             if ($_POST['MatKhauMoi'] == $_POST['MatKhauXN']) {
                 if (md5($_POST['MatKhau']) == $_SESSION['login']['MatKhau']) {
                     $data = array(
                         'MatKhau' => md5($_POST['MatKhauMoi']),
                     );
-                    $this->login_model->updateInfor($data);
+                    $this->login_model->updateInfor($data,$passOrinfo);
                 } else {
                     setcookie('doimk', 'Mật khẩu không đúng', time() + 2);
                 }
