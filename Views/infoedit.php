@@ -25,7 +25,7 @@
                     <form  action="?act=taikhoan&xuli=updateinfo" method="POST">
                         <label class="container-infor__title" >Thông Tin Tài Khoản</label>
                         <h2 class ="container-infor__name">Khách hàng: <span><?= $data['Ho']. " ".$data['Ten'] ?></span></h2>
-                        <span><input class="infoChange-type" type="checkbox" name="" id="" > Thông tin cá nhân </span>
+                        <span><input class= "infoChange-type" type="radio" name="radio-changeInfor" id="radio-changeInfor">Thông tin cá nhân </span>
                         <div class="container-inforChange">
                             <fieldset class="container-infor__item name-login">
                                 <label>Tên Đăng nhập</label>
@@ -65,7 +65,7 @@
                         </div>
                         
                         <!-- Đổi mật khẩu -->
-                        <span><input class= "infoChange-type"type="checkbox" name="" id="" > Đổi mật khẩu </span>
+                        <span><input class= "infoChange-type" type="radio" name="radio-changeInfor" id="radio-changeInfor"> Đổi mật khẩu </span>
                         <div class="container-inforChange">
                                  <fieldset class="container-infor__item">
                                     <label>Mật khẩu củ</label>

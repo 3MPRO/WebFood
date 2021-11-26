@@ -124,9 +124,9 @@
                                             <div class="product-fruits__infos">
                                                 <h2 class="tilte-name-product-t"><?= $data_sanpham[$i]['TenSP']?></h2>
                                                 <div>
-                                                <span class="price-new">60.000đ</span>
+                                                <span class="price-new"><?= number_format( $data_sanpham[$i]['DonGia']) ?>đ</span>
                                                 <button class="button-add-product button-add-product--view">Cho vào giỏ</button>
-                                                <span class="price-old">60.000đ</span>
+                                                <span class="price-old"><?php echo number_format($data_sanpham[$i]['DonGia']+ 20000) ?>đ</span>
                 
                                                 </div>
                                             </div>
