@@ -13,7 +13,8 @@
                     </button>
                   </form>
                 </div>
-                <div class="header_right d-flex justify-content-between align-items-center">
+              </div>
+              <div class="header_right d-flex justify-content-between align-items-center">
                   <div class="header_notification_warp d-flex align-items-center">
                     <li>
                       <a class="bell_notification_clicker nav-link-notify">
@@ -30,7 +31,6 @@
                     <i class="fas fa-user-tie"></i>
                   </div>
                 </div>
-              </div>
             </div>
         </div>
     </div>
