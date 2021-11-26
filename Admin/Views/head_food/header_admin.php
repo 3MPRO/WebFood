@@ -26,9 +26,9 @@
                       </a>
                     </li>
                   </div>
-                </div>
-                <div class="profile_info">
+                  <div class="profile_info">
                   <i class="fas fa-user-tie"></i>
+                </div>
                 </div>
               </div>
             </div>
