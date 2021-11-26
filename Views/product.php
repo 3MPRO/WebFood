@@ -118,7 +118,7 @@
                                             <div class="product-img">
                                                 <a href="?act=detail&sp=<?=$data_sanpham[$i]['MaSP']?>">
                                                     <span class ="img--hover"></span> 
-                                                    <img src="./public/images/<?php $data_sanpham[$i]['hinhanh'] ?>" alt="">
+                                                    <img src="./public/images/<?php echo $data_sanpham[$i]['hinhanh'] ?>" alt="">
                                                 </a>
                                             </div>
                                             <div class="product-fruits__infos">
