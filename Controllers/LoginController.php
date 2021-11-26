@@ -35,12 +35,6 @@ class LoginController
        
         $data_danhmuc = $this->login_model->danhmuc();
 
-        $data_chitietDM = array();
-
-        for ($i = 1; $i <= count($data_danhmuc); $i++) {
-            $data_chitietDM[$i] = $this->login_model->chitietdanhmuc($i);
-        }
-
         require_once('Views/indexview.php');
     }
     function login_action()
@@ -66,11 +60,7 @@ class LoginController
     function dangky_action()
     {
         $data_danhmuc = $this->login_model->danhmuc();
-<<<<<<< HEAD
-=======
-        
-        //echo "thien";
->>>>>>> b542a8ac40ade4375fe15e9606d5835d385a94bd
+
         $check1 = 0;
         $check2 = 0;
         $data_check = $this->login_model->check_account();

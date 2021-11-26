@@ -28,8 +28,32 @@
   ?>
   <section class="main_content dashboard_part large_header_bg">
     <?php
-      require_once("Views/head_food/header_admin.php")
+      require_once("Views/head_food/header_admin.php");
+      if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {
+        $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
+        $act = isset($_GET['act']) ? $_GET['act'] : "admin";
+        switch ($mod) {
+          case 'sanpham':
+            switch ($act) {
+              case 'list':
+                require_once('MVC/views/sanpham/list.php');
+                break;
+              case 'add':
+                require_once('MVC/views/sanpham/add.php');
+                break;
+              case 'edit':
+                require_once('MVC/views/sanpham/edit.php');
+                break;
+              default:
+                require_once('MVC/views/sanpham/list.php');
+                break;
+            }
+          default : ;
+      
+      }
     ?>
+
+
   </section>
 </body>
 </html>
