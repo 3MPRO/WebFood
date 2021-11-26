@@ -66,6 +66,7 @@ class Login extends Model
     
     function dangky_action($data, $check1, $check2)
     {
+        echo 'aaaa';
         if ($check1 == 0) {
             if ($check2 == 0) {
                 $f = "";

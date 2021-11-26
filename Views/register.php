@@ -11,7 +11,7 @@
                         </div>
                         <div>
                             <strong>
-                                <span>Đăng nhập tài khoản</span>
+                                <span>Đăng ký tài Khoản</span>
                             </strong>
                         </div>
                     </div>
@@ -20,7 +20,7 @@
                     <div class="d-group">
                         <div class="left-col">
                             <div class="d-group__login">
-                                <h1>Đăng nhập tài khoản</h1>
+                                <h1>Đăng ký tài khoản</h1>
                                 <?php if (isset($_COOKIE['msg'])) { ?>
                                     <div class="alert alert-success">
                                         <strong>Thông báo</strong> <?= $_COOKIE['msg'] ?>
@@ -90,7 +90,7 @@
                                 <p>Tích điểm đổi quà</p>
                                 <p>Được giảm giá cho lần mua tiếp theo lên đến 10%</p>
                             </div>
-                            <a class="btn-register-default" href="?act=taikhoan&xuli=login">Đăng nhập</a>
+                            <a class="btn-register-default" href="?act=taikhoan&xuli=dangky">Đăng nhập</a>
                         </div>
                     </div>
                 </div>

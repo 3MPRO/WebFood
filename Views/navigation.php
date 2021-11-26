@@ -42,14 +42,14 @@
                     case 'login':
                         require_once("login.php");
                         break;
-                    case 'dangky_action':
-                        require_once("login.php");
-                        break;
+                    // case 'dangky_action':
+                    //     require_once("login.php");
+                    //     break;
                     case 'dangky':
                         require_once("register.php");
                         break;
                     default:
-                        require_once("login.php");
+                        require_once("register.php");
                         break;
                 }
             }

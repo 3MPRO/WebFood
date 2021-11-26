@@ -57,14 +57,15 @@ class LoginController
         );
         $this->login_model->login_action($data);
     }
+
     function dangky(){
         $data_danhmuc = $this->login_model->danhmuc();
         require_once("Views/indexview.php");
     }
+    
     function dangky_action()
     {
         $data_danhmuc = $this->login_model->danhmuc();
-        echo "thien";
         $check1 = 0;
         $check2 = 0;
         $data_check = $this->login_model->check_account();
@@ -97,7 +98,6 @@ class LoginController
             }
         }    
         $this->login_model->dangky_action($data, $check1, $check2);
-        
     }
     function dangxuat()
     {
