@@ -31,14 +31,7 @@
             
             return $data;
         }
-<<<<<<< HEAD
-        
-=======
-<<<<<<< HEAD
-        
-=======
->>>>>>> b060ad85fcd1b597112e0169dcc0f1741630ca74
->>>>>>> 0f8bf3db19ca3c69c3101234ebab949e40929cc3
+
         function chitietdanhmuc($id)
             {
                 $query =  "SELECT d.TenDM as Ten, l.* FROM danhmuc as d, loaisanpham as l WHERE d.MaDM = l.MaDM and d.MaDM = $id";
