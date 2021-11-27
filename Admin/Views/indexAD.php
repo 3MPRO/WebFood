@@ -15,22 +15,19 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="Public/css/main.css">
-    <link rel="stylesheet" href="Public/css/style.css">
-    <link rel="stylesheet" href="../public/css/reset.css">
-    <link rel="stylesheet" href="Public/css/admin.css">
-    <link rel="stylesheet" href="../public/css/product.css">
-    <link rel="stylesheet" href="../public/css/style.css">
-    <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="../Public/css/responsive.css">
+    <link rel="stylesheet" href="../Public/css/style.css">
+    <link rel="stylesheet" href="../Public/css/reset.css">
+    <link rel="stylesheet" href="../Public/css/admin.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./public/js/jquery.js"></script>
 </head>
 <body>
   <?php 
-    require_once("Views/menu.php"); 
+    require_once("menu.php"); 
   ?>
   <section class="main_content dashboard_part large_header_bg">
-    <?php require_once("Views/head_food/header_admin.php"); ?>
+    <?php require_once("head_food/header_admin.php"); ?>
     <div class="main_content-center">
     <?php
      

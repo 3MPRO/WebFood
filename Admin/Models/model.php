@@ -1,5 +1,5 @@
 <?php 
-require_once("../Models/connection.php");
+require_once("connection.php");
 class Model
 {
     var $conn;
