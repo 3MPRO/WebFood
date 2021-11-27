@@ -23,7 +23,7 @@
                 </a>
             </li>
             <li>
-                <a class="has-arrow" href="#" aria-expanded="true">
+                <a class="has-arrow" href="?mod=sanpham" aria-expanded="true">
                     <div class="icon_menu">
                         <i class="fas fa-seedling"></i>
                         <span>Quản lý sản phẩm</span>
