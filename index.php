@@ -87,18 +87,23 @@ switch ($mod) {
         break;
     case 'cart':
             $act = isset($_GET['xuli']) ? $_GET['xuli'] : "list";
+            $sl = isset($_GET['sl']) ? $_GET['sl'] : 1;
             require_once('Controllers/CartController.php');
             $controller_obj = new CartController();
             switch ($act) {
                 case 'list':
                     $controller_obj->list_cart();
                     break;
-                case 'add':
-                    $controller_obj->add_cart();
+                case 'update':
+                    $controller_obj->update_cart();
                     break;
-                }
+                case 'add':
+                    $controller_obj->add_cart($sl);
+                    break;
                 break;
+            }
     default : 
         require_once('home.php');
 }
+
 ?>

@@ -48,7 +48,7 @@
                             <div class="heart__icon">
                                 <a href="">
                                     <i class="far fa-heart"></i>
-                                    <span class="cart-icon__count">2</span>
+                                    <span class="heart-icon__count">2</span>
                                 </a>
                             </div>
                             
