@@ -1,5 +1,5 @@
 <?php 
-require_once("connection.php");
+require_once("../Models/connection.php");
 class Model
 {
     var $conn;
@@ -10,5 +10,12 @@ class Model
         $conn_obj = new Connection();
         $this->conn = $conn_obj->conn;
     }
+    function all(){
+        $query = "select * from $this->table ORDER BY $this->contens ASC";
+        echo $query;
+        require("result.php");
+        return $data;
+   }
+
 }
 ?>  
