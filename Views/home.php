@@ -101,7 +101,7 @@
                                 <p>Chuối tiêu xanh tại Dũng</p>
                                 <div class="price-box">
                                     <span class="price-text">70.000đ</span>
-                                    <button class="button-add-product">Cho vào giỏ</button>
+                                    <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                                 <p>Chuối tiêu xanh tại Dũng</p>
                                 <div class="price-box">
                                     <span class="price-text">70.000đ</span>
-                                    <button class="button-add-product">Cho vào giỏ</button>
+                                    <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                             <div class="product__price-box">
                                 <p class="price-new">250.000đ</p>
                                 <p class="price-old">280.000đ</p>
-                                <button class="button-add-product">Cho vào giỏ</button>
+                                <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
                             </div>
                         </div>
                     </div>
@@ -160,7 +160,7 @@
                                     <p>Chuối tiêu xanh tại Dũng</p>
                                     <div class="price-box">
                                         <span class="price-text">70.000đ</span>
-                                        <button class="button-add-product">Cho vào giỏ</button>
+                                        <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
                                     </div>
                                 </div>
                             </div>
@@ -182,7 +182,7 @@
                                     <p>Chuối tiêu xanh tại Dũng</p>
                                     <div class="price-box">
                                         <span class="price-text">70.000đ</span>
-                                        <button class="button-add-product">Cho vào giỏ</button>
+                                        <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
                                     </div>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@
                     <div class="product__price-box">
                         <p class="price-new">250.000đ</p>
                         <p class="price-old">280.000đ</p>
-                        <button class="button-add-product">Cho vào giỏ</button>
+                        <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
                     </div>
                 </div>
                 <div class="row">
@@ -221,7 +221,7 @@
                                 <p>Chuối tiêu xanh tại Dũng</p>
                                 <div class="price-box">
                                     <span class="price-text">70.000đ</span>
-                                    <button class="button-add-product">Cho vào giỏ</button>
+                                    <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
                                 </div>
                             </div>
                         </div>
@@ -263,7 +263,7 @@
                                 <h2 class="tilte-name-product"><?= $data_sanpham1[$i]['TenSP'] ?></h2>
                                 <span class="price-text"><?= number_format($data_sanpham1[$i]['DonGia']) ?> VNĐ</span>
                                 <a  href="?act=cart&xuli=add&id=<?=$data_sanpham1[$i]['MaSP']?>"
-                                    class="button-add-product" 
+                                    class="button-add-product btn-add-cart" 
                                     value="<?php echo $data_sanpham1[$i]['MaSP'] ?>"
                                     name="add-button"
                                 >Cho vào giỏ</a>
@@ -306,7 +306,7 @@
                             <h2 class="tilte-name-product"><?= $data_sanpham2[$i]['TenSP'] ?></h2>
                             <span class="price-text"><?= number_format($data_sanpham2[$i]['DonGia']) ?> VNĐ</span>
                             <a  href="?act=cart&xuli=add&id=<?=$data_sanpham2[$i]['MaSP']?>"
-                                class="button-add-product" 
+                                class="button-add-product btn-add-cart" 
                                 value="<?php echo $data_sanpham2[$i]['MaSP'] ?>"
                                 name="add-button"
                             >Cho vào giỏ</a>

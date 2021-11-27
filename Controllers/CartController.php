@@ -25,7 +25,7 @@ class CartController
         }
         require_once('Views/indexview.php');
     }
-    function add_cart()
+    function add_cart($sl)
     {
         $id = $_GET['id'];
         $data = $this->cart_model->detail_sp($id);
@@ -33,15 +33,17 @@ class CartController
         $count = 0;
         if (isset($_SESSION['product'][$id])) {
             $arr = $_SESSION['product'][$id];
-            $arr['soluong'] = $arr['soluong'] + 1;
+            $arr['soluong'] = $arr['soluong'] + $sl;
             $arr['ThanhTien'] = $arr['soluong'] * $arr["DonGia"];
             $_SESSION['product'][$id] = $arr;
+            echo $sl;
+            
         } else {
             $arr['MaSP'] = $data['MaSP'];
             $arr['TenSP'] = $data['TenSP'];
             $arr['DonGia'] = $data['DonGia'];
-            $arr['soluong'] = 1;
-            $arr['ThanhTien'] = $data['DonGia'];
+            $arr['soluong'] = $sl;
+            $arr['ThanhTien'] = $data['DonGia']*$arr['soluong'];
             $arr['hinhanh'] = $data['hinhanh'];
             $_SESSION['product'][$id] = $arr;
         }
@@ -49,8 +51,19 @@ class CartController
         foreach ($_SESSION['product'] as $value) {
             $count += $value['ThanhTien'];
         }
-
-        header('Location:?act=home');
+        $path = 'Location:?act=detail&sp=' .$id;
+        header($path);
+    }
+    function update_cart()
+    {   $id = $_GET['id'];
+        echo $id;
+        $arr = $_SESSION['product'][$_GET['id']];
+        $arr['TenSP'] = $arr['TenSP'];
+        $arr['soluong'] = $arr['soluong'] + 1;
+        $arr['ThanhTien'] = $arr['soluong'] * $arr["DonGia"];
+        $_SESSION['product'][$_GET['id']] = $arr;
+        $path = 'Location:?act=detail&sp=' .$id;
+        header($path);
     }
 
 }

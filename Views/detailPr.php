@@ -65,19 +65,19 @@
                     </div>
                 </div>
             </div>
-            <form action="">
+            <form action="./Controllers/CartController.php" method="post">
                 <div class="custom-quantity">
-                    <a class="btn-minus">
+                    <a class="btn-minus" href="?act=cart&xuli=delete&id=<?php echo $data_sanpham[0]['MaSP'];?>" >
                         <i class="fas fa-minus"></i>
                     </a>
-                    <input type="text" class="qty-input" value="1">
-                    <a class="btn-plus">
+                    <input type="text" class="qty-input" value="1" name="slsanpham">
+                    <a class="btn-plus" href="?act=cart&xuli=update&id=<?php echo $data_sanpham[0]['MaSP'];?>">
                         <i class="fas fa-plus"></i>
                     </a>
                 </div>
                 <div class="group-button-add">
-                    <button class="add-cart">Cho vào giỏ hàng</button>
-                    <button class="buy-now">Cho vào giỏ hàng</button>
+                    <a href="?act=cart&xuli=add&id=<?php echo $data_sanpham[0]['MaSP']; ?>&sl=1" class="add-cart btn-add-cart" data-id="<?php echo $data_sanpham[0]['MaSP']; ?>">Cho vào giỏ hàng</a>
+                    <a href="" class="buy-now">Mua ngay</a>
                 </div>
                 <div class="icon-heart">
                     <button class="add-heart">

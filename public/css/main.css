@@ -144,7 +144,7 @@
 .heart__icon > a ,.cart-icon > a{
     position: relative;
 }
-.cart-icon__count {
+.cart-icon__count, .heart-icon__count {
     position: absolute;
     width: 15px;
     border-radius: 100%;
@@ -940,14 +940,18 @@ input.seed-mail::placeholder {
     display: flex;
     justify-content: space-between;
 }
-.group-button-add button{ 
+.group-button-add a{
     cursor: pointer;
     color: #fff;
     font-size: 24px;
     font-weight: 700;
     padding: 8px 5px;
     transition: 0.2s ease-in;
-    border-radius: 8px;}
+    border-radius: 8px;
+    width: 215px;
+    display: block;
+    text-align: center;
+    }
 .add-cart{
     background-color: var(--cl-green);
     border: 1px solid var(--cl-green);
