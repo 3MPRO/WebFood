@@ -66,7 +66,7 @@
                                         $thanhtien +=$value['ThanhTien'];
                                     }}
                                 ?>
-                                <a href="">
+                                <a href="?act=cart">
                                     <i class="fas fa-cart-arrow-down"></i>
                                     <span class="cart-icon__count"><?php echo $countProduct ?></span>
                                 </a>

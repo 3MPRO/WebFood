@@ -62,9 +62,11 @@
         case "detail":
             require_once("detailPr.php");
             break;
-       
+        case'cart':
+            require_once("cart/cart.php");
+            break;
         default :
-        require_once("error-404.php");
+            require_once("error-404.php");
         break;
     }
       
