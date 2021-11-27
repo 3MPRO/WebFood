@@ -1,57 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    
-    <link rel="stylesheet" href="public/css/admin.css">
-   
-</head>
-<body>
-<!-- Bar -->
-<nav class="navbar">
-    <!-- Search -->
-  <div class="header__search">
-    <form action="">
-      <span class="input-group">
-        <button class="search-submit" type="button">
-          <img src="https://img.icons8.com/material-outlined/24/000000/search--v1.png"/>
-        </button>
-      </span>
-      <input type="text" placeholder="Tìm kiếm ..." class="search-text-product">
-    </form>
-    <div class="result__box">
-      <div class="search-results">
-                                            
-      </div>
-    </div>
-  </div>
-
-  <div class="navbar_right">
-    <ul class="navbar_nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <span>admin</span>
-          <i class="far fa-user-circle"></i>
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">
-            <i class="fas fa-user"></i>Hồ sơ 
-          </a>
-          <a class="dropdown-item" href="#">
-            <i class="fas fa-sign-out-alt"></i>Đăng xuất 
-          </a>
+<div class="container-fluid no-gutters">
+    <div class="row">
+        <div class="col-lg-12 p-0 ">
+            <div class="header_iner d-flex justify-content-between align-items-center">
+              <div class="serach_field-area d-flex align-items-center">
+                <div class="search_inner">
+                  <form action="#">
+                    <div class="search_field">
+                      <input type="text" placeholder="Tìm kiếm...">
+                    </div>
+                    <button type="submit">
+                      <img src="https://img.icons8.com/material-outlined/24/000000/search--v1.png"/>
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <div class="header_right d-flex justify-content-between align-items-center">
+                  <div class="header_notification_warp d-flex align-items-center">
+                    <li>
+                      <a class="bell_notification_clicker nav-link-notify">
+                        <i class="far fa-bell"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="CHATBOX_open nav-link-notify">
+                        <i class="far fa-envelope"></i>
+                      </a>
+                    </li>
+                  </div>
+                  <div class="profile_info">
+                    <i class="fas fa-user-tie"></i>
+                  </div>
+                </div>
+            </div>
         </div>
-      </li>
-    </ul>
-  </div>
-</nav>
-</body>
-</html>
+    </div>
+</div>

@@ -150,11 +150,8 @@
                                                     <a href="?act=taikhoan&xuli=login">Đăng nhập</a>
                                                 </li>
                                                 <?php } ?>
-                                    </ul>
+                                        </ul>
                                         </div>
-
-                                        </form>
-
                                     </div>
                                 </div>
                             </div>
