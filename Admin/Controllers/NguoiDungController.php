@@ -16,12 +16,12 @@ class NguoiDungController
     {
         $id = isset($_GET['id']) ? $_GET['id'] : 1;
         $data = $this->nguoidung_model->find($id);
-        require_once("../Views/indexAD.php");
+        require_once("./Views/indexAD.php");
         //require_once("MVC/Views/authors/detail.php");
     }
     public function add()
     {
-        require_once("../Views/indexAD.php");
+        require_once("./Views/indexAD.php");
         //require_once("MVC/Views/authors/add.php");
     }
     public function store()
@@ -56,7 +56,6 @@ class NguoiDungController
         $id = isset($_GET['id']) ? $_GET['id'] : 1;
         $data = $this->nguoidung_model->find($id);
         require_once("./Views/indexAD.php");
-        //require_once("MVC/Views/authors/edit.php");
     }
     public function update()
     {
