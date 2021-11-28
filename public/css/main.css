@@ -583,11 +583,13 @@ h2.tilte-name-product {
     border-radius: 5px;
     cursor: pointer;
     position: relative;
-    right: -230px;
+    right: -360px;
     visibility: hidden;
     transition: all ease 0.3s;
     display: block;
     top: -10px;
+    max-width: 150px;
+    text-align: center;
 }
 .populator__product-right {
     margin-bottom: 25px;

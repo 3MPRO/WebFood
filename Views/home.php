@@ -103,7 +103,7 @@
                                         <p>Chuối tiêu xanh tại Dũng</p>
                                         <div class="price-box">
                                             <span class="price-text"><?= number_format($item['DonGia']) ?> đ</span>
-                                            <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
+                                            <a href="?act=cart&xuli=add&id=<?=$item['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
                                         </div>
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@
                             <div class="product__price-box">
                                 <p class="price-new"><?= number_format($data_random1[0]['giaCu']) ?> đ</p>
                                 <p class="price-old"><?= number_format($data_random1[0]['DonGia']) ?> đ</p>
-                                <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
+                                <a href="?act=cart&xuli=add&id=<?=$data_random1[0]['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
                             </div>
                         </div>
                     </div>
@@ -144,7 +144,7 @@
                                         <p>Chuối tiêu xanh tại Dũng</p>
                                         <div class="price-box">
                                             <span class="price-text"><?= number_format($data_random2[0]['DonGia']) ?> đ</span>
-                                            <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
+                                            <a href="?act=cart&xuli=add&id=<?=$data_random2[0]['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
                                         </div>
                                     </div>
                                 </div>
@@ -166,7 +166,7 @@
                                     <p>Chuối tiêu xanh tại Dũng</p>
                                     <div class="price-box">
                                         <span class="price-text"><?= number_format($data_random3[0]['DonGia']) ?> đ</span>
-                                        <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
+                                        <a href="?act=cart&xuli=add&id=<?=$data_random3[0]['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
                                     </div>
                                 </div>
                             </div>
@@ -185,8 +185,8 @@
                     </a>
                     <div class="product__price-box">
                         <p class="price-new"><?= number_format($data_random4[0]['giaCu']) ?> đ</p>
-                        <p class="price-old"><?= number_format($data_random3[0]['DonGia']) ?> đ</p>
-                        <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
+                        <p class="price-old"><?= number_format($data_random4[0]['DonGia']) ?> đ</p>
+                        <a href="?act=cart&xuli=add&id=<?=$data_random4[0]['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
                     </div>
                 </div>
                 <div class="row">
@@ -205,7 +205,7 @@
                                 <p>Chuối tiêu xanh tại Dũng</p>
                                 <div class="price-box">
                                     <span class="price-text"><?= number_format($data_random5[0]['DonGia']) ?></span>
-                                    <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
+                                    <a href="?act=cart&xuli=add&id=<?=$data_random5[0]['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
                                 </div>
                             </div>
                         </div>
@@ -224,7 +224,7 @@
                 </h2>
                 <p class="populator__head-desc">Sản phẩm tươi ngon mới nhất</p>
             </div>
-            <a href="" class="populator__head-all">
+            <a href="?act=product&cate=1" class="populator__head-all">
                 <p>Xem tất cả</p>
                 <i class="fas fa-long-arrow-alt-right"></i>
             </a>
