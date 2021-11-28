@@ -295,3 +295,15 @@ input[type="radio"]:checked {
     padding: 5px;
     border-radius: 5px ;
 }
+.add-product-form{
+    width: 100%;
+}
+.add-product-item{
+    width: 900px;
+    margin: 20px 5px;
+}
+.add-product-form 
+.add-product-form label{
+    margin: 10px 0px;
+    display: block;
+}
