@@ -86,59 +86,43 @@
         <div class="row">
             <div class="col-lg-8 col">
                 <div class="row">
-                    <div class="col col-lg-6">
-                        <div class="item_product_main">
-                            <div class="populator__product">
-                                <a href="" class="populator__product-link">
-                                    <img src="./public/images/pro20-grande.webp" alt="">
-                                    <span><i class="far fa-heart"></i></span>
-                                </a>
-                            </div>
-                            <div class="populator__product-content">
-                                <h2 class="poplator__product-content-title tilte-name-product">
-                                    Chuối tiêu loại to
-                                </h2>
-                                <p>Chuối tiêu xanh tại Dũng</p>
-                                <div class="price-box">
-                                    <span class="price-text">70.000đ</span>
-                                    <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
+                    <?php 
+                        foreach ($data_random as $item) {?>
+                            <div class="col col-lg-6">
+                                <div class="item_product_main">
+                                    <div class="populator__product">
+                                        <a href="" class="populator__product-link">
+                                            <img src="./public/images/<?= $item['hinhanh'];?>" alt="">
+                                            <span><i class="far fa-heart"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="populator__product-content">
+                                        <h2 class="poplator__product-content-title tilte-name-product">
+                                            <?= $item['TenSP'] ?>
+                                        </h2>
+                                        <p>Chuối tiêu xanh tại Dũng</p>
+                                        <div class="price-box">
+                                            <span class="price-text"><?= number_format($item['DonGia']) ?> đ</span>
+                                            <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col col-lg-6">
-                        <div class="item_product_main">
-                            <div class="populator__product">
-                                <a href="" class="populator__product-link">
-                                    <img src="./public/images/pro35-grande.webp" alt="">
-                                    <span><i class="far fa-heart"></i></span>
-                                </a>
-                            </div>
-                            <div class="populator__product-content">
-                                <h2 class="poplator__product-content-title tilte-name-product">
-                                    Ớt xanh, ớt đỏ Đà Lạt
-                                </h2>
-                                <p>Chuối tiêu xanh tại Dũng</p>
-                                <div class="price-box">
-                                    <span class="price-text">70.000đ</span>
-                                    <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                    <?php } ?>
                 </div>
                 <div class="row">
                     <div class="col col-6">
                         <div class="populator__product-right">
                             <a href="" class="populator__product-right-link">
-                                <img src="./public/images/pro57-grande.webp" alt="">
+                                <img src="./public/images/<?= $data_random1[0]['hinhanh'] ?>" alt="">
                                 <h2 class="tilte-name-product">
-                                    Dâu tây đà lạt loại 1kg
+                                    <?= $data_random1[0]['TenSP'] ?>
                                 </h2>
                             </a>
                             <div class="product__price-box">
-                                <p class="price-new">250.000đ</p>
-                                <p class="price-old">280.000đ</p>
+                                <p class="price-new"><?= number_format($data_random1[0]['giaCu']) ?> đ</p>
+                                <p class="price-old"><?= number_format($data_random1[0]['DonGia']) ?> đ</p>
                                 <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
                             </div>
                         </div>
@@ -146,24 +130,24 @@
                     <div class="col col-6">
                         <div class="row">
                             <div class="col col-12">
-                            <div class="item_product_main">
-                                <div class="populator__product">
-                                    <a href="" class="populator__product-link">
-                                        <img src="./public/images/pro20-grande.webp" alt="">
-                                        <span><i class="far fa-heart"></i></span>
-                                    </a>
-                                </div>
-                                <div class="populator__product-content">
-                                    <h2 class="poplator__product-content-title tilte-name-product">
-                                        Chuối tiêu loại to
-                                    </h2>
-                                    <p>Chuối tiêu xanh tại Dũng</p>
-                                    <div class="price-box">
-                                        <span class="price-text">70.000đ</span>
-                                        <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
+                                <div class="item_product_main">
+                                    <div class="populator__product">
+                                        <a href="" class="populator__product-link">
+                                            <img src="./public/images/<?= $data_random2[0]['hinhanh'] ?>" alt="">
+                                            <span><i class="far fa-heart"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="populator__product-content">
+                                        <h2 class="poplator__product-content-title tilte-name-product">
+                                            <?= $data_random2[0]['TenSP'] ?>
+                                        </h2>
+                                        <p>Chuối tiêu xanh tại Dũng</p>
+                                        <div class="price-box">
+                                            <span class="price-text"><?= number_format($data_random2[0]['DonGia']) ?> đ</span>
+                                            <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             </div>
                         </div>
                         <div class="row">
@@ -171,17 +155,17 @@
                             <div class="item_product_main">
                                 <div class="populator__product">
                                     <a href="" class="populator__product-link">
-                                        <img src="./public/images/pro20-grande.webp" alt="">
+                                        <img src="./public/images/<?= $data_random3[0]['hinhanh'] ?>" alt="">
                                         <span><i class="far fa-heart"></i></span>
                                     </a>
                                 </div>
                                 <div class="populator__product-content">
                                     <h2 class="poplator__product-content-title tilte-name-product">
-                                        Chuối tiêu loại to
+                                        <?= $data_random3[0]['TenSP'] ?>
                                     </h2>
                                     <p>Chuối tiêu xanh tại Dũng</p>
                                     <div class="price-box">
-                                        <span class="price-text">70.000đ</span>
+                                        <span class="price-text"><?= number_format($data_random3[0]['DonGia']) ?> đ</span>
                                         <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
                                     </div>
                                 </div>
@@ -194,14 +178,14 @@
             <div class="col-lg-4 col">
                 <div class="populator__product-right ">
                     <a href="" class="populator__product-right-link">
-                        <img src="./public/images/pro57-grande.webp" alt="">
+                        <img src="./public/images/<?= $data_random4[0]['hinhanh'] ?>" alt="">
                         <h2 class="tilte-name-product">
-                            Dâu tây đà lạt loại 1kg
+                            <?= $data_random4[0]['TenSP'] ?>
                         </h2>
                     </a>
                     <div class="product__price-box">
-                        <p class="price-new">250.000đ</p>
-                        <p class="price-old">280.000đ</p>
+                        <p class="price-new"><?= number_format($data_random4[0]['giaCu']) ?> đ</p>
+                        <p class="price-old"><?= number_format($data_random3[0]['DonGia']) ?> đ</p>
                         <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
                     </div>
                 </div>
@@ -210,17 +194,17 @@
                         <div class="item_product_main">
                             <div class="populator__product">
                                 <a href="" class="populator__product-link">
-                                    <img src="./public/images/pro20-grande.webp" alt="">
+                                    <img src="./public/images/<?= $data_random5[0]['hinhanh'] ?>" alt="">
                                     <span><i class="far fa-heart"></i></span>
                                 </a>
                             </div>
                             <div class="populator__product-content">
                                 <h2 class="poplator__product-content-title tilte-name-product">
-                                    Chuối tiêu loại to
+                                <?= $data_random5[0]['TenSP'] ?>
                                 </h2>
                                 <p>Chuối tiêu xanh tại Dũng</p>
                                 <div class="price-box">
-                                    <span class="price-text">70.000đ</span>
+                                    <span class="price-text"><?= number_format($data_random5[0]['DonGia']) ?></span>
                                     <button class="button-add-product btn-add-cart">Cho vào giỏ</button>
                                 </div>
                             </div>

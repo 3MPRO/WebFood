@@ -587,6 +587,7 @@ h2.tilte-name-product {
     visibility: hidden;
     transition: all ease 0.3s;
     display: block;
+    top: -10px;
 }
 .populator__product-right {
     margin-bottom: 25px;
@@ -618,7 +619,7 @@ h2.tilte-name-product {
 }
 
 .product__price-box{
-    padding: 10px 20px;
+    padding: 0 20px;
  }
  .product__price-box button {
      position: relative;
@@ -629,9 +630,10 @@ h2.tilte-name-product {
     color: var(--cl-red);
     font-weight: 500;
 }
-.price-old{ 
+.price-old{
     text-decoration: line-through;
     font-size: 13px;
+    margin-top: 10px;
 }
 
 /* product-fruits */
