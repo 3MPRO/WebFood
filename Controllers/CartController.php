@@ -62,8 +62,30 @@ class CartController
         $arr['soluong'] = $arr['soluong'] + 1;
         $arr['ThanhTien'] = $arr['soluong'] * $arr["DonGia"];
         $_SESSION['product'][$_GET['id']] = $arr;
-        $path = 'Location:?act=detail&sp=' .$id;
+        $path = 'Location:?act=cart';
         header($path);
     }
+
+    function delete_cart_item()
+    {
+        $arr = $_SESSION['product'][$_GET['id']];
+        if ($arr['soluong'] == 1) {
+            unset($_SESSION['product'][$_GET['id']]);
+        } else {
+            $arr = $_SESSION['product'][$_GET['id']];
+            $arr['soluong'] = $arr['soluong'] - 1;
+            $arr['ThanhTien'] = $arr['soluong'] * $arr["DonGia"];
+            $_SESSION['product'][$_GET['id']] = $arr;
+        }
+        $path = 'Location:?act=cart';
+        header($path);
+    }
+
+    function delete_cart() {
+        unset($_SESSION['product'][$_GET['id']]);
+        $path = 'Location:?act=cart';
+        header($path);
+    }
+
 
 }

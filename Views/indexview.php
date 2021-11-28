@@ -53,19 +53,5 @@
         
     </script>
 
-    <script>
-        function addCart(id) {
-            $.ajax({
-                url: '',
-                type: "GET",
-            }).done(function(res) {
-                console.log(res);
-            })
-        }
-    </script>
-   
-    
-    
-    
 </body>
 </html>

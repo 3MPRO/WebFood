@@ -1026,7 +1026,7 @@ input.seed-mail::placeholder {
     height: 100px;
 }
 .cart-page-container {
-    display: flex;
+    /* display: flex; */
     padding: 10px;
 }
 
@@ -1038,11 +1038,26 @@ input.seed-mail::placeholder {
     width: 100%;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #c1c1c1;
+    padding: 10px 0;
 }
 
+.grid__item.cart_info:last-child {
+    border-bottom: none;
+}
+.cart_name-wrapper a {
+    display: block;
+    padding: 8px 12px;
+}
 .price-cart-wrapper {
     display: flex;
     width: 54%;
     float: right;
     justify-content: space-between;
 }
+
+.empty-cart-item {
+    margin: auto;width: 300px;
+}
+
+.empty-cart-item img {margin: 0 100px;padding: 20px 0;}

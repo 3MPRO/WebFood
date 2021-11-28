@@ -1,6 +1,7 @@
 let productListFruits = document.getElementById('owl-fruilt-slider')
 let productListDry = document.getElementById('owl-slider-dry')
 let item = document.querySelector.bind(document)
+let items= document.querySelectorAll.bind(document)
 const listbtnAddCart = document.querySelectorAll('.add-cart')
 let headerEl = document.getElementById('header')
 var sticky = headerEl.offsetTop+400;
@@ -94,16 +95,23 @@ const App = {
             valueInput == 1 ? valueInput = 1 : valueInput--
             console.log(valueInput);
             qtyInputEl.value = `${valueInput}`
-            console.log(_this.defaulthref + '' + valueInput);
-            listbtnAddCart[0].href = _this.defaulthref + '' + valueInput
+            // console.log(_this.defaulthref + '' + valueInput);
+            if(listbtnAddCart[0]) {
+                listbtnAddCart[0].href = _this.defaulthref + '' + valueInput
+            }
         })
         btnPlus.addEventListener('click', function(e) {
             e.preventDefault()
             valueInput == 10 ? valueInput = 10 : valueInput++
             qtyInputEl.value = `${valueInput}`
-            console.log(_this.defaulthref + '' + valueInput);
-            listbtnAddCart[0].href = _this.defaulthref + '' + valueInput
+            // console.log(_this.defaulthref + '' + valueInput);
+            if(listbtnAddCart[0]) {
+                listbtnAddCart[0].href = _this.defaulthref + '' + valueInput
+            }
         })
+    },
+    fnPlusCart : function() {
+       
     },
     start: function() {
         this.sliderProducts('#owl-fruilt-slider')
@@ -112,6 +120,7 @@ const App = {
         this.productDetailSlider()
         this.addCart()
         this.quantityCart()
+        this.fnPlusCart()
     }  
 }
  

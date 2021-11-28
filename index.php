@@ -97,6 +97,12 @@ switch ($mod) {
                 case 'update':
                     $controller_obj->update_cart();
                     break;
+                case 'delete':
+                    $controller_obj->delete_cart_item();
+                    break;
+                case 'delete-cart':
+                    $controller_obj->delete_cart();
+                    break;
                 case 'add':
                     $controller_obj->add_cart($sl);
                     break;
