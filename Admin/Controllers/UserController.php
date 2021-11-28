@@ -1,5 +1,5 @@
 <?php
-    require_once("./Models/nguoidung.php");
+    require_once("./Models/user.php");
 class NguoiDungController
 {
     var $nguoidung_model;

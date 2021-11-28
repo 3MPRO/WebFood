@@ -71,39 +71,39 @@
               switch ($act) {
                 case 'list':
                   $controller_obj->list();
-                  require_once('  nguoidung/list.php');
+                  require_once('user/list.php');
                   break;
                 case 'add':
-                  require_once('nguoidung/add.php');
+                  require_once('user/add.php');
                   break;
                 case 'detail':
-                  require_once('nguoidung/detail.php');
+                  require_once('user/detail.php');
                   break;
                 case 'edit':
-                  require_once('nguoidung/edit.php');
+                  require_once('user/edit.php');
                   break;
                 default:
                   $controller_obj->list();
-                  require_once('nguoidung/list.php');
+                  require_once('user/list.php');
                   break;
               }
               break;
             case 'loaisanpham':
               switch ($act) {
                 case 'list':
-                  require_once('loaisanpham/list.php');
+                  require_once('typeproduct/list.php');
                   break;
                 case 'add':
-                  require_once('loaisanpham/add.php');
+                  require_once('typeproduct/add.php');
                   break;
                 case 'detail':
-                  require_once('loaisanpham/detail.php');
+                  require_once('typeproduct/detail.php');
                   break;
                 case 'edit':
-                  require_once('loaisanpham/edit.php');
+                  require_once('typeproduct/edit.php');
                   break;
                 default:
-                  require_once('loaisanpham/list.php');
+                  require_once('typeproduct/list.php');
                   break;
               }
               break;

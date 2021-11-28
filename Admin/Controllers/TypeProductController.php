@@ -1,5 +1,5 @@
 <?php
-require_once("./Models/loaisanpham.php");
+require_once("./Models/typeproduct.php");
 class LoaisanphamController
 {
 	var $loaisanpham_model;
