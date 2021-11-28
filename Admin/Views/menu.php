@@ -2,7 +2,7 @@
     <nav class="sidebar vertical-scroll ps-container ps-theme-default ps-active-y">
         <div class="logo d-flex justify-content-between">
             <a href="#">
-                <img src="../Public/image/logo.webp" alt=""> 
+                <img src="./Public/image/logo.webp" alt=""> 
             </a>
         </div>
         <ul id="sidebar_menu" class="metismenu">
@@ -15,7 +15,7 @@
                 </a>
             </li>
             <li>
-                <a class="has-arrow"href="?mod=nguoidung" aria-expanded="true">
+                <a class="has-arrow" href="?mod=nguoidung" aria-expanded="true">
                     <div class="icon_menu">
                         <i class="fas fa-user" aria-expanded="true"></i>
                         <span>Quản lý tài khoản</span>

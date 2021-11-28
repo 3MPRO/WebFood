@@ -21,7 +21,7 @@
   </thead>
   <tbody>
     <?php
-
+    
     foreach ($data as $row) { ?>
       <tr>
         <th scope="row"><?= $row['MaND'] ?></th>
