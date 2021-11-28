@@ -15,7 +15,7 @@
                 </a>
             </li>
             <li>
-                <a class="has-arrow" href="#" aria-expanded="true">
+                <a class="has-arrow"href="?mod=nguoidung" aria-expanded="true">
                     <div class="icon_menu">
                         <i class="fas fa-user" aria-expanded="true"></i>
                         <span>Quản lý tài khoản</span>
