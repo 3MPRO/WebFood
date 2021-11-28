@@ -52,21 +52,21 @@
           case 'sanpham':
             switch ($act) {
               case 'list':
-                require_once('MVC/views/sanpham/list.php');
+                require_once('product/sanpham/list.php');
                 break;
               case 'add':
-                require_once('Views/product/addproduct.php');
+                require_once('product/addproduct.php');
                 break;
               case 'edit':
-                require_once('MVC/views/sanpham/edit.php');
+                require_once('product/sanpham/edit.php');
                 break;
               default:
-                require_once('Views/product/productad.php');
+                require_once('product/productad.php');
                 break;
               }
               break;
             case 'nguoidung':
-              require_once('./Controllers/NguoiDungController.php');
+              require_once('./Controllers/UserController.php');
               $controller_obj = new NguoiDungController();
               switch ($act) {
                 case 'list':
@@ -85,6 +85,25 @@
                 default:
                   $controller_obj->list();
                   require_once('nguoidung/list.php');
+                  break;
+              }
+              break;
+            case 'loaisanpham':
+              switch ($act) {
+                case 'list':
+                  require_once('loaisanpham/list.php');
+                  break;
+                case 'add':
+                  require_once('loaisanpham/add.php');
+                  break;
+                case 'detail':
+                  require_once('loaisanpham/detail.php');
+                  break;
+                case 'edit':
+                  require_once('loaisanpham/edit.php');
+                  break;
+                default:
+                  require_once('loaisanpham/list.php');
                   break;
               }
               break;

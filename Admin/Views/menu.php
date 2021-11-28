@@ -31,7 +31,7 @@
                 </a>
             </li>
             <li>
-                <a class="has-arrow" href="#" aria-expanded="true">
+                <a class="has-arrow" href="?mod=loaisanpham" aria-expanded="true">
                     <div class="icon_menu">
                         <i class="fas fa-cloud-meatball"></i>
                         <span>Quản lý loại sản phẩm</span>
