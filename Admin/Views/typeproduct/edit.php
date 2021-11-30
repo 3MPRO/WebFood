@@ -12,11 +12,6 @@
             <input type="text" class="form-control" id="" placeholder="" name="TenLSP" value="<?=$data_detail['TenLSP'] ?>">
         </div>
         <div class="form-group">
-            <label for="">Hình ảnh</label>
-            <img src="../public/img/company/<?=$data_detail['HinhAnh']?>" height="200px" width="200px">
-            <input type="file" class="form-control" id="" placeholder="" name="HinhAnh" >
-        </div>
-        <div class="form-group">
             <label for="">Mô tả</label>
             <input type="text" class="form-control" id="" placeholder="" name="MoTa"  value="<?=$data_detail['Mota'] ?>">
         </div>

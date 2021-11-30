@@ -22,20 +22,8 @@ class LoaisanphamController
 	}
 	public function store()
 	{
-		$target_dir = "../public/img/company/"; 
-
-        $HinhAnh = "";
-        $target_file = $target_dir . basename($_FILES["HinhAnh"]["name"]); // link sẽ upload file lên
-
-        $status_upload = move_uploaded_file($_FILES["HinhAnh"]["tmp_name"], $target_file);
-
-        if ($status_upload) { // nếu upload file không có lỗi 
-            $HinhAnh =  basename($_FILES["HinhAnh"]["name"]);
-		}
-
 		$data = array(
 			'TenLSP' => $_POST['TenLSP'],
-			'HinhAnh' => $HinhAnh,
 			'MoTa' => $_POST['MoTa'],
 			'MaDM' => $_POST['MaDM']
 		);
@@ -70,21 +58,9 @@ class LoaisanphamController
 	}
 	public function update()
 	{
-		$target_dir = "../public/img/company/";  // thư mục chứa file upload
-
-        $HinhAnh = "";
-        $target_file = $target_dir . basename($_FILES["HinhAnh"]["name"]); // link sẽ upload file lên
-
-        $status_upload = move_uploaded_file($_FILES["HinhAnh"]["tmp_name"], $target_file);
-
-        if ($status_upload) { // nếu upload file không có lỗi 
-            $HinhAnh =  basename($_FILES["HinhAnh"]["name"]);
-		}
-
 		$data = array(
 			'MaLSP' => $_POST['MaLSP'],
 			'TenLSP' => $_POST['TenLSP'],
-			'HinhAnh' => $HinhAnh,
 			'MoTa' => $_POST['MoTa'],
 			'MaDM' => $_POST['MaDM']
 		);
@@ -95,9 +71,6 @@ class LoaisanphamController
                 $data[$key] = $value;
             }
 		}
-		if ($HinhAnh == "") {
-            unset($data['HinhAnh']);
-        }
 		$this->loaisanpham_model->update($data);
 	}
 }

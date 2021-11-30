@@ -16,7 +16,7 @@
       <th scope="col">Email</th>
       <th scope="col">Giới tính</th>
       <th scope="col">Quyền hạn</th>
-      <th>#</th>
+      <th>Thao tác</th>
     </tr>
   </thead>
   <tbody>

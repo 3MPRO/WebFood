@@ -10,10 +10,6 @@
             <input type="text" class="form-control" id="" placeholder="" name="TenLSP">
         </div>
         <div class="form-group">
-            <label for="">Hình ảnh</label>
-            <input type="file" class="form-control" id="" placeholder="" name="HinhAnh">
-        </div>
-        <div class="form-group">
             <label for="">Mô tả</label>
             <input type="text" class="form-control" id="" placeholder="" name="MoTa">
         </div>

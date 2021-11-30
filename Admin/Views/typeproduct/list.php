@@ -12,9 +12,8 @@
     <tr>
       <th scope="col">Mã LSP</th>
       <th scope="col">Tên LSP</th>
-      <th scope="col">Hình Ảnh</th>
       <th scope="col">Mô tả</th>
-      <th>#</th>
+      <th>Thao tác</th>
     </tr>
   </thead>
   <tbody>
@@ -22,9 +21,6 @@
       <tr>
         <td><?= $row['MaLSP'] ?></td>
         <td><?= $row['TenLSP'] ?></td>
-        <td>
-          <img src="../public/img/company/<?= $row['HinhAnh'] ?>" height="60px">
-        </td>
         <td><?= $row['Mota'] ?></td>
         <td>
           <a href="?mod=loaisanpham&act=detail&id=<?= $row['MaLSP'] ?>" class="btn btn-success">Xem</a>

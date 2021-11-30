@@ -10,7 +10,9 @@
 
         function limit($a, $b)
         {
-            $query =  "SELECT * from sanpham WHERE TrangThai = 1  ORDER BY ThoiGian DESC limit $a,$b";
+            $query =  "SELECT * from sanpham,hinhanh WHERE TrangThai = 1 and sanpham.MaSP = hinhanh.masp 
+            GROUP by sanpham.MaSP
+            ORDER BY ThoiGian DESC limit $a,$b ";
     
             require("result.php");
     
@@ -18,7 +20,7 @@
         }
         function random($id)
         {
-            $query = "SELECT * FROM SanPham WHERE TrangThai = 1 ORDER BY RAND () LIMIT $id";
+            $query = "SELECT * FROM SanPham,hinhanh  WHERE TrangThai = 1  and sanpham.MaSP = hinhanh.masp ORDER BY RAND () LIMIT $id";
             require("result.php");
             
             return $data;
