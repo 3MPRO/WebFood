@@ -72,9 +72,9 @@ class ProductController
        //echo "<script>console.log($this->idsp)</script>";
        $idsp = $this->product_model->getIdProductnew(); // lấy id sản phẩm mới chèn ;
         $data_img = array(   
-            $idsp."1" => $hinhAnhChinh,
-            $idsp."2"  => $hinhAnh1,
-            $idsp."3"  => $hinhAnh2
+            $idsp." 1" => $hinhAnhChinh,
+            $idsp." 2"  => $hinhAnh1,
+            $idsp." 3"  => $hinhAnh2
         );
         
         $this->product_model->insertImg($data_img);

@@ -59,7 +59,7 @@
         $i =0;
         foreach($data_img as $key => $value){
             $i +=1;
-            $key = rtrim($key, $i);
+            $key = rtrim($key, " ".$i);
             $dat .= "('null','$key','$value'),";
         }
         $dat = trim($dat, ",");
