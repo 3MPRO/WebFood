@@ -1,3 +1,4 @@
+    <div class="add-product-form">
     <a class ="btn-addproduct" href="?mod=sanpham&act=add"> Thêm mới</a>
     <div class="head-tableProduct">
         <div class="head-tableProduct_content">
@@ -43,3 +44,5 @@
         <?php   }?> 
         
     </table>
+    </div>
+    

@@ -254,7 +254,7 @@ input[type="radio"]:checked {
     border: #f6f6f8 solid 1px;
     background-color: #ffff;
     box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
-    margin: 20px;
+    margin: 100px;
 }
 .product-table{
     max-width: 100%;
@@ -287,6 +287,7 @@ input[type="radio"]:checked {
     background-color: var(--cl-red);
 }
 .btn-addproduct{
+    outline: none;
     min-width: fit-content;
     max-width: 65px;
     color: #ffff !important;
@@ -296,13 +297,15 @@ input[type="radio"]:checked {
     border-radius: 5px ;
 }
 .add-product-form{
+    
+    margin-top: 10px;
     width: 100%;
 }
 .add-product-item{
     width: 900px;
     margin: 20px 5px;
 }
-.add-product-form 
+
 .add-product-form label{
     margin: 10px 0px;
     display: block;

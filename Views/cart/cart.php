@@ -38,7 +38,7 @@
         ?>
         <div class="cart-page-container" data-line="1">
         <?php
-            if (isset($_SESSION['product'])) {
+            if (isset($_SESSION['product']) && count($_SESSION['product']) > 0) {
                 foreach ($_SESSION['product'] as $value) { ?>
                     <div class="grid__item cart_info">
                         <a href="" class="cart-page-item-image" title="Cà chua beef túi lưới 500g">
@@ -74,15 +74,15 @@
                             </div>
                         </div>
                     </div>
-            <?php }}?>
+            <?php }} else{?>
 
             <?php  
-                if(count($_SESSION['product']) == 0) {?>
+                // if(count($_SESSION['product'])==0) {?>
                 <div class="empty-cart-item">
                     <img src="./public/images/icon-empty.PNG" alt="">
-                <p>Không có sản phẩm nào trong giỏ hàng </p>
-            </div>
-               <?php }?>
+                    <p>Không có sản phẩm nào trong giỏ hàng </p>
+                </div>
+            <?php }?>
 		</div>
     </div>
 </main>

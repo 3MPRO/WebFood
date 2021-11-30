@@ -73,7 +73,7 @@
                                 <div class="cart-down">
                                     <div class="cart-content">
                                         <div class="cart-wrapper-content">
-                                            <?php if(isset($_SESSION['product'])){
+                                            <?php if(isset($_SESSION['product']) && count($_SESSION['product']) > 0){
                                                 foreach ($_SESSION['product'] as $value) { 
                                                     // print_r($value);
                                                     ?>
@@ -109,24 +109,27 @@
                                                         </div>
                                                     </div>
                                                 </form>
-                                                <div class="cart-content-inner__footer">
-                                                    <div class="cart-content-inner__subtotal">
-                                                        <p>Tổng tiền</p>
-                                                        <p class="text-total"><?=number_format($thanhtien)?></p>
-                                                    </div>
-                                                    <div class="cart-content-inner__checkout">
-                                                        <button class="cart-content-inner__checkout-btn">Thanh toán</button>
-                                                    </div>
+                                                <?php } ?>
                                                 </div>
-                                            <?php }} ?>
-                                        </div>
-                                        <?php if(count($_SESSION['product']) == 0) {?>
-                                        <div class="cart-down-empty">
-                                            <img src="./public/images/empy-icon.PNG" alt="">
-                                            <p>Không có sản phẩm nào trong giỏ hàng của bạn</p>
-                                        </div>
-                                        <?php } ?>
-                                    </div>
+                                                
+                                            </div>
+                                            <div class="cart-content-inner__footer">
+                                                <div class="cart-content-inner__subtotal">
+                                                    <p>Tổng tiền</p>
+                                                    <p class="text-total"><?=number_format($thanhtien)?></p>
+                                                </div>
+                                                <div class="cart-content-inner__checkout">
+                                                    <button class="cart-content-inner__checkout-btn">Thanh toán</button>
+                                                </div>
+                                            </div>
+                                            <?php } ?>
+                                            <?php
+                                                if(!isset($_SESSION['product']) || count($_SESSION['product'])===0) {?>
+                                                <div class="cart-down-empty">
+                                                    <img src="./public/images/empy-icon.PNG" alt="">
+                                                    <p>Không có sản phẩm nào trong giỏ hàng của bạn</p>
+                                                </div>
+                                            <?php } ?>
                                 </li>
                                 <li>
                                     <div class="user">

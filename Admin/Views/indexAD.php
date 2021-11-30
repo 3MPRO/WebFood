@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./Public/css/reset.css">
     <link rel="stylesheet" href="./Public/css/admin.css">
    
+    <link rel="stylesheet" href="../public/css/product.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./public/js/jquery.js"></script>
 </head>
@@ -29,90 +30,79 @@
   ?>
   <section class="main_content dashboard_part large_header_bg">
     <?php require_once("head_food/header_admin.php"); ?>
-    <div class="main_content-center">
-
-      <!-- Page Heading -->
-      <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-
-      <!-- DataTales Example -->
+    <div class="container-fluid">
       <div class="card shadow mb-4">
-        <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">
+        <div class="card-body">
+          <div class="table-responsive">
             <?php
-            $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
-            echo "Database " . $mod;
+            /*  if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {*/
+                $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
+                $act = isset($_GET['act']) ? $_GET['act'] : "admin"; 
+                switch ($mod) {
+                  case 'sanpham':
+                    switch ($act) {
+                      case 'list':
+                        require_once('product/sanpham/list.php');
+                        break;
+                      case 'add':
+                        require_once('product/addproduct.php');
+                        break;
+                      case 'edit':
+                        require_once('product/sanpham/edit.php');
+                        break;
+                      default:
+                        require_once('product/productad.php');
+                        break;
+                      }
+                      break;
+                    case 'nguoidung':
+                      require_once('./Controllers/UserController.php');
+                      $controller_obj = new NguoiDungController();
+                      switch ($act) {
+                        case 'list':
+                          $controller_obj->list();
+                          require_once('user/list.php');
+                          break;
+                        case 'add':
+                          require_once('user/add.php');
+                          break;
+                        case 'detail':
+                          require_once('user/detail.php');
+                          break;
+                        case 'edit':
+                          require_once('user/edit.php');
+                          break;
+                        default:
+                          $controller_obj->list();
+                          require_once('user/list.php');
+                          break;
+                      }
+                      break;
+                    case 'loaisanpham':
+                      switch ($act) {
+                        case 'list':
+                          require_once('typeproduct/list.php');
+                          break;
+                        case 'add':
+                          require_once('typeproduct/add.php');
+                          break;
+                        case 'detail':
+                          require_once('typeproduct/detail.php');
+                          break;
+                        case 'edit':
+                          require_once('typeproduct/edit.php');
+                          break;
+                        default:
+                          require_once('typeproduct/list.php');
+                          break;
+                      }
+                      break;
+              }
             ?>
-          </h6>
+          </div>
         </div>
-    <?php
-     
-     /*  if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {*/
-        $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
-        $act = isset($_GET['act']) ? $_GET['act'] : "admin"; 
-        switch ($mod) {
-          case 'sanpham':
-            switch ($act) {
-              case 'list':
-                require_once('product/sanpham/list.php');
-                break;
-              case 'add':
-                require_once('product/addproduct.php');
-                break;
-              case 'edit':
-                require_once('product/sanpham/edit.php');
-                break;
-              default:
-                require_once('product/productad.php');
-                break;
-              }
-              break;
-            case 'nguoidung':
-              require_once('./Controllers/UserController.php');
-              $controller_obj = new NguoiDungController();
-              switch ($act) {
-                case 'list':
-                  $controller_obj->list();
-                  require_once('user/list.php');
-                  break;
-                case 'add':
-                  require_once('user/add.php');
-                  break;
-                case 'detail':
-                  require_once('user/detail.php');
-                  break;
-                case 'edit':
-                  require_once('user/edit.php');
-                  break;
-                default:
-                  $controller_obj->list();
-                  require_once('user/list.php');
-                  break;
-              }
-              break;
-            case 'loaisanpham':
-              switch ($act) {
-                case 'list':
-                  require_once('typeproduct/list.php');
-                  break;
-                case 'add':
-                  require_once('typeproduct/add.php');
-                  break;
-                case 'detail':
-                  require_once('typeproduct/detail.php');
-                  break;
-                case 'edit':
-                  require_once('typeproduct/edit.php');
-                  break;
-                default:
-                  require_once('typeproduct/list.php');
-                  break;
-              }
-              break;
-      }
-   /*  } */
-    ?>
+      </div>
     </div>
-
   </section>
 </body>
 </html>
