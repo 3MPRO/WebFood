@@ -50,8 +50,24 @@
                 }
             }
         });
-        
     </script>
+    <script>
+        function plusCart(id) {
+            let string = "input[name='cart-input-"+`${id}`+ "']"
+            var quantityVal = document.querySelector(string)
+            var quantityInput = Number(quantityVal.value) + 1;
+            quantityVal.value = quantityInput
+            let urlS = '?act=cart&xuli=update&id='+`${id}`
+            $.ajax({
+                url:urlS,
+                method: 'POST',
+                // data: {qty: quantityInput, item_id: id},
+                data: $("#frmid").serialize(),
+                success: function(res) {
+                },
+            });
+        }
+    </script> 
 
 </body>
 </html>
