@@ -4,7 +4,8 @@ let item = document.querySelector.bind(document)
 let items= document.querySelectorAll.bind(document)
 const listbtnAddCart = document.querySelectorAll('.add-cart')
 let headerEl = document.getElementById('header')
-var sticky = headerEl.offsetTop+400;
+var sticky = headerEl.offsetTop+50;
+var rootElement = document.documentElement
 console.log(listbtnAddCart);
 
 const App = {
@@ -36,9 +37,18 @@ const App = {
         window.addEventListener('scroll',()=> {
             if (window.pageYOffset >= sticky) {
                 headerEl.classList.add("sticky")
+                item('.box-button-top').classList.add('show-back')
             } else {
                 headerEl.classList.remove("sticky");
+                item('.box-button-top').classList.remove('show-back')
             }
+        })
+
+        item('.box-button-top').addEventListener("click", function() {
+            rootElement.scrollTo({
+                top: 0,
+                behavior: "smooth"
+              })
         })
 
     },
@@ -70,14 +80,14 @@ const App = {
                 console.log(btnAddCart.href);
                 setTimeout(function(){
                     modelAddCart.style = style
-                },1000)
+                },500)
                 setTimeout(function(){
                     console.log('setInterval 2');
                     modelAddCart.style = 'right: -200px;'
-                },5000)
+                },3000)
                 setTimeout(function(){
                     window.location.href = btnAddCart.href
-                },6000)
+                },4000)
                 e.preventDefault()
             //    clearInterval(idTime)
             })
