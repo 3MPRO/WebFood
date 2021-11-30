@@ -7,7 +7,7 @@
   </div>
 <?php } ?>
 <hr>
-<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+<table class="table table-bordered acountTable" id="dataTable" width="100%" cellspacing="0">
   <thead>
     <tr>
       <th scope="col">MaAD</th>
@@ -43,10 +43,10 @@
           ?>
         </td>
         <td>
-          <a href="?mod=nguoidung&act=detail&id=<?= $row['MaND'] ?>" type="button" class="btn btn-success">Xem</a>
+          <a href="?mod=nguoidung&act=detail&id=<?= $row['MaND'] ?>" type="button" class="btn btn-addproduct">Xem</a>
           <?php //if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
-          <a href="?mod=nguoidung&act=edit&id=<?= $row['MaND'] ?>" type="button" class="btn btn-warning">Sửa</a>
-          <a href="?mod=nguoidung&act=delete&id=<?= $row['MaND'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
+          <a href="?mod=nguoidung&act=edit&id=<?= $row['MaND'] ?>" type="button" class="btn btn-addproduct">Sửa</a>
+          <a href="?mod=nguoidung&act=delete&id=<?= $row['MaND'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-addproduct ">Xóa</a>
           <?php //}?>
         </td>
       </tr>

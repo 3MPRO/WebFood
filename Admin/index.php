@@ -13,10 +13,10 @@ session_start();
                case 'add':
                     $controller_obj->add();
                     break;
-          /*      case 'store':
+               case 'store':
                     $controller_obj->store();
                     break;
-                case 'delete':
+               /*  case 'delete':
                     $controller_obj->delete();
                     break;
                 case 'edit':

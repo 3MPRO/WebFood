@@ -1,5 +1,10 @@
 
-    <form class="add-product-form"action="">
+    <?php 
+        if(isset($_COOKIE['idsp'])){
+            echo $_COOKIE['idsp'];
+        }
+    ?>
+    <form class="add-product-form"action="?mod=sanpham&act=store" method="POST" enctype="multipart/form-data">
     <?php if (isset($_COOKIE['msg'])) { ?>
     <div class="alert alert-warning">
       <strong>Thông báo</strong> <?= $_COOKIE['msg'] ?>
@@ -36,15 +41,15 @@
     </fieldset>
     <fieldset class="add-product-item">
         <label>Hình ảnh chính</label>
-        <input type="file" class="form-control" id="" placeholder="" name="HinhAnh">
+        <input type="file" class="form-control" id="" placeholder="" name="hinhAnhChinh">
     </fieldset>
     <fieldset class="add-product-item">
         <label>Hình ảnh 2</label>
-        <input type="file" class="form-control" id="" placeholder="" name="HinhAnh1">
+        <input type="file" class="form-control" id="" placeholder="" name="hinhAnh1">
     </fieldset>
     <fieldset class="add-product-item">
         <label>Hình ảnh 3</label>
-        <input type="file" class="form-control" id="" placeholder="" name="HinhAnh2">
+        <input type="file" class="form-control" id="" placeholder="" name="hinhAnh2">
     </fieldset>
     <fieldset class="add-product-item">
         <label>Mã khuyến mãi</label>

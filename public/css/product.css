@@ -306,3 +306,9 @@ input[type="radio"]:checked {
     margin: 10px 0px;
     display: block;
 }
+.acountTable{
+    font-size: 1.6rem;
+}
+.acountTable th, .acountTable td{
+    max-width: 90px;
+}
