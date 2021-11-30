@@ -119,7 +119,10 @@
                                                     <p class="text-total"><?=number_format($thanhtien)?></p>
                                                 </div>
                                                 <div class="cart-content-inner__checkout">
-                                                    <button class="cart-content-inner__checkout-btn">Thanh toán</button>
+                                                    <a href="" class="cart-content-inner__btn btn-checkout">Thanh toán</a >
+                                                </div>
+                                                <div class="cart-content-inner__checkout">
+                                                    <a href="?act=cart"class="cart-content-inner__btn btn-show">Xem giỏ hàng</a>
                                                 </div>
                                             </div>
                                             <?php } ?>
