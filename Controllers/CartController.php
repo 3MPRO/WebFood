@@ -11,6 +11,9 @@ class CartController
     {
         $data_danhmuc = $this->cart_model->danhmuc();
 
+        // $data_danhmuc = $this->cart_model->danhmuc();
+
+
         // $data_chitietDM = array();
 
         // for ($i = 1; $i <= count($data_danhmuc); $i++) {

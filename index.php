@@ -108,6 +108,7 @@ switch ($mod) {
                     break;
                 break;
             }
+            break;
     default : 
         require_once('home.php');
 }

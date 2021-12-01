@@ -282,18 +282,23 @@ input[type="radio"]:checked {
 .btnUpdate--delete.btn-addproduct{
     background-color: var(--cl-red);
 }
-.btn-addproduct{
+.btn-addproduct {
     outline: none;
     min-width: fit-content;
-    max-width: 65px;
+    max-width: 40px;
     color: #ffff !important;
     background-color: var(--cl-green);
     text-align: center;
     padding: 5px;
     border-radius: 5px ;
 }
-.add-product-form{
-    
+.btn--edit{
+    background-color: var(--cl-orange);
+}
+.btn--delete{
+    background-color: var(--cl-red);
+}
+.add-product-form{  
     margin-top: 10px;
     width: 100%;
 }
@@ -304,5 +309,18 @@ input[type="radio"]:checked {
 
 .add-product-form label{
     margin: 10px 0px;
+    display: block;
+}
+.acountTable{
+    margin: 0 !important;
+    width: 100%;
+    font-size: 1rem;
+}
+.acountTable th, .acountTable td{
+   text-align: center;
+    max-width:  100px;
+}
+.btn-block{
+   margin: 2px auto;
     display: block;
 }

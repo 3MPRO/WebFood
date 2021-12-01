@@ -36,7 +36,7 @@
                 <td>
                     <div class="">
                     <a class="btn-addproduct btnUpdate--view">Xem</a>
-                        <a class="btn-addproduct btnUpdate--edit">Sửa</a>
+                        <a class="btn-addproduct btn--edit">Sửa</a>
                         <a class="btn-addproduct btnUpdate--delete">Xóa</a>
                     </div>
                 </td>
