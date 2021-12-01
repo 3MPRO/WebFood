@@ -35,9 +35,11 @@
      require_once("footer_header/footer.php");
     ?>
     <script src="./public/lib/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
         <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./public/js/main.js"></script>
+    <script src="./public/js/countdown.js"></script>
     <script>
         var $sliderBanner = $('.slider-list')
         $sliderBanner.owlCarousel({

@@ -69,6 +69,100 @@
         </div>
     </div>
 </section>
+<section id="product-sale">
+    <div class="container">
+        <div class="product-sale-top">
+            <div class="product-sale-text">
+                <a href="">Giá sốc mỗi ngày</a>
+                <p>Sản phẩm giảm giá hỗ trợ khách hàng</p>
+            </div>
+            <div class="product-sale-count">
+                <div class="wrapper-count">
+                    <div class="countdown-block">
+                        <span class="days time-elem">
+                        <span class="top">00</span>
+                        <span class="top-back">
+                            <span>00</span>
+                        </span>
+                        <span class="bottom">00</span>
+                        <span class="bottom-back">
+                            <span>00</span>
+                        </span>
+                        </span>
+                    </div>
+                    <div class="countdown-block">
+                        <span class="hours time-elem">
+                        <span class="top">00</span>
+                        <span class="top-back">
+                            <span>00</span>
+                        </span>
+                        <span class="bottom">00</span>
+                        <span class="bottom-back">
+                            <span>00</span>
+                        </span>
+                        </span>
+                    </div>
+                    <div class="countdown-block">
+                        <span class="minutes time-elem">
+                        <span class="top">00</span>
+                        <span class="top-back">
+                            <span>00</span>
+                        </span>
+                        <span class="bottom">00</span>
+                        <span class="bottom-back">
+                            <span>00</span>
+                        </span>
+                        </span>
+                    </div>
+                    <div class="countdown-block">
+                        <span class="seconds time-elem">
+                        <span class="top">00</span>
+                        <span class="top-back">
+                            <span>00</span>
+                        </span>
+                        <span class="bottom">00</span>
+                        <span class="bottom-back">
+                            <span>00</span>
+                        </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list-product-sale owl-carousel owl-theme" id="product-sale-slider">
+            <?php 
+                for ($i = 0; $i < (count($data_sanpham1)); $i++) {
+                    ?>
+                    <div class="col-product__item sale-home">
+                        <form action="" >
+                            <div>
+                            <div class="product-item__sale-off">
+                                <span class="home-product-item__percent">10%</span>
+                                <label class ="home-product-item__label" for="">Giảm</label>
+                            </div>
+                            <a href=""><i class="product-item-icon far fa-heart"></i></a>
+                            </div>
+                            <div class="product-img">
+                                <a href="?act=detail&sp=<?=$data_sanpham1[$i]['MaSP']?>">
+                                    <span class ="img--hover"></span> 
+                                    <img src="./public/images/<?php echo $data_sanpham1[$i]['hinhanh'] ?>" alt="">
+                                </a>
+                            </div>
+                            <div class="product-fruits__infos">
+                                <h2 class="tilte-name-product-t"><?= $data_sanpham1[$i]['TenSP']?></h2>
+                                <div>
+                                <span class="price-new"><?= number_format( $data_sanpham1[$i]['DonGia']) ?>đ</span>
+                                <button class="button-add-product button-add-product--view">Cho vào giỏ</button>
+                                <span class="price-old"><?php echo number_format($data_sanpham1[$i]['DonGia']+ 20000) ?>đ</span>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                <?php } ?>
+        </div>
+    </div>
+</section>
 <section id="populator">
     <div class="container">
         <div class="populator__head">
