@@ -67,6 +67,8 @@
         $result = $this->conn->query($query);
         setcookie('idsp', 'chèn hình ảnh : '.$query, time() + 2);
     }
-  
+    function getSanPhamById(){
+        
+    }
 }
 ?>

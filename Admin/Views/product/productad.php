@@ -36,8 +36,8 @@
                 <td>
                     <div class="">
                     <a class="btn-addproduct btnUpdate--view">Xem</a>
-                        <a class="btn-addproduct btn--edit">Sửa</a>
-                        <a class="btn-addproduct btnUpdate--delete">Xóa</a>
+                        <a href="?mod=sanpham&act=edit&idsp=<?= $value['MaSP']?>" class="btn-addproduct btn--edit">Sửa</a>
+                        <a href="?mod=sanpham&act=delete&idsp=<?= $value['MaSP']?>" class="btn-addproduct btnUpdate--delete">Xóa</a>
                     </div>
                 </td>
             </tr>

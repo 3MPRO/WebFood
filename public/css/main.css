@@ -220,6 +220,7 @@
 }
 
 .cart-wrapper-content{
+    display: none;
     max-height: 60vh;
     overflow-y: auto;
  }

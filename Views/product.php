@@ -95,18 +95,26 @@
                     </div>
                     <div class="product-list col-lg-9">
                         <div class="container">
-                        
                             <div class="product-list__title row">
                                 <h1 ><?= $data_danhmuc[$cate -1]['TenDM'] ?></h1>
                             </div>
 
-                            <div class="row">
-                                
+                        <?php 
+                       $conunt = count($data_sanpham);
+                        if($conunt >30){
+                            $n =10;
+                        }
+                        else $n = $conunt;
+                            ?>
+                            <div class="grid__row">
                                 <?php 
                                 if($data_sanpham != NULL)
-                                {
-                                    for($i=0 ;$i <4; $i++){ ?>
-                                    <div class="col col-product__item">
+                                {   
+                                    for($i = 0;$i<$n; $i++){
+                                        
+                                        ?>
+                                    
+                                    <div class="col-product__item">
                                         <form action="" >
                                             <div>
                                         <div class="product-item__sale-off">
@@ -131,15 +139,17 @@
                                                 </div>
                                             </div>
                                         </form>
+                                        <div class="clear"></div>
                                     </div>
-                                <?php } 
-                                }
+                                <?php } }
+                                
                                 else 
                                     echo "Không lấy dc dữ liệu";
                                 
                                 ?>
                                 
                             </div>
+                      
                         </div>
 
                     </div>
