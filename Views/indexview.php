@@ -52,12 +52,46 @@
         });
     </script>
     <script>
-        function plusCart(id) {
+        function plusCart(id,donGia) {
             let string = "input[name='cart-input-"+`${id}`+ "']"
             var quantityVal = document.querySelector(string)
+            let totalText = Number(document.querySelector('.text-total').innerText.replaceAll(',',''))
+            totalText+= Number(donGia);
+            console.log(document.querySelector('.text-total').innerText.replaceAll(',',''));
+            let str = totalText + "";
+            console.log(totalText);
+            str = str.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+            document.querySelector('.text-total').innerText = str
             var quantityInput = Number(quantityVal.value) + 1;
+            $('.btn-qty-minus ').removeClass('enable-minus')
             quantityVal.value = quantityInput
+            
             let urlS = '?act=cart&xuli=update&id='+`${id}`
+            $.ajax({
+                url:urlS,
+                method: 'POST',
+                // data: {qty: quantityInput, item_id: id},
+                data: $("#frmid").serialize(),
+                success: function(res) {
+                },
+            });
+        }
+        function minusCart(id,donGia) {
+            let string = "input[name='cart-input-"+`${id}`+ "']"
+            var quantityVal = document.querySelector(string)
+            let totalText = Number(document.querySelector('.text-total').innerText.replaceAll(',',''))
+            totalText-= Number(donGia);
+            console.log(document.querySelector('.text-total').innerText.replaceAll(',',''));
+            let str = totalText + "";
+            console.log(totalText);
+            str = str.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+            document.querySelector('.text-total').innerText = str
+            var quantityInput = Number(quantityVal.value) - 1;
+            if(quantityInput <=1) {
+                $('.btn-qty-minus ').addClass('enable-minus')
+            }
+            quantityVal.value = quantityInput
+            let urlS = '?act=cart&xuli=delete&id='+`${id}`
             $.ajax({
                 url:urlS,
                 method: 'POST',
