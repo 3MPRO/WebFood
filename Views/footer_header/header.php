@@ -72,7 +72,7 @@
                                 </a>
                                 <div class="cart-down">
                                     <div class="cart-content">
-                                        <div class="cart-wrapper-content">
+                                        <div class="cart-wrapper-content <?php  if(!isset($_SESSION['product']) || count($_SESSION['product'])===0) echo 'hiddent'?>">
                                             <?php if(isset($_SESSION['product']) && count($_SESSION['product']) > 0){
                                             foreach ($_SESSION['product'] as $value) { 
                                                 // print_r($value);
@@ -91,19 +91,19 @@
                                                                 <div class="cart-content-inner__qty">
                                                                     <label for="">Số Lượng</label>
                                                                     <div class="group-btn-qty">
-                                                                        <a class="btn-qty-minus">
+                                                                        <a class="btn-qty-minus <?php if($value['soluong'] <=1) echo 'enable-minus';?>" onclick="minusCart(<?php echo $value['MaSP']?>, <?php echo $value['DonGia']?>)">
                                                                             <i class="fas fa-minus"></i>
                                                                         </a>
                                                                         <input type="hidden" name="ma-sp" value="<?php echo $value['MaSP']?>">
                                                                         <input type="text" name="cart-input-<?php echo $value['MaSP']?>" class="cart-input" value="<?php echo $value['soluong'] ?>">
-                                                                        <a class="btn-qty-plus" onclick="plusCart(<?php echo $value['MaSP']?>)">
+                                                                        <a class="btn-qty-plus" onclick="plusCart(<?php echo $value['MaSP']?>, <?php echo $value['DonGia']?>)">
                                                                             <i class="fas fa-plus"></i>
                                                                         </a>
                                                                     </div>
                                                                 </div>
                                                                 <div class="cart-content-inner__prices">
-                                                                    <p class="cart-price"><?php echo number_format($value['ThanhTien'])?> đ</p>
-                                                                    <a href="" class="btn-remove-cart">Xóa</a>
+                                                                    <p class="cart-price"><?php echo number_format($value['DonGia'])?> đ</p>
+                                                                    <a href="?act=cart&xuli=delete-cart&id=<?=$value['MaSP']?>" class="btn-remove-cart">Xóa</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -117,7 +117,10 @@
                                             <div class="cart-content-inner__footer">
                                                 <div class="cart-content-inner__subtotal">
                                                     <p>Tổng tiền</p>
-                                                    <p class="text-total"><?=number_format($thanhtien)?></p>
+                                                    <div style="display: flex;color: red;font-weight: 800;">
+                                                        <p class="text-total"><?=number_format($thanhtien)?></p>
+                                                        <p>đ</p>
+                                                    </div>
                                                 </div>
                                                 <div class="cart-content-inner__checkout">
                                                     <a href="" class="cart-content-inner__btn btn-checkout">Thanh toán</a >
