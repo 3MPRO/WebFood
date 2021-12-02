@@ -12,6 +12,7 @@ const App = {
     defaulthref: listbtnAddCart.length != 0 ? listbtnAddCart[0].search.substring(0, listbtnAddCart[0].search.length - 1) : '',
     sliderProducts: function(element) {
       var $sliderList = $(`${element}`)
+
         $sliderList.trigger('destroy.owl.carousel');
         $sliderList.owlCarousel({
             margin:10,
@@ -120,46 +121,18 @@ const App = {
             }
         })
     },
-    fnPlusCart : function() {
-       
-    },
     start: function() {
         this.sliderProducts('#owl-fruilt-slider')
         this.sliderProducts('#owl-slider-dry')
+        this.sliderProducts('#product-sale-slider')
         this.eventDom()
         this.productDetailSlider()
         this.addCart()
         this.quantityCart()
-        this.fnPlusCart()
     }  
 }
  
 App.start()
-
-
-// Create function quantity cart
-// const quantityCart = () => {
-//     const btnMinus = document.querySelector('.custom-quantity .btn-minus')
-//     const btnPlus = document.querySelector('.custom-quantity .btn-plus')
-//     let qtyInputEl = document.querySelector('.qty-input')
-//     let valueInput = qtyInputEl.value
-//     btnMinus.addEventListener('click', function(e) {
-//         e.preventDefault()
-//         valueInput == 1 ? valueInput = 1 : valueInput--
-        
-//         qtyInputEl.value = valueInput
-//     })
-//     btnPlus.addEventListener('click', function(e) {
-//         e.preventDefault()
-//         valueInput == 10 ? valueInput = 10 : valueInput++
-//         qtyInputEl.value = valueInput
-//     })
-// }
-
-// loadProducts()
-// productDetailSlider()
-// quantityCart()
-
 
 /* Change password js */
 var checkbox = document.getElementById("radio-changePass")

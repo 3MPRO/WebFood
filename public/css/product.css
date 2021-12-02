@@ -72,7 +72,14 @@
     overflow: hidden;
   /*   width: 100%;
     height: 100%;
+<<<<<<< HEAD
+    max-height: 290px;
+=======
     /* max-height: 290px; */ 
+>>>>>>> 6b4848c4a0b22465249f5fb4c8f74d043fe925b3
+}
+.col-product__item.sale-home {
+    width: 212px;
 }
 .product-img{
     position: relative;
