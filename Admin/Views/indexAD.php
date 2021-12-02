@@ -48,7 +48,7 @@
                         require_once('product/addproduct.php');
                         break;
                       case 'edit':
-                        require_once('product/sanpham/edit.php');
+                        require_once('product/updateProduct.php');
                         break;
                       default:
                         require_once('product/productad.php');

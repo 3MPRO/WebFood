@@ -1,10 +1,9 @@
 
     <?php 
-        if(isset($_COOKIE['idsp'])){
-            echo $_COOKIE['idsp'];
-        }
+      
     ?>
-    <form class="add-product-form"action="?mod=sanpham&act=store" method="POST" enctype="multipart/form-data">
+    <form class="add-product-form"action="?mod=sanpham&act=update" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="MaSP" value="<?= $data['MaSP'] ?>">
     <?php if (isset($_COOKIE['msg'])) { ?>
     <div class="alert alert-warning">
       <strong>Thông báo</strong> <?= $_COOKIE['msg'] ?>
@@ -15,7 +14,7 @@
         <label>Danh mục</label>
         <select class="form-control" name="MaDM" id="add-cate">
        <?php foreach ($data_dm as $row){ ?>
-        <option value="<?= $row['MaDM'] ?>"><?= $row['TenDM'] ?></option>
+        <option <?= ($row['MaDM'] == $data['MaDM'])?'selected':''?> value="<?= $row['MaDM'] ?>"> <?= $row['TenDM'] ?>  </option>
             <?php }?>
         </select>
     </fieldset>
@@ -23,34 +22,56 @@
         <label>Loại sản phẩm</label>
         <select class="form-control" name="MaLSP" id="add-cate">
         <?php foreach ($data_lsp as $row) { ?>
-          <option value="<?= $row['MaLSP'] ?>"><?= $row['TenLSP'] ?></option>
+          <option <?= ($row['MaLSP'] == $data['MaLSP'])?'selected':''?> value="<?= $row['MaLSP'] ?>"><?= $row['TenLSP'] ?></option>
         <?php } ?>
         </select>
     </fieldset>
     <fieldset class="add-product-item">
         <label>Tên sản phẩm</label>
-        <input class="form-control" type="text" name="TenSP" id="">
+        <input class="form-control" type="text" name="TenSP" id="" value="<?=$data['TenSP']?>">
     </fieldset>
     <fieldset class="add-product-item">
         <label>Đơn giá</label>
-        <input  class="form-control" type="text" name="DonGia" id="">
+        <input  class="form-control" type="text" name="DonGia" id="" value="<?=$data['DonGia']?>">
     </fieldset>
     <fieldset class="add-product-item">
         <label>Số lượng</label>
-        <input class="form-control" type="text" name="SoLuong" id="">
+        <input class="form-control" type="text" name="SoLuong" id="" value="<?=$data['SoLuong']?>">
     </fieldset>
+    
+    <?php 
+    if(count($dataImg)>0){
+        $i =0;
+    foreach($dataImg as $imgrow){
+        $i +=1;?>
+    
     <fieldset class="add-product-item">
-        <label>Hình ảnh chính</label>
-        <input type="file" class="form-control" id="" placeholder="" name="hinhAnhChinh">
+        <label>Hình ảnh <?=$i?> </label>
+        <img src="../public/images/<?=$imgrow['hinhanh']?>" height="200px" width="200px">
+        <input type="file" class="form-control" id="" placeholder="" name="<?=$imgrow['tenhinh']?>" value="<?=$imgrow['hinhanh']?>">
+        
+    </fieldset>
+    <?php }}
+    else {
+    ?>
+     <fieldset class="add-product-item">
+        <label>Hình ảnh 1 </label>
+        
+        <input type="file" class="form-control" id="" placeholder="" name="hinhanh1" value="">
     </fieldset>
     <fieldset class="add-product-item">
         <label>Hình ảnh 2</label>
-        <input type="file" class="form-control" id="" placeholder="" name="hinhAnh1">
+       
+        <input type="file" class="form-control" id="" placeholder="" name="hinhanh2" value="">
+   
     </fieldset>
     <fieldset class="add-product-item">
         <label>Hình ảnh 3</label>
-        <input type="file" class="form-control" id="" placeholder="" name="hinhAnh2">
+        
+        <input type="file" class="form-control" id="" placeholder="" name="hinhanh3" value="">
+   
     </fieldset>
+    <?php }?>
     <fieldset class="add-product-item">
         <label>Mã khuyến mãi</label>
         <select id="" name="MaKM" class="form-control">
@@ -58,6 +79,7 @@
           <option value="<?= $row['MaKM'] ?>"><?= $row['TenKM'] ?></option>
         <?php } ?>
       </select>
+      
     </fieldset>
     <fieldset class="add-product-item">
         <label>Trạng thái</label>

@@ -16,15 +16,15 @@ session_start();
                case 'store':
                     $controller_obj->store();
                     break;
-               /*  case 'delete':
+                 case 'delete':
                     $controller_obj->delete();
                     break;
                 case 'edit':
-                    $controller_obj->edit();
+                    $controller_obj->callUpdate();
                     break;
                 case 'update':
                     $controller_obj->update(); 
-                    break;*/
+                    break;
                 default:
                     $controller_obj->list();
                     break;

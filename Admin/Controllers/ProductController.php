@@ -23,6 +23,11 @@ class ProductController
         require_once("Views/indexAD.php");
 
     }
+    public function delete()
+    {
+        $id = $_GET['id'];
+        $this->product_model->delete($id);
+    }
     public function store(){
         $target_dir = "../public/images/";
         $hinhAnhChinh ="";
@@ -69,7 +74,7 @@ class ProductController
        $this->product_model->store($data_sanpham);
      
         
-       //echo "<script>console.log($this->idsp)</script>";
+      
        $idsp = $this->product_model->getIdProductnew(); // lấy id sản phẩm mới chèn ;
         $data_img = array(   
             $idsp." 1" => $hinhAnhChinh,
@@ -79,31 +84,39 @@ class ProductController
         
         $this->product_model->insertImg($data_img);
     }
-    public function edit(){
-        
+    public function callUpdate()
+    {
+        $id = isset($_GET['idsp']) ? $_GET['idsp'] : 1;
+        $data_km = $this->product_model->khuyenmai();
+        $data_lsp = $this->product_model->loaisp();
+        $data_dm = $this->product_model->danhmuc();
+        $data = $this->product_model->getSanPhamById($id);
+        $dataImg = $this->product_model->getImgById($id);
+        require_once("Views/indexAD.php");
+      
     }
     public function update()
     {
         $target_dir = "../public/images/";
-        $hinhAnhChinh ="";
-        $target_file = $target_dir . basename($_FILES["hinhAnhChinh"]["name"]);
-        $status_upload = move_uploaded_file($_FILES["hinhAnhChinh"]["tmp_name"],$target_file);
-        if($status_upload){// up k lỗi
-            $hinhAnhChinh = basename($_FILES['hinhAnhChinh']['name']);
-        }
-
         $hinhAnh1 ="";
-        $target_file = $target_dir . basename($_FILES['hinhAnh1']["name"]);
-        $status_upload = move_uploaded_file($_FILES['hinhAnh1']['tmp_name'],$target_file);
+        $target_file = $target_dir . basename($_FILES["hinhanh1"]["name"]);
+        $status_upload = move_uploaded_file($_FILES["hinhanh1"]["tmp_name"],$target_file);
         if($status_upload){// up k lỗi
-            $hinhAnh1 = basename($_FILES['hinhAnh1']['name']);
+            $hinhAnh1 = basename($_FILES['hinhanh1']['name']);
         }
 
         $hinhAnh2 ="";
-        $target_file = $target_dir . basename($_FILES['hinhAnh2']["name"]);
-        $status_upload = move_uploaded_file($_FILES['hinhAnh2']['tmp_name'],$target_file);
+        $target_file = $target_dir . basename($_FILES['hinhanh2']["name"]);
+        $status_upload = move_uploaded_file($_FILES['hinhanh2']['tmp_name'],$target_file);
         if($status_upload){// up k lỗi
-            $hinhAnh2 = basename($_FILES['hinhAnh2']['name']);
+            $hinhAnh2 = basename($_FILES['hinhanh2']['name']);
+        }
+
+        $hinhAnh3 ="";
+        $target_file = $target_dir . basename($_FILES['hinhanh3']["name"]);
+        $status_upload = move_uploaded_file($_FILES['hinhanh3']['tmp_name'],$target_file);
+        if($status_upload){// up k lỗi
+            $hinhAnh3 = basename($_FILES['hinhanh3']['name']);
         }
 
         $trangThai = 0;
@@ -114,7 +127,7 @@ class ProductController
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $ThoiGian =  date('Y-m-d H:i:s');
         $data_sanpham = array(
-            'MASP'=>'null',
+            'MASP'=>$_POST['MaSP'],
             'MaLSP' =>    $_POST['MaLSP'],
             'TenSP'  =>   $_POST['TenSP'],
             'DonGia' => $_POST['DonGia'],
@@ -123,24 +136,31 @@ class ProductController
             'SoSao' =>  0,
             'SoDanhGia' => 0,
             'TrangThai' => $trangThai,
-           
             'ThoiGian' => $ThoiGian
         );
-       $this->product_model->store($data_sanpham);
-     
-        
+        $masp = $_POST['MaSP'];
+       $this->product_model->updateProduct($data_sanpham);
+            
        //echo "<script>console.log($this->idsp)</script>";
-       $idsp = $this->product_model->getIdProductnew(); // lấy id sản phẩm mới chèn ;
+      
         $data_img = array(   
-            $idsp." 1" => $hinhAnhChinh,
-            $idsp." 2"  => $hinhAnh1,
-            $idsp." 3"  => $hinhAnh2
-        );    
-        $this->product_model->insertImg($data_img);
+           "hinhanh1" => $hinhAnh1,
+            "hinhanh2"  => $hinhAnh2,
+           "hinhanh3"  => $hinhAnh3
+        );   
+        if ($hinhAnh1 == "") {
+            unset($data_img['hinhanh1']);
+            }
+            if ($hinhAnh2 == "") {
+            unset($data_img['hinhanh2']);
+            }
+            if ($hinhAnh3 == "") {
+            unset($data_img['hinhanh3']); 
+           $this->product_model->updateImg($data_img,$masp);
     }
     
    
-    
+}   
 
 }
 ?>
