@@ -143,10 +143,11 @@
                             <a href=""><i class="product-item-icon far fa-heart"></i></a>
                             </div>
                             <div class="product-img">
-                                <a href="?act=detail&sp=<?=$data_sanpham1[$i]['MaSP']?>">
+                                <a href="?act=detail&sp=<?=$data_sanpham1[$i]['MaSP']?>" style="display: block;">
                                     <span class ="img--hover"></span> 
                                     <img src="./public/images/<?php echo $data_sanpham1[$i]['hinhanh'] ?>" alt="">
                                 </a>
+                                <p class="text-sale">Sale</p>
                             </div>
                             <div class="product-fruits__infos">
                                 <h2 class="tilte-name-product-t"><?= $data_sanpham1[$i]['TenSP']?></h2>
@@ -187,8 +188,8 @@
                                     <div class="populator__product">
                                         <a href="" class="populator__product-link">
                                             <img src="./public/images/<?= $item['hinhanh'];?>" alt="">
-                                            <span><i class="far fa-heart"></i></span>
                                         </a>
+                                        <span><i class="far fa-heart icon-heart-i"></i></span>
                                     </div>
                                     <div class="populator__product-content">
                                         <h2 class="poplator__product-content-title tilte-name-product">
@@ -228,8 +229,8 @@
                                     <div class="populator__product">
                                         <a href="" class="populator__product-link">
                                             <img src="./public/images/<?= $data_random2[0]['hinhanh'] ?>" alt="">
-                                            <span><i class="far fa-heart"></i></span>
                                         </a>
+                                        <span><i class="far fa-heart icon-heart-i"></i></span>
                                     </div>
                                     <div class="populator__product-content">
                                         <h2 class="poplator__product-content-title tilte-name-product">
@@ -250,8 +251,8 @@
                                 <div class="populator__product">
                                     <a href="" class="populator__product-link">
                                         <img src="./public/images/<?= $data_random3[0]['hinhanh'] ?>" alt="">
-                                        <span><i class="far fa-heart"></i></span>
                                     </a>
+                                    <span><i class="far fa-heart icon-heart-i"></i></span>
                                 </div>
                                 <div class="populator__product-content">
                                     <h2 class="poplator__product-content-title tilte-name-product">
@@ -289,8 +290,8 @@
                             <div class="populator__product">
                                 <a href="" class="populator__product-link">
                                     <img src="./public/images/<?= $data_random5[0]['hinhanh'] ?>" alt="">
-                                    <span><i class="far fa-heart"></i></span>
                                 </a>
+                                <span><i class="far fa-heart icon-heart-i"></i></span>
                             </div>
                             <div class="populator__product-content">
                                 <h2 class="poplator__product-content-title tilte-name-product">

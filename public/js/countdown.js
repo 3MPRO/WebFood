@@ -10,6 +10,9 @@ window.addEventListener('load', () => {
         m: 0,
         s: 0,
     }
+    if(timeLeft.d === 0) {
+        localStorage.setItem('timeLeft', JSON.stringify(timeLeft));
+    }
     
     let totalSeconds;
     
@@ -95,4 +98,6 @@ window.addEventListener('load', () => {
     }
     const deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1);
     init(deadline);
+    console.log(timeLeft.d);
+    
 });

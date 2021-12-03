@@ -124,7 +124,7 @@
                                         <a href=""><i class="product-item-icon far fa-heart"></i></a>
                                         </div>
                                             <div class="product-img">
-                                                <a href="?act=detail&sp=<?=$data_sanpham[$i]['MaSP']?>">
+                                                <a href="?act=detail&sp=<?=$data_sanpham[$i]['MaSP']?>" style="display: block;">
                                                     <span class ="img--hover"></span> 
                                                     <img src="./public/images/<?php echo $data_sanpham[$i]['hinhanh'] ?>" alt="">
                                                 </a>
