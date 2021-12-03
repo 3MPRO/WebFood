@@ -7,12 +7,10 @@
                     <span>Trang chủ</span>
                 </a>
                 <span class="mr_lr">&nbsp;/ &nbsp;</span>
-                <a href="#">
-                    <span>Sản phẩm nổi bật</span>
-                </a>
-                <span class="mr_lr">&nbsp;/ &nbsp;</span>
+                <span>Giỏ hàng</span>
             </div>
         </div>
+        <h2 style="font-size: 24px;">Giỏ hàng của tôi</h2>
     </div>
 
     <div class="cart-page">
@@ -84,5 +82,18 @@
                 </div>
             <?php }?>
 		</div>
+    </div>
+
+    <div class="cart-page-footer">
+        <div class="cart-page-footer-total">
+            <p>Tổng tiền</p>
+            <span>
+                <?php echo number_format($thanhtien) ?>
+                đ
+            </span>
+        </div>
+        <div class="cart-page-footer-button">
+            <a href="">Thanh toán</a>
+        </div>
     </div>
 </main>

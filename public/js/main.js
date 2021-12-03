@@ -4,13 +4,15 @@ let item = document.querySelector.bind(document)
 let items= document.querySelectorAll.bind(document)
 const listbtnAddCart = document.querySelectorAll('.add-cart')
 let headerEl = document.getElementById('header')
-var sticky = headerEl.offsetTop+400;
+var sticky = headerEl.offsetTop+50;
+var rootElement = document.documentElement
 console.log(listbtnAddCart);
 
 const App = {
     defaulthref: listbtnAddCart.length != 0 ? listbtnAddCart[0].search.substring(0, listbtnAddCart[0].search.length - 1) : '',
     sliderProducts: function(element) {
       var $sliderList = $(`${element}`)
+
         $sliderList.trigger('destroy.owl.carousel');
         $sliderList.owlCarousel({
             margin:10,
@@ -36,9 +38,18 @@ const App = {
         window.addEventListener('scroll',()=> {
             if (window.pageYOffset >= sticky) {
                 headerEl.classList.add("sticky")
+                item('.box-button-top').classList.add('show-back')
             } else {
                 headerEl.classList.remove("sticky");
+                item('.box-button-top').classList.remove('show-back')
             }
+        })
+
+        item('.box-button-top').addEventListener("click", function() {
+            rootElement.scrollTo({
+                top: 0,
+                behavior: "smooth"
+              })
         })
 
     },
@@ -70,14 +81,14 @@ const App = {
                 console.log(btnAddCart.href);
                 setTimeout(function(){
                     modelAddCart.style = style
-                },1000)
+                },500)
                 setTimeout(function(){
                     console.log('setInterval 2');
                     modelAddCart.style = 'right: -200px;'
-                },5000)
+                },3000)
                 setTimeout(function(){
                     window.location.href = btnAddCart.href
-                },6000)
+                },4000)
                 e.preventDefault()
             //    clearInterval(idTime)
             })
@@ -110,46 +121,18 @@ const App = {
             }
         })
     },
-    fnPlusCart : function() {
-       
-    },
     start: function() {
         this.sliderProducts('#owl-fruilt-slider')
         this.sliderProducts('#owl-slider-dry')
+        this.sliderProducts('#product-sale-slider')
         this.eventDom()
         this.productDetailSlider()
         this.addCart()
         this.quantityCart()
-        this.fnPlusCart()
     }  
 }
  
 App.start()
-
-
-// Create function quantity cart
-// const quantityCart = () => {
-//     const btnMinus = document.querySelector('.custom-quantity .btn-minus')
-//     const btnPlus = document.querySelector('.custom-quantity .btn-plus')
-//     let qtyInputEl = document.querySelector('.qty-input')
-//     let valueInput = qtyInputEl.value
-//     btnMinus.addEventListener('click', function(e) {
-//         e.preventDefault()
-//         valueInput == 1 ? valueInput = 1 : valueInput--
-        
-//         qtyInputEl.value = valueInput
-//     })
-//     btnPlus.addEventListener('click', function(e) {
-//         e.preventDefault()
-//         valueInput == 10 ? valueInput = 10 : valueInput++
-//         qtyInputEl.value = valueInput
-//     })
-// }
-
-// loadProducts()
-// productDetailSlider()
-// quantityCart()
-
 
 /* Change password js */
 var checkbox = document.getElementById("radio-changePass")

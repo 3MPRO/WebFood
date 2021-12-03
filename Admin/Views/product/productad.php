@@ -1,4 +1,10 @@
+    <div class="add-product-form">
     <a class ="btn-addproduct" href="?mod=sanpham&act=add"> Thêm mới</a>
+    <?php if (isset($_COOKIE['msg'])) { ?>
+    <div class="alert alert-warning alert-warning_productlist">
+      <strong>Thông báo</strong> <?= $_COOKIE['msg'] ?>
+    </div>
+    <?php } ?>
     <div class="head-tableProduct">
         <div class="head-tableProduct_content">
             <Span>Show</Span>
@@ -35,11 +41,12 @@
                 <td>
                     <div class="">
                     <a class="btn-addproduct btnUpdate--view">Xem</a>
-                        <a class="btn-addproduct btnUpdate--edit">Sửa</a>
-                        <a class="btn-addproduct btnUpdate--delete">Xóa</a>
+                        <a href="?mod=sanpham&act=edit&idsp=<?= $value['MaSP']?>" class="btn-addproduct btn--edit">Sửa</a>
+                        <a href="?mod=sanpham&act=delete&idsp=<?= $value['MaSP']?>" class="btn-addproduct btnUpdate--delete">Xóa</a>
                     </div>
                 </td>
             </tr>
         <?php   }?> 
         
     </table>
+    </div>

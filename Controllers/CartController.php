@@ -9,7 +9,10 @@ class CartController
     }
     function list_cart()
     {
+        $data_danhmuc = $this->cart_model->danhmuc();
+
         // $data_danhmuc = $this->cart_model->danhmuc();
+
 
         // $data_chitietDM = array();
 

@@ -1,12 +1,14 @@
 <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
 <a href="?mod=loaisanpham&act=add" type="button" class="btn btn-primary">Thêm mới</a>
 <?php } ?>
+
 <?php if (isset($_COOKIE['msg'])) { ?>
   <div class="alert alert-success">
     <strong>Thông báo</strong> <?= $_COOKIE['msg'] ?>
   </div>
 <?php } ?>
 <hr>
+
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
   <thead>
     <tr>

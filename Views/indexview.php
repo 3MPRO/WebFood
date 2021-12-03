@@ -35,9 +35,11 @@
      require_once("footer_header/footer.php");
     ?>
     <script src="./public/lib/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
         <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./public/js/main.js"></script>
+    <script src="./public/js/countdown.js"></script>
     <script>
         var $sliderBanner = $('.slider-list')
         $sliderBanner.owlCarousel({
@@ -50,8 +52,58 @@
                 }
             }
         });
-        
     </script>
+    <script>
+        function plusCart(id,donGia) {
+            let string = "input[name='cart-input-"+`${id}`+ "']"
+            var quantityVal = document.querySelector(string)
+            let totalText = Number(document.querySelector('.text-total').innerText.replaceAll(',',''))
+            totalText+= Number(donGia);
+            console.log(document.querySelector('.text-total').innerText.replaceAll(',',''));
+            let str = totalText + "";
+            console.log(totalText);
+            str = str.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+            document.querySelector('.text-total').innerText = str
+            var quantityInput = Number(quantityVal.value) + 1;
+            $('.btn-qty-minus ').removeClass('enable-minus')
+            quantityVal.value = quantityInput
+            
+            let urlS = '?act=cart&xuli=update&id='+`${id}`
+            $.ajax({
+                url:urlS,
+                method: 'POST',
+                // data: {qty: quantityInput, item_id: id},
+                data: $("#frmid").serialize(),
+                success: function(res) {
+                },
+            });
+        }
+        function minusCart(id,donGia) {
+            let string = "input[name='cart-input-"+`${id}`+ "']"
+            var quantityVal = document.querySelector(string)
+            let totalText = Number(document.querySelector('.text-total').innerText.replaceAll(',',''))
+            totalText-= Number(donGia);
+            console.log(document.querySelector('.text-total').innerText.replaceAll(',',''));
+            let str = totalText + "";
+            console.log(totalText);
+            str = str.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+            document.querySelector('.text-total').innerText = str
+            var quantityInput = Number(quantityVal.value) - 1;
+            if(quantityInput <=1) {
+                $('.btn-qty-minus ').addClass('enable-minus')
+            }
+            quantityVal.value = quantityInput
+            let urlS = '?act=cart&xuli=delete&id='+`${id}`
+            $.ajax({
+                url:urlS,
+                method: 'POST',
+                // data: {qty: quantityInput, item_id: id},
+                data: $("#frmid").serialize(),
+                success: function(res) {
+                },
+            });
+        }
+    </script> 
 
 </body>
 </html>
