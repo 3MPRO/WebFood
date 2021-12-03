@@ -34,7 +34,7 @@
         $row = mysqli_fetch_assoc($result);
       
         $id =$row['MaSP'];
-        setcookie('idsp', 'Lấy id thành công'.$id, time() + 2);
+      //  setcookie('idsp', 'Lấy id thành công'.$id, time() + 2);
        
         return $id;
 
@@ -56,10 +56,10 @@
 
         if ($status == true) {
             setcookie('msg', 'Thêm mới thành công', time() + 2);
-          header('Location: ?mod=' . $this->table . '&act=add');
+          header('Location: ?mod=' .$this->table . '&act=add');
         } else {
             setcookie('msg', 'Thêm mới thất bại', time() + 2);
-        header('Location: ?mod=' . $this->table . '&act=add');
+        header('Location: ?mod=' .$this->table . '&act=add');
         }
     }
     function updateProduct($data)
@@ -74,8 +74,8 @@
         $result = $this->conn->query($query);
         
         if ($result == true) {
-            setcookie('msg', 'Duyệt thành công', time() + 2);
-           // header('Location: ?mod=' . $this->table);
+            setcookie('msg', 'Cập nhật thành công', time() + 2);
+            header('Location: ?mod=' . $this->table);
         } else {
             setcookie('msg', $query, time() + 2);
             header('Location: ?mod=' . $this->table . '&act=edit&idsp=' . $data['id']['id']);
@@ -85,13 +85,10 @@
         $query = "select *from hinhanh where masp = $idsp and tenhinh ='$imgName'";
         $result = $this->conn->query($query);
         $row = mysqli_fetch_assoc($result);
-        //setcookie('msg', $row, time() + 2);
-        //header('Location: ?mod=' . $this->table . '&act=edit&id=' . $idsp);
         if($row != null){
             return true;
         }
         else return false;
-
     }
     function updateImg($data_img, $idsp){
         $query ="";
@@ -107,15 +104,14 @@
             }
         }
         if ($result == true) {
-            setcookie('msg', 'Duyệt thành công', time() + 2);
+            setcookie('msg', 'Cập nhật thành công', time() + 2);
             header('Location: ?mod=' . $this->table);
         } else {
             setcookie('msg', $query, time() + 2);
-            header('Location: ?mod=' . $this->table . '&act=edit&idsp=' . $idsp);
         }
 
         }
-        
+  
     function insertImg($data_img){
         $dat ="";
         $i =0;
@@ -127,9 +123,25 @@
         $dat = trim($dat, ",");
         $query = "INSERT INTO hinhanh VALUES $dat;";
         $result = $this->conn->query($query);
+        if ($result == true) {
+            setcookie('msg', 'Duyệt thành công', time() + 2);
+            header('Location: ?mod=' . $this->table);
+        } else {
+            setcookie('msg', $query, time() + 2);
+        }
         //setcookie('idsp', 'chèn hình ảnh : '.$query, time() + 2);
     }
-
+    function deleteImg($id)
+    {
+        $query = "DELETE from hinhanh where masp=$id";    
+        $status = $this->conn->query($query);
+        if ($status == true) {
+            setcookie('msg', 'Xóa thành công', time() + 2);
+        } else {
+            setcookie('msg', 'Xóa không thành công', time() + 2);
+        }
+        header('Location: ?mod=' . $this->table);
+    }
 
     
 }

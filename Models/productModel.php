@@ -4,7 +4,7 @@
         function sanpham_danhmuc($a,$b,$danhmuc)
         {  
              $query ="SELECT * from sanpham , loaisanpham, danhmuc, hinhanh
-             WHERE  trangThai = 1  
+             WHERE  trangThai = 1 
              		and loaisanpham.MaDM = danhmuc.MaDM 
              		and sanpham.MaLSP = loaisanpham.MaLSP 
              		and loaisanpham.MaDM = '$danhmuc' 

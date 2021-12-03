@@ -254,7 +254,6 @@ input[type="radio"]:checked {
     background-color: var(--cl-backad);
 }
 .main_content-center{
-   
     font-size: 1.6rem;
     color: var(--cl-textad);
     padding: 30px 25px;
@@ -262,8 +261,7 @@ input[type="radio"]:checked {
     width: max-content;
     border: #f6f6f8 solid 1px;
     background-color: #ffff;
-    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
-    margin: 100px;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important; 
 }
 .product-table{
     max-width: 100%;
@@ -276,14 +274,12 @@ input[type="radio"]:checked {
 .product-table th,td{
     border: #e3e6f0 solid 1px;
     padding: 20px;
-    max-width: 250px;
 }
 .btn-addproduct:hover{
     cursor: pointer;
     color: rgb(233, 227, 227);
     opacity: 0.6;
 }
-
 .head-tableProduct{
     padding:10px 10px;
     border-top: #e3e6f0 solid 1px;

@@ -74,7 +74,7 @@
     </fieldset>
     <fieldset class="add-product-item">
         <label>Trạng thái</label>
-        <input type="checkbox" id="" placeholder="" value="1" name="TrangThai"><em>(Check cho phép hiện thị sản phẩm)</em>
+        <input type="checkbox" id="" checked="true" placeholder="" value="1" name="TrangThai"><em>(Check cho phép hiện thị sản phẩm)</em>
     </fieldset>
     <fieldset class="add-product-item">
         <label>Mô tả</label>
