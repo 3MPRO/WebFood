@@ -47,7 +47,7 @@
                 </a>
             </li>
             <li>
-                <a class="has-arrow" href="#" aria-expanded="true">
+                <a class="has-arrow" href="?mod=category" aria-expanded="true">
                     <div class="icon_menu">
                         <i class="fas fa-list"></i>
                         <span>Quản lý danh mục sản phẩm</span>
