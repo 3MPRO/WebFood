@@ -20,7 +20,9 @@
     <link rel="stylesheet" href="./public/css/reset.css">
     <link rel="stylesheet" href="./public/css/product.css">
     <link rel="stylesheet" href="./public/css/login.css">
+    <!-- Lib -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/js-image-zoom@0.7.0/js-image-zoom.js" type="application/javascript"></script>
     <script src="./public/js/jquery.js"></script>
 </head>
 <body>
@@ -39,7 +41,7 @@
         <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./public/js/main.js"></script>
-    <script src="./public/js/countdown.js"></script>
+    <!-- <script src="./public/js/countdown.js"></script> -->
     <script>
         var $sliderBanner = $('.slider-list')
         $sliderBanner.owlCarousel({
@@ -105,5 +107,13 @@
         }
     </script> 
 
+    <script>
+        var options1 = {
+            width: 350,
+            zoomWidth: 300,
+            offset: {vertical: 0, horizontal: 5}
+        };
+        new ImageZoom(document.getElementById("product-detail-left__thumbnail"), options1);
+    </script>
 </body>
 </html>

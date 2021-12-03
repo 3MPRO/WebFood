@@ -24,7 +24,7 @@
     <div class="row mb-4">
         <div class="col col-lg-4">
             <div class="product-detail-left">
-                <div class="product-detail-left__thumbnail">
+                <div id="product-detail-left__thumbnail">
                     <img src="./public/images/<?php echo $data_sanpham[0]['hinhanh']; ?>" alt="" class="product-detail-left__image-main">
                 </div>
                 <div class="product-detail-left__list-thumb">

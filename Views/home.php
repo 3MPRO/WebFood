@@ -507,3 +507,5 @@
         </div>
     </div>
 </section>
+
+<script src="./public/js/countdown.js"></script>

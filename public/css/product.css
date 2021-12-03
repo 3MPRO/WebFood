@@ -76,7 +76,6 @@
     max-height: 290px;
 =======
     /* max-height: 290px; */ 
->>>>>>> 6b4848c4a0b22465249f5fb4c8f74d043fe925b3
 }
 .col-product__item.sale-home {
     width: 212px;
@@ -186,7 +185,7 @@
     padding: 0;
 }
 .price-old{
-    float: left;
+    /* float: left; */
 }
 /*left  */
 .product__content{

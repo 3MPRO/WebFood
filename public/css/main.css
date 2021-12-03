@@ -29,7 +29,7 @@
     width: 100%;
     margin-bottom: 90px;
     box-shadow: 0px 0px 6px rgb(79 95 120 / 10%);
-    z-index: 5;
+    z-index: 11;
     animation: header-animation 0.7s ease;
   }
 
@@ -220,7 +220,7 @@
 }
 
 .cart-wrapper-content{
-    display: none;
+    /* display: none; */
     max-height: 60vh;
     overflow-y: auto;
  }
@@ -900,10 +900,11 @@ input.seed-mail::placeholder {
     margin-bottom: 50px;
 }
 
-.product-detail-left__thumbnail {
+#product-detail-left__thumbnail {
     margin-bottom: 20px;
+    z-index: 10;
 }
-.product-detail-left__thumbnail img{
+#product-detail-left__thumbnail img{
     width: 350px;
     height: 350px;
     border-radius: 10px;

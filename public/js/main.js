@@ -57,7 +57,7 @@ const App = {
     productDetailSlider: function() {
         const listThumbnailDetails = document.querySelectorAll('.product-detail-left__list-thumb ul li')
         const listThumbnails = document.querySelectorAll('.product-detail-left__list-thumb ul li img')
-        const productThumbnail = document.querySelector('.product-detail-left__thumbnail img')
+        const productThumbnail = document.querySelector('#product-detail-left__thumbnail img')
         listThumbnailDetails.forEach((itemThumbnail, index) => {
             listThumbnailDetails[0].classList.add('active')
             itemThumbnail.addEventListener('click', () => {
@@ -66,7 +66,10 @@ const App = {
                 }
                 itemThumbnail.classList.add('active')
                 productThumbnail.src = listThumbnails[index].src
-                console.log(listThumbnails[index].src);
+                let stringSrc = 'url("'+ `${listThumbnails[index].src}` + '")'
+                console.log(stringSrc);
+                item('.js-image-zoom__zoomed-image').style.backgroundImage = stringSrc
+                console.log(item('.js-image-zoom__zoomed-image').style.backgroundImage);
             })
         });
     },
