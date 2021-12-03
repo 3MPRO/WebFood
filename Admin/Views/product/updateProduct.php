@@ -40,38 +40,29 @@
     </fieldset>
     
     <?php 
-    if(count($dataImg)>0){
-        $i =0;
-    foreach($dataImg as $imgrow){
-        $i +=1;?>
-    
-    <fieldset class="add-product-item">
-        <label>Hình ảnh <?=$i?> </label>
-        <img src="../public/images/<?=$imgrow['hinhanh']?>" height="200px" width="200px">
-        <input type="file" class="form-control" id="" placeholder="" name="<?=$imgrow['tenhinh']?>" value="<?=$imgrow['hinhanh']?>">
-        
-    </fieldset>
-    <?php }}
-    else {
-    ?>
-     <fieldset class="add-product-item">
-        <label>Hình ảnh 1 </label>
-        
-        <input type="file" class="form-control" id="" placeholder="" name="hinhanh1" value="">
-    </fieldset>
-    <fieldset class="add-product-item">
-        <label>Hình ảnh 2</label>
-       
-        <input type="file" class="form-control" id="" placeholder="" name="hinhanh2" value="">
-   
-    </fieldset>
-    <fieldset class="add-product-item">
-        <label>Hình ảnh 3</label>
-        
-        <input type="file" class="form-control" id="" placeholder="" name="hinhanh3" value="">
-   
-    </fieldset>
+    for($i=1 ; $i<=3;$i++)
+        {
+           if(isset($dataImg[$i-1])) {
+            $imgrow = $dataImg[$i-1];
+           }
+                
+        if(isset($dataImg[$i-1])){?>
+        <fieldset class="add-product-item">
+            <label>Hình ảnh <?=$i?> </label>
+            <img src="../public/images/<?=$imgrow['hinhanh']?>" height="200px" width="200px">
+            <input type="file" class="form-control" id="" placeholder="" name="<?=$imgrow['tenhinh']?>" value="<?=$imgrow['hinhanh']?>">
+            
+        </fieldset>
+    <?php }else{ ?>
+        <fieldset class="add-product-item">
+            <label>Hình ảnh <?=$i?> </label>
+            <input type="file" class="form-control" id="" placeholder="" name="hinhanh<?=$i?>" value="">
+        </fieldset>
     <?php }?>
+    <?php }?>
+    
+   
+   
     <fieldset class="add-product-item">
         <label>Mã khuyến mãi</label>
         <select id="" name="MaKM" class="form-control">

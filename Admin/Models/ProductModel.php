@@ -75,23 +75,47 @@
         
         if ($result == true) {
             setcookie('msg', 'Duyệt thành công', time() + 2);
+           // header('Location: ?mod=' . $this->table);
+        } else {
+            setcookie('msg', $query, time() + 2);
+            header('Location: ?mod=' . $this->table . '&act=edit&idsp=' . $data['id']['id']);
+        }
+    }
+    function issetImgName($idsp, $imgName){
+        $query = "select *from hinhanh where masp = $idsp and tenhinh ='$imgName'";
+        $result = $this->conn->query($query);
+        $row = mysqli_fetch_assoc($result);
+        //setcookie('msg', $row, time() + 2);
+        //header('Location: ?mod=' . $this->table . '&act=edit&id=' . $idsp);
+        if($row != null){
+            return true;
+        }
+        else return false;
+
+    }
+    function updateImg($data_img, $idsp){
+        $query ="";
+        $result ="";
+        foreach($data_img as $key => $value){
+            if($this->issetImgName($idsp, $key)){ // nếu tên hình đã có thì update với tên hình
+              $query = "UPDATE hinhanh set hinhanh = '$value' where masp = $idsp and tenhinh = '$key';";
+              $result = $this->conn->query($query);
+            }
+            else { // nếu tên hình chưa có thì chèn lại
+                $query = "INSERT into  hinhanh values ('null',  '$idsp' ,'$value' ,'$key')";
+                $result = $this->conn->query($query);
+            }
+        }
+        if ($result == true) {
+            setcookie('msg', 'Duyệt thành công', time() + 2);
             header('Location: ?mod=' . $this->table);
         } else {
             setcookie('msg', $query, time() + 2);
-            header('Location: ?mod=' . $this->table . '&act=edit&id=' . $data['id']['id']);
+            header('Location: ?mod=' . $this->table . '&act=edit&idsp=' . $idsp);
         }
-    }
-    function updateImg($data_img, $idsp){
-      
-        foreach($data_img as $key => $value){
-            $query = "UPDATE hinhanh set hinhanh = $value where masp = $idsp and tenhinh = $key;";
-            $result = $this->conn->query($query);
+
         }
-       
-       
-       
-       // setcookie('idsp', 'chèn hình ảnh : '.$query, time() + 2);
-    }
+        
     function insertImg($data_img){
         $dat ="";
         $i =0;
@@ -103,7 +127,7 @@
         $dat = trim($dat, ",");
         $query = "INSERT INTO hinhanh VALUES $dat;";
         $result = $this->conn->query($query);
-        setcookie('idsp', 'chèn hình ảnh : '.$query, time() + 2);
+        //setcookie('idsp', 'chèn hình ảnh : '.$query, time() + 2);
     }
 
 

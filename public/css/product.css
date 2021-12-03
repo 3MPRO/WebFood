@@ -350,3 +350,6 @@ input[type="radio"]:checked {
     margin-left : -5px;
     margin-right : -5px;
 }
+.alert-warning_productlist{
+    margin-top: 20px;
+}
