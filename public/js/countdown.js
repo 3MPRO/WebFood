@@ -3,24 +3,18 @@ window.addEventListener('load', () => {
     const hours = document.querySelector('.hours')
     const minutes = document.querySelector('.minutes')
     const seconds = document.querySelector('.seconds')
-    
     let timeLeft = {
         d: 0,
         h: 0,
         m: 0,
         s: 0,
     }
-    if(timeLeft.d === 0) {
-        localStorage.setItem('timeLeft', JSON.stringify(timeLeft));
-    }
-    
     let totalSeconds;
     
     function init(endtime) {
         totalSeconds = Math.floor(Date.parse(endtime) - Date.parse(new Date()));
         console.log(totalSeconds);
         setTimeLeft();
-        console.log(timeLeft);
         let interval = setInterval(() => {
             if (totalSeconds < 0) {
                 clearInterval(interval);
@@ -30,9 +24,14 @@ window.addEventListener('load', () => {
     }
     
     function countTime() {
-        timeLeft = JSON.parse(localStorage.getItem("timeLeft"));   
+        console.log(timeLeft);
+        localStorage.setItem('timeLeft', JSON.stringify(timeLeft));
+        if(timeLeft == null) {
+            timeLeft = JSON.parse(localStorage.getItem('timeLeft'));
+            console.log('hdfsdfsd');
+        }
         if (totalSeconds > 0) {
-            --timeLeft.s;
+            --timeLeft.s; 
             if (timeLeft.m >= 0 && timeLeft.s < 0) {
                 timeLeft.s = 59;
                 --timeLeft.m;
@@ -98,6 +97,4 @@ window.addEventListener('load', () => {
     }
     const deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1);
     init(deadline);
-    console.log(timeLeft.d);
-    
 });
