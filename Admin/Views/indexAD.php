@@ -11,19 +11,21 @@
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="./Public/css/responsive.css">
     <link rel="stylesheet" href="./Public/css/style.css">
     <link rel="stylesheet" href="./Public/css/reset.css">
     <link rel="stylesheet" href="./Public/css/admin.css">
-   
     <link rel="stylesheet" href="../public/css/product.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./public/js/jquery.js"></script>
    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Data table -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  
 </head>
 <body>
   <?php 
