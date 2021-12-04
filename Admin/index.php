@@ -61,7 +61,7 @@ session_start();
             }
             break;
         case 'loaisanpham':
-            require_once('./Controllers/TypeProductController.php');
+            require_once('Controllers/TypeProductController.php');
             $controller_obj = new LoaisanphamController();
             switch ($act) {
                 case 'list':

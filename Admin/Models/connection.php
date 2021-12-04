@@ -1,4 +1,5 @@
 <?php 
+//echo "<script>alert('có mặt')</script>";
     class connection{
         var $conn;
         function __construct()
