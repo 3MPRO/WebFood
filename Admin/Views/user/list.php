@@ -21,7 +21,6 @@
   </thead>
   <tbody>
     <?php
-    
     foreach ($data as $row) { ?>
       <tr>
         <th class="th-firt" scope="row"><?= $row['MaND'] ?></th>
@@ -43,19 +42,11 @@
           ?>
         </td>
         <td>
-<<<<<<< HEAD
           <a href="?mod=nguoidung&act=detail&id=<?= $row['MaND'] ?>" type="button" class="btn btn-success">Xem</a>
-          <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
+          <?php //if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
           <a href="?mod=nguoidung&act=edit&id=<?= $row['MaND'] ?>" type="button" class="btn btn-warning">Sửa</a>
           <a href="?mod=nguoidung&act=delete&id=<?= $row['MaND'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
-          <?php }?>
-=======
-          <a href="?mod=nguoidung&act=detail&id=<?= $row['MaND'] ?>" type="button" class="btn-addproduct btn-block ">Xem</a>
-          <?php //if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
-          <a href="?mod=nguoidung&act=edit&id=<?= $row['MaND'] ?>" type="button" class="btn-addproduct btn-block btn--edit">Sửa</a>
-          <a href="?mod=nguoidung&act=delete&id=<?= $row['MaND'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn-addproduct btn-block btn--delete">Xóa</a>
           <?php //}?>
->>>>>>> 8239b05bc3f079c01f457a3cd1509ba97190e6cb
         </td>
       </tr>
     <?php } ?>
