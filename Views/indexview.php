@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://previews.123rf.com/images/marylia17/marylia171602/marylia17160200116/52748659-vector-organic-food-logo-fresh-fruit-logo-apple-logo-eco-natural-products-icon-isolated-identity.jpg" />
     <title>Fruity Fresh</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -20,7 +20,9 @@
     <link rel="stylesheet" href="./public/css/reset.css">
     <link rel="stylesheet" href="./public/css/product.css">
     <link rel="stylesheet" href="./public/css/login.css">
+    <!-- Lib -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/js-image-zoom@0.7.0/js-image-zoom.js" type="application/javascript"></script>
     <script src="./public/js/jquery.js"></script>
 </head>
 <body>
@@ -39,7 +41,7 @@
         <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./public/js/main.js"></script>
-    <script src="./public/js/countdown.js"></script>
+    <!-- <script src="./public/js/countdown.js"></script> -->
     <script>
         var $sliderBanner = $('.slider-list')
         $sliderBanner.owlCarousel({
@@ -105,5 +107,13 @@
         }
     </script> 
 
+    <script>
+        var options1 = {
+            width: 350,
+            zoomWidth: 300,
+            offset: {vertical: 0, horizontal: 5}
+        };
+        new ImageZoom(document.getElementById("product-detail-left__thumbnail"), options1);
+    </script>
 </body>
 </html>

@@ -1,8 +1,5 @@
 
     <?php 
-        if(isset($_COOKIE['idsp'])){
-            echo $_COOKIE['idsp'];
-        }
     ?>
     <form class="add-product-form"action="?mod=sanpham&act=store" method="POST" enctype="multipart/form-data">
     <?php if (isset($_COOKIE['msg'])) { ?>
@@ -61,7 +58,7 @@
     </fieldset>
     <fieldset class="add-product-item">
         <label>Trạng thái</label>
-        <input type="checkbox" id="" placeholder="" value="1" name="TrangThai"><em>(Check cho phép hiện thị sản phẩm)</em>
+        <input type="checkbox" id="" checked="true" placeholder="" value="1" name="TrangThai"><em>(Check cho phép hiện thị sản phẩm)</em>
     </fieldset>
     <fieldset class="add-product-item">
         <label>Mô tả</label>

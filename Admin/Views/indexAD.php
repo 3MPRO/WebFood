@@ -80,7 +80,8 @@
                           break;
                       }
                       break;
-                    case 'loaisanpham':
+                   
+                       case 'loaisanpham':
                       switch ($act) {
                         case 'list':
                           require_once('typeproduct/list.php');
@@ -99,6 +100,25 @@
                           break;
                       }
                       break;
+                      case 'category':
+                        switch ($act) {
+                          case 'list':
+                            require_once('category/list.php');
+                            break;
+                          case 'add':
+                            require_once('category/add.php');
+                            break;
+                          case 'detail':
+                            require_once('category/detail.php');
+                            break;
+                          case 'edit':
+                            require_once('category/edit.php');
+                            break;
+                          default:
+                            require_once('category/list.php');
+                            break;
+                        }
+                        break;
               }
             ?>
           </div>

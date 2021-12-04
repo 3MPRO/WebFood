@@ -29,7 +29,7 @@
     width: 100%;
     margin-bottom: 90px;
     box-shadow: 0px 0px 6px rgb(79 95 120 / 10%);
-    z-index: 5;
+    z-index: 11;
     animation: header-animation 0.7s ease;
   }
 
@@ -220,7 +220,7 @@
 }
 
 .cart-wrapper-content{
-    display: none;
+    /* display: none; */
     max-height: 60vh;
     overflow-y: auto;
  }
@@ -516,7 +516,7 @@ h2.tilte-name-product {
     font-size: 15px;
     font-weight: 700;
     color: var(--cl-title);
-    height: 61px;
+    height: 50px;
 }
 .item_product_main{
     display: flex;
@@ -536,7 +536,7 @@ h2.tilte-name-product {
     font-size: 20px;
 }
 
-.populator__product-link span{
+.populator__product > span{
     position: absolute;
     right: 10px;
     top: 10px;
@@ -736,7 +736,8 @@ h2.tilte-name-product {
     font-size: 20px;
     transition: all ease 0.2s;
 }
-.icon-heart-product:hover {
+.icon-heart-product:hover ,.product-item-icon:hover,
+i.far.fa-heart.icon-heart-i:hover{
     color: var(--cl-red);
     cursor: pointer;
 }
@@ -900,10 +901,11 @@ input.seed-mail::placeholder {
     margin-bottom: 50px;
 }
 
-.product-detail-left__thumbnail {
+#product-detail-left__thumbnail {
     margin-bottom: 20px;
+    z-index: 10;
 }
-.product-detail-left__thumbnail img{
+#product-detail-left__thumbnail img{
     width: 350px;
     height: 350px;
     border-radius: 10px;
@@ -1022,6 +1024,10 @@ input.seed-mail::placeholder {
 }
 .icon-heart{ 
     margin-top: 20px;
+}
+i.far.fa-heart.icon-heart-i {
+    font-size: 20px;
+    font-weight: 500;
 }
 .add-heart{ 
     font-size: 24px;

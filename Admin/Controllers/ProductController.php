@@ -24,7 +24,9 @@ class ProductController
     }
     public function delete()
     {
-        $id = $_GET['id'];
+
+        $id = $_GET['idsp'];
+        $this->product_model->deleteImg($id);
         $this->product_model->delete($id);
     }
     public function store()
@@ -52,11 +54,12 @@ class ProductController
         }
 
         $trangThai = 0;
-        if (isset($POST['TrangThai'])) {
-            $trangThai = $POST['TrangThai'];
+        if (isset($_POST['TrangThai'])) {
+            $trangThai = $_POST['TrangThai'];
         }
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $ThoiGian =  date('Y-m-d H:i:s');
+        $giaCu =  $_POST['DonGia']+30000;
         $data_sanpham = array(
             'MASP' => 'null',
             'MaLSP' =>    $_POST['MaLSP'],
@@ -67,8 +70,8 @@ class ProductController
             'SoSao' =>  0,
             'SoDanhGia' => 0,
             'TrangThai' => $trangThai,
-
-            'ThoiGian' => $ThoiGian
+            'ThoiGian' => $ThoiGian,
+            'giaCu'=> $giaCu
         );
         $this->product_model->store($data_sanpham);
 
@@ -95,7 +98,7 @@ class ProductController
     }
     public function update()
     {
-        if(isset($POST)){
+        if(!empty($_POST)){
             $target_dir = "../public/images/";
             $hinhAnh1 = "";
             $target_file = $target_dir . basename($_FILES["hinhanh1"]["name"]);
@@ -119,11 +122,12 @@ class ProductController
             }
     
             $trangThai = 0;
-            if (isset($POST['TrangThai'])) {
-                $trangThai = $POST['TrangThai'];
-            }
+           
+                $trangThai = $_POST['TrangThai']; 
+            
             date_default_timezone_set('Asia/Ho_Chi_Minh');
             $ThoiGian =  date('Y-m-d H:i:s');
+            $giaCu =  $_POST['DonGia']+30000;
             $data_sanpham = array(
                 'MASP' => $_POST['MaSP'],
                 'MaLSP' =>  $_POST['MaLSP'],
@@ -134,7 +138,8 @@ class ProductController
                 'SoSao' =>  0,
                 'SoDanhGia' => 0,
                 'TrangThai' => $trangThai,
-                'ThoiGian' => $ThoiGian
+                'ThoiGian' => $ThoiGian,
+                'giaCu'=> $giaCu
             );
             $masp = $_POST['MaSP'];
             $this->product_model->updateProduct($data_sanpham);
@@ -156,9 +161,7 @@ class ProductController
                 unset($data_img['hinhanh3']);
             }
             $this->product_model->updateImg($data_img, $masp);
-        }
-       else
-            header('Location: ?mod=' ."sanpham");
-            setcookie("msg","Không có gì để cập nhật !");
+        }   
     }
+  
 }
