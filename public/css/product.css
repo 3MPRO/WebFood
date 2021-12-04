@@ -63,6 +63,8 @@
 }
 .product-list__title{
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
 } 
 .col-product__item{
     margin-top: 20px;
@@ -108,7 +110,7 @@ p.text-sale {
 }
 .product-img img{
     width: 100%;
-    height: 184px;
+    height: 250px;
 }
  .button-add-product:hover {
     color: #fff;
@@ -125,6 +127,7 @@ p.text-sale {
 .col-product__item:hover .button-add-product {
         visibility: visible;
         right: -10px;
+        top: 10px;
     } 
 
 .img--hover{
@@ -224,7 +227,8 @@ p.text-sale {
 }
 .category__item:hover, .category__item:hover a{
     color: var(--cl-red);
-    right: -5px;
+    transition: all 0.5s ease;
+    padding-left: 3px;
 }
 .nav-left__filter-product{
     margin: 20px 0;
@@ -286,9 +290,40 @@ input[type="radio"]:checked {
     margin: 10px;
     margin-top: 20px;
     border-radius: 2px;
-   
 }
 
+/* FILTER */
+span.filter__conterner__title-head {
+    color: blue;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+a.filter__remove {
+    padding-left: 100px;
+}
+.filter-container__selected-filter-list ul {
+    max-width: 300px;
+}
+li.filter-container__selected-filter-item a {
+    color: #fff;
+    background: var(--cl-green);
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+li.filter-container__selected-filter-item {
+    display: inline-block;
+    margin-bottom: 30px;
+}
+.wrapper-filter__head {
+    margin-bottom: 20px;
+}
+.filter__hiddent {
+    display: none;
+}
+
+
+/* END */
 .product-table th,td{
     border: #e3e6f0 solid 1px;
     padding: 20px;
@@ -333,7 +368,9 @@ input[type="radio"]:checked {
     width: 900px;
     margin: 20px 5px;
 }
-
+.span.price-old.price-old-cate {
+    margin-bottom: 0;
+}
 .add-product-form label{
     margin: 10px 0px;
     display: block;

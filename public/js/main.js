@@ -4,7 +4,7 @@ let item = document.querySelector.bind(document)
 let items= document.querySelectorAll.bind(document)
 const listbtnAddCart = document.querySelectorAll('.add-cart')
 let headerEl = document.getElementById('header')
-var sticky = headerEl.offsetTop+50;
+var sticky = headerEl.offsetTop+200;
 var rootElement = document.documentElement
 console.log(listbtnAddCart);
 
@@ -124,6 +124,14 @@ const App = {
             }
         })
     },
+    startCount: function() {
+        localStorage.setItem('timeLeft', JSON.stringify({
+            d: 15,
+            h: 0,
+            m: 0,
+            s: 0,
+        }))
+    },
     start: function() {
         this.sliderProducts('#owl-fruilt-slider')
         this.sliderProducts('#owl-slider-dry')
@@ -132,6 +140,7 @@ const App = {
         this.productDetailSlider()
         this.addCart()
         this.quantityCart()
+        this.startCount()
     }  
 }
  

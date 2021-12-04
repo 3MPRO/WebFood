@@ -25,12 +25,8 @@ window.addEventListener('load', () => {
     
     function countTime() {
         console.log(timeLeft);
-        localStorage.setItem('timeLeft', JSON.stringify(timeLeft));
-        if(timeLeft == null) {
-            timeLeft = JSON.parse(localStorage.getItem('timeLeft'));
-            console.log('hdfsdfsd');
-        }
         if (totalSeconds > 0) {
+            timeLeft = JSON.parse(localStorage.getItem('timeLeft'));
             --timeLeft.s; 
             if (timeLeft.m >= 0 && timeLeft.s < 0) {
                 timeLeft.s = 59;

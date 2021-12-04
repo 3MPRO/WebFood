@@ -392,9 +392,8 @@ a.cart-content-inner__btn{
     top: 35px;
     left: -20px;
     display: none;
-    z-index: 1;
+    z-index: 12;
     background: #fff;
-    
 }
 
 .nav-item__down-item {  
@@ -654,7 +653,8 @@ h2.tilte-name-product {
 .price-old{
     text-decoration: line-through;
     font-size: 13px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
+    display: inherit;
 }
 
 /* product-fruits */

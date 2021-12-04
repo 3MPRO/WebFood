@@ -41,12 +41,29 @@
                             <div class="filter-product__collocation">
                                 <h1>Sắp xếp</h1>
                                 <ul class="filter-product__collocation">
-                                    <li class="filter-collocation__item"><input type ="radio" name ="radio">Tên A - Z </li>
-                                    <li class="filter-collocation__item"><input type ="radio" name ="radio">Tên Z - A</li>
-                                    <li class="filter-collocation__item"><input type ="radio" name ="radio">Giá thấp đến cao </li>
-                                    <li class="filter-collocation__item"><input type ="radio" name ="radio">Giá cao đến thấp</li>
-                                    <li class="filter-collocation__item"><input type ="radio" name ="radio">Mới nhất </li>
-                                    <li class="filter-collocation__item"><input type ="radio" name ="radio">Cũ nhất</li>
+                                    <li class="filter-collocation__item">
+                                        <input type ="radio" name ="radio" class="input-filter__radio" value="asc" id="asc" onclick="filterProduct('asc','TenSP')">
+                                        <label for="asc">Tên A - Z</label><br></li>
+                                    <li class="filter-collocation__item">
+                                        <input type ="radio" name ="radio" class="input-filter__radio" value="desc" id="desc" onclick="filterProduct('desc','TenSP')">
+                                        <label for="desc">Tên Z - A</label><br></li>
+                                    </li>
+                                    <li class="filter-collocation__item">
+                                        <input type ="radio" name ="radio" class="input-filter__radio" value="price-asc" id="price_asc" onclick="filterProduct('asc','DonGia')">
+                                        <label for="price_asc">Giá thấp đến cao</label><br></li>
+                                    </li>
+                                    <li class="filter-collocation__item">
+                                        <input type ="radio" name ="radio" class="input-filter__radio" value="price-desc" id="price_desc" onclick="filterProduct('desc','DonGia')">
+                                        <label for="price_desc">Giá cao đến thấp</label><br></li>
+                                    </li>
+                                    <li class="filter-collocation__item">
+                                        <input type ="radio" name ="radio" class="input-filter__radio" value="news" id="news" onclick="filterProduct('desc','ThoiGian')">
+                                        <label for="news">Mới nhất</label><br></li>
+                                    </li>
+                                    <li class="filter-collocation__item">
+                                        <input type ="radio" name ="radio" id="old" class="input-filter__radio" value="old" onclick="filterProduct('Asc','ThoiGian')">
+                                        <label for="old">Cũ nhất</label><br></li>
+                                    </li>
                                 </ul>
                             </div>
 
@@ -72,9 +89,6 @@
                                     <li class="filter-price__item"><a href=""><i class="fas swich-icon fa-toggle-on fa-toggle-off"></i>Từ 400.000đ đến 600.000đ</a> </li>
                                     <li class="filter-price__item"><a href=""><i class="fas swich-icon fa-toggle-on fa-toggle-off"></i>Từ 600.000đ đến 800.000đ</a></li>
                                     <li class="filter-price__item"><a href=""><i class="fas swich-icon fa-toggle-on fa-toggle-off"></i>Từ 800.000đ đến 1 triệu</a> </li>
-                                    <li class="filter-price__item"><a href=""><i class="fas swich-icon fa-toggle-on fa-toggle-off"></i>Từ 1 đến 2 triệu</a> </li>
-                                    <li class="filter-price__item"><a href=""><i class="fas swich-icon fa-toggle-on fa-toggle-off"></i>Trên 2 triệu</a> </li>
-
                                 </ul>
                             </div>
 
@@ -93,28 +107,58 @@
 
 
                     </div>
-                    <div class="product-list col-lg-9">
+                    <div class="product-list col-lg-9" >
                         <div class="container">
                             <div class="product-list__title row">
                                 <h1 ><?= $data_danhmuc[$cate -1]['TenDM'] ?></h1>
+                                <div class="filter__conterner__selected filter__hiddent">
+                                    <div class="wrapper-filter__head">
+                                        <span class="filter__conterner__title-head">
+                                            <i class="fa fa-arrow-left"></i>
+                                            Bạn chọn
+                                        </span>
+                                        <a href="" class="filter__remove">
+                                            Bỏ hết
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </div>
+                                    <div class="filter-container__selected-filter-list">
+                                        <ul>
+                                            <li class="filter-container__selected-filter-item">
+                                                <a href="">
+                                                    <i class="fa fa-close"></i>
+                                                    Dưới 100.000đ
+                                                </a>
+                                            </li>
+                                            <li class="filter-container__selected-filter-item">
+                                                <a href="">
+                                                    <i class="fa fa-close"></i>
+                                                    Dưới 100.000đ
+                                                </a>
+                                            </li>
+                                            <li class="filter-container__selected-filter-item">
+                                                <a href="">
+                                                    <i class="fa fa-close"></i>
+                                                    Dưới 100.000
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-
+                        
                         <?php 
-                       $conunt = count($data_sanpham);
-                        if($conunt >30){
-                            $n =10;
-                        }
-                        else $n = $conunt;
+                       $count = count($data_sanpham);
                             ?>
-                            <div class="grid__row">
+                            <div class="row" id="product-list-main">
                                 <?php 
                                 if($data_sanpham != NULL)
                                 {   
-                                    for($i = 0;$i<$n; $i++){
+                                    for($i = 0;$i<$count; $i++){
                                         
                                         ?>
                                     
-                                    <div class="col-product__item">
+                                    <div class="col-product__item col col-md-4 col-lg-4">
                                         <form action="" >
                                             <div>
                                         <div class="product-item__sale-off">
