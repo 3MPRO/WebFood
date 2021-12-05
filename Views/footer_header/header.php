@@ -177,7 +177,9 @@
 <nav id="nav">
     <div class="container">
         <ul class="nav-list">
-            <li class="nav-list__item active"><a href="?act=home">Trang chủ</a></li>
+            <li class="nav-list__item">
+                <a href="?act=home" class="nav-list__item-link">Trang chủ</a>
+            </li>
             <li class="nav-list__item">
                 <a href="">
                     Sản phẩm
@@ -186,17 +188,20 @@
                 <ul class="nav-item__down">
                     <?php foreach($data_danhmuc as $row) { ?>
 
-                            <li class="nav-item__down-item"><a href="?act=product&cate=<?=$row['MaDM'] ?>"><?=$row['TenDM']?></a></li>
+                            <li class="nav-item__down-item">
+                                <a href="?act=product&cate=<?=$row['MaDM'] ?>"><?=$row['TenDM']?>
+                                </a>
+                            </li>
 
                             <?php  } ?>
                     
                     
                 </ul>
             </li>
-            <li class="nav-list__item"><a href="?act=product&cate=2">Bánh kẹo</a></li>
-            <li class="nav-list__item"><a href="?act=product&cate=3">Đồ khô, gạo</a></li>
-            <li class="nav-list__item"><a href="?act=">Liên hệ</a></li>
-            <li class="nav-list__item"><a href="?act=">Tin tức</a></li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=product&cate=2">Bánh kẹo</a></li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=product&cate=3">Đồ khô, gạo</a></li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=">Liên hệ</a></li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=">Tin tức</a></li>
         </ul>
     </div>
 </nav>

@@ -42,26 +42,26 @@
                                 <h1>Sắp xếp</h1>
                                 <ul class="filter-product__collocation">
                                     <li class="filter-collocation__item">
-                                        <input type ="radio" name ="radio" class="input-filter__radio" value="asc" id="asc" onclick="filterProduct('asc','TenSP')">
+                                        <input type ="radio" name ="radio" class="input-filter__radio" value="asc" id="asc" onclick="filterProduct('asc','TenSP', '<?php echo $data_danhmuc[$cate- 1]['TenDM'];?>')">
                                         <label for="asc">Tên A - Z</label><br></li>
                                     <li class="filter-collocation__item">
-                                        <input type ="radio" name ="radio" class="input-filter__radio" value="desc" id="desc" onclick="filterProduct('desc','TenSP')">
+                                        <input type ="radio" name ="radio" class="input-filter__radio" value="desc" id="desc" onclick="filterProduct('desc','TenSP','<?php echo $data_danhmuc[$cate- 1]['TenDM'];?>')">
                                         <label for="desc">Tên Z - A</label><br></li>
                                     </li>
                                     <li class="filter-collocation__item">
-                                        <input type ="radio" name ="radio" class="input-filter__radio" value="price-asc" id="price_asc" onclick="filterProduct('asc','DonGia')">
+                                        <input type ="radio" name ="radio" class="input-filter__radio" value="price-asc" id="price_asc" onclick="filterProduct('asc','DonGia','<?php echo $data_danhmuc[$cate- 1]['TenDM'];?>')">
                                         <label for="price_asc">Giá thấp đến cao</label><br></li>
                                     </li>
                                     <li class="filter-collocation__item">
-                                        <input type ="radio" name ="radio" class="input-filter__radio" value="price-desc" id="price_desc" onclick="filterProduct('desc','DonGia')">
+                                        <input type ="radio" name ="radio" class="input-filter__radio" value="price-desc" id="price_desc" onclick="filterProduct('desc','DonGia','<?php echo $data_danhmuc[$cate- 1]['TenDM'];?>')">
                                         <label for="price_desc">Giá cao đến thấp</label><br></li>
                                     </li>
                                     <li class="filter-collocation__item">
-                                        <input type ="radio" name ="radio" class="input-filter__radio" value="news" id="news" onclick="filterProduct('desc','ThoiGian')">
+                                        <input type ="radio" name ="radio" class="input-filter__radio" value="news" id="news" onclick="filterProduct('desc','ThoiGian','<?php echo $data_danhmuc[$cate- 1]['TenDM'];?>')">
                                         <label for="news">Mới nhất</label><br></li>
                                     </li>
                                     <li class="filter-collocation__item">
-                                        <input type ="radio" name ="radio" id="old" class="input-filter__radio" value="old" onclick="filterProduct('Asc','ThoiGian')">
+                                        <input type ="radio" name ="radio" id="old" class="input-filter__radio" value="old" onclick="filterProduct('Asc','ThoiGian','<?php echo $data_danhmuc[$cate- 1]['TenDM'];?>')">
                                         <label for="old">Cũ nhất</label><br></li>
                                     </li>
                                 </ul>
@@ -83,12 +83,98 @@
                             <div class="filter-product__price">
                                 <h1>Theo mức giá</h1>
                                 <ul class="filter-product__price">
-                                    <li class="filter-price__item"><a href=""><i class="fas swich-icon fa-toggle-on fa-toggle-off"></i>Dưới 100.000đ</a> </li>
-                                    <li class="filter-price__item"><a href=""><i class="fas swich-icon fa-toggle-on fa-toggle-off"></i>Từ 100.000đ đến 200.000đ</a></li>
-                                    <li class="filter-price__item"><a href=""><i class="fas swich-icon fa-toggle-on fa-toggle-off"></i>Từ 200.000đ đến 400.000đ</a> </li>
-                                    <li class="filter-price__item"><a href=""><i class="fas swich-icon fa-toggle-on fa-toggle-off"></i>Từ 400.000đ đến 600.000đ</a> </li>
-                                    <li class="filter-price__item"><a href=""><i class="fas swich-icon fa-toggle-on fa-toggle-off"></i>Từ 600.000đ đến 800.000đ</a></li>
-                                    <li class="filter-price__item"><a href=""><i class="fas swich-icon fa-toggle-on fa-toggle-off"></i>Từ 800.000đ đến 1 triệu</a> </li>
+                                    <li class="filter-price__item">
+                                        <label class="toggle" for="100">
+                                            <input type="checkbox" class="toggle__input" value="Dưới 100.000đ" id="100" />
+                                            <span class="toggle-track">
+                                                <span class="toggle-indicator">
+                                                    <span class="checkMark">
+                                                        <svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
+                                                            <path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                            Dưới 100.000đ
+                                        </label>
+                                    </li>
+                                    <li class="filter-price__item">
+                                        <label class="toggle" for="100-200">
+                                            <input type="checkbox" class="toggle__input" value="Từ 100.000đ đến 200.000đ" id="100-200" />
+                                            <span class="toggle-track">
+                                                <span class="toggle-indicator">
+                                                    <span class="checkMark">
+                                                        <svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
+                                                            <path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                            Từ 100.000đ đến 200.000đ
+                                        </label>
+                                    </li>
+                                    <li class="filter-price__item">
+                                    <label class="toggle" for="200-400">
+                                        <input type="checkbox" class="toggle__input" value="Từ 200.000đ đến 400.000đ" id="200-400" />
+                                        <span class="toggle-track">
+                                            <span class="toggle-indicator">
+                                                <span class="checkMark">
+                                                    <svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
+                                                        <path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
+                                                    </svg>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        Từ 200.000đ đến 400.000đ
+                                    </label>
+                                    </li>
+                                    <li class="filter-price__item">
+                                         <label class="toggle" for="400-600">
+                                        <input type="checkbox" class="toggle__input" value="Từ 400.000đ đến 600.000đ" id="400-600" />
+                                        <span class="toggle-track">
+                                            <span class="toggle-indicator">
+                                                <span class="checkMark">
+                                                    <svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
+                                                        <path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
+                                                    </svg>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        Từ 400.000đ đến 600.000đ
+                                    </label> 
+                                    </li>
+                                    <li class="filter-price__item">
+                                         
+                                         <label class="toggle" for="600-800">
+                                        <input type="checkbox" class="toggle__input" value="Từ 600.000đ đến 800.000đ" id="600-800" />
+                                        <span class="toggle-track">
+                                            <span class="toggle-indicator">
+                                                <span class="checkMark">
+                                                    <svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
+                                                        <path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
+                                                    </svg>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        Từ 600.000đ đến 800.000đ
+                                    </label>
+                                    </li>
+                                    <li class="filter-price__item">
+                                         
+                                         <label class="toggle" for="500-1">
+                                        <input type="checkbox" class="toggle__input" value="Từ 800.000đ đến 1 triệu" id="500-1" />
+                                        <span class="toggle-track">
+                                            <span class="toggle-indicator">
+                                                <span class="checkMark">
+                                                    <svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
+                                                        <path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
+                                                    </svg>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        Từ 800.000đ đến 1 triệu
+                                    </label> 
+                                    </li>
                                 </ul>
                             </div>
 
@@ -124,24 +210,7 @@
                                     </div>
                                     <div class="filter-container__selected-filter-list">
                                         <ul>
-                                            <li class="filter-container__selected-filter-item">
-                                                <a href="">
-                                                    <i class="fa fa-close"></i>
-                                                    Dưới 100.000đ
-                                                </a>
-                                            </li>
-                                            <li class="filter-container__selected-filter-item">
-                                                <a href="">
-                                                    <i class="fa fa-close"></i>
-                                                    Dưới 100.000đ
-                                                </a>
-                                            </li>
-                                            <li class="filter-container__selected-filter-item">
-                                                <a href="">
-                                                    <i class="fa fa-close"></i>
-                                                    Dưới 100.000
-                                                </a>
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>

@@ -40,17 +40,19 @@ $(document).ready(function(){
     });
 });
 // filter product 
-function filterProduct(action,name) {
+function filterProduct(action,name, danhmuc) {
     var action = action
+    var danhmuc = danhmuc
     var name = name
     $.ajax({
         url: "Models/get_data.php",
         method: 'POST',
-        data: {action: action,name: name},
+        data: {action: action,name: name, danhmuc: danhmuc},
         success: function(data) {
             $('#product-list-main').html(data)
         }
     })
+
 }
 
 

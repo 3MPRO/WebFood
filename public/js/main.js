@@ -10,6 +10,8 @@ console.log(listbtnAddCart);
 
 const App = {
     defaulthref: listbtnAddCart.length != 0 ? listbtnAddCart[0].search.substring(0, listbtnAddCart[0].search.length - 1) : '',
+    arrayValueCheckbox: [],
+    statusCheckbox: true,
     sliderProducts: function(element) {
       var $sliderList = $(`${element}`)
 
@@ -35,6 +37,7 @@ const App = {
         });
     },
     eventDom: function() {
+        let _this = this;
         window.addEventListener('scroll',()=> {
             if (window.pageYOffset >= sticky) {
                 headerEl.classList.add("sticky")
@@ -52,7 +55,83 @@ const App = {
               })
         })
 
+        // Active nav link
+        const currentLocation = location.href
+        const menuItems = items('.nav-list__item .nav-list__item-link')
+        for (let i = 0; i < menuItems.length; i++) {
+            if(menuItems[i].href === currentLocation){
+                menuItems[i].className = 'active'
+            }
+        }
+
+        // Checkbox
+        const listCheckbox = items('.toggle__input')
+        
+        listCheckbox.forEach((element, index) => {
+            element.addEventListener('click',function(){
+                let valueCheck = this.value
+                var listValue = _this.arrayValueCheckbox
+                this.classList.toggle('checkbox-checked')
+                if(this.classList.contains('checkbox-checked')) {
+                    if(listValue.length == 0){
+                        listValue.push(valueCheck)
+                        console.log("day la truong hop bang 0",listValue);
+                        _this.renderUICheckbox(listValue)
+                        localStorage.setItem('listValue',JSON.stringify(listValue))
+                    } else {
+                        listValue = JSON.parse(localStorage.getItem('listValue'))
+                        listValue.push(valueCheck)
+                        console.log(listValue);
+                        _this.renderUICheckbox(listValue)
+                        localStorage.setItem('listValue',JSON.stringify(listValue))
+                    }
+                }else{
+                    const newListValue = JSON.parse(localStorage.getItem('listValue'))
+                    const newArr = newListValue.splice(index,1)
+                    // console.log("newarr", newListValue);
+                    localStorage.setItem('listValue',JSON.stringify(newListValue))
+                    _this.renderUICheckbox(newListValue)
+                    
+                }
+            })
+        });
+
     },
+    renderUICheckbox: function(arr) {
+        let elFilterSelected = item('.filter__conterner__selected')
+        let elFilterList = item('.filter-container__selected-filter-list ul')
+        if(arr.length > 0) {
+            elFilterSelected.classList.remove('filter__hiddent')
+            rootElement.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+            let newArr = this.unique(arr)
+            var htmls = newArr.map((value) => {
+                return `
+                <li class="filter-container__selected-filter-item">
+                    <a href="">
+                        <i class="fa fa-close"></i>
+                        ${value}
+                    </a>
+                </li>
+                `
+            }).join('')
+            elFilterList.innerHTML = htmls
+            
+        } else {
+            elFilterSelected.classList.add('filter__hiddent')
+        }
+
+        
+    },
+    unique: function(arr) {
+        var newArr = []
+        newArr = arr.filter(function (item) {
+          return newArr.includes(item) ? '' : newArr.push(item)
+        })
+        return newArr
+      },
     // Slider thumb detail
     productDetailSlider: function() {
         const listThumbnailDetails = document.querySelectorAll('.product-detail-left__list-thumb ul li')
@@ -141,6 +220,7 @@ const App = {
         this.addCart()
         this.quantityCart()
         this.startCount()
+        console.log(this.arrayValueCheckbox)
     }  
 }
  

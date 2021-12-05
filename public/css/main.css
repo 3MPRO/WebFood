@@ -346,6 +346,10 @@ a.cart-content-inner__btn{
     height: 50px;
 }
 
+.nav-list__item > a.active {
+    color: #ffeb00;
+}
+
 .nav-list__item {
     margin-right: 40px;
     position: relative;

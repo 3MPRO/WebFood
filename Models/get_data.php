@@ -4,7 +4,8 @@
     if(isset($_POST['action'])){
         $action = $_POST['action'];
         $name = $_POST['name'];
-        $query = "SELECT * FROM danhmuc, loaisanpham, sanpham, hinhanh WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and danhmuc.TenDM = 'Bánh kẹo' GROUP by sanpham.MaSP ORDER BY {$name} {$_POST['action']}";
+        $danhmuc = $_POST['danhmuc'];
+        $query = "SELECT * FROM danhmuc, loaisanpham, sanpham, hinhanh WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and danhmuc.TenDM = '{$danhmuc}' GROUP by sanpham.MaSP ORDER BY {$name} {$_POST['action']}";
         $result = $mysqli->query($query);
         $row =  $result -> fetch_array(MYSQLI_ASSOC);
         $count = count($row);
