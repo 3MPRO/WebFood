@@ -72,6 +72,7 @@ const App = {
                 let valueCheck = this.value
                 var listValue = _this.arrayValueCheckbox
                 this.classList.toggle('checkbox-checked')
+                console.log("day la truong hop ngoai if ",listValue);
                 if(this.classList.contains('checkbox-checked')) {
                     if(listValue.length == 0){
                         listValue.push(valueCheck)
@@ -81,16 +82,18 @@ const App = {
                     } else {
                         listValue = JSON.parse(localStorage.getItem('listValue'))
                         listValue.push(valueCheck)
-                        console.log(listValue);
+                        console.log("day truong hop khac 0",listValue);
                         _this.renderUICheckbox(listValue)
-                        localStorage.setItem('listValue',JSON.stringify(listValue))
+                        localStorage.setItem('listValue',JSON.stringify(_this.unique(listValue)));
                     }
                 }else{
                     const newListValue = JSON.parse(localStorage.getItem('listValue'))
-                    const newArr = newListValue.splice(index,1)
-                    // console.log("newarr", newListValue);
-                    localStorage.setItem('listValue',JSON.stringify(newListValue))
-                    _this.renderUICheckbox(newListValue)
+                    let filterResult = newListValue.filter(function(element){
+                        return element !== valueCheck;
+                      });
+                    console.log("day truong hop uncheck vi tri", filterResult);
+                    localStorage.setItem('listValue',JSON.stringify(_this.unique(filterResult)))
+                    _this.renderUICheckbox(filterResult)
                     
                 }
             })
