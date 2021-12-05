@@ -18,6 +18,7 @@ $(document).ready(function(){
         $(this).parent(".search-results").empty();
     });
 });
+
 ///
 $(document).ready(function(){
     
@@ -38,3 +39,25 @@ $(document).ready(function(){
         $(this).parent(".search-result").empty();
     });
 });
+// filter product 
+function filterProduct(action,name, danhmuc) {
+    var action = action
+    var danhmuc = danhmuc
+    var name = name
+    $.ajax({
+        url: "Models/get_data.php",
+        method: 'POST',
+        data: {action: action,name: name, danhmuc: danhmuc},
+        success: function(data) {
+            $('#product-list-main').html(data)
+        }
+    })
+
+}
+
+
+// SELECT * 
+// FROM danhmuc, loaisanpham, sanpham
+// WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP
+// and danhmuc.TenDM = 'Bánh kẹo'
+// ORDER BY TenSP ASC

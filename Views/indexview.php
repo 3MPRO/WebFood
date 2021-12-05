@@ -110,6 +110,7 @@
     <script>
         var options1 = {
             width: 350,
+            height: 350,
             zoomWidth: 300,
             offset: {vertical: 0, horizontal: 5}
         };
