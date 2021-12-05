@@ -5,35 +5,19 @@
       <strong>Thông báo</strong> <?= $_COOKIE['msg'] ?>
     </div>
     <?php } ?>
-    <div class="head-tableProduct">
-        <div class="head-tableProduct_content">
-            <Span>Show</Span>
-            <select name="" id="">
-                <option value="10">10</option>
-                <option value="2">25</option> 
-                <option value="3">50</option> 
-                <option value="4">100</option>
-            </select>
-            <span>entries</span>
-        </div>
-        <div class="head-tableProduct_content">
-            <Span>Search:</Span>
-            <input type="text">
-        </div>
-        
-    </div>
-    <table class ="product-table">
-        <tr>
-            <th>Mã sản phẩm</th>
-            <th>Tên sản phẩm</th>
-            <th>Giá thành</th>
-            <th>Số lượng</th>
-            <th>Trạng thái</th>
-            <th>Thao tác</th>
-        </tr>
+    <hr>
+    <table id="dataTable" class ="product-table" cellspacing="0" width="100%">
+        <thead>
+            <th  class="th-firt" scope="col">Mã sản phẩm</th>
+            <th  scope="col">Tên sản phẩm</th>
+            <th  scope="col">Giá thành</th>
+            <th  scope="col">Số lượng</th>
+            <th  scope="col">Trạng thái</th>
+            <th  scope="col">Thao tác</th>
+        </thead>
        <?php foreach($data_product as $value){ ?>
                 <tr>
-                <td><?= $value['MaSP']?></td>
+                <th><?= $value['MaSP']?></th>
                 <td><?= $value['TenSP'] ?></td>
                 <td><?= $value['DonGia'] ?></td>
                 <td><?= $value['SoLuong'] ?></td>
@@ -51,5 +35,7 @@
     </table>
     </div>
     <script>
-        
-    </script>
+  $(document).ready(function() {
+    $('#dataTable').DataTable();
+  });
+</script>

@@ -120,6 +120,25 @@
                             break;
                         }
                         break;
+                        case 'khuyenmai':
+                          switch ($act) {
+                            case 'list':
+                              require_once('khuyenmai/list.php');
+                              break;
+                            case 'add':
+                              require_once('khuyenmai/add.php');
+                              break;
+                            case 'detail':
+                              require_once('khuyenmai/detail.php');
+                              break;
+                            case 'edit':
+                              require_once('khuyenmai/edit.php');
+                              break;
+                            default:
+                              require_once('khuyenmai/list.php');
+                              break;
+                          }
+                          break;
               }
             ?>
           </div>

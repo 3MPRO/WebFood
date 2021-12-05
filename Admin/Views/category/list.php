@@ -21,10 +21,10 @@
         <td><?= $row['MaDM'] ?></td>
         <td><?= $row['TenDM'] ?></td>
         <td>
-          <a href="?mod=danhmuc&act=detail&id=<?= $row['MaDM'] ?>" class="btn btn-success">Xem</a>
+          <a href="?mod=category&act=detail&id=<?= $row['MaDM'] ?>" class="btn btn-success">Xem</a>
           <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
-          <a href="?mod=danhmuc&act=edit&id=<?= $row['MaDM'] ?>" class="btn btn-warning">Sửa</a>
-          <a href="?mod=danhmuc&act=delete&id=<?= $row['MaDM'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
+          <a href="?mod=category&act=edit&id=<?= $row['MaDM'] ?>" class="btn btn-warning">Sửa</a>
+          <a href="?mod=category&act=delete&id=<?= $row['MaDM'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
           <?php }?>
         </td>
       </tr>
