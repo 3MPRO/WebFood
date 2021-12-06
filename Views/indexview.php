@@ -111,8 +111,9 @@
         var options1 = {
             width: 350,
             height: 350,
-            zoomWidth: 300,
-            offset: {vertical: 0, horizontal: 5}
+            zoomWidth: 200,
+            zoomHeight: 200,
+            offset: {vertical: 2, horizontal: 5}
         };
         new ImageZoom(document.getElementById("product-detail-left__thumbnail"), options1);
     </script>

@@ -300,7 +300,7 @@ span.filter__conterner__title-head {
 }
 
 a.filter__remove {
-    padding-left: 100px;
+    padding-left: 60px;
 }
 .filter-container__selected-filter-list ul {
     max-width: 300px;
@@ -487,4 +487,23 @@ li.filter-container__selected-filter-item {
 
 .filter-price__item .toggle {
     font-size: 14px;
+}
+
+.nav-left__filter-head {
+    padding: 10px;
+    border: dashed 1px var(--cl-green);
+    margin-bottom: 20px;
+    color: var(--cl-green);
+}
+.nav-left__filter-head h2 {
+    font-size: 22px;
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+
+.filter__conterner__selected {
+    margin: 20px 0;
+}
+h1#product-list__title__h1 {
+    font-size: 24px;
 }

@@ -11,6 +11,7 @@ console.log(listbtnAddCart);
 const App = {
     defaulthref: listbtnAddCart.length != 0 ? listbtnAddCart[0].search.substring(0, listbtnAddCart[0].search.length - 1) : '',
     arrayValueCheckbox: [],
+    arrayValuePrice: [],
     statusCheckbox: true,
     sliderProducts: function(element) {
       var $sliderList = $(`${element}`)
@@ -68,10 +69,15 @@ const App = {
         const listCheckbox = items('.toggle__input')
         
         listCheckbox.forEach((element, index) => {
+            console.log(element.getAttribute("id"));
             element.addEventListener('click',function(){
                 let valueCheck = this.value
                 var listValue = _this.arrayValueCheckbox
                 this.classList.toggle('checkbox-checked')
+
+                let valuePrice = this.getAttribute("id")
+                var listValuePrice = _this.arrayValuePrice
+
                 console.log("day la truong hop ngoai if ",listValue);
                 if(this.classList.contains('checkbox-checked')) {
                     if(listValue.length == 0){
@@ -79,12 +85,21 @@ const App = {
                         console.log("day la truong hop bang 0",listValue);
                         _this.renderUICheckbox(listValue)
                         localStorage.setItem('listValue',JSON.stringify(listValue))
+
+                        // listValuePrice
+                        listValuePrice.push(valuePrice)
+                        localStorage.setItem('listValuePrice',JSON.stringify(listValuePrice))
                     } else {
                         listValue = JSON.parse(localStorage.getItem('listValue'))
                         listValue.push(valueCheck)
                         console.log("day truong hop khac 0",listValue);
                         _this.renderUICheckbox(listValue)
-                        localStorage.setItem('listValue',JSON.stringify(_this.unique(listValue)));
+                        localStorage.setItem('listValue',JSON.stringify(_this.unique(listValue)))
+
+                        // listValuePrice
+                        listValuePrice = JSON.parse(localStorage.getItem("listValuePrice"))
+                        listValuePrice.push(valuePrice)
+                        localStorage.setItem('listValuePrice',JSON.stringify(_this.unique(listValuePrice)))
                     }
                 }else{
                     const newListValue = JSON.parse(localStorage.getItem('listValue'))
@@ -94,6 +109,13 @@ const App = {
                     console.log("day truong hop uncheck vi tri", filterResult);
                     localStorage.setItem('listValue',JSON.stringify(_this.unique(filterResult)))
                     _this.renderUICheckbox(filterResult)
+
+                    // listValuePrice
+                    const newListValuePrice = JSON.parse(localStorage.getItem('listValuePrice'))
+                    let filterResultPrice = newListValuePrice.filter(function(element){
+                        return element != valuePrice
+                    })
+                    localStorage.setItem('listValuePrice',JSON.stringify(_this.unique(filterResultPrice)))
                     
                 }
             })
