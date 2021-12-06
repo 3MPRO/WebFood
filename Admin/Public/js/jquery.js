@@ -24,7 +24,7 @@ $(document).ready(function(){
 $('#MaDM').change(function(){
     var idcate = $(this).val();
     $.ajax({
-        url: "Models/ajax_action.php",
+        url: "Models/ajax/ajax_action.php",
         method: "POST",
         data:{idcate:idcate},
         success:function(data){
@@ -38,7 +38,7 @@ window.onload = function(){
         var idcate = $('#MaDM').val();
         var idtype = $('#idtype').val();
         $.ajax({
-        url: "Models/ajax_action.php",
+        url: "Models/ajax/ajax_action.php",
         method: "POST",
         data:{idcate:idcate,idtype:idtype},
         success:function(data){

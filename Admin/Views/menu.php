@@ -55,15 +55,7 @@
                 </a>
             </li>
             <li>
-                <a class="has-arrow" href="#" aria-expanded="true">
-                    <div class="icon_menu">
-                        <i class="fab fa-centos"></i>
-                        <span>Quản lý banner</span>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a class="has-arrow" href="#" aria-expanded="true">
+                <a class="has-arrow" href="?mod=khuyenmai" aria-expanded="true">
                     <div class="icon_menu">
                         <i class="fas fa-balance-scale-left"></i>
                         <span>Quản lý khuyến mãi</span>

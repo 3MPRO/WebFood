@@ -1,5 +1,4 @@
 <?php
- //echo "<script>alert('cómat')</script>";  
 require_once("model.php");
 
 class loaisanpham extends Model
