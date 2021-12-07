@@ -1,5 +1,5 @@
 <?php if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) { ?>
-<a href="?mod=danhmuc&act=add" type="button" class="btn btn-primary">Thêm mới</a>
+<a href="?mod=category&act=add" type="button" class="btn btn-primary">Thêm mới</a>
 <?php } ?>
 <?php if (isset($_COOKIE['msg'])) { ?>
   <div class="alert alert-success">
