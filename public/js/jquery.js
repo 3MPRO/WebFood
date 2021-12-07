@@ -18,6 +18,7 @@ $(document).ready(function(){
         $(this).parent(".search-results").empty();
     });
 });
+
 ///
 $(document).ready(function(){
     
@@ -37,4 +38,41 @@ $(document).ready(function(){
         $(this).parents(".name-login").find('input[type="text"]').val($(this).text());
         $(this).parent(".search-result").empty();
     });
+
+    $('input.toggle__input').each(function (index, value) {
+        console.log($(this));
+        $(this).on('click',function ajaxFilter() {
+        var listValue = JSON.parse(localStorage.getItem("listValuePrice"))
+        $.ajax({
+            url: "Models/get_data_price.php",
+            method: "POST",
+            data: {listValue: listValue},
+            success: function(data) {
+                $('#product-list-main').html(data)
+            }
+        })
+    })
+    })
 });
+// filter product 
+function filterProduct(action,name, danhmuc) {
+    var action = action
+    var danhmuc = danhmuc
+    var name = name
+    console.log('da click');
+    $.ajax({
+        url: "Models/get_data.php",
+        method: 'POST',
+        data: {action: action,name: name, danhmuc: danhmuc},
+        success: function(data) {
+            $('#product-list-main').html(data)
+        }
+    })
+}
+
+
+// SELECT * 
+// FROM danhmuc, loaisanpham, sanpham
+// WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP
+// and danhmuc.TenDM = 'Bánh kẹo'
+// ORDER BY TenSP ASC

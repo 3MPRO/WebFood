@@ -38,165 +38,185 @@
           <div class="table-responsive">
             <?php
                 if (isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) {
-                $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
-                $act = isset($_GET['act']) ? $_GET['act'] : "admin"; 
-                switch ($mod) {
-                  case 'sanpham':
-                    switch ($act) {
-                      case 'list':
-                        require_once('product/sanpham/list.php');
-                        break;
-                      case 'add':
-                        require_once('product/addproduct.php');
-                        break;
-                      case 'edit':
-                        require_once('product/updateProduct.php');
-                        break;
-                      default:
-                        require_once('product/productad.php');
-                        break;
-                      }
-                      break;
-                    case 'nguoidung':
-                      require_once('./Controllers/UserController.php');
-                      $controller_obj = new NguoiDungController();
-                      switch ($act) {
-                        case 'list':
-                          $controller_obj->list();
-                          require_once('user/list.php');
-                          break;
-                        case 'add':
-                          require_once('user/add.php');
-                          break;
-                        case 'detail':
-                          require_once('user/detail.php');
-                          break;
-                        case 'edit':
-                          require_once('user/edit.php');
-                          break;
-                        default:
-                          $controller_obj->list();
-                          require_once('user/list.php');
-                          break;
-                      }
-                      break;
-                   
-                       case 'loaisanpham':
-                      switch ($act) {
-                        case 'list':
-                          require_once('typeproduct/list.php');
-                          break;
-                        case 'add':
-                          require_once('typeproduct/add.php');
-                          break;
-                        case 'detail':
-                          require_once('typeproduct/detail.php');
-                          break;
-                        case 'edit':
-                          require_once('typeproduct/edit.php');
-                          break;
-                        default:
-                          require_once('typeproduct/list.php');
-                          break;
-                      }
-                      break;
-                      case 'category':
-                        switch ($act) {
-                          case 'list':
-                            require_once('category/list.php');
-                            break;
-                          case 'add':
-                            require_once('category/add.php');
-                            break;
-                          case 'detail':
-                            require_once('category/detail.php');
-                            break;
-                          case 'edit':
-                            require_once('category/edit.php');
-                            break;
-                          default:
-                            require_once('category/list.php');
-                            break;
-                        }
-                        break;
-              }} else {
-                if (isset($_SESSION['isLogin_Nhanvien']) && $_SESSION['isLogin_Nhanvien'] == true) {
                   $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
-                  $act = isset($_GET['act']) ? $_GET['act'] : "admin";
+                  $act = isset($_GET['act']) ? $_GET['act'] : "admin"; 
                   switch ($mod) {
-                    // case 'hoadon':
-                    //   switch ($act) {
-                    //     case 'list':
-                    //       require_once('MVC/Views/hoadon/list.php');
-                    //       break;
-                    //     case 'chitiet':
-                    //       require_once('MVC/Views/hoadon/detail.php');
-                    //       break;
-                    //     default:
-                    //       require_once('MVC/Views/hoadon/list.php');
-                    //       break;
-                    //   }
-                    //   break;
-                    case 'category':
-                      switch ($act) {
-                        case 'list':
-                          require_once('category/list.php');
-                          break;
-                        case 'add':
-                          require_once('category/add.php');
-                          break;
-                        case 'detail':
-                          require_once('category/detail.php');
-                          break;
-                        case 'edit':
-                          require_once('category/edit.php');
-                          break;
-                        default:
-                          require_once('category/list.php');
-                          break;
-                      }
-                      break;
-                    case 'danhmuc':
-                      switch ($act) {
-                        case 'list':
-                          require_once('MVC/views/danhmuc/list.php');
-                          break;
-                        case 'detail':
-                          require_once('MVC/views/danhmuc/detail.php');
-                          break;
-                        default:
-                          require_once('MVC/views/danhmuc/list.php');
-                          break;
-                      }
-                      break;
                     case 'sanpham':
                       switch ($act) {
                         case 'list':
-                          require_once('MVC/views/sanpham/list.php');
+                          require_once('product/sanpham/list.php');
                           break;
-                        case 'detail':
-                          require_once('MVC/views/sanpham/detail.php');
+                        case 'add':
+                          require_once('product/addproduct.php');
                           break;
-                        default:
-                          require_once('MVC/views/sanpham/list.php');
-                          break;
-                      }
-                      break;
-                    case 'khuyenmai':
-                      switch ($act) {
-                        case 'list':
-                          require_once('MVC/views/khuyenmai/list.php');
-                          break;
-                        case 'detail':
-                          require_once('MVC/views/khuyenmai/detail.php');
+                        case 'edit':
+                          require_once('product/updateProduct.php');
                           break;
                         default:
-                          require_once('MVC/views/khuyenmai/list.php');
+                          require_once('product/productad.php');
                           break;
-                      }
-                      break;
+                        }
+                        break;
+                      case 'nguoidung':
+                        require_once('./Controllers/UserController.php');
+                        $controller_obj = new NguoiDungController();
+                        switch ($act) {
+                          case 'list':
+                            $controller_obj->list();
+                            require_once('user/list.php');
+                            break;
+                          case 'add':
+                            require_once('user/add.php');
+                            break;
+                          case 'detail':
+                            require_once('user/detail.php');
+                            break;
+                          case 'edit':
+                            require_once('user/edit.php');
+                            break;
+                          default:
+                            $controller_obj->list();
+                            require_once('user/list.php');
+                            break;
+                        }
+                        break;
+                    
+                        case 'loaisanpham':
+                        switch ($act) {
+                          case 'list':
+                            require_once('typeproduct/list.php');
+                            break;
+                          case 'add':
+                            require_once('typeproduct/add.php');
+                            break;
+                          case 'detail':
+                            require_once('typeproduct/detail.php');
+                            break;
+                          case 'edit':
+                            require_once('typeproduct/edit.php');
+                            break;
+                          default:
+                            require_once('typeproduct/list.php');
+                            break;
+                        }
+                        break;
+                        case 'category':
+                          switch ($act) {
+                            case 'list':
+                              require_once('category/list.php');
+                              break;
+                            case 'add':
+                              require_once('category/add.php');
+                              break;
+                            case 'detail':
+                              require_once('category/detail.php');
+                              break;
+                            case 'edit':
+                              require_once('category/edit.php');
+                              break;
+                            default:
+                              require_once('category/list.php');
+                              break;
+                          }
+                          break;
+                        }
+              }
+              else {
+                  if (isset($_SESSION['isLogin_Nhanvien']) && $_SESSION['isLogin_Nhanvien'] == true) {
+                    $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
+                    $act = isset($_GET['act']) ? $_GET['act'] : "admin";
+                    switch ($mod) {
+                      // case 'hoadon':
+                      //   switch ($act) {
+                      //     case 'list':
+                      //       require_once('MVC/Views/hoadon/list.php');
+                      //       break;
+                      //     case 'chitiet':
+                      //       require_once('MVC/Views/hoadon/detail.php');
+                      //       break;
+                      //     default:
+                      //       require_once('MVC/Views/hoadon/list.php');
+                      //       break;
+                      //   }
+                      //   break;
+                      case 'loaisanpham':
+                        switch ($act) {
+                          case 'list':
+                            require_once('typeproduct/list.php');
+                            break;
+                          case 'add':
+                            require_once('typeproduct/add.php');
+                            break;
+                          case 'detail':
+                            require_once('typeproduct/detail.php');
+                            break;
+                          case 'edit':
+                            require_once('typeproduct/edit.php');
+                            break;
+                          default:
+                            require_once('typeproduct/list.php');
+                            break;
+                        }
+                        break;
+                        case 'category':
+                          switch ($act) {
+                            case 'list':
+                              require_once('category/list.php');
+                              break;
+                            case 'add':
+                              require_once('category/add.php');
+                              break;
+                            case 'detail':
+                              require_once('category/detail.php');
+                              break;
+                            case 'edit':
+                              require_once('category/edit.php');
+                              break;
+                            default:
+                              require_once('category/list.php');
+                              break;
+                          }
+                          break;
+                          case 'sanpham':
+                            switch ($act) {
+                              case 'list':
+                                require_once('product/sanpham/list.php');
+                                break;
+                              case 'add':
+                                require_once('product/addproduct.php');
+                                break;
+                              case 'edit':
+                                require_once('product/updateProduct.php');
+                                break;
+                              default:
+                                require_once('product/productad.php');
+                                break;
+                              }
+                              break;
+                    //   case 'khuyenmai':
+                    //     switch ($act) {
+                    //       case 'list':
+                    //         require_once('MVC/views/khuyenmai/list.php');
+                    //         break;
+                    //       case 'detail':
+                    //         require_once('MVC/views/khuyenmai/detail.php');
+                    //         break;
+                    //       default:
+                    //         require_once('MVC/views/khuyenmai/list.php');
+                    //         break;
+                    //     }
+                    //     break;
+                     }
                   }
-                }
+                  else{
+                    if (isset($_SESSION['isLogin_GiaoHang']) && $_SESSION['isLogin_GiaoHang'] == true) {
+                      $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
+                      $act = isset($_GET['act']) ? $_GET['act'] : "admin";
+                      switch ($mod) {
+                      
+                       }
+                    }
+                  }
               }
             ?>
           </div>

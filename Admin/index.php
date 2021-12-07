@@ -60,8 +60,38 @@ session_start();
                     break;
             }
             break;
+            case 'khuyenmai':
+                require_once('Controllers/KhuyenmaiController.php');
+                $controller_obj = new KhuyenmaiController();
+                switch ($act) {
+                    case 'list':
+                        $controller_obj->list();
+                        break;
+                    case 'detail':
+                        $controller_obj->detail();
+                        break;
+                    case 'add':
+                        $controller_obj->add();
+                        break;
+                    case 'store':
+                        $controller_obj->store();
+                        break;
+                    case 'delete':
+                        $controller_obj->delete();
+                        break;
+                    case 'edit':
+                        $controller_obj->edit();
+                        break;
+                    case 'update':
+                        $controller_obj->update();
+                        break;
+                    default:
+                        $controller_obj->list();
+                        break;
+                }
+                break;
         case 'loaisanpham':
-            require_once('./Controllers/TypeProductController.php');
+            require_once('Controllers/TypeProductController.php');
             $controller_obj = new LoaisanphamController();
             switch ($act) {
                 case 'list':

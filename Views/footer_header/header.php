@@ -153,7 +153,7 @@
                                                 <li class="group-login__list-item"><a href="?act=taikhoan&xuli=account">Tài khoản</a></li>
                                                 <li class="group-login__list-item"><a href="?act=taikhoan&xuli=dangxuat">Đăng xuất</a></li>
                                                 <?php
-                                                if(isset($_SESSION['isLogin_Admin']) || isset($_SESSION['isLogin_Nhanvien'])){ ?>
+                                                if(isset($_SESSION['isLogin_Admin']) || isset($_SESSION['isLogin_Nhanvien']) || isset($_SESSION['isLogin_GiaoHang'])){ ?>
                                                 <li class="group-login__list-item"><a href="admin/?mod=login">Trang quản lý</a></li>
                                                 <?php }}else{ ?>
                                                 <li class="group-login__list-item"><b>Khách hàng</b></li>
@@ -177,7 +177,9 @@
 <nav id="nav">
     <div class="container">
         <ul class="nav-list">
-            <li class="nav-list__item active"><a href="?act=home">Trang chủ</a></li>
+            <li class="nav-list__item">
+                <a href="?act=home" class="nav-list__item-link">Trang chủ</a>
+            </li>
             <li class="nav-list__item">
                 <a href="">
                     Sản phẩm
@@ -186,17 +188,20 @@
                 <ul class="nav-item__down">
                     <?php foreach($data_danhmuc as $row) { ?>
 
-                            <li class="nav-item__down-item"><a href="?act=product&cate=<?=$row['MaDM'] ?>"><?=$row['TenDM']?></a></li>
+                            <li class="nav-item__down-item">
+                                <a href="?act=product&cate=<?=$row['MaDM'] ?>"><?=$row['TenDM']?>
+                                </a>
+                            </li>
 
                             <?php  } ?>
                     
                     
                 </ul>
             </li>
-            <li class="nav-list__item"><a href="?act=product&cate=2">Bánh kẹo</a></li>
-            <li class="nav-list__item"><a href="?act=product&cate=3">Đồ khô, gạo</a></li>
-            <li class="nav-list__item"><a href="?act=">Liên hệ</a></li>
-            <li class="nav-list__item"><a href="?act=">Tin tức</a></li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=product&cate=2">Bánh kẹo</a></li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=product&cate=3">Đồ khô, gạo</a></li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=">Liên hệ</a></li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=">Tin tức</a></li>
         </ul>
     </div>
 </nav>

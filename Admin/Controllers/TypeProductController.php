@@ -1,5 +1,7 @@
 <?php
-require_once("./Models/typeproduct.php");
+	//echo "<script>alert('có mặt')</script>";
+	require_once("./Models/typeproduct.php");
+
 class LoaisanphamController
 {
 	var $loaisanpham_model;
@@ -7,9 +9,15 @@ class LoaisanphamController
 	{
 		$this->loaisanpham_model = new loaisanpham();
 	}
-
-	public function list()
+	public function getTypeByIdCate($idcate)
 	{
+		echo "<script>alert('có mặt')</script>";
+		$data = array();
+		$data = $this->loaisanpham_model->getTypeById($idcate); 
+		return $data;
+	}
+	public function list()
+	{	
 		$data = array();
 		$data = $this->loaisanpham_model->all(); 
 		require_once("./Views/indexAD.php");
@@ -74,3 +82,4 @@ class LoaisanphamController
 		$this->loaisanpham_model->update($data);
 	}
 }
+?>

@@ -1,7 +1,7 @@
 
     <?php 
     ?>
-    <form class="add-product-form"action="?mod=sanpham&act=store" method="POST" enctype="multipart/form-data">
+    <form id ="table"c lass="add-product-form"action="?mod=sanpham&act=store" method="POST" enctype="multipart/form-data">
     <?php if (isset($_COOKIE['msg'])) { ?>
     <div class="alert alert-warning">
       <strong>Thông báo</strong> <?= $_COOKIE['msg'] ?>
@@ -10,7 +10,7 @@
     <h3>Thêm sản phẩm mới : </h3>
     <fieldset class="add-product-item">
         <label>Danh mục</label>
-        <select class="form-control" name="MaDM" id="add-cate">
+        <select id="MaDM" class="form-control" name="MaDM">
        <?php foreach ($data_dm as $row){ ?>
         <option value="<?= $row['MaDM'] ?>"><?= $row['TenDM'] ?></option>
             <?php }?>
@@ -18,10 +18,10 @@
     </fieldset>
     <fieldset class="add-product-item">
         <label>Loại sản phẩm</label>
-        <select class="form-control" name="MaLSP" id="add-cate">
-        <?php foreach ($data_lsp as $row) { ?>
+        <select id="MaLSP" class="form-control" name="MaLSP">
+        <!-- <?php foreach ($data_lsp as $row) { ?>
           <option value="<?= $row['MaLSP'] ?>"><?= $row['TenLSP'] ?></option>
-        <?php } ?>
+        <?php } ?> -->
         </select>
     </fieldset>
     <fieldset class="add-product-item">
@@ -68,9 +68,4 @@
     
    
 </form>
-<script>
-  $(document).ready(function() {
-    $('#dataTable').DataTable();
-  });
-</script>
 

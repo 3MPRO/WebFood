@@ -4,12 +4,15 @@ let item = document.querySelector.bind(document)
 let items= document.querySelectorAll.bind(document)
 const listbtnAddCart = document.querySelectorAll('.add-cart')
 let headerEl = document.getElementById('header')
-var sticky = headerEl.offsetTop+50;
+var sticky = headerEl.offsetTop+200;
 var rootElement = document.documentElement
 console.log(listbtnAddCart);
 
 const App = {
     defaulthref: listbtnAddCart.length != 0 ? listbtnAddCart[0].search.substring(0, listbtnAddCart[0].search.length - 1) : '',
+    arrayValueCheckbox: [],
+    arrayValuePrice: [],
+    statusCheckbox: true,
     sliderProducts: function(element) {
       var $sliderList = $(`${element}`)
 
@@ -35,6 +38,7 @@ const App = {
         });
     },
     eventDom: function() {
+        let _this = this;
         window.addEventListener('scroll',()=> {
             if (window.pageYOffset >= sticky) {
                 headerEl.classList.add("sticky")
@@ -52,7 +56,107 @@ const App = {
               })
         })
 
+        // Active nav link
+        const currentLocation = location.href
+        const menuItems = items('.nav-list__item .nav-list__item-link')
+        for (let i = 0; i < menuItems.length; i++) {
+            if(menuItems[i].href === currentLocation){
+                menuItems[i].className = 'active'
+            }
+        }
+
+        // Checkbox
+        const listCheckbox = items('.toggle__input')
+        
+        listCheckbox.forEach((element, index) => {
+            console.log(element.getAttribute("id"));
+            element.addEventListener('click',function(){
+                let valueCheck = this.value
+                var listValue = _this.arrayValueCheckbox
+                this.classList.toggle('checkbox-checked')
+
+                let valuePrice = this.getAttribute("id")
+                var listValuePrice = _this.arrayValuePrice
+
+                console.log("day la truong hop ngoai if ",listValue);
+                if(this.classList.contains('checkbox-checked')) {
+                    if(listValue.length == 0){
+                        listValue.push(valueCheck)
+                        console.log("day la truong hop bang 0",listValue);
+                        _this.renderUICheckbox(listValue)
+                        localStorage.setItem('listValue',JSON.stringify(listValue))
+
+                        // listValuePrice
+                        listValuePrice.push(valuePrice)
+                        localStorage.setItem('listValuePrice',JSON.stringify(listValuePrice))
+                    } else {
+                        listValue = JSON.parse(localStorage.getItem('listValue'))
+                        listValue.push(valueCheck)
+                        console.log("day truong hop khac 0",listValue);
+                        _this.renderUICheckbox(listValue)
+                        localStorage.setItem('listValue',JSON.stringify(_this.unique(listValue)))
+
+                        // listValuePrice
+                        listValuePrice = JSON.parse(localStorage.getItem("listValuePrice"))
+                        listValuePrice.push(valuePrice)
+                        localStorage.setItem('listValuePrice',JSON.stringify(_this.unique(listValuePrice)))
+                    }
+                }else{
+                    const newListValue = JSON.parse(localStorage.getItem('listValue'))
+                    let filterResult = newListValue.filter(function(element){
+                        return element !== valueCheck;
+                      });
+                    console.log("day truong hop uncheck vi tri", filterResult);
+                    localStorage.setItem('listValue',JSON.stringify(_this.unique(filterResult)))
+                    _this.renderUICheckbox(filterResult)
+
+                    // listValuePrice
+                    const newListValuePrice = JSON.parse(localStorage.getItem('listValuePrice'))
+                    let filterResultPrice = newListValuePrice.filter(function(element){
+                        return element != valuePrice
+                    })
+                    localStorage.setItem('listValuePrice',JSON.stringify(_this.unique(filterResultPrice)))
+                    
+                }
+            })
+        });
+
     },
+    renderUICheckbox: function(arr) {
+        let elFilterSelected = item('.filter__conterner__selected')
+        let elFilterList = item('.filter-container__selected-filter-list ul')
+        if(arr.length > 0) {
+            elFilterSelected.classList.remove('filter__hiddent')
+            rootElement.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+            let newArr = this.unique(arr)
+            var htmls = newArr.map((value) => {
+                return `
+                <li class="filter-container__selected-filter-item">
+                    <a href="">
+                        <i class="fa fa-close"></i>
+                        ${value}
+                    </a>
+                </li>
+                `
+            }).join('')
+            elFilterList.innerHTML = htmls
+            
+        } else {
+            elFilterSelected.classList.add('filter__hiddent')
+        }
+
+        
+    },
+    unique: function(arr) {
+        var newArr = []
+        newArr = arr.filter(function (item) {
+          return newArr.includes(item) ? '' : newArr.push(item)
+        })
+        return newArr
+      },
     // Slider thumb detail
     productDetailSlider: function() {
         const listThumbnailDetails = document.querySelectorAll('.product-detail-left__list-thumb ul li')
@@ -124,6 +228,14 @@ const App = {
             }
         })
     },
+    startCount: function() {
+        localStorage.setItem('timeLeft', JSON.stringify({
+            d: 15,
+            h: 0,
+            m: 0,
+            s: 0,
+        }))
+    },
     start: function() {
         this.sliderProducts('#owl-fruilt-slider')
         this.sliderProducts('#owl-slider-dry')
@@ -132,6 +244,8 @@ const App = {
         this.productDetailSlider()
         this.addCart()
         this.quantityCart()
+        this.startCount()
+        console.log(this.arrayValueCheckbox)
     }  
 }
  

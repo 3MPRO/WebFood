@@ -27,11 +27,18 @@ class Login extends Model
                 if($login['MaQuyen'] == 3){
                 $_SESSION['isLogin_Nhanvien'] = true;
                 $_SESSION['login'] = $login;
-                }else{
-                    $_SESSION['isLogin'] = true;
-                    $_SESSION['login'] = $login;
                 }
-            }
+                else{
+                    if($login['MaQuyen'] == 4){
+                    $_SESSION['isLogin_GiaoHang'] = true;
+                    $_SESSION['login'] = $login;
+                    }
+                    else{
+                        $_SESSION['isLogin'] = true;
+                        $_SESSION['login'] = $login;
+                    }
+                }
+            } 
             header('Location: ?mod=login');
         } else {
             setcookie('msg1', 'Đăng nhập không thành công', time() + 5);
@@ -47,6 +54,10 @@ class Login extends Model
         }
         if(isset($_SESSION['isLogin_Nhanvien'])){
             unset($_SESSION['isLogin_Nhanvien']);
+            unset($_SESSION['login']);
+        }
+        if(isset($_SESSION['isLogin_GiaoHang'])){
+            unset($_SESSION['isLogin_GiaoHang']);
             unset($_SESSION['login']);
         }
         if(isset($_SESSION['isLogin'])){
@@ -120,8 +131,7 @@ class Login extends Model
                  header('Location: ?act=taikhoan&xuli=account#doitk');
              }
         }
-       
-      }
+    }
     
     function error()
     {

@@ -5,7 +5,7 @@
 <?php } ?>
 <hr>
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-    <form action="?mod=danhmuc&act=update" method="POST" role="form" enctype="multipart/form-data">
+    <form action="?mod=category&act=update" method="POST" role="form" enctype="multipart/form-data">
         <div class="form-group">
             <label for="">Mã danh mục</label>
             <input type="text" class="form-control" id="" placeholder="" name="MaDM" value="<?= $data['MaDM'] ?>">

@@ -3,7 +3,8 @@
       
     ?>
     <form class="add-product-form"action="?mod=sanpham&act=update" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="MaSP" value="<?= $data['MaSP'] ?>">
+    <input type="hidden" id="MaSP" value="<?= $data['MaSP'] ?>">
+    <input type="hidden" id="idtype" value="<?= $data['MaLSP'] ?>">
     <?php if (isset($_COOKIE['msg'])) { ?>
     <div class="alert alert-warning">
       <strong>Thông báo</strong> <?= $_COOKIE['msg'] ?>
@@ -12,7 +13,7 @@
     <h3>Thêm sản phẩm mới : </h3>
     <fieldset class="add-product-item">
         <label>Danh mục</label>
-        <select class="form-control" name="MaDM" id="add-cate">
+        <select id="MaDM" class="form-control" name="MaDM" id="add-cate">
        <?php foreach ($data_dm as $row){ ?>
         <option <?= ($row['MaDM'] == $data['MaDM'])?'selected':''?> value="<?= $row['MaDM'] ?>"> <?= $row['TenDM'] ?>  </option>
             <?php }?>
@@ -20,7 +21,7 @@
     </fieldset>
     <fieldset class="add-product-item">
         <label>Loại sản phẩm</label>
-        <select class="form-control" name="MaLSP" id="add-cate">
+        <select class="form-control" name="MaLSP" id="MaLSP">
         <?php foreach ($data_lsp as $row) { ?>
           <option <?= ($row['MaLSP'] == $data['MaLSP'])?'selected':''?> value="<?= $row['MaLSP'] ?>"><?= $row['TenLSP'] ?></option>
         <?php } ?>
