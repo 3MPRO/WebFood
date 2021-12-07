@@ -69,8 +69,8 @@
    
 </form>
 <script>
-    $(document).ready(function() {
-      $('#summernote').summernote();
-    });
+  $(document).ready(function() {
+    $('#dataTable').DataTable();
+  });
 </script>
 
