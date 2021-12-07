@@ -65,7 +65,10 @@
         case'cart':
             require_once("cart/cart.php");
             break;
-        default :
+        case "pay":
+            require_once("pay.php");
+            break;
+        default:
             require_once("error-404.php");
         break;
     }

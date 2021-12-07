@@ -123,7 +123,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="cart-content-inner__checkout">
-                                                    <a href="" class="cart-content-inner__btn btn-checkout">Thanh toán</a >
+                                                    <a href="?act=pay" class="cart-content-inner__btn btn-checkout">Thanh toán</a >
                                                 </div>
                                                 <div class="cart-content-inner__checkout">
                                                     <a href="?act=cart"class="cart-content-inner__btn btn-show">Xem giỏ hàng</a>

@@ -146,6 +146,10 @@ const App = {
             
         } else {
             elFilterSelected.classList.add('filter__hiddent')
+            rootElement.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
         }
 
         

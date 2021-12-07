@@ -109,6 +109,11 @@ switch ($mod) {
                 break;
             }
             break;
+    case 'pay':
+        require_once('./Controllers/PayController.php');
+        $objCate = new PayController();
+        $objCate->list_cart();
+        break;
     default : 
         require_once('home.php');
 }

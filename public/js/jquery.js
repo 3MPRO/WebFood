@@ -17,6 +17,26 @@ $(document).ready(function(){
         $(this).parents(".search-box-action").find('input[type="text"]').val($(this).text());
         $(this).parent(".search-results").empty();
     });
+
+
+    $(".city").change(function() {
+        var id = $(".city").val();
+        $.post("Models/choose_city/data.php", {id: id}, function(data) {
+            $(".huyen").html(data);
+        })
+    })
+    $(".huyen").change(function() {
+        var idHuyen = $(".huyen").val();
+        $.post("Models/choose_city/ward.php",{idHuyen: idHuyen},function(data) {
+            $(".xa").html(data);
+        })
+    })
+    $(".xa").change(function() {
+        var idXa = $(".xa").val();
+        $.post("Models/choose_city/village.php",{idXa: idXa},function(data) {
+            $(".thon").html(data);
+        })
+    })
 });
 
 ///
