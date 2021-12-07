@@ -126,19 +126,7 @@
                     $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
                     $act = isset($_GET['act']) ? $_GET['act'] : "admin";
                     switch ($mod) {
-                      // case 'hoadon':
-                      //   switch ($act) {
-                      //     case 'list':
-                      //       require_once('MVC/Views/hoadon/list.php');
-                      //       break;
-                      //     case 'chitiet':
-                      //       require_once('MVC/Views/hoadon/detail.php');
-                      //       break;
-                      //     default:
-                      //       require_once('MVC/Views/hoadon/list.php');
-                      //       break;
-                      //   }
-                      //   break;
+                      
                       case 'loaisanpham':
                         switch ($act) {
                           case 'list':
@@ -193,19 +181,6 @@
                                 break;
                               }
                               break;
-                    //   case 'khuyenmai':
-                    //     switch ($act) {
-                    //       case 'list':
-                    //         require_once('MVC/views/khuyenmai/list.php');
-                    //         break;
-                    //       case 'detail':
-                    //         require_once('MVC/views/khuyenmai/detail.php');
-                    //         break;
-                    //       default:
-                    //         require_once('MVC/views/khuyenmai/list.php');
-                    //         break;
-                    //     }
-                    //     break;
                      }
                   }
                   else{
@@ -213,7 +188,7 @@
                       $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
                       $act = isset($_GET['act']) ? $_GET['act'] : "admin";
                       switch ($mod) {
-                      
+
                        }
                     }
                   }
