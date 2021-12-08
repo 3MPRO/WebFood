@@ -39,7 +39,7 @@
                 </a>
             </li>
             <li>
-                <a class="has-arrow" href="#" aria-expanded="true">
+                <a class="has-arrow" href="?mod=bill" aria-expanded="true">
                     <div class="icon_menu">
                         <i class="fas fa-money-bill-wave"></i>
                         <span>Quản lý hóa đơn</span>
