@@ -194,6 +194,19 @@
                                 break;
                               }
                               break;
+                            case 'bill':
+                              switch ($act) {
+                                case 'list':
+                                  require_once('bill/list.php');
+                                  break;
+                                case 'chitiet':
+                                  require_once('bill/detail.php');
+                                  break;
+                                default:
+                                  require_once('bill/list.php');
+                                  break;
+                              }
+                              break;
                      }
                   }
                   else{
@@ -201,16 +214,16 @@
                       $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
                       $act = isset($_GET['act']) ? $_GET['act'] : "admin";
                       switch ($mod) {
-                        case 'bill':
+                        case 'order':
                           switch ($act) {
                             case 'list':
-                              require_once('bill/list.php');
+                              require_once('order/list.php');
                               break;
                             case 'chitiet':
-                              require_once('bill/detail.php');
+                              require_once('order/detail.php');
                               break;
                             default:
-                              require_once('bill/list.php');
+                              require_once('order/list.php');
                               break;
                           }
                           break;

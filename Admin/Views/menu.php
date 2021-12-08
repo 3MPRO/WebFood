@@ -62,5 +62,13 @@
                     </div>
                 </a>
             </li>
+            <li>
+                <a class="has-arrow" href="?mod=order" aria-expanded="true">
+                    <div class="icon_menu">
+                        <i class="fas fa-balance-scale-left"></i>
+                        <span>Quản lý đơn hàng</span>
+                    </div>
+                </a>
+            </li>
         </ul>
     </nav>

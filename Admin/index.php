@@ -170,7 +170,28 @@ session_start();
                         $controller_obj->list();
                         break;
                 }
-                break;   
+                break;  
+            case 'order':
+                require_once('Controllers/OrderController.php');
+                $controller_obj = new OrderController();
+                switch ($act) {
+                    case 'list':
+                        $controller_obj->list();
+                        break;
+                    case 'chitiet':
+                        $controller_obj->chitiet();
+                        break;
+                    case 'delete':
+                        $controller_obj->delete();
+                        break;
+                    case 'xetduyet':
+                        $controller_obj->xetduyet();
+                        break;
+                    default:
+                        $controller_obj->list();
+                        break;
+                }
+                break; 
         default:
         header('location: ?mod=nguoidung');
         }
