@@ -1,12 +1,12 @@
 <?php
     require_once("connection.php");
     $mysqli = new mysqli("localhost","root","","webfood");
+    $danhmuc = $_POST['danhmuc'];
     if(isset($_POST['listValue'])){
         $listValue = $_POST['listValue'];
-        $strPrice = '';
         if(count($listValue) > 0){
             foreach ($listValue as $item){
-                $query = "SELECT * FROM danhmuc, loaisanpham, sanpham, hinhanh WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and danhmuc.TenDM = 'Bánh kẹo' and sanpham.DonGia between {$item} GROUP by sanpham.MaSP";
+                $query = "SELECT * FROM danhmuc, loaisanpham, sanpham, hinhanh WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and danhmuc.TenDM = '{$danhmuc}' and sanpham.DonGia between {$item} GROUP by sanpham.MaSP";
                 $result = $mysqli->query($query);
                 $row =  $result -> fetch_array(MYSQLI_ASSOC);
                 if($row){
@@ -44,13 +44,10 @@
                     }
                     echo $output;
                 }
-                else {
-                    echo '<h2>Error</h2>';
-                }
             }
         } 
     }else {
-        $query = "SELECT * FROM danhmuc, loaisanpham, sanpham, hinhanh WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and danhmuc.TenDM = 'Bánh kẹo' and sanpham.DonGia GROUP by sanpham.MaSP";
+        $query = "SELECT * FROM danhmuc, loaisanpham, sanpham, hinhanh WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and danhmuc.TenDM = '{$danhmuc}' and sanpham.DonGia GROUP by sanpham.MaSP";
         $result = $mysqli->query($query);
         $row =  $result -> fetch_array(MYSQLI_ASSOC);
         if($row){

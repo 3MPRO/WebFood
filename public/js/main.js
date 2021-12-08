@@ -121,6 +121,21 @@ const App = {
             })
         });
 
+
+        // remove checkbox
+        const elRemoveAll = item('.filter__remove')
+        elRemoveAll.onclick = () => {
+            const listValue = []
+            const listValuePrice = []
+            localStorage.setItem('listValue', JSON.stringify(listValue))
+            localStorage.setItem('listValuePrice', JSON.stringify(listValuePrice))
+
+            listCheckbox.forEach((element, index) => {
+                element.checked = false
+                element.classList.remove('checkbox-checked')
+            })
+            _this.renderUICheckbox([])
+        }
     },
     renderUICheckbox: function(arr) {
         let elFilterSelected = item('.filter__conterner__selected')
@@ -135,10 +150,10 @@ const App = {
             var htmls = newArr.map((value) => {
                 return `
                 <li class="filter-container__selected-filter-item">
-                    <a href="">
+                    <span class="filter-selected__item">
                         <i class="fa fa-close"></i>
                         ${value}
-                    </a>
+                    </span>
                 </li>
                 `
             }).join('')
@@ -151,8 +166,32 @@ const App = {
                 behavior: "smooth"
             })
         }
-
-        
+        const elRemoves = items('.filter-selected__item')
+        this.removeElements(elRemoves, arr)
+    },
+    removeElements: function(elRemoves, arr){
+        console.log(arr);
+        const _this = this
+        if(elRemoves.length > 1) {
+            elRemoves.forEach((element, index) => {
+                element.addEventListener('click', function(){
+                    let listValuePrice = _this.getList()
+                    if(listValuePrice.length == 1) {
+                        listValuePrice.splice(0, 1)
+                    }else {
+                        listValuePrice.splice(index, 1)
+                    }
+                    element.remove()
+                    console.log('vi tri element', index);
+                    console.log(listValuePrice);
+                    localStorage.setItem('listValuePrice', JSON.stringify(listValuePrice))
+                })
+            })
+        }
+    },
+    getList: function() {
+        const listValuePrice =JSON.parse(localStorage.getItem('listValuePrice'))
+        return listValuePrice
     },
     unique: function(arr) {
         var newArr = []
