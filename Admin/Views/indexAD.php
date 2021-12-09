@@ -119,7 +119,40 @@
                               break;
                           }
                           break;
+                          case 'bill':
+                            switch ($act) {
+                              case 'list':
+                                require_once('bill/list.php');
+                                break;
+                              case 'chitiet':
+                                require_once('bill/detail.php');
+                                break;
+                              default:
+                                require_once('bill/list.php');
+                                break;
+                            }
+                            break;
+                            case 'khuyenmai':
+                              switch ($act) {
+                                case 'list':
+                                  require_once('Views/khuyenmai/list.php');
+                                  break;
+                                case 'add':
+                                  require_once('Views/khuyenmai/add.php');
+                                  break;
+                                case 'detail':
+                                  require_once('Views/khuyenmai/detail.php');
+                                  break;
+                                case 'edit':
+                                  require_once('Views/khuyenmai/edit.php');
+                                  break;
+                                default:
+                                  require_once('Views/khuyenmai/list.php');
+                                  break;
+                              }
+                              break;
                         }
+   
               }
               else {
                   if (isset($_SESSION['isLogin_Nhanvien']) && $_SESSION['isLogin_Nhanvien'] == true) {
@@ -181,14 +214,59 @@
                                 break;
                               }
                               break;
+                            case 'bill':
+                              switch ($act) {
+                                case 'list':
+                                  require_once('bill/list.php');
+                                  break;
+                                case 'chitiet':
+                                  require_once('bill/detail.php');
+                                  break;
+                                default:
+                                  require_once('bill/list.php');
+                                  break;
+                              }
+                              break;
+                              case 'khuyenmai':
+                                switch ($act) {
+                                  case 'list':
+                                    require_once('Views/khuyenmai/list.php');
+                                    break;
+                                  case 'add':
+                                    require_once('Views/khuyenmai/add.php');
+                                    break;
+                                  case 'detail':
+                                    require_once('Views/khuyenmai/detail.php');
+                                    break;
+                                  case 'edit':
+                                    require_once('Views/khuyenmai/edit.php');
+                                    break;
+                                  default:
+                                    require_once('Views/khuyenmai/list.php');
+                                    break;
+                                }
+                                break;
                      }
+                     
                   }
                   else{
                     if (isset($_SESSION['isLogin_GiaoHang']) && $_SESSION['isLogin_GiaoHang'] == true) {
                       $mod = isset($_GET['mod']) ? $_GET['mod'] : "login";
                       $act = isset($_GET['act']) ? $_GET['act'] : "admin";
                       switch ($mod) {
-
+                        case 'order':
+                          switch ($act) {
+                            case 'list':
+                              require_once('order/list.php');
+                              break;
+                            case 'chitiet':
+                              require_once('order/detail.php');
+                              break;
+                            default:
+                              require_once('order/list.php');
+                              break;
+                          }
+                          break;
                        }
                     }
                   }

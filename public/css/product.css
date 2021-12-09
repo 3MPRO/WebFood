@@ -510,3 +510,9 @@ li.filter-container__selected-filter-item {
 h1#product-list__title__h1 {
     font-size: 24px;
 }
+.container-inforChange .title-name-result{
+    margin-top: 5px;
+}
+.title-name-result--false{
+    color: red;
+}

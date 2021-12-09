@@ -1,5 +1,5 @@
 <?php
-
+  
 function getKey() {
     $link = mysqli_connect("localhost", "root", "", "webfood");
     if(isset($_REQUEST["term"])){
@@ -15,7 +15,7 @@ function getKey() {
             // Cố gắng thực thi câu lệnh đã chuẩn bị
             if(mysqli_stmt_execute($stmt)){
                 $result = mysqli_stmt_get_result($stmt);
-                
+              
                 // Kiểm tra số lượng row trong kết quả
                 if(mysqli_num_rows($result) > 0){
                     // Tìm nạp các hàng kết quả dưới dạng mảng kết hợp

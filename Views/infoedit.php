@@ -18,11 +18,8 @@
                     </div>
                 </div>
                 <div class="container-infor">
-                  <?php if(isset($data)) { 
-                  
+                  <?php if(isset($data)) {    
                       ?>
-                    
-                    
                         <label class="container-infor__title">Thông Tin Tài Khoản</label>
                         <h2 class ="container-infor__name">Khách hàng: <span><?= $data['Ho']. " ".$data['Ten'] ?></span></h2>
                         <input checked="true" class= "infoChange-type" type="radio" name="radio-changeInfor" id="radio-changeInfor"><span>Thông tin cá nhân </span>
@@ -32,7 +29,7 @@
                             <fieldset class="container-infor__item name-login">
                                 <label>Tên Đăng nhập</label>
                                 <span class="required">*</span>
-                                <input name = "TaiKhoan" type="text" value="<?= $data['TaiKhoan']?>" class="form-control form-control-lg edit  " placeholder=""/>
+                                <input id="nameLogin" name = "TaiKhoan" type="text" value="<?= $data['TaiKhoan']?>" class="form-control form-control-lg edit  " placeholder=""/>
                                 <div class="search-result"></div>
                             </fieldset>
                             </fieldset>
@@ -107,4 +104,11 @@
                
             </div>
         </section>
-    
+    <script>
+        document.ready(function(){
+     $('#nameLogin input[type="text"]').on("keyup input", function(){
+        alert("abcjakd");
+        console.log("ngu ngo");
+    })
+})
+    </script>
