@@ -124,18 +124,20 @@ const App = {
 
         // remove checkbox
         const elRemoveAll = item('.filter__remove')
-        elRemoveAll.onclick = () => {
-            const listValue = []
-            const listValuePrice = []
-            localStorage.setItem('listValue', JSON.stringify(listValue))
-            localStorage.setItem('listValuePrice', JSON.stringify(listValuePrice))
-
-            listCheckbox.forEach((element, index) => {
-                element.checked = false
-                element.classList.remove('checkbox-checked')
+        if(elRemoveAll!==null) {
+            elRemoveAll.addEventListener('click',() => {
+                const listValue = []
+                const listValuePrice = []
+                localStorage.setItem('listValue', JSON.stringify(listValue))
+                localStorage.setItem('listValuePrice', JSON.stringify(listValuePrice))
+    
+                listCheckbox.forEach((element, index) => {
+                    element.checked = false
+                    element.classList.remove('checkbox-checked')
+                })
+                _this.renderUICheckbox([])
             })
-            _this.renderUICheckbox([])
-        }
+        } 
     },
     renderUICheckbox: function(arr) {
         let elFilterSelected = item('.filter__conterner__selected')
@@ -151,7 +153,6 @@ const App = {
                 return `
                 <li class="filter-container__selected-filter-item">
                     <span class="filter-selected__item">
-                        <i class="fa fa-close"></i>
                         ${value}
                     </span>
                 </li>
@@ -164,28 +165,6 @@ const App = {
             rootElement.scrollTo({
                 top: 0,
                 behavior: "smooth"
-            })
-        }
-        const elRemoves = items('.filter-selected__item')
-        this.removeElements(elRemoves, arr)
-    },
-    removeElements: function(elRemoves, arr){
-        console.log(arr);
-        const _this = this
-        if(elRemoves.length > 1) {
-            elRemoves.forEach((element, index) => {
-                element.addEventListener('click', function(){
-                    let listValuePrice = _this.getList()
-                    if(listValuePrice.length == 1) {
-                        listValuePrice.splice(0, 1)
-                    }else {
-                        listValuePrice.splice(index, 1)
-                    }
-                    element.remove()
-                    console.log('vi tri element', index);
-                    console.log(listValuePrice);
-                    localStorage.setItem('listValuePrice', JSON.stringify(listValuePrice))
-                })
             })
         }
     },
@@ -229,16 +208,23 @@ const App = {
         listbtnAddCart.forEach(btnAddCart => {
             btnAddCart.addEventListener('click',function(e){
                 console.log(btnAddCart.href);
-                setTimeout(function(){
-                    modelAddCart.style = style
-                },500)
-                setTimeout(function(){
-                    console.log('setInterval 2');
-                    modelAddCart.style = 'right: -200px;'
-                },3000)
+                Toastify({
+                    text: "Bạn vừa thêm sản phẩm vào giỏ hàng",
+                    duration: 4000,
+                    destination: "https://github.com/apvarun/toastify-js",
+                    newWindow: true,
+                    close: true,
+                    gravity: "top", // `top` or `bottom`
+                    position: "right", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                        background: "linear-gradient(to right, #00b09b, #96c93d)",
+                    },
+                    onClick: function(){} // Callback after click
+                }).showToast();
                 setTimeout(function(){
                     window.location.href = btnAddCart.href
-                },4000)
+                },2000)
                 e.preventDefault()
             //    clearInterval(idTime)
             })

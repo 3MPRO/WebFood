@@ -93,7 +93,7 @@
             </span>
         </div>
         <div class="cart-page-footer-button">
-            <a href="">Thanh toán</a>
+            <a href="?act=pay">Thanh toán</a>
         </div>
     </div>
 </main>
