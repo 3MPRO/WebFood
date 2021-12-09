@@ -4,7 +4,6 @@ $(document).ready(function(){
         var inputVal= $(this).val();
         var resultDropdown= $(".search-results");
         if(inputVal.length){
-           
             $.get("Views/backend-search.php", {term: inputVal}).done(function(data){
                 resultDropdown.html(data);
                 
@@ -39,19 +38,23 @@ $(document).ready(function(){
     })
 });
 
-///
+/// edit infor
 $(document).ready(function(){
     
     $('.name-login input[type="text"]').on("keyup input", function(){
         var inputVal = $(this).val();
-        var resultDropdown = $(this).siblings(".search-result");
+        var result= $(".search-result");
+       /// var result = $(this).siblings(".search-result");
         if(inputVal.length){
-            console.log('con chim');
-            $.get("./Views/backend-infor.php",{term: inputVal}).done(function(data){
-                resultDropdown.html(data);
-            });
+            console.log($(this).val());
+            // console.log('con chim');
+           // alert('da toi day');
+          $.get("Views/backend-infor.php", {term: inputVal}).done(function(data){
+            result.html(data);
+        });
         }else{
-            resultDropdown.empty();
+            result.empty();
+            console.log('con');
         }
     });
     $(document).on("click", ".search-result p", function(){

@@ -132,7 +132,27 @@
                                 break;
                             }
                             break;
+                            case 'khuyenmai':
+                              switch ($act) {
+                                case 'list':
+                                  require_once('Views/khuyenmai/list.php');
+                                  break;
+                                case 'add':
+                                  require_once('Views/khuyenmai/add.php');
+                                  break;
+                                case 'detail':
+                                  require_once('Views/khuyenmai/detail.php');
+                                  break;
+                                case 'edit':
+                                  require_once('Views/khuyenmai/edit.php');
+                                  break;
+                                default:
+                                  require_once('Views/khuyenmai/list.php');
+                                  break;
+                              }
+                              break;
                         }
+   
               }
               else {
                   if (isset($_SESSION['isLogin_Nhanvien']) && $_SESSION['isLogin_Nhanvien'] == true) {
@@ -207,7 +227,27 @@
                                   break;
                               }
                               break;
+                              case 'khuyenmai':
+                                switch ($act) {
+                                  case 'list':
+                                    require_once('Views/khuyenmai/list.php');
+                                    break;
+                                  case 'add':
+                                    require_once('Views/khuyenmai/add.php');
+                                    break;
+                                  case 'detail':
+                                    require_once('Views/khuyenmai/detail.php');
+                                    break;
+                                  case 'edit':
+                                    require_once('Views/khuyenmai/edit.php');
+                                    break;
+                                  default:
+                                    require_once('Views/khuyenmai/list.php');
+                                    break;
+                                }
+                                break;
                      }
+                     
                   }
                   else{
                     if (isset($_SESSION['isLogin_GiaoHang']) && $_SESSION['isLogin_GiaoHang'] == true) {

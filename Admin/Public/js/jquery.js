@@ -47,4 +47,3 @@ window.onload = function(){
     })
 }
  });
-////// the end cate to view type
