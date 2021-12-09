@@ -54,6 +54,7 @@
                     <option <?= ($data['MaQuyen'] == '1')?'selected':''?> value="1"> Khách hàng</option>
                     <option <?= ($data['MaQuyen'] == '2')?'selected':''?> value="2"> Quản trị viên</option>
                     <option <?= ($data['MaQuyen'] == '3')?'selected':''?> value="3"> Nhân viên</option>
+                    <option <?= ($data['MaQuyen'] == '4')?'selected':''?> value="4"> Giao Hàng</option>
                </select>
            </div>
            </div>
