@@ -26,10 +26,6 @@ class LoginController
             }
             require_once('./Views/indexview.php');     
         }
-       
-
-
-        
     function login()
     {
        

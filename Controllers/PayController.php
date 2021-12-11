@@ -1,11 +1,14 @@
 <?php
 require_once("Models/PayModel.php");
+require_once("Models/login.php");
 class PayController
 {
     var $pay_model;
+    var $login_model;
     public function __construct()
     {
         $this->pay_model = new PayModel();
+        $this->login_model = new Login();
     }
     function list_cart()
     {

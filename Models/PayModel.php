@@ -15,6 +15,9 @@ class PayModel extends Model
         return $data;
     }
 
+    function insert_order() {
+        
+    }
     // function getDistrict($key) {
     //     $query = "SELECT *from district where provinceid = '$key'";
     //     require("result.php");
