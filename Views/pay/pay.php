@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <form action="" method="POST">
+    <form action="?act=pay&xuli=saved" method="POST">
         <div class="row">
             <div class="col-lg-4">
                 <div class="section__content-input">
@@ -30,7 +30,7 @@
                             <fieldset class="form-group">
                                 <label>Số điện thoại</label>
                                 <span class="required">*</span>
-                                <input type="tel" name="billingPhone" class="form-control form-control-lg" placeholder="Số điện thoại" required value=" <?=$_SESSION['login']['SDT'] ?>"/>
+                                <input type="tel" name="SDT" class="form-control form-control-lg" placeholder="Số điện thoại" required value=" <?=$_SESSION['login']['SDT'] ?>"/>
                             </fieldset>
                             <fieldset class="form-group">
                                 <label>Địa chỉ</label>
@@ -146,7 +146,7 @@
                             Quay lại giỏ hàng
                         </a>
                         <div class="pay-order__button">
-                            <button class="pay-order__button-check" type="submit">Đặt hàng</button>
+                            <button class="pay-order__button-check" type="submit" name="submit">Đặt hàng</button>
                         </div>
                     </div>
                 </div>

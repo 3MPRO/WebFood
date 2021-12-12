@@ -1516,3 +1516,65 @@ button.pay-order__button-check {
     right: -8px;
     color: #fff;
 }
+
+.order-complete__head {
+    display: flex;
+    align-items: center;
+}
+
+.order-complete__head .icon-check {
+    margin-right: 20px;
+}
+
+.order-complete__head-right h2 {
+    padding: 2px 0;
+}
+
+.order-complete__content {
+    display: flex;
+    padding: 20px 15px;
+    border: 1px dashed;
+    margin: 20px 0;
+    justify-content: space-between;
+}
+
+.order-complete__content-infor {
+    margin-bottom: 20px;
+}
+
+.order-complete__content span {
+    line-height: 1.4;
+    display: block;
+}
+
+.order-summary__wrapper {
+    background-color: #fafafa;
+    height: 200px;
+}
+
+.order-summary__head {
+    border-bottom: 4px solid;
+    padding: 8px 20px;
+}
+
+.order-summary__content div {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.order-summary__content {
+    border-bottom: 4px solid;
+    padding: 20px;
+}
+.order-summary__footer  div {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+p.sum-price {
+    color: var(--cl-red);
+    font-size: 22px;
+    font-weight: 600;
+}
