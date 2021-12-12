@@ -1520,6 +1520,7 @@ button.pay-order__button-check {
 .order-complete__head {
     display: flex;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .order-complete__head .icon-check {
@@ -1528,6 +1529,7 @@ button.pay-order__button-check {
 
 .order-complete__head-right h2 {
     padding: 2px 0;
+    font-size: 20px;
 }
 
 .order-complete__content {
@@ -1576,5 +1578,19 @@ button.pay-order__button-check {
 p.sum-price {
     color: var(--cl-red);
     font-size: 22px;
+    font-weight: 600;
+}
+
+.button-back {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+a.btn-back-home {
+    background: var(--cl-green);
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
     font-weight: 600;
 }

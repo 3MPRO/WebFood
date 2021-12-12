@@ -32,14 +32,14 @@
                                 <span class="required">*</span>
                                 <input type="tel" name="SDT" class="form-control form-control-lg" placeholder="Số điện thoại" required value=" <?=$_SESSION['login']['SDT'] ?>"/>
                             </fieldset>
-                            <fieldset class="form-group">
+                            <!-- <fieldset class="form-group">
                                 <label>Địa chỉ</label>
                                 <span class="required">*</span>
                                 <input type="text" name="diachi" class="form-control form-control-lg" placeholder="Địa chỉ" required value="<?=$_SESSION['login']['DiaChi'] ?>"/>
-                            </fieldset>
+                            </fieldset> -->
                             <div class="form-group">
-                                <select class="form-control city" name="city" id="select">
-                                    <option>Thành phố</option>
+                                <select class="form-control city" name="city" id="select" required>
+                                    <option value="">Thành phố</option>
                                     <?php
                                         if(count($data) > 0) {
                                             foreach($data as $value) { ?>
@@ -51,18 +51,18 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-control huyen" name="district" id="select">
-                                    <option>Huyện</option>
+                                <select class="form-control huyen" name="district" id="select" required>
+                                    <option value="">Huyện</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-control xa" name="wards" id="select">
-                                    <option>Xã</option>
+                                <select class="form-control xa" name="wards" id="select" required>
+                                    <option value="">Xã</option>
                                 </select> 
                             </div>
                             <div class="form-group">
-                                <select class="form-control thon" name="village" id="select">
-                                    <option>Thôn</option>
+                                <select class="form-control thon" name="village" id="select" required>
+                                    <option value="">Thôn</option>
                                 </select>
                             </div>
                         </div>

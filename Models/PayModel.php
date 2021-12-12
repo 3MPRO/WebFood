@@ -51,6 +51,7 @@ class PayModel extends Model
             echo $status_ct;
         }
         if ($status == true and $status_ct = true) {
+            // unset($_SESSION['product']);
             setcookie('msg', 'Đăng ký thành công', time() + 2);
             header('location: ?act=pay&xuli=order_complete');
         } else {

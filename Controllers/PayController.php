@@ -5,6 +5,7 @@ class PayController
 {
     var $pay_model;
     var $login_model;
+    var $diachi;
     public function __construct()
     {
         $this->pay_model = new PayModel();
@@ -14,6 +15,9 @@ class PayController
         $data_danhmuc = $this->pay_model->danhmuc();
         $data = $this->pay_model->getProvince();
         require_once('Views/indexview.php');
+    }
+    function showAddress() {
+        
     }
     function save()
     {
@@ -34,7 +38,8 @@ class PayController
             $village = $this->pay_model->getCity($_POST['village'], 'village');
 
             // print_r($city[0]['name']);
-            $diachi = $city[0]['name'] .'-'. $district[0]['name'] .'-'. $wards[0]['name'] .'-'. $village[0]['name'];
+            $diachi = $city[0]['name'] .' - '. $district[0]['name'] .' - '. $wards[0]['name'] .' - '. $village[0]['name'];
+            $_SESSION['login']['DiaChi'] = $diachi;
         }
         $data = array(
             'MaND' => $_SESSION['login']['MaND'],

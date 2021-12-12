@@ -1,4 +1,15 @@
 <main>
+<?php 
+    $soluong = 0;
+    $thanhtien = 0;
+    $countProduct = 0;
+    if(isset($_SESSION['product'])){
+    foreach ($_SESSION['product'] as $value) {
+        $countProduct++;
+        $soluong +=1;
+        $thanhtien +=$value['ThanhTien'];
+    }}
+?>
     <div class="container">
         <div class="row">
             <div class="col col-lg-7 col-md-7">
@@ -13,16 +24,16 @@
                     </div>
                     <div class="order-complete__head-right">
                         <h2>Cảm ơn bạn đã đặt hàng</h2>
-                        <p>Một email xác nhận đã được gửi tới sybuivan29@gmail.com.Xin vui lòng kiểm tra email của bạn</p>
+                        <p>Một email xác nhận đã được gửi tới <?=$_SESSION['login']['Email'] ?>. Xin vui lòng kiểm tra email của bạn</p>
                     </div>
                 </div>
                 <div class="order-complete__content">
                     <div class="order-complete__content-left">
                         <div class="order-complete__content-infor">
                             <h2>Thông tin mua hàng</h2>
-                            <span>Bùi Văn Sỷ</span>
-                            <span>sybuivan29@gmail.com</span>
-                            <span>0947895039</span>
+                            <span><?=$_SESSION['login']['Ten'] ?>  <?=$_SESSION['login']['Ho']?></span>
+                            <span><?=$_SESSION['login']['Email'] ?></span>
+                            <span><?=$_SESSION['login']['SDT'] ?></span>
                         </div>
                         <div>
                             <h2>Phương thức thanh toán</h2>
@@ -32,9 +43,9 @@
                     <div class="order-complete__content-right">
                         <div class="order-complete__content-infor">
                             <h2>Địa chỉ nhận hàng</h2>
-                            <span>Bùi Văn Sỷ</span>
-                            <span>Tỉnh Quảng Trị- Huyện gio linh</span>
-                            <span>0947895039</span>
+                            <span><?=$_SESSION['login']['Ten'] ?> <?=$_SESSION['login']['Ho']?></span>
+                            <span><?=$_SESSION['login']['DiaChi'] ?></span>
+                            <span><?=$_SESSION['login']['SDT'] ?></span>
                         </div>
                         <div>
                             <h2>Phương thức vận chuyển</h2>
@@ -51,7 +62,7 @@
                     <div class="order-summary__content">
                         <div>
                             <span class="total-line__name">Tạm tính</span>
-                            <span class="total-line__price">60.000đ</span>
+                            <span class="total-line__price"><?php echo number_format($thanhtien); ?>đ</span>
                         </div>
                         <div>
                             <span class="total-line__name">Phí vận chuyển</span>
@@ -60,8 +71,8 @@
                     </div>
                     <div class="order-summary__footer">
                         <div>
-                            <span>Tổng cồng</span>
-                            <p class="sum-price">100.000đ</p>
+                            <span>Tổng cộng</span>
+                            <p class="sum-price"><?php echo number_format($thanhtien + 40000)?>đ</p>
                         </div>
                     </div>
                 </div>
