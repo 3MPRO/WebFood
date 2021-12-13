@@ -114,7 +114,7 @@
         var options1 = {
             width: 350,
             height: 350,
-            zoomWidth: 200,
+            zoomWidth: 400,
             zoomHeight: 200,
             offset: {vertical: 2, horizontal: 5}
         };

@@ -153,7 +153,7 @@
                                 <h2 class="tilte-name-product-t"><?= $data_sanpham1[$i]['TenSP']?></h2>
                                 <div>
                                 <span class="price-new"><?= number_format( $data_sanpham1[$i]['DonGia']) ?>đ</span>
-                                <button class="button-add-product button-add-product--view">Cho vào giỏ</button>
+                                <a href="?act=cart&xuli=add&id=<?=$data_sanpham1[$i]['MaSP']?>" class="button-add-product button-add-product btn-add-cart button-add-product--view">Cho vào giỏ</a>
                                 <span class="price-old"><?php echo number_format($data_sanpham1[$i]['DonGia']+ 20000) ?>đ</span>
 
                                 </div>
@@ -186,7 +186,7 @@
                             <div class="col col-lg-6">
                                 <div class="item_product_main">
                                     <div class="populator__product">
-                                        <a href="" class="populator__product-link">
+                                        <a href="?act=detail&sp=<?=$item['MaSP']?>" class="populator__product-link">
                                             <img src="./public/images/<?= $item['hinhanh'];?>" alt="">
                                         </a>
                                         <span><i class="far fa-heart icon-heart-i"></i></span>
@@ -209,7 +209,7 @@
                 <div class="row">
                     <div class="col col-6">
                         <div class="populator__product-right">
-                            <a href="" class="populator__product-right-link">
+                            <a href="?act=detail&sp=<?=$data_random1[0]['MaSP']?>" class="populator__product-right-link">
                                 <img src="./public/images/<?= $data_random1[0]['hinhanh'] ?>" alt="">
                                 <h2 class="tilte-name-product">
                                     <?= $data_random1[0]['TenSP'] ?>
@@ -227,7 +227,7 @@
                             <div class="col col-12">
                                 <div class="item_product_main">
                                     <div class="populator__product">
-                                        <a href="" class="populator__product-link">
+                                        <a href="?act=detail&sp=<?=$data_random2[0]['MaSP']?>" class="populator__product-link">
                                             <img src="./public/images/<?= $data_random2[0]['hinhanh'] ?>" alt="">
                                         </a>
                                         <span><i class="far fa-heart icon-heart-i"></i></span>
@@ -249,7 +249,7 @@
                             <div class="col col-12">
                             <div class="item_product_main">
                                 <div class="populator__product">
-                                    <a href="" class="populator__product-link">
+                                    <a href="?act=detail&sp=<?=$data_random3[0]['MaSP']?>" class="populator__product-link">
                                         <img src="./public/images/<?= $data_random3[0]['hinhanh'] ?>" alt="">
                                     </a>
                                     <span><i class="far fa-heart icon-heart-i"></i></span>
@@ -272,7 +272,7 @@
             </div>
             <div class="col-lg-4 col">
                 <div class="populator__product-right ">
-                    <a href="" class="populator__product-right-link">
+                    <a href="?act=detail&sp=<?=$data_random4[0]['MaSP']?>" class="populator__product-right-link">
                         <img src="./public/images/<?= $data_random4[0]['hinhanh'] ?>" alt="">
                         <h2 class="tilte-name-product">
                             <?= $data_random4[0]['TenSP'] ?>
@@ -288,7 +288,7 @@
                     <div class="col col-12">
                         <div class="item_product_main">
                             <div class="populator__product">
-                                <a href="" class="populator__product-link">
+                                <a href="?act=detail&sp=<?=$data_random5gi[0]['MaSP']?>" class="populator__product-link">
                                     <img src="./public/images/<?= $data_random5[0]['hinhanh'] ?>" alt="">
                                 </a>
                                 <span><i class="far fa-heart icon-heart-i"></i></span>
@@ -384,7 +384,7 @@
                         <div class="product-fruits__infos">
                             <h2 class="tilte-name-product"><?= $data_sanpham2[$i]['TenSP'] ?></h2>
                             <span class="price-text"><?= number_format($data_sanpham2[$i]['DonGia']) ?> VNĐ</span>
-                            <a  href="?act=cart&xuli=add&id=<?=$data_sanpham2[$i]['MaSP']?>"
+                            <a href="?act=cart&xuli=add&id=<?=$data_sanpham2[$i]['MaSP']?>"
                                 class="button-add-product btn-add-cart" 
                                 value="<?php echo $data_sanpham2[$i]['MaSP'] ?>"
                                 name="add-button"
