@@ -9,7 +9,7 @@
             $username ="root";
             $password =""; 
             $db_name ="webfood";
- 
+            
             //Tao ket noi CSDL
             $this->conn = new mysqli($severname,$username,$password,$db_name);
             $this->conn->set_charset("utf8");
