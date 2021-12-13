@@ -58,11 +58,8 @@
                         }
                         break;
                       case 'nguoidung':
-                        require_once('./Controllers/UserController.php');
-                        $controller_obj = new NguoiDungController();
                         switch ($act) {
-                          case 'list':
-                            $controller_obj->list();
+                          case 'list':         
                             require_once('user/list.php');
                             break;
                           case 'add':
@@ -75,12 +72,10 @@
                             require_once('user/edit.php');
                             break;
                           default:
-                            $controller_obj->list();
                             require_once('user/list.php');
                             break;
                         }
                         break;
-                    
                         case 'loaisanpham':
                         switch ($act) {
                           case 'list':
