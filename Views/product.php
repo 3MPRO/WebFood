@@ -13,9 +13,7 @@
                 </div>
                 <div>
                     <strong>
-                        <span> <?php 
-                                echo $data_danhmuc[$cate- 1]['TenDM'] 
-                        ?></span>
+                        <span id="danhmuc"><?php echo $data_danhmuc[$cate- 1]['TenDM'];?></span>
                     </strong>
                 </div>
             </div>
@@ -76,10 +74,10 @@
                                         <i class="fa fa-arrow-left"></i>
                                         Bạn chọn
                                     </span>
-                                    <a href="" class="filter__remove">
+                                    <div class="filter__remove">
                                         Bỏ hết
                                         <i class="fa fa-angle-right"></i>
-                                    </a>
+                                    </div>
                                 </div>
                                 <div class="filter-container__selected-filter-list">
                                     <ul>

@@ -121,6 +121,23 @@ const App = {
             })
         });
 
+
+        // remove checkbox
+        const elRemoveAll = item('.filter__remove')
+        if(elRemoveAll!==null) {
+            elRemoveAll.addEventListener('click',() => {
+                const listValue = []
+                const listValuePrice = []
+                localStorage.setItem('listValue', JSON.stringify(listValue))
+                localStorage.setItem('listValuePrice', JSON.stringify(listValuePrice))
+    
+                listCheckbox.forEach((element, index) => {
+                    element.checked = false
+                    element.classList.remove('checkbox-checked')
+                })
+                _this.renderUICheckbox([])
+            })
+        } 
     },
     renderUICheckbox: function(arr) {
         let elFilterSelected = item('.filter__conterner__selected')
@@ -135,10 +152,9 @@ const App = {
             var htmls = newArr.map((value) => {
                 return `
                 <li class="filter-container__selected-filter-item">
-                    <a href="">
-                        <i class="fa fa-close"></i>
+                    <span class="filter-selected__item">
                         ${value}
-                    </a>
+                    </span>
                 </li>
                 `
             }).join('')
@@ -151,8 +167,10 @@ const App = {
                 behavior: "smooth"
             })
         }
-
-        
+    },
+    getList: function() {
+        const listValuePrice =JSON.parse(localStorage.getItem('listValuePrice'))
+        return listValuePrice
     },
     unique: function(arr) {
         var newArr = []
@@ -190,16 +208,23 @@ const App = {
         listbtnAddCart.forEach(btnAddCart => {
             btnAddCart.addEventListener('click',function(e){
                 console.log(btnAddCart.href);
-                setTimeout(function(){
-                    modelAddCart.style = style
-                },500)
-                setTimeout(function(){
-                    console.log('setInterval 2');
-                    modelAddCart.style = 'right: -200px;'
-                },3000)
+                Toastify({
+                    text: "Bạn vừa thêm sản phẩm vào giỏ hàng",
+                    duration: 4000,
+                    destination: "https://github.com/apvarun/toastify-js",
+                    newWindow: true,
+                    close: true,
+                    gravity: "top", // `top` or `bottom`
+                    position: "right", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                        background: "linear-gradient(to right, #00b09b, #96c93d)",
+                    },
+                    onClick: function(){} // Callback after click
+                }).showToast();
                 setTimeout(function(){
                     window.location.href = btnAddCart.href
-                },4000)
+                },2000)
                 e.preventDefault()
             //    clearInterval(idTime)
             })

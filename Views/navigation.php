@@ -25,7 +25,7 @@
                     break;
             }
         } else {
-            if ((isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) || (isset($_SESSION['isLogin_Nhanvien']) && $_SESSION['isLogin_Nhanvien'] == true)) {
+            if ((isset($_SESSION['isLogin_Admin']) && $_SESSION['isLogin_Admin'] == true) || (isset($_SESSION['isLogin_Nhanvien']) && $_SESSION['isLogin_Nhanvien'] == true) || (isset($_SESSION['isLogin_GiaoHang']) && $_SESSION['isLogin_GiaoHang'] == true)) {
                 switch ($act) {
                     case 'login':
                         require_once("login.php");
@@ -65,8 +65,19 @@
         case'cart':
             require_once("cart/cart.php");
             break;
-        case "pay":
-            require_once("pay.php");
+        case 'pay':
+            $act = isset($_GET['xuli']) ? $_GET['xuli'] : "list";
+            switch ($act) {
+                case 'list':
+                    require_once("pay/pay.php");
+                    break;
+                case 'order_complete':
+                    require_once("pay/order_complete.php");
+                    break;
+                default:
+                    require_once("pay.php");
+                    break;
+            }
             break;
         default:
             require_once("error-404.php");

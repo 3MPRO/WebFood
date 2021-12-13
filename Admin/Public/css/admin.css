@@ -218,3 +218,19 @@
     border-radius: 50%;
     cursor: pointer;
 }
+
+.btn-primary {
+    color: #fff;
+    background-color: #6bc21a;
+    border-color: #6bc21a;
+}
+
+.btn-primary:hover{
+    color: #fff;
+    background-color: #498214;
+    border-color: #498214;
+}
+
+.align-items-center {
+    color: #6bc21a;
+}

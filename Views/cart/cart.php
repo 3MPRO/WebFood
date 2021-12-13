@@ -93,7 +93,13 @@
             </span>
         </div>
         <div class="cart-page-footer-button">
-            <a href="">Thanh toán</a>
+            <a href="<?php 
+                if(isset($_COOKIE['msg1'])) {
+                    echo '?act=pay';
+                } else {
+                    echo '?act=taikhoan';
+                }
+            ?>">Thanh toán</a>
         </div>
     </div>
 </main>

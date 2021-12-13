@@ -298,14 +298,14 @@ span.filter__conterner__title-head {
     font-size: 22px;
     font-weight: 600;
 }
-
-a.filter__remove {
-    padding-left: 60px;
+.filter__remove {
+    cursor: pointer;
 }
+
 .filter-container__selected-filter-list ul {
     max-width: 300px;
 }
-li.filter-container__selected-filter-item a {
+li.filter-container__selected-filter-item span {
     color: #fff;
     background: var(--cl-green);
     padding: 8px 10px;
@@ -317,6 +317,9 @@ li.filter-container__selected-filter-item {
 }
 .wrapper-filter__head {
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .filter__hiddent {
     display: none;

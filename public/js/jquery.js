@@ -61,21 +61,26 @@ $(document).ready(function(){
         $(this).parents(".name-login").find('input[type="text"]').val($(this).text());
         $(this).parent(".search-result").empty();
     });
-
-    $('input.toggle__input').each(function (index, value) {
-        console.log($(this));
-        $(this).on('click',function ajaxFilter() {
+    function ajaxFilter() {
         var listValue = JSON.parse(localStorage.getItem("listValuePrice"))
+        var danhmuc = $("#danhmuc").text();
         $.ajax({
             url: "Models/get_data_price.php",
             method: "POST",
-            data: {listValue: listValue},
+            data: {listValue: listValue, danhmuc: danhmuc},
             success: function(data) {
                 $('#product-list-main').html(data)
             }
         })
+    }
+
+    $('input.toggle__input').each(function (index, value) {
+        console.log($(this));
+        $(this).on('click',ajaxFilter);
     })
-    })
+
+    $(".filter__remove").on('click',ajaxFilter);
+
 });
 // filter product 
 function filterProduct(action,name, danhmuc) {

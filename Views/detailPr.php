@@ -77,7 +77,7 @@
                 </div>
                 <div class="group-button-add">
                     <a href="?act=cart&xuli=add&id=<?php echo $data_sanpham[0]['MaSP']; ?>&sl=1" class="add-cart btn-add-cart" data-id="<?php echo $data_sanpham[0]['MaSP']; ?>">Cho vào giỏ hàng</a>
-                    <a href="" class="buy-now">Mua ngay</a>
+                    <a href="?act=pay" class="buy-now">Mua ngay</a>
                 </div>
                 <div class="icon-heart">
                     <button class="add-heart">
