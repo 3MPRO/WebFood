@@ -14,7 +14,6 @@ require_once("./Models/productModel.php");
             {
                 $data_sanpham  = $this->product_model->sanpham($_GET['sp']);
             }
-            
             $data_limit1 = $this->product_model->limit(0,4);
             $data_limit2 = $this->product_model->limit(4,4);
             $data_limit3 = $this->product_model->limit(8,4);

@@ -1,4 +1,3 @@
-
 <main id="main">
 <div class="container">
     <div class="break-crumb">
@@ -120,114 +119,44 @@
                 </div>
             </div>
             <div class="owl-carousel owl-theme" id="owl-slider-dry">
-                <div class="product-main">
-                    <form action="">
-                        <div class="product-fruits__thumb">
-                            <a href="">
-                                <img src="./public/images/images-dry/sp26.jpg" alt="">
-                            </a>
-                            <div class="icon-heart-product">
-                                <i class="far fa-heart"></i>
-                            </div>
+                <?php 
+                // print_r($data_sanpham1);
+                    for ($i = 0; $i < (count($data_sanpham1)); $i++) {
+                        ?>
+                        <div class="product-main">
+                            <form action="" method="post">
+                                <div class="product-fruits__thumb">
+                                    <a href="?act=detail&sp=<?=$data_sanpham1[$i]['MaSP']?>">
+                                        <img src="./public/images/<?=$data_sanpham1[$i]['hinhanh'] ?>" alt="Product Title">
+                                    </a>
+                                    <div class="icon-heart-product">
+                                        <i class="far fa-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="product-fruits__infos">
+                                    <h2 class="tilte-name-product"><?= $data_sanpham1[$i]['TenSP'] ?></h2>
+                                    <span class="price-text"><?= number_format($data_sanpham1[$i]['DonGia']) ?> VNĐ</span>
+                                    <a  href="?act=cart&xuli=add&id=<?=$data_sanpham1[$i]['MaSP']?>"
+                                        class="button-add-product btn-add-cart" 
+                                        value="<?php echo $data_sanpham1[$i]['MaSP'] ?>"
+                                        name="add-button"
+                                    >Cho vào giỏ</a>
+                                </div>
+                            </form>
                         </div>
-                        <div class="product-fruits__infos">
-                            <h2 class="tilte-name-product">Kỷ tử khô đỏ - loại đẹp 100g</h2>
-                            <span class="price-text">60.000đ</span>
-                            <button class="button-add-product">Cho vào giỏ</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="product-main">
-                    <form action="">
-                        <div class="product-fruits__thumb">
-                            <a href="">
-                                <img src="./public/images/images-dry/sp27.jpg" alt="">
-                            </a>
-                            <div class="icon-heart-product">
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="product-fruits__infos">
-                            <h2 class="tilte-name-product">Bò khô que hộp 250g</h2>
-                            <span class="price-text">60.000đ</span>
-                            <button class="button-add-product">Cho vào giỏ</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="product-main">
-                    <form action="">
-                        <div class="product-fruits__thumb">
-                            <a href="">
-                                <img src="./public/images/images-dry/sp28.jpg" alt="">
-                            </a>
-                            <div class="icon-heart-product">
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="product-fruits__infos">
-                            <h2 class="tilte-name-product">500g cá khô sạch con to</h2>
-                            <span class="price-text">60.000đ</span>
-                            <button class="button-add-product">Cho vào giỏ</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="product-main">
-                    <form action="">
-                        <div class="product-fruits__thumb">
-                            <a href="">
-                                <img src="./public/images/images-dry/sp29.webp" alt="">
-                            </a>
-                            <div class="icon-heart-product">
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="product-fruits__infos">
-                            <h2 class="tilte-name-product">Trứng gà</h2>
-                            <span class="price-text">60.000đ</span>
-                            <button class="button-add-product">Cho vào giỏ</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="product-main">
-                    <form action="">
-                        <div class="product-fruits__thumb">
-                            <a href="">
-                                <img src="./public/images/pro20-grande.webp" alt="">
-                            </a>
-                            <div class="icon-heart-product">
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="product-fruits__infos">
-                            <h2 class="tilte-name-product">Chuối Tiêu Quê Loại To</h2>
-                            <span class="price-text">60.000đ</span>
-                            <button class="button-add-product">Cho vào giỏ</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="product-main">
-                    <form action="">
-                        <div class="product-fruits__thumb">
-                            <a href="">
-                                <img src="./public/images/pro20-grande.webp" alt="">
-                            </a>
-                            <div class="icon-heart-product">
-                                <i class="far fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="product-fruits__infos">
-                            <h2 class="tilte-name-product">Chuối Tiêu Quê Loại To</h2>
-                            <span class="price-text">60.000đ</span>
-                            <button class="button-add-product">Cho vào giỏ</button>
-                        </div>
-                    </form>
-                </div>
+                <?php }?>
             </div>
+
         </div>
     </section>
+    <div class="about-author">
+        <!-- comments -->
+        <div class="post-comments">
+            <!-- comment -->
+            <div class="fb-comments" data-href="https://dxdbloger.000webhostapp.com?act=detail&amp;id=<?php echo $data_sanpham[0]['MaSP']; ?>" data-width="500" data-numposts="5"></div>
+            <!-- /comment -->
+        </div>
+        <!-- /comments -->
+    </div>
 </div>
 </main>
-
-        
-   
-    

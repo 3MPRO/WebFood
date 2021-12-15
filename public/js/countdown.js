@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
     }
     
     function countTime() {
-        console.log(timeLeft);
+        // console.log(timeLeft);
         if (totalSeconds > 0) {
             timeLeft = JSON.parse(localStorage.getItem('timeLeft'));
             --timeLeft.s; 

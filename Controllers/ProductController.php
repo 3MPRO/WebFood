@@ -16,7 +16,7 @@ require_once("./Models/productModel.php");
             {
                 $data_sanpham  = $this->product_model->sanpham($_GET['sp']);
             }
-            
+            $data_sanpham1 = $this->product_model->sanpham_danhmuc(0,10,1);
             if(isset($_GET['keyword'])) {
                 $key = $_GET['keyword'];
                 $data = $this->product_model->searchData($key);
