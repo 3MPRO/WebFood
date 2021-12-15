@@ -315,7 +315,7 @@
         <div class="populator__head">
             <div>
                 <h2 class="populator__head-title">
-                    <a href="">Gian hàng hoa quả</a>
+                    <a href="?act=product&cate=1">Gian hàng hoa quả</a>
                 </h2>
                 <p class="populator__head-desc">Sản phẩm tươi ngon mới nhất</p>
             </div>
@@ -358,11 +358,11 @@
         <div class="populator__head">
             <div>
                 <h2 class="populator__head-title">
-                    <a href="">Gian hàng đồ khô</a>
+                    <a href="?act=product&cate=3">Gian hàng đồ khô</a>
                 </h2>
                 <p class="populator__head-desc">Sản phẩm từ đồ khô chất lượng cao</p>
             </div>
-            <a href="" class="populator__head-all">
+            <a href="?act=product&cate=3" class="populator__head-all">
                 <p>Xem tất cả</p>
                 <i class="fas fa-long-arrow-alt-right"></i>
             </a>

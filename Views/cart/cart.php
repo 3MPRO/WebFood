@@ -83,8 +83,14 @@
             <?php }?>
 		</div>
     </div>
-
+    <?php if(!isset($_SESSION['product'])) { ?>
     <div class="cart-page-footer">
+        <div class="cart-page-footer-button">
+            <a href="?act=home">Tiếp tục mua hàng</a>
+        </div>
+    </div>
+    <?php } else { ?>
+        <div class="cart-page-footer">
         <div class="cart-page-footer-total">
             <p>Tổng tiền</p>
             <span>
@@ -93,13 +99,8 @@
             </span>
         </div>
         <div class="cart-page-footer-button">
-            <a href="<?php 
-                if(isset($_COOKIE['msg1'])) {
-                    echo '?act=pay';
-                } else {
-                    echo '?act=taikhoan';
-                }
-            ?>">Thanh toán</a>
+            <a href="?act=pay">Thanh toán</a>
         </div>
     </div>
+    <?php }?>
 </main>

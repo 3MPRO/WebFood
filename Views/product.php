@@ -247,7 +247,7 @@
                                                 <h2 class="tilte-name-product-t"><?= $data_sanpham[$i]['TenSP']?></h2>
                                                 <div>
                                                 <span class="price-new"><?= number_format( $data_sanpham[$i]['DonGia']) ?>đ</span>
-                                                <button class="button-add-product button-add-product--view">Cho vào giỏ</button>
+                                                <a href="?act=cart&xuli=add&id=<?=$data_sanpham[$i]['MaSP']?>" class="button-add-product button-add-product--view btn-add-cart">Cho vào giỏ</a>
                                                 <span class="price-old"><?php echo number_format($data_sanpham[$i]['DonGia']+ 20000) ?>đ</span>
                 
                                                 </div>

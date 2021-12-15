@@ -124,7 +124,7 @@
                                                 </div>
                                                 <div class="cart-content-inner__checkout">
                                                     <a href="<?php 
-                                                        if(isset($_COOKIE['msg1'])) {
+                                                        if(isset($_SESSION['login'])) {
                                                             echo '?act=pay';
                                                         } else {
                                                             echo '?act=taikhoan';
