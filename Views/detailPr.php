@@ -1,4 +1,3 @@
-
 <main id="main">
 <div class="container">
     <div class="break-crumb">
@@ -148,20 +147,16 @@
                 <?php }?>
             </div>
 
-            <div class="about-author">
-                <!-- comments -->
-                <div class="post-comments">
-                    <!-- comment -->
-                    <div class="fb-comments" data-href="http://localhost/%C4%90%E1%BB%93%20%C3%A1n%20cu%E1%BB%91i%20k%C3%AC/WebFood/index.php?act=detail&amp;sp=<?php echo $data_sanpham[0]['MaSP']; ?>" data-width="" data-numposts="5"></div>
-                    <!-- /comment -->
-                </div>
-                <!-- /comments -->
-            </div>
         </div>
     </section>
+    <div class="about-author">
+        <!-- comments -->
+        <div class="post-comments">
+            <!-- comment -->
+            <div class="fb-comments" data-href="https://dxdbloger.000webhostapp.com?act=detail&amp;id=<?php echo $data_sanpham[0]['MaSP']; ?>" data-width="500" data-numposts="5"></div>
+            <!-- /comment -->
+        </div>
+        <!-- /comments -->
+    </div>
 </div>
 </main>
-
-        
-   
-    
