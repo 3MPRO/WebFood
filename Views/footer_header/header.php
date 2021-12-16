@@ -46,9 +46,9 @@
                     <ul class="group__account-list">
                         <li>
                             <div class="heart__icon">
-                                <a href="">
+                                <a href="?act=favorite">
                                     <i class="far fa-heart"></i>
-                                    <span class="heart-icon__count">2</span>
+                                    <span class="heart-icon__count">0</span>
                                 </a>
                             </div>
                             

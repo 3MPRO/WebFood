@@ -18,7 +18,11 @@ switch ($mod) {
         $objCate = new homeController();
         $objCate->list();
         break;
-
+    case 'favorite':
+        require_once('./Controllers/favoriteController.php');
+        $objCate = new favoriteController();
+        $objCate->list();
+        break;
     case 'taikhoan':
         $act = isset($_GET['xuli']) ? $_GET['xuli'] : "taikhoan";
         require_once('Controllers/LoginController.php');

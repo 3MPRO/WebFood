@@ -10,6 +10,9 @@
         case "product":
             require_once("product.php");
             break;
+        case "favorite":
+            require_once("favorite/favorite.php");
+            break;
         case "taikhoan":
         $act = isset($_GET['xuli']) ? $_GET['xuli'] : "login";
         if (isset($_SESSION['isLogin']) && $_SESSION['isLogin'] == true) {
