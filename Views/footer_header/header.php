@@ -205,7 +205,7 @@
             </li>
             <li class="nav-list__item"><a class="nav-list__item-link" href="?act=product&cate=2">Bánh kẹo</a></li>
             <li class="nav-list__item"><a class="nav-list__item-link" href="?act=product&cate=3">Đồ khô, gạo</a></li>
-            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=">Liên hệ</a></li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=contact">Liên hệ</a></li>
             <li class="nav-list__item"><a class="nav-list__item-link" href="?act=news">Tin tức</a></li>
         </ul>
     </div>

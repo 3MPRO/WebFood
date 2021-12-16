@@ -135,6 +135,11 @@ switch ($mod) {
         $objCate = new newsController();
         $objCate->list();
         break;
+    case 'contact':
+            require_once('./Controllers/ContactController.php');
+            $objCate = new newsController();
+            $objCate->list();
+            break;
     default : 
         require_once('home.php');
 }
