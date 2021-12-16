@@ -46,9 +46,9 @@
                     <ul class="group__account-list">
                         <li>
                             <div class="heart__icon">
-                                <a href="">
+                                <a href="?act=favorite">
                                     <i class="far fa-heart"></i>
-                                    <span class="heart-icon__count">2</span>
+                                    <span class="heart-icon__count">0</span>
                                 </a>
                             </div>
                             
@@ -206,7 +206,7 @@
             <li class="nav-list__item"><a class="nav-list__item-link" href="?act=product&cate=2">Bánh kẹo</a></li>
             <li class="nav-list__item"><a class="nav-list__item-link" href="?act=product&cate=3">Đồ khô, gạo</a></li>
             <li class="nav-list__item"><a class="nav-list__item-link" href="?act=">Liên hệ</a></li>
-            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=">Tin tức</a></li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=news">Tin tức</a></li>
         </ul>
     </div>
 </nav>

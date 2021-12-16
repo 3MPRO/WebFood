@@ -34,7 +34,7 @@
         ?></td>
         <td>
           <a href="?mod=bill&act=chitiet&id=<?= $row['MaHD'] ?>" class="btn btn-success" >Xem chi tiết</a>
-          <!-- <a href="?mod=bill&act=delete&id=<?= $row['MaHD'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a> -->
+          <a href="?mod=bill&act=delete&id=<?= $row['MaHD'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
         </td>
       </tr>
     <?php } ?>

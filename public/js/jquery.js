@@ -81,6 +81,24 @@ $(document).ready(function(){
 
     $(".filter__remove").on('click',ajaxFilter);
 
+    // $('.icon-heart-element').each(function() {
+    //     // console.log($(this));
+    //     $(this).on('click',function() {
+    //         var id = $(this).data().heart
+            
+    //     });
+    // })
+
+    // function ajaxAddFavorite(id) {
+    //     $.ajax({
+    //         url: "View/favorite/favorite.php",
+    //         method: "POST",
+    //         data: {id: id},
+    //         success: function(data) {
+    //             $('#product-list-main').html(data)
+    //         }
+    //     })
+    // }
 });
 // filter product 
 function filterProduct(action,name, danhmuc) {

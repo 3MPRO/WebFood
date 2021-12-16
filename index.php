@@ -18,7 +18,11 @@ switch ($mod) {
         $objCate = new homeController();
         $objCate->list();
         break;
-
+    case 'favorite':
+        require_once('./Controllers/favoriteController.php');
+        $objCate = new favoriteController();
+        $objCate->list();
+        break;
     case 'taikhoan':
         $act = isset($_GET['xuli']) ? $_GET['xuli'] : "taikhoan";
         require_once('Controllers/LoginController.php');
@@ -126,6 +130,11 @@ switch ($mod) {
                 $controller_obj->list_cart();
                 break;
         } break;
+    case 'news':
+        require_once('./Controllers/newsController.php');
+        $objCate = new newsController();
+        $objCate->list();
+        break;
     default : 
         require_once('home.php');
 }

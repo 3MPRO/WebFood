@@ -748,7 +748,8 @@ h2.tilte-name-product {
     transition: all ease 0.2s;
 }
 .icon-heart-product:hover ,.product-item-icon:hover,
-i.far.fa-heart.icon-heart-i:hover{
+i.far.fa-heart.icon-heart-i:hover,
+.icon-heart-element--active{
     color: var(--cl-red);
     cursor: pointer;
 }

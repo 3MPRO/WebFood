@@ -140,7 +140,9 @@
                                 <span class="home-product-item__percent">10%</span>
                                 <label class ="home-product-item__label" for="">Giảm</label>
                             </div>
-                            <a href=""><i class="product-item-icon far fa-heart"></i></a>
+                            <a href="">
+                                <i data-heart="<?php echo $data_sanpham1[$i]['MaSP'] ?>"  class="icon-heart-element product-item-icon far fa-heart"></i>
+                            </a>
                             </div>
                             <div class="product-img">
                                 <a href="?act=detail&sp=<?=$data_sanpham1[$i]['MaSP']?>" style="display: block;">
@@ -189,7 +191,7 @@
                                         <a href="?act=detail&sp=<?=$item['MaSP']?>" class="populator__product-link">
                                             <img src="./public/images/<?= $item['hinhanh'];?>" alt="">
                                         </a>
-                                        <span><i class="far fa-heart icon-heart-i"></i></span>
+                                        <span><i class=" data-heart="<?php echo $item['MaSP'] ?>" far fa-heart icon-heart-element icon-heart-i"></i></span>
                                     </div>
                                     <div class="populator__product-content">
                                         <h2 class="poplator__product-content-title tilte-name-product">
@@ -230,7 +232,7 @@
                                         <a href="?act=detail&sp=<?=$data_random2[0]['MaSP']?>" class="populator__product-link">
                                             <img src="./public/images/<?= $data_random2[0]['hinhanh'] ?>" alt="">
                                         </a>
-                                        <span><i class="far fa-heart icon-heart-i"></i></span>
+                                        <span><i data-heart="<?php echo $data_sanpham2[0]['MaSP'] ?>" class="far fa-heart icon-heart-element icon-heart-i"></i></span>
                                     </div>
                                     <div class="populator__product-content">
                                         <h2 class="poplator__product-content-title tilte-name-product">
@@ -252,7 +254,7 @@
                                     <a href="?act=detail&sp=<?=$data_random3[0]['MaSP']?>" class="populator__product-link">
                                         <img src="./public/images/<?= $data_random3[0]['hinhanh'] ?>" alt="">
                                     </a>
-                                    <span><i class="far fa-heart icon-heart-i"></i></span>
+                                    <span><i data-heart="<?php echo $data_sanpham3[0]['MaSP'] ?>" class="far fa-heart icon-heart-element icon-heart-i"></i></span>
                                 </div>
                                 <div class="populator__product-content">
                                     <h2 class="poplator__product-content-title tilte-name-product">
@@ -291,7 +293,7 @@
                                 <a href="?act=detail&sp=<?=$data_random5gi[0]['MaSP']?>" class="populator__product-link">
                                     <img src="./public/images/<?= $data_random5[0]['hinhanh'] ?>" alt="">
                                 </a>
-                                <span><i class="far fa-heart icon-heart-i"></i></span>
+                                <span><i data-heart="<?php echo $data_random5[0]['MaSP'] ?>" class="far fa-heart icon-heart-element icon-heart-i"></i></span>
                             </div>
                             <div class="populator__product-content">
                                 <h2 class="poplator__product-content-title tilte-name-product">
@@ -335,7 +337,7 @@
                                     <img src="./public/images/<?=$data_sanpham1[$i]['hinhanh'] ?>" alt="Product Title">
                                 </a>
                                 <div class="icon-heart-product">
-                                    <i class="far fa-heart"></i>
+                                    <i data-heart="<?php echo $data_sanpham1[$i]['MaSP'] ?>" class="icon-heart-element far fa-heart"></i>
                                 </div>
                             </div>
                             <div class="product-fruits__infos">
@@ -378,7 +380,7 @@
                                 <img src="./public/images/<?=$data_sanpham2[$i]['hinhanh'] ?>" alt="Product Title">
                             </a>
                             <div class="icon-heart-product">
-                                <i class="far fa-heart"></i>
+                                <i data-heart="<?php echo $data_sanpham2[$i]['MaSP'] ?>"  class="far fa-heart"></i>
                             </div>
                         </div>
                         <div class="product-fruits__infos">
