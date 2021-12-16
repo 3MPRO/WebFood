@@ -156,6 +156,7 @@
                                             ?>
                                                 <li class="group-login__list-item"><b>Chào <?=$_SESSION['login']['Ten']?></b></li>
                                                 <li class="group-login__list-item"><a href="?act=taikhoan&xuli=account">Tài khoản</a></li>
+                                                <li class="group-login__list-item"><a href="?act=orderMy">Đơn hàng của tôi</a></li>
                                                 <li class="group-login__list-item"><a href="?act=taikhoan&xuli=dangxuat">Đăng xuất</a></li>
                                                 <?php
                                                 if(isset($_SESSION['isLogin_Admin']) || isset($_SESSION['isLogin_Nhanvien']) || isset($_SESSION['isLogin_GiaoHang'])){ ?>

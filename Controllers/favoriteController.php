@@ -9,7 +9,6 @@ require_once("./Models/favoriteModel.php");
         }
         function list()
             {  
-            $id = $_POST['id'];
             $data_danhmuc = $this->favorite_model->danhmuc();
             $data_sanpham = $this->favorite_model->allProduct();
             $myJSON = json_encode($data_sanpham);

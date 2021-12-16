@@ -33,7 +33,9 @@
                         </div>
                     </div>
                     <div class="col col-lg-9">
-                        <?php echo $myJSON ?>
+                        <div class="row" id="main-favorite">
+                            
+                        </div>
                     <script>
                         localStorage.setItem('dulieu', '<?php echo $myJSON ?>');  
                     </script>

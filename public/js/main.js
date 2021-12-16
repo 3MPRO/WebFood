@@ -13,6 +13,7 @@ const App = {
     arrayValueCheckbox: [],
     arrayValuePrice: [],
     arrayIdHeart: [],
+    arrayListFavorites : [],
     statusCheckbox: true,
     sliderProducts: function(element) {
       var $sliderList = $(`${element}`)
@@ -265,61 +266,117 @@ const App = {
             s: 0,
         }))
     },
-    addFavorite: function() {
-        let elListIcon = items('.icon-heart-element')
-        let elCountHeart = item('.heart-icon__count').innerText
-        console.log('day la yeu thich', elCountHeart);
-        let _this = this
-        elListIcon.forEach(item => {
-            let arrayIdHeart = _this.arrayIdHeart
-            item.addEventListener('click', function(){
-                if(item.classList.contains('icon-heart-element--active')) {
-                    Toastify({
-                        text: "Bạn đã xóa sản phẩm khỏi danh mục yêu thích",
-                        duration: 4000,
-                        destination: "https://github.com/apvarun/toastify-js",
-                        newWindow: true,
-                        close: true,
-                        gravity: "top", // `top` or `bottom`
-                        position: "right", // `left`, `center` or `right`
-                        stopOnFocus: true, // Prevents dismissing of toast on hover
-                        style: {
-                            background: "linear-gradient(to right, #00b09b, #96c93d)",
-                        },
-                        onClick: function(){} // Callback after click
-                    }).showToast();
-                }else {
-                    Toastify({
-                        text: "Bạn vừa thêm sản phẩm vào danh mục yêu thích",
-                        duration: 4000,
-                        destination: "https://github.com/apvarun/toastify-js",
-                        newWindow: true,
-                        close: true,
-                        gravity: "top", // `top` or `bottom`
-                        position: "right", // `left`, `center` or `right`
-                        stopOnFocus: true, // Prevents dismissing of toast on hover
-                        style: {
-                            background: "linear-gradient(to right, #00b09b, #96c93d)",
-                        },
-                        onClick: function(){} // Callback after click
-                    }).showToast();
-                }
-                item.classList.toggle('icon-heart-element--active')
-                var animalType = item.getAttribute("data-heart");
-                arrayIdHeart.push(animalType);
-                console.log(arrayIdHeart);
-                localStorage.setItem("data-heart", JSON.stringify(arrayIdHeart));
-            })
-        })
-    },
+    // addFavorite: function() {
+    //     let elListIcon = items('.icon-heart-element')
+    //     console.log(elListIcon);
+    //     let elCountHeart = item('.heart-icon__count').innerText
+    //     console.log('day la yeu thich', elCountHeart);
+    //     let _this = this
+    //     let arrayIdHeart = _this.arrayIdHeart
+    //     if(arrayIdHeart.length ===0) {
+    //         arrayIdHeart = JSON.parse(localStorage.getItem("data-heart"))
+    //     }
+    //     console.log(arrayIdHeart);
+    //     elListIcon.forEach(item => {
+    //         item.addEventListener('click', function(){
+    //             if(item.classList.contains('icon-heart-element--active')) {
+    //                 Toastify({
+    //                     text: "Bạn đã xóa sản phẩm khỏi danh mục yêu thích",
+    //                     duration: 4000,
+    //                     destination: "https://github.com/apvarun/toastify-js",
+    //                     newWindow: true,
+    //                     close: true,
+    //                     gravity: "top", // `top` or `bottom`
+    //                     position: "right", // `left`, `center` or `right`
+    //                     stopOnFocus: true, // Prevents dismissing of toast on hover
+    //                     style: {
+    //                         background: "linear-gradient(to right, #00b09b, #96c93d)",
+    //                     },
+    //                     onClick: function(){} // Callback after click
+    //                 }).showToast();
+    //             }else {
+    //                 Toastify({
+    //                     text: "Bạn vừa thêm sản phẩm vào danh mục yêu thích",
+    //                     duration: 4000,
+    //                     destination: "https://github.com/apvarun/toastify-js",
+    //                     newWindow: true,
+    //                     close: true,
+    //                     gravity: "top", // `top` or `bottom`
+    //                     position: "right", // `left`, `center` or `right`
+    //                     stopOnFocus: true, // Prevents dismissing of toast on hover
+    //                     style: {
+    //                         background: "linear-gradient(to right, #00b09b, #96c93d)",
+    //                     },
+    //                     onClick: function(){} // Callback after click
+    //                 }).showToast();
+    //             }
+    //             item.classList.toggle('icon-heart-element--active')
+    //             var animalType = item.getAttribute("data-heart");
+    //             arrayIdHeart.push(animalType);
+    //             console.log(arrayIdHeart);
+    //             localStorage.setItem("data-heart", JSON.stringify(_this.unique(arrayIdHeart)));
+    //         })
+    //     })
+    //     _this.getListProductFavorites()
+    // },
+    // getListProductFavorites: function() {
+    //     let listProductFavorites = JSON.parse(localStorage.getItem("dulieu"));
+    //     let _this = this
+    //     let listId = JSON.parse(localStorage.getItem("data-heart"))
+    //     for (let i = 0; i < listId.length; i++) {
+    //         console.log(listId[i]);
+    //         for (let j = 0; j < listProductFavorites.length; j++) {
+    //             if(listProductFavorites[j].MaSP === listId[i]){
+    //                 _this.arrayListFavorites.push(listProductFavorites[j]);
+    //                 console.log(listProductFavorites[j]);
+    //             }
+    //         }
+    //     }
+    //     _this.renderIUFavorite(_this.arrayListFavorites)
+    //     _this.addFavorite()
+    // },
+    // renderIUFavorite: function(arr) {
+    //     let elMainFavorite = item("#main-favorite")
+    //     console.log(elMainFavorite);
+    //     console.log('day la arrayListFavorites',arr);
+    //     item(".heart-icon__count").innerText = arr.length;
+    //     var htmls = arr.map((item) => {
+    //         return `
+    //         <div class="product-main col col-md-4" style="margin-right:0;">
+    //             <form action="" method="post">
+    //                 <div class="product-fruits__thumb">
+    //                     <a href="?act=detail&sp=${item.MaSP}">
+    //                         <img src="./public/images/${item.hinhanh}" alt="Product Title">
+    //                     </a>
+    //                     <div class="icon-heart-product">
+    //                         <i data-heart="${item.MaSP}" class="icon-heart-element icon-heart-element--active far fa-heart"></i>
+    //                     </div>
+    //                 </div>
+    //                 <div class="product-fruits__infos">
+    //                     <h2 class="tilte-name-product">${item.TenSP}</h2>
+    //                     <span class="price-text">${item.DonGia} VNĐ</span>
+    //                     <a href="?act=cart&xuli=add&id=${item.MaSP}"
+    //                         class="button-add-product btn-add-cart" 
+    //                         value="${item.MaSP}"
+    //                         name="add-button"
+    //                     >Cho vào giỏ</a>
+    //                 </div>
+    //             </form>
+    //         </div>
+    //         `
+    //     })
+    //     if(elMainFavorite!=null){
+    //         elMainFavorite.innerHTML = htmls.join('');
+    //     }
+    // },
     start: function() {
         this.sliderProducts('#owl-fruilt-slider')
         this.sliderProducts('#owl-slider-dry')
         this.sliderProducts('#product-sale-slider')
+        // this.addFavorite()
         this.eventDom()
         this.productDetailSlider()
         this.addCart()
-        this.addFavorite()
         this.quantityCart()
         this.startCount()
         console.log(this.arrayValueCheckbox)

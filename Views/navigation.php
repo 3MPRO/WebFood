@@ -35,7 +35,7 @@
                         break;
                     case 'account':
                         require_once("infoedit.php");
-                        break; 
+                        break;
                     default:
                         require_once("login.php");
                         break;
@@ -64,6 +64,9 @@
         break;
         case "detail":
             require_once("detailPr.php");
+            break;
+        case 'orderMy':
+            require_once("orderMy.php");
             break;
         case'cart':
             require_once("cart/cart.php");
