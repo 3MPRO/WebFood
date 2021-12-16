@@ -82,6 +82,9 @@
                     break;
             }
             break;
+        case "news":
+            require_once("News/news.php");
+            break;
         default:
             require_once("error-404.php");
         break;
