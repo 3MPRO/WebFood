@@ -53,6 +53,7 @@
 /* Menu */
 
 .sidebar {
+    padding: 0px 2px;
     height: 100vh;
     left: 0;
     top: 0;
