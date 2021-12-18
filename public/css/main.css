@@ -184,7 +184,7 @@
 }
 .group-login {
     position: absolute;
-    width: 120px;
+    width: 142px;
     box-shadow: 0px 0px 6px rgb(79 95 120 / 10%);
     right: -20px;
     top: 35px;
@@ -1624,3 +1624,20 @@ a.btn-usset-order__disble {
     cursor: no-drop;
     pointer-events: none;
 }
+
+.pagination {
+    display: inline-block;
+    padding-top: 50px;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  .pagination a.active {
+    background-color: var(--cl-green);
+    color: white;
+  }

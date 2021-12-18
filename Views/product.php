@@ -86,17 +86,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="nav-left__filter-product">
-                            <div class="filter-product__origin">
-                                <h1>Nguồn gốc</h1>
-                                <ul class="filter-product__origin">
-                                    <li class="filter-origin__item"><a href=""><i class="fas swich-icon fa-toggle-on fa-toggle-off"></i> Đà lạt</a> </li>
-                                    <li class="filter-origin__item"><a href=""><i class="fas swich-icon fa-toggle-on fa-toggle-off"></i> Nhập khẩu</a></li>
-                                    <li class="filter-origin__item"><a href=""><i class="fas swich-icon fa-toggle-on fa-toggle-off"></i> Trong nước</a> </li>
-                                </ul>
-                            </div>
-
-                        </div>
+                        
                         <div class="nav-left__filter-product">
                             <div class="filter-product__price">
                                 <h1>Theo mức giá</h1>
@@ -198,14 +188,7 @@
 
                         </div>
                         <div class="nav-left__filter-product">
-                            <div class="filter-product__category">
-                                <h1>Loại</h1>
-                                <ul class="filter-product__category">
-                                    <li class="filter-category__item"><a href=""> <i class="fas swich-icon fa-toggle-on fa-toggle-off"></i> Hải sản</a> </li>
-                                    <li class="filter-category__item"><a href=""> <i class="fas swich-icon fa-toggle-on fa-toggle-off"></i> Hoa quả</a></li>
-                                    <li class="filter-category__item"><a href=""> <i class="fas swich-icon fa-toggle-on fa-toggle-off"></i> Thịt tươi</a> </li>
-                                </ul>
-                            </div>
+                            
 
                         </div>
 

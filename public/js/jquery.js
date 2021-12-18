@@ -101,15 +101,16 @@ $(document).ready(function(){
     // }
 });
 // filter product 
-function filterProduct(action,name, danhmuc) {
+function filterProduct(action,name, danhmuc,limit) {
     var action = action
     var danhmuc = danhmuc
     var name = name
+    var limit = limit
     console.log('da click');
     $.ajax({
         url: "Models/get_data.php",
         method: 'POST',
-        data: {action: action,name: name, danhmuc: danhmuc},
+        data: {action: action,name: name, danhmuc: danhmuc,limit: limit},
         success: function(data) {
             $('#product-list-main').html(data)
         }

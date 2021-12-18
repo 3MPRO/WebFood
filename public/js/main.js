@@ -225,7 +225,7 @@ const App = {
                 }).showToast();
                 setTimeout(function(){
                     window.location.href = btnAddCart.href
-                },2000)
+                },1000)
                 e.preventDefault()
             //    clearInterval(idTime)
             })
@@ -257,14 +257,6 @@ const App = {
                 listbtnAddCart[0].href = _this.defaulthref + '' + valueInput
             }
         })
-    },
-    startCount: function() {
-        localStorage.setItem('timeLeft', JSON.stringify({
-            d: 15,
-            h: 0,
-            m: 0,
-            s: 0,
-        }))
     },
     // addFavorite: function() {
     //     let elListIcon = items('.icon-heart-element')
@@ -378,7 +370,7 @@ const App = {
         this.productDetailSlider()
         this.addCart()
         this.quantityCart()
-        this.startCount()
+        // this.startCount()
         console.log(this.arrayValueCheckbox)
     }  
 }

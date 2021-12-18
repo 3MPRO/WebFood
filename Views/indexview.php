@@ -56,6 +56,8 @@
             margin:10,
             loop: true,
             nav:true,
+            autoplay:true,
+            autoplayTimeout:2000,
             responsive:{
                 1000:{
                     items:1
@@ -127,7 +129,20 @@
     </script>
 
     <script>
-
+        function start() {
+            const timeLeft = JSON.parse(localStorage.getItem('timeLeft'));
+            if(timeLeft==null){
+                localStorage.setItem('timeLeft', JSON.stringify({
+                    d: 15,
+                    h: 0,
+                    m: 0,
+                    s: 0,
+                }))
+            } else {
+                return
+            }
+        }
+        start()
     </script>
 </body>
 </html>
