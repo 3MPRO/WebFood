@@ -123,7 +123,7 @@
                             <div class="product-main">
                                 <form action="">
                                     <div class="product-fruits__thumb">
-                                        <a href="">
+                                        <a href="?act=detail&sp=<?=$row['MaSP']?>">
                                             <img src="./public/images/<?= $row['hinhanh']?>" alt="">
                                         </a>
                                         <div class="icon-heart-product">
