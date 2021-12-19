@@ -117,25 +117,29 @@
                 </div>
             </div>
             <div class="owl-carousel owl-theme" id="owl-slider-concerning">
-                <?php foreach ($data_lq as $row) { ?>
-                <div class="product-main">
-                    <form action="">
-                        <div class="product-fruits__thumb">
-                            <a href="">
-                                <img src="./public/images/<?= $row['hinhanh']?>" alt="">
-                            </a>
-                            <div class="icon-heart-product">
-                                <i class="far fa-heart"></i>
+                <div class="row">
+                    <?php foreach ($data_lq as $row) { ?>
+                        <div class="col col-lg-3 col-md-3">
+                            <div class="product-main">
+                                <form action="">
+                                    <div class="product-fruits__thumb">
+                                        <a href="">
+                                            <img src="./public/images/<?= $row['hinhanh']?>" alt="">
+                                        </a>
+                                        <div class="icon-heart-product">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                    </div>
+                                    <div class="product-fruits__infos">
+                                        <h2 class="tilte-name-product"><?= $row['TenSP']?></h2>
+                                        <span class="price-text"><?= number_format($row['DonGia'])?>đ</span>
+                                        <button class="button-add-product">Cho vào giỏ</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <div class="product-fruits__infos">
-                            <h2 class="tilte-name-product"><?= $row['TenSP']?></h2>
-                            <span class="price-text"><?= $row['DonGia']?></span>
-                            <button class="button-add-product">Cho vào giỏ</button>
-                        </div>
-                    </form>
+                    <?php } ?>
                 </div>
-                <?php } ?>
             </div>
         </div>
     </section>

@@ -10,11 +10,12 @@ require_once("./Models/productModel.php");
         }
         function list()
         {   
+            $data_danhmuc = $this->product_model->danhmuc();
             if(isset($_GET['sp']))
             {
                 $data_sanpham  = $this->product_model->sanpham($_GET['sp']);
                 if($data_sanpham!=null){
-                    $data_lq = $this->product_model->sanpham_danhmuc(0,20,$data_sanpham[0]['MaDM']);
+                    $data_lq = $this->product_model->sanpham_danhmuc(0,4,$data_sanpham[0]['MaDM']);
                 }
             }
             $data_limit1 = $this->product_model->limit(0,4);

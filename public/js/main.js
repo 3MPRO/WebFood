@@ -16,28 +16,31 @@ const App = {
     arrayListFavorites : [],
     statusCheckbox: true,
     sliderProducts: function(element) {
-      var $sliderList = $(`${element}`)
-
-        $sliderList.trigger('destroy.owl.carousel');
-        $sliderList.owlCarousel({
-            margin:10,
-            loop:true,
-            nav:true,
-            autoplay:true,
-            autoplayTimeout:5000,
-            autoplayHoverPause:true,
-            responsive:{
-                0:{
-                    items:1
-                },
-                600:{
-                    items:3
-                },
-                1000:{
-                    items:5
+        var $sliderList = $(`${element}`)
+        
+        if($sliderList!=null) {
+            console.log($sliderList);
+            $sliderList.trigger('destroy.owl.carousel');
+            $sliderList.owlCarousel({
+                margin:10,
+                loop:true,
+                nav:true,
+                autoplay:true,
+                autoplayTimeout:5000,
+                autoplayHoverPause:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:3
+                    },
+                    1000:{
+                        items:5
+                    }
                 }
-            }
-        });
+            });
+        }
     },
     eventDom: function() {
         let _this = this;
