@@ -14,9 +14,25 @@
              require("result.php");
              return $data;  
         }
+        function sanpham_khuyenmai() {
+            $query = "SELECT * FROM khuyenmai, sanpham,hinhanh WHERE khuyenmai.MaKM = sanpham.MaKM and khuyenmai.GiaTriKM != 0 AND sanpham.MaSP = hinhanh.masp
+            GROUP by sanpham.MaSP";
+            // echo $query;
+            require("result.php");
+            return $data;
+        }
+
+        public function sanpham_km($masp)
+        {
+            $query ="SELECT * from sanpham,hinhanh,khuyenmai where sanpham.MaSP = hinhanh.masp and khuyenmai.MaKM = sanpham.MaKM and sanpham.MaSP = '$masp'";
+            require("result.php");
+            return $data;
+        }
+
         public function sanpham($masp)
         {
-            $query ="SELECT * from sanpham,hinhanh where sanpham.MaSP = hinhanh.masp and sanpham.MaSP = '$masp'";
+            $query ="SELECT * from sanpham,hinhanh,danhmuc,loaisanpham
+            where sanpham.MaSP = hinhanh.masp and sanpham.MaLSP = loaisanpham.MaLSP and loaisanpham.MaDM = danhmuc.MaDM and sanpham.MaSP = '$masp'";
             require("result.php");
             return $data;
         }

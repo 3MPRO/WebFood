@@ -21,7 +21,9 @@ require_once("./Models/productModel.php");
             }
             $data_sanpham1 = $this->product_model->sanpham_danhmuc(0,10,1);
             $data_sanpham2 = $this->product_model->sanpham_danhmuc(0,10,3);
+            $data_khuyenmai = $this->product_model->sanpham_khuyenmai();
 
+            
             $data_limit1 = $this->product_model->limit(0,4);
             $data_limit2 = $this->product_model->limit(4,4);
             $data_limit3 = $this->product_model->limit(8,4);

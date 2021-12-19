@@ -51,6 +51,20 @@ const App = {
             }
         })
 
+        // Load more description product details
+        // const btnLoadMore = item('.btn-view-more')
+        // const contentDesc = item('.product-tab-desc__element')
+        // btnLoadMore.addEventListener('click', function(){
+        //     console.log('daclick load more');
+        //     contentDesc.classList.toggle('product-tab-desc')
+        //     if(!contentDesc.classList.contains('product-tab-desc')){
+        //         btnLoadMore.innerText = 'Thu gọn'
+        //     }else {
+        //         btnLoadMore.innerText = 'Xem thêm'
+        //     }
+        // })
+
+        // click to top
         item('.box-button-top').addEventListener("click", function() {
             rootElement.scrollTo({
                 top: 0,

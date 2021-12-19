@@ -1,3 +1,4 @@
+
 <main id="main">
 <div class="container">
     <div class="break-crumb">
@@ -19,11 +20,18 @@
             </div>
         </div>
     </div>
-
+<?php  
+    if(isset($_GET['km'])){
+        $km = $_GET['km'];
+        $status = true;
+    }else{
+        $status = false;
+    }
+?>
     <div class="row mb-4">
         <div class="col col-lg-4">
             <div class="product-detail-left">
-                <div id="product-detail-left__thumbnail">
+                <div id="product-detail-left__thumbnail" class="<?php if($status == true) echo "product-detail-left__thumbnail--sale "?>">
                     <img src="./public/images/<?php echo $data_sanpham[0]['hinhanh']; ?>" alt="" class="product-detail-left__image-main">
                 </div>
                 <div class="product-detail-left__list-thumb">
@@ -47,21 +55,18 @@
         </div>
         <div class="col col-lg-5">
             <div class="product-detail-main">
-                <h2 class="tilte-name-product"><?php echo $data_sanpham[0]['TenSP']; ?></h2>
+                <h2 class="tilte-name-product-detail"><?php echo $data_sanpham[0]['TenSP']; ?></h2>
                 <div class="product-detail-main__price">
-                    <span><?php echo number_format($data_sanpham[0]['DonGia']); ?> đ</span>
+                    <span class="product-detail-main__price-new"><?php echo number_format($data_sanpham[0]['DonGia']); ?> đ</span>
+                    <?php if($status == true) { ?>
+                    <span class="product-detail-price__old"><?php echo number_format($data_sanpham[0]['giaCu']); ?> đ</span>
+                    <span class="product-detail-price__sale"><?= $km ?>%</span>
+                    <?php } ?>
                 </div>
                 <div class="product-detail-main__desc">
-                    <div>
-                        <span>Nguồi gốc</span>
-                    <strong>
-                        <span>Đà lạt</span>
-                    </strong>
-                    </div>
-                    <div>
-                        <span>Mã sản phẩm</span>
-                        <strong>CT-01</strong>
-                    </div>
+                    <p class="product-detail-main__desc-text">
+                        <?php echo $data_sanpham[0]['desc'] ?>
+                    </p>
                 </div>
             </div>
             <form action="./Controllers/CartController.php" method="post">
@@ -76,12 +81,7 @@
                 </div>
                 <div class="group-button-add">
                     <a href="?act=cart&xuli=add&id=<?php echo $data_sanpham[0]['MaSP']; ?>&sl=1" class="add-cart btn-add-cart" data-id="<?php echo $data_sanpham[0]['MaSP']; ?>">Cho vào giỏ hàng</a>
-                    <a href="?act=pay" class="buy-now">Mua ngay</a>
-                </div>
-                <div class="icon-heart">
-                    <button class="add-heart">
-                        <i class="far fa-heart"></i>
-                    </button>
+                    <a href="" class="buy-now">Mua ngay</a>
                 </div>
             </form>
         </div>
@@ -95,16 +95,14 @@
         <div class="col col-lg-12">
             <div class="product_getcontent">
                 <div class="product-tab-title">
-                    <span>Chi tiết</span>
+                    <span>Mô tả</span>
                 </div>
-                <div class="product-text-desc">
-                    <p>
-                        <strong>Chuối tiêu xanh</strong> tại Dũng Hà được lựa chọn kỹ càng, đảm bảo chuối xanh luôn tươi sạch và giữ lại hàm lượng dinh dưỡng cao nhất. Sản phẩm chuối tiêu xanh của chúng tôi, cam kết không chứa các hóa chất, chất kích thích tăng trưởng gây hại, đảm bảo an toàn cho sức khỏe người tiêu dùng. Do đó, bạn hoàn toàn có thể yên tâm khi lựa chọn mua chuối xanh cho của gia đình nhé. Món chuối xanh sẽ làm đa dạng thêm hương vị cho các món ăn của gia đình bạn đó!
-                    </p>
-                    <p>
-                        <strong>Chuối xanh làm nguyên liệu nấu ăn Chuối xanh</strong> làm nguyên liệu nấu ăn, chuối xanh tự nhiên có mùi thơm nhẹ, vỏ rất mỏng và thịt quả chắc, ngọt mát. Chuối xanh có thể chế biến thành rất nhiều món khác nhau với nhiều hương vị thơm ngon bổ dưỡng cho bữa cơm gia đình thêm ấm cúng. Công dụng giảm cân của chuối xanh Chuối xanh có vị chát và chứa nhiều chất xơ và tinh bột nên có khả năng làm loại bỏ chất béo và các tạp chất có hại khác trong cơ thể ra bên ngoài. Chính vì thế, ăn chuối xanh luộc sẽ giúp bạn giảm cân hiệu quả.  Chuối xanh tốt cho bệnh dạ dầy Chuối tiêu xanh chứa nhiều hợp chất quan trọng, giúp kích thích sự phát triển của lớp màng nhầy trong dạ dày, ngăn cản sự tấn công của dịch vị vào thành dạ dày, giúp chữa lành các vết thương từ thành ruột và dạ dày. Chuối tiêu xanh giúp điều trị bệnh loét dạ dày hiệu quả.
-                    </p>
+                <div class="product-tab-desc product-tab-desc__element">
+                    <?php echo $data_sanpham[0]['mota']; ?>
                 </div>
+                <!-- <div class="view-button-toggle">
+                    <button class="btn-view-more">Xem thêm</button>
+                </div> -->
             </div>
         </div>
     </div>
@@ -118,45 +116,28 @@
                     </h2>
                 </div>
             </div>
-            <div class="owl-carousel owl-theme" id="owl-slider-dry">
-                <?php 
-                // print_r($data_sanpham1);
-                    for ($i = 0; $i < (count($data_sanpham1)); $i++) {
-                        ?>
-                        <div class="product-main">
-                            <form action="" method="post">
-                                <div class="product-fruits__thumb">
-                                    <a href="?act=detail&sp=<?=$data_sanpham1[$i]['MaSP']?>">
-                                        <img src="./public/images/<?=$data_sanpham1[$i]['hinhanh'] ?>" alt="Product Title">
-                                    </a>
-                                    <div class="icon-heart-product">
-                                        <i class="far fa-heart"></i>
-                                    </div>
-                                </div>
-                                <div class="product-fruits__infos">
-                                    <h2 class="tilte-name-product"><?= $data_sanpham1[$i]['TenSP'] ?></h2>
-                                    <span class="price-text"><?= number_format($data_sanpham1[$i]['DonGia']) ?> VNĐ</span>
-                                    <a  href="?act=cart&xuli=add&id=<?=$data_sanpham1[$i]['MaSP']?>"
-                                        class="button-add-product btn-add-cart" 
-                                        value="<?php echo $data_sanpham1[$i]['MaSP'] ?>"
-                                        name="add-button"
-                                    >Cho vào giỏ</a>
-                                </div>
-                            </form>
+            <div class="owl-carousel owl-theme" id="owl-slider-concerning">
+                <?php foreach ($data_lq as $row) { ?>
+                <div class="product-main">
+                    <form action="">
+                        <div class="product-fruits__thumb">
+                            <a href="">
+                                <img src="./public/images/<?= $row['hinhanh']?>" alt="">
+                            </a>
+                            <div class="icon-heart-product">
+                                <i class="far fa-heart"></i>
+                            </div>
                         </div>
-                <?php }?>
+                        <div class="product-fruits__infos">
+                            <h2 class="tilte-name-product"><?= $row['TenSP']?></h2>
+                            <span class="price-text"><?= $row['DonGia']?></span>
+                            <button class="button-add-product">Cho vào giỏ</button>
+                        </div>
+                    </form>
+                </div>
+                <?php } ?>
             </div>
-
         </div>
     </section>
-    <div class="about-author">
-        <!-- comments -->
-        <div class="post-comments">
-            <!-- comment -->
-            <div class="fb-comments" data-href="https://dxdbloger.000webhostapp.com?act=detail&amp;id=<?php echo $data_sanpham[0]['MaSP']; ?>" data-width="500" data-numposts="5"></div>
-            <!-- /comment -->
-        </div>
-        <!-- /comments -->
-    </div>
 </div>
 </main>
