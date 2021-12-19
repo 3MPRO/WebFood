@@ -12,6 +12,7 @@ window.addEventListener('load', () => {
     let totalSeconds;
     
     function init(endtime) {
+        console.log();
         totalSeconds = Math.floor(Date.parse(endtime) - Date.parse(new Date()));
         console.log(totalSeconds);
         setTimeLeft();

@@ -133,7 +133,7 @@
             const timeLeft = JSON.parse(localStorage.getItem('timeLeft'));
             if(timeLeft==null){
                 localStorage.setItem('timeLeft', JSON.stringify({
-                    d: 15,
+                    d: 7,
                     h: 0,
                     m: 0,
                     s: 0,
