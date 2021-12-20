@@ -143,12 +143,12 @@ switch ($mod) {
                 break;
         } break;
     case 'news':
-        require_once('./Controllers/newsController.php');
+        require_once('Controllers/newsController.php');
         $objCate = new newsController();
         $objCate->list();
         break;
     case 'contact':
-            require_once('./Controllers/ContactController.php');
+            require_once('Controllers/ContactController.php');
             $objCate = new newsController();
             $objCate->list();
             break;
