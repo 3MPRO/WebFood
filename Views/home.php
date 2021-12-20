@@ -1,16 +1,15 @@
 <section id="slider">
     <div class="container">
         <ul class="slider-list">
-            <li class="slider-list__item">
-                <a href="">
-                    <img src="./public/images/slider_1.webp" alt="">
-                </a>
-            </li>
-            <li class="slider-list__item">
-                <a href="">
-                    <img src="./public/images/slider_2.webp" alt="">
-                </a>
-            </li>
+            <?php 
+                foreach($data_banner as $banner) {
+                    ?>
+                    <li class="slider-list__item">
+                        <a href="">
+                            <img src="./public/<?php echo $banner['HinhAnh'] ?>" alt="">
+                        </a>
+                    </li>
+            <?php } ?>
         </ul>
     </div>
 </section>

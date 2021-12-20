@@ -35,11 +35,19 @@
                     <div class="shipping_status">
                         <span class="note">Trạng thái vận chuyển:</span> 
                         <b style="color:#212B25" class="span_">
-                            Chưa chuyển
+                            <?php if($data_detail_order[0]['TrangThaiDH'] == 0) {
+                                echo "Đang chờ lấy";}
+                                else if($data_detail_order[0]['TrangThaiDH'] == 1) {
+                                    echo "Đang vận chuyển";
+                                } else if($data_detail_order[0]['TrangThaiDH'] == 2) {
+                                    echo "Đã giao";
+                                }
+                                ?>
                         </b>
                     </div>
                 </div>
             </div>
+            <?php print_r($data_detail_order); ?>
             <div class="order-detail__center">
                 <div class="row">
                     <div class="col col-ms-6">
