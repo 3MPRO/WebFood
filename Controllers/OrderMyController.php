@@ -17,9 +17,16 @@ class OrderMyController
     }
     function deteteHoaDon(){
        $MaHD = $_GET['maHD'];
-       echo$MaHD;
        $this->order_model->deleteHoaDon($MaHD);
        $path = 'Location:?act=orderMy';
        header($path);
-     }  
+    }
+    
+    function orderDetail() {
+        $data_danhmuc = $this->order_model->danhmuc();
+        $MaHD = $_GET['maHD'];
+        $data_detail_order = $this->order_model->orderDetail($MaHD);
+        $data_detail_order_product = $this->order_model->orderDetail_product($MaHD);
+        require_once('Views/indexview.php');
+    }
 }

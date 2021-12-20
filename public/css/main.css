@@ -1497,7 +1497,11 @@ div.wrapper-count {
     font-size: 22px;
     font-weight: 800;
 }
-
+.pay-error__note p {
+    color: var(--cl-red);
+    text-decoration: underline;
+    display: none;
+}
 li.pad-order__item {
     display: flex;
     justify-content: space-between;
@@ -1651,8 +1655,7 @@ a.btn-back-home {
     border: 1px solid #dee2e6;
     background: #f1975f;
     color: #fff;
-    padding: 5px;
-    
+    padding: 10px;
 }
 .table-order th {
     font-weight: 400;
@@ -1691,3 +1694,62 @@ a.btn-usset-order__disble {
     background-color: var(--cl-green);
     color: white;
   }
+
+  .wrapper-pay__cod.wrapper-pay__cod--active {font-weight: 900;}
+
+
+
+  /* ORDER_DETAIL */
+.page_order .body_order .box-address {
+    margin-top: 30px;
+}
+.order-detail__head-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.order-detail__head h2 {
+    font-size: 24px;
+    padding-bottom: 30px;
+}
+.box-des {
+    min-height: 110px;
+    padding: 13px 25px 10px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+.box-address {
+    margin-bottom: 30px;
+}
+.box-des p {
+    font-size: 18px;
+    line-height: 16px;
+    vertical-align: top;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+td.link {
+    display: flex;
+    align-items: center;
+}
+
+.image_order {
+    padding-right: 14px;
+}
+
+.content_right ,.bottom_mb{
+    display: flex;
+    align-items: center;
+}
+td.numeric {padding-top: 57px;text-align: center;}
+
+.quantity_mb,.title_order {
+    margin-right: 10px;
+}
+
+h2.title-head {
+    text-transform: uppercase;
+    font-size: 22px;
+    padding-bottom: 15px;
+}

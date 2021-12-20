@@ -66,8 +66,16 @@
             require_once("detailPr.php");
             break;
         case 'orderMy':
-            require_once("orderMy.php");
-            break;
+            $act = isset($_GET['xuli']) ? $_GET['xuli'] : "list";
+            switch ($act) {
+                case 'list':
+                    require_once("order/orderMy.php");
+                    break;
+                case 'order-detail':
+                    require_once("order/orderDetail.php");
+                    break;
+            }break;
+           
         case'cart':
             require_once("cart/cart.php");
             break;

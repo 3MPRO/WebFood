@@ -90,9 +90,16 @@
                 </div>
                 <div class="layout-flex">
                     <h2>Thanh toán</h2>
-                    <div class="wrapper-pay__cod">
+                    <div class="wrapper-pay__cod wrapper-pay__cod--active">
                         <span>Thanh toán khi giao hàng(COD)</span>
                         <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <div class="wrapper-pay__cod">
+                        <a href="" class="btn-paypel">Thanh toán bằng paypal</a>
+                    </div>
+                    <div class="pay-error__note">
+                        <p>*Xin lỗi tính năng này chưa hoàn thành</p>
+                        
                     </div>
                 </div>
             </div>
