@@ -1706,7 +1706,7 @@ a.btn-usset-order__disble {
 .order-detail__head-wrapper {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 .order-detail__head h2 {
     font-size: 24px;
