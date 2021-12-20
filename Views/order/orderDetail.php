@@ -28,7 +28,12 @@
                         <span class="note">Trạng thái thanh toán:</span> 
                         <i class="status_pending">	 
                             <em>
-                                <span class="span_pending" style="color: red"><strong><em>Chưa thanh toán</em></strong></span>
+                                <span class="span_pending" style="color: red"><strong><em>
+                                    <?php if ($data_detail_order[0]['TrangThaiDH'] == 1) {
+                                        echo 'Đã thanh toán';
+                                    }else {echo 'Chưa thanh toán';}
+                                    ?>
+                                </em></strong></span>
                             </em>
                         </i>
                     </div>
@@ -36,18 +41,16 @@
                         <span class="note">Trạng thái vận chuyển:</span> 
                         <b style="color:#212B25" class="span_">
                             <?php if($data_detail_order[0]['TrangThaiDH'] == 0) {
-                                echo "Đang chờ lấy";}
+                                echo "Đang vẫn chuyển";}
                                 else if($data_detail_order[0]['TrangThaiDH'] == 1) {
-                                    echo "Đang vận chuyển";
-                                } else if($data_detail_order[0]['TrangThaiDH'] == 2) {
-                                    echo "Đã giao";
-                                }
+                                    echo "Đã giao thành công";
+                                } 
                                 ?>
                         </b>
                     </div>
                 </div>
             </div>
-            <?php print_r($data_detail_order); ?>
+            <!-- <?php print_r($data_detail_order); ?> -->
             <div class="order-detail__center">
                 <div class="row">
                     <div class="col col-ms-6">
