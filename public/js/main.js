@@ -54,18 +54,14 @@ const App = {
             }
         })
 
-        // Load more description product details
-        // const btnLoadMore = item('.btn-view-more')
-        // const contentDesc = item('.product-tab-desc__element')
-        // btnLoadMore.addEventListener('click', function(){
-        //     console.log('daclick load more');
-        //     contentDesc.classList.toggle('product-tab-desc')
-        //     if(!contentDesc.classList.contains('product-tab-desc')){
-        //         btnLoadMore.innerText = 'Thu gọn'
-        //     }else {
-        //         btnLoadMore.innerText = 'Xem thêm'
-        //     }
-        // })
+        // 
+        const btnPaypal = item('.btn-paypel')
+        if(btnPaypal!=null) {
+            btnPaypal.addEventListener('click', function(e){
+                e.preventDefault();
+                item('.pay-error__note p').style.display = 'block';
+            })
+        }
 
         // click to top
         item('.box-button-top').addEventListener("click", function() {
