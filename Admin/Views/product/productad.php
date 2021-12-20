@@ -24,7 +24,7 @@
                 <td><?= $value['TrangThai'] ?></td>
                 <td>
                     <div class="">
-                    <a class="btn-addproduct btnUpdate--view">Xem</a>
+                    <a class="btn-addproduct btnUpdate--view" href="/WebFood/Webfood?act=detail&sp=<?= $value['MaSP']?>">Xem</a>
                         <a href="?mod=sanpham&act=edit&idsp=<?= $value['MaSP']?>" class="btn-addproduct btn--edit">Sửa</a>
                         <a href="?mod=sanpham&act=delete&idsp=<?= $value['MaSP']?>" class="btn-addproduct btnUpdate--delete" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn-addproduct btn-block btn--delete">Xóa</a>
                     </div>
