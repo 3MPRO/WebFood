@@ -92,6 +92,8 @@
 
 .col-product__item.product-item__sale-off--none .product-item__sale-off,
 .col-product__item.product-item__sale-off--none .price-old,
+.col-product__item.product-item__sale-off--none .text-sale,
+.col-product__item.product-item__sale-off--none .product-img::after,
 .col-product__item.product-item__sale-off--none::after{
     display: none;
 }

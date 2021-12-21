@@ -1526,10 +1526,14 @@ span.pay-order__item-price {
 }
 
 .pay-order__total-wrapper {
-    padding: 15px 0;
+    padding: 8px 0;
     display: flex;
     justify-content: space-between;
     font-size: 18px;
+}
+
+span.pad-order__item-name {
+    max-width: 192px;
 }
 
 .pay-order__checkout {

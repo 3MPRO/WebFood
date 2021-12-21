@@ -86,9 +86,10 @@
                             </h2>
                             <div class="box-des">
                                 <p>
-                                    
-                                    Không có ghi chú
-                                    
+                                    <?php 
+                                        if($data_detail_order[0]['ghiChu']!="") 
+                                            echo $data_detail_order[0]['ghiChu'];
+                                        else echo "Không có ghi chú";?>
                                 </p>
                             </div>
                         </div>

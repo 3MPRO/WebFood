@@ -40,6 +40,7 @@ class PayController
             // print_r($city[0]['name']);
             $diachi = $city[0]['name'] .' - '. $district[0]['name'] .' - '. $wards[0]['name'] .' - '. $village[0]['name'];
             $_SESSION['login']['DiaChi'] = $diachi;
+            $ghichu = $_POST['ghichu'];
         }
         $data = array(
             'MaND' => $_SESSION['login']['MaND'],
@@ -48,6 +49,7 @@ class PayController
             'SDT' => $_SESSION['login']['SDT'],
             'DiaChi' => $diachi,
             'TongTien' => $count,
+            'GhiChu' => $ghichu,
             'TrangThai'  =>  '0',
         );
         $this->pay_model->save($data);

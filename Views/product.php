@@ -208,10 +208,15 @@
                                 if($data_sanpham != NULL)
                                 {   
                                     for($i = 0;$i<$count; $i++){
-                                        if ($data_sanpham[$i]['GiaTriKM'] == 0) 
+                                        if ($data_sanpham[$i]['GiaTriKM'] == 0) {
                                             $status = "product-item__sale-off--none";
-                                        else 
+                                            $km = "no";
+                                            $makm = "";
+                                        }
+                                        else {
                                             $status = "";
+                                            $makm = "&km=" .$data_sanpham[$i]['MaSP'];
+                                        }
                                         ?>
                                     
                                     <div class="col-product__item col col-md-4 col-lg-4 <?= $status ?>">
@@ -224,18 +229,19 @@
                                         <a href=""><i class="product-item-icon far fa-heart"></i></a>
                                         </div>
                                             <div class="product-img">
-                                                <a href="?act=detail&sp=<?=$data_sanpham[$i]['MaSP']?>" style="display: block;">
+                                                <a href="?act=detail&sp=<?=$data_sanpham[$i]['MaSP']?><?= $makm ?>" style="display: block;">
                                                     <span class ="img--hover"></span> 
                                                     <img src="./public/images/<?php echo $data_sanpham[$i]['hinhanh'] ?>" alt="">
                                                 </a>
+                                                <p class="text-sale <?= $status ?>">Sale</p>
                                             </div>
                                             <div class="product-fruits__infos">
                                                 <h2 class="tilte-name-product-t"><?= $data_sanpham[$i]['TenSP']?></h2>
                                                 <div>
                                                 <span class="price-new"><?= number_format( $data_sanpham[$i]['DonGia']) ?>đ</span>
-                                                <a href="?act=cart&xuli=add&id=<?=$data_sanpham[$i]['MaSP']?>" class="button-add-product button-add-product--view btn-add-cart">Cho vào giỏ</a>
+                                                <a href="?act=cart&xuli=add&id=<?=$data_sanpham[$i]['MaSP']?>" 
+                                                class="button-add-product button-add-product--view btn-add-cart">Cho vào giỏ</a>
                                                 <span class="price-old <?= $status ?>"><?php echo number_format($data_sanpham[$i]['giaCu']) ?>đ</span>
-                
                                                 </div>
                                             </div>
                                         </form>
