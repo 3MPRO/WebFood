@@ -89,6 +89,21 @@
     text-align: center;
     overflow: hidden;
 }
+
+.col-product__item.product-item__sale-off--none .product-item__sale-off,
+.col-product__item.product-item__sale-off--none .price-old,
+.col-product__item.product-item__sale-off--none::after{
+    display: none;
+}
+
+.col-product__item.product-item__sale-off--none .product-img {
+    border: none;
+}
+
+.col-product__item.product-item__sale-off--none:hover .button-add-product {
+    top: -6px;
+}
+
 .product-img::after {
     position: absolute;
     content: "";
@@ -142,7 +157,7 @@ p.text-sale {
     transition: all 0.5s;
 }
 .col-product__item:hover .img--hover{ 
-    opacity: 0.6;
+    opacity: 0.4;
 }
 .product-item-icon{
     transition: ease-in 0.2s;

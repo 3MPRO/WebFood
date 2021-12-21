@@ -208,15 +208,18 @@
                                 if($data_sanpham != NULL)
                                 {   
                                     for($i = 0;$i<$count; $i++){
-                                        
+                                        if ($data_sanpham[$i]['GiaTriKM'] == 0) 
+                                            $status = "product-item__sale-off--none";
+                                        else 
+                                            $status = "";
                                         ?>
                                     
-                                    <div class="col-product__item col col-md-4 col-lg-4">
+                                    <div class="col-product__item col col-md-4 col-lg-4 <?= $status ?>">
                                         <form action="" >
                                             <div>
                                         <div class="product-item__sale-off">
-                                                <span class="home-product-item__percent">10%</span>
-                                                <label class ="home-product-item__label" for="">Giảm</label>
+                                            <span class="home-product-item__percent"><?= $data_sanpham[$i]['GiaTriKM'];?>%</span>
+                                            <label class ="home-product-item__label" for="">Giảm</label>
                                         </div>
                                         <a href=""><i class="product-item-icon far fa-heart"></i></a>
                                         </div>
@@ -231,7 +234,7 @@
                                                 <div>
                                                 <span class="price-new"><?= number_format( $data_sanpham[$i]['DonGia']) ?>đ</span>
                                                 <a href="?act=cart&xuli=add&id=<?=$data_sanpham[$i]['MaSP']?>" class="button-add-product button-add-product--view btn-add-cart">Cho vào giỏ</a>
-                                                <span class="price-old"><?php echo number_format($data_sanpham[$i]['DonGia']+ 20000) ?>đ</span>
+                                                <span class="price-old <?= $status ?>"><?php echo number_format($data_sanpham[$i]['giaCu']) ?>đ</span>
                 
                                                 </div>
                                             </div>
