@@ -81,6 +81,17 @@
                 </li>
             <?php } ?>
             <?php
+                if(isset($_SESSION['isLogin_Admin']) || isset($_SESSION['isLogin_Nhanvien'])){ ?>
+                <li>
+                    <a class="has-arrow" href="?mod=banner" aria-expanded="true">
+                        <div class="icon_menu">
+                            <i class="far fa-image"></i>
+                            <span>Quản lý banner</span>
+                        </div>
+                    </a>
+                </li>
+            <?php } ?>
+            <?php
                 if(isset($_SESSION['isLogin_GiaoHang'])){ ?>
                 <li>
                     <a class="has-arrow" href="?mod=order" aria-expanded="true">

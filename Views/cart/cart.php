@@ -83,7 +83,7 @@
             <?php }?>
 		</div>
     </div>
-    <?php if(!isset($_SESSION['product'])) { ?>
+    <?php if(!isset($_SESSION['product']) || count($_SESSION['product']) == 0) { ?>
     <div class="cart-page-footer">
         <div class="cart-page-footer-button">
             <a href="?act=home">Tiếp tục mua hàng</a>

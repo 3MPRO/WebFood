@@ -103,7 +103,7 @@
     background: transparent;
     color: #8890B5;
     margin-top: 25px;
-    font-family: "Comfortaa", cursive;
+    /* font-family: "Comfortaa", cursive; */
 }
 
 .sidebar #sidebar_menu li a .icon_menu {

@@ -48,5 +48,11 @@
             require("result.php");
             return $data;
         }
+
+        function getBanner() {
+            $query = "SELECT * FROM banner";
+            require("result.php");
+            return $data;
+        }
     }
 ?>
