@@ -160,13 +160,15 @@
                                                 <?php
                                                 if(isset($_SESSION['isLogin_Admin']) || isset($_SESSION['isLogin_Nhanvien']) || isset($_SESSION['isLogin_GiaoHang'])){ ?>
                                                 <li class="group-login__list-item"><a href="admin/?mod=login">Trang quản lý</a></li>
+                                                <li class="group-login__list-item"><a href="?act=taikhoan&xuli=dangxuat">Đăng xuất</a></li>
                                                 <?php }}else{ ?>
                                                 <li class="group-login__list-item"><b>Khách hàng</b></li>
                                                 <li class="group-login__list-item">
                                                     <a href="?act=taikhoan&xuli=login">Đăng nhập</a>
                                                 </li>
-                                                <?php } ?>
                                                 <li class="group-login__list-item"><a href="?act=taikhoan&xuli=dangxuat">Đăng xuất</a></li>
+                                                <?php } ?>
+                                                
                                         </ul>
                                         </div>
                                     </div>
