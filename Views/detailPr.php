@@ -141,7 +141,11 @@
                                     <div class="product-fruits__infos">
                                         <h2 class="tilte-name-product"><?= $row['TenSP']?></h2>
                                         <span class="price-text"><?= number_format($row['DonGia'])?>đ</span>
-                                        <button class="button-add-product">Cho vào giỏ</button>
+                                        <a href="?act=cart&xuli=add&id=<?=$row['MaSP']?>"
+                                            class="button-add-product btn-add-cart" 
+                                            value="<?php echo $row['MaSP'] ?>"
+                                            name="add-button"
+                                        >Cho vào giỏ</a>
                                     </div>
                                 </form>
                             </div>

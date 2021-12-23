@@ -41,7 +41,7 @@
                         <span class="note">Trạng thái vận chuyển:</span> 
                         <b style="color:#212B25" class="span_">
                             <?php if($data_detail_order[0]['TrangThaiDH'] == 0) {
-                                echo "Đang vẫn chuyển";}
+                                echo "Đang chờ lấy hàng";}
                                 else if($data_detail_order[0]['TrangThaiDH'] == 1) {
                                     echo "Đã giao thành công";
                                 } 
