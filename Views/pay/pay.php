@@ -32,39 +32,56 @@
                                 <span class="required">*</span>
                                 <input type="tel" name="SDT" class="form-control form-control-lg" placeholder="Số điện thoại" required value=" <?=$_SESSION['login']['SDT'] ?>"/>
                             </fieldset>
-                            <!-- <fieldset class="form-group">
-                                <label>Địa chỉ</label>
-                                <span class="required">*</span>
-                                <input type="text" name="diachi" class="form-control form-control-lg" placeholder="Địa chỉ" required value="<?=$_SESSION['login']['DiaChi'] ?>"/>
-                            </fieldset> -->
-                            <div class="form-group">
-                                <select class="form-control city" name="city" id="select" required>
-                                    <option value="">Thành phố</option>
-                                    <?php
-                                        if(count($data) > 0) {
-                                            foreach($data as $value) { ?>
-    
-                                        <option value="<?php echo $value['provinceid']; ?>"> <?php echo $value['name']; ?></option>
-                                    <?php
-                                        }}
-                                    ?>
-                                </select>
+                            <div class="form-group address-wrapper">
+                                <div class="address-select">
+                                    <span id="btn-address-select" class="btn btn-address btn-address-active">
+                                        Địa chỉ
+                                    </span>
+                                </div>
+                                <div class="address-default">
+                                    <span id="btn-address-default" class="btn btn-address">
+                                        Địa chỉ mặc định
+                                    </span>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <select class="form-control huyen" name="district" id="select" required>
-                                    <option value="">Huyện</option>
-                                </select>
+                            <div class="box-select-address">
+                                <div class="form-group">
+                                    <select class="form-control city" name="city" id="select" required>
+                                        <option value="">Thành phố</option>
+                                        <?php
+                                            if(count($data) > 0) {
+                                                foreach($data as $value) { ?>
+        
+                                            <option value="<?php echo $value['provinceid']; ?>"> <?php echo $value['name']; ?></option>
+                                        <?php
+                                            }}
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control huyen" name="district" id="select" required>
+                                        <option value="">Huyện</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control xa" name="wards" id="select" required>
+                                        <option value="">Xã</option>
+                                    </select> 
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control thon" name="village" id="select" required>
+                                        <option value="">Thôn</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <select class="form-control xa" name="wards" id="select" required>
-                                    <option value="">Xã</option>
-                                </select> 
+
+                            <div class="box-address-default" style="display:none;">
+                                <span class="address-default-span">
+                                    <?= $data_address[0]['DiaChi']; ?>
+                                </span>
+                                <input type="text" value="<?= $data_address[0]['DiaChi']; ?>" hidden name="address-default">
                             </div>
-                            <div class="form-group">
-                                <select class="form-control thon" name="village" id="select" required>
-                                    <option value="">Thôn</option>
-                                </select>
-                            </div>
+
                             <fieldset class="form-group">
                                 <label>Ghi chú</label>
                                 <input type="text" name="ghichu" class="form-control form-control-lg" placeholder="Ghi chú" value=""/>
@@ -166,3 +183,60 @@
     </form>
     </div>
 </main>
+
+<script>
+    (function(){
+        var htmls = `
+        <div class="form-group">
+            <select class="form-control city" name="city" id="select" required>
+                <option value="">Thành phố</option>
+                <?php
+                    if(count($data) > 0) {
+                        foreach($data as $value) { ?>
+
+                    <option value="<?php echo $value['provinceid']; ?>"> <?php echo $value['name']; ?></option>
+                <?php
+                    }}
+                ?>
+            </select>
+        </div>
+        <div class="form-group">
+            <select class="form-control huyen" name="district" id="select" required>
+                <option value="">Huyện</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <select class="form-control xa" name="wards" id="select" required>
+                <option value="">Xã</option>
+            </select> 
+        </div>
+        <div class="form-group">
+            <select class="form-control thon" name="village" id="select" required>
+                <option value="">Thôn</option>
+            </select>
+        </div>
+        `
+        let btnAddressDefault = document.getElementById('btn-address-default');
+        let boxAddress = document.querySelector('.box-select-address')
+        let boxAddressDefault = document.querySelector('.box-address-default')
+        let btnAddressSelect = document.getElementById('btn-address-select');
+        btnAddressDefault.addEventListener('click', function(){
+            let elements = document.querySelectorAll('.box-select-address .form-group')
+            boxAddress.style.display = 'none';
+            boxAddressDefault.style.display = 'block';
+            btnAddressSelect.classList.remove('btn-address-active')
+            this.classList.add('btn-address-active');
+            for (let index = 0; index < elements.length; index++) {
+                elements[index].remove()
+            }
+        })
+
+        btnAddressSelect.addEventListener('click', function(){
+            boxAddress.style.display = 'block';
+            boxAddressDefault.style.display = 'none';
+            btnAddressDefault.classList.remove('btn-address-active')
+            this.classList.add('btn-address-active');
+            boxAddress.innerHTML = htmls
+        })
+    })()
+</script>

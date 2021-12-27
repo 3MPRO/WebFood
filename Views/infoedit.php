@@ -59,7 +59,6 @@
                         <span class="required">*</span>
                         <input type="text" name = "DiaChi" value="<?= $data['DiaChi']?>" class="form-control form-control-lg edit" placeholder=""/>
                     </fieldset>
-                
                 <div class="container-infor__item">
                     <input class="btn-edit" type="submit" value="Cập Nhật">
                 </div>
