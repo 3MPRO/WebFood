@@ -37,10 +37,9 @@
             require("result.php");
             return $data;
         }
-        public function loaisp_danhmuc($danhmuc)
+        public function loaisp_danhmuc()
         {
-            $query ="SELECT * from danhmuc, loaisanpham
-                     where danhmuc.MaDM = loaisanpham.MaDM";
+            $query ="SELECT * from loaisanpham";
             require("result.php");
             return $data; 
         }

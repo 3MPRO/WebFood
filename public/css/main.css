@@ -387,7 +387,7 @@ a.cart-content-inner__btn{
     color: #ffeb00;
 }
 
-.nav-list__item a:hover {
+.nav-list__item a:hover,.nav-item__down-item a:hover {
     color: #ffeb00;
     transition: 0.3s ease;
 }
@@ -407,6 +407,28 @@ a.cart-content-inner__btn{
 
 .nav-item__down-item {  
     border-bottom: 1px solid #c1c1c1;
+    position: relative;
+}
+.nav-item__down-item i.fas.fa-chevron-right {
+    position: absolute;
+    right: 15px;
+}
+.nav-item__down-item:hover .nav-list__down {
+    display: block;
+}
+
+.nav-item__down-item:hover > a {
+    color: #ffeb00;
+}
+
+.nav-list__down {
+    position: absolute;
+    right: -100%;
+    top: 0;
+    background: #fff;
+    width: 200px;
+    display: none;
+    box-shadow: 0px 0px 6px rgb(79 95 120 / 10%);
 }
 
 .nav-item__down-item a{
