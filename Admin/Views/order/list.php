@@ -19,16 +19,14 @@
     </tr>
   </thead>
   <tbody>
-    <?php foreach ($data as $row) {
-         if($row['TrangThai']==1){
-      ?>
+  <?php foreach ($data as $row) { ?>
       <tr>
         <td><?= $row['NguoiNhan'] ?></td>
         <td><?= $row['NgayLap'] ?></td>
         <td><?= number_format($row['TongTien']) ?>VNĐ</td>
         <td><?= $row['DiaChi'] ?></td>
         <td><?= $row['SDT'] ?></td>
-        <td><?php if($row['TrangThaiDH']==0 ){
+        <td><?php if($row['TrangThaiDH']==0){
             echo 'Chưa giao';
         }else{
             echo 'Đã giao';
@@ -39,7 +37,7 @@
           <a href="?mod=order&act=delete&id=<?= $row['MaHD'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
         </td>
       </tr>
-    <?php }} ?>
+    <?php } ?>
 </table>
 <script>
   $(document).ready(function() {
