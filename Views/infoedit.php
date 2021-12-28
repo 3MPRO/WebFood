@@ -22,7 +22,14 @@
                 ?>
                 <label class="container-infor__title">Thông Tin Tài Khoản</label>
                 <h2 class ="container-infor__name">Khách hàng: <span><?= $data['Ho']. " ".$data['Ten'] ?></span></h2>
-                <input checked="true" class= "infoChange-type" type="radio" name="radio-changeInfor" id="radio-changeInfor"><span>Thông tin cá nhân </span>
+                <input checked="true" class= "infoChange-type" type="radio" name="radio-changeInfor" id="radio-changeInfor">
+                <label for="radio-changeInfor">
+                    <span>Thông tin cá nhân </span>
+                </label>
+                <input class= "infoChange-type" type="radio" name="radio-changeInfor" id="radio-changePass"  <?php if (isset($_COOKIE['doimk'])) { echo 'checked="true"';}?>>
+                <label for="radio-changePass">
+                    <span> Đổi mật khẩu </span>
+                </label>
                 <div class="div"></div>
                 <form  action="?act=taikhoan&xuli=updateinfo" class="container-inforChange  container-inforp" method="POST">
                 
@@ -65,7 +72,6 @@
             </form>
                 <!-- Đổi mật khẩu -->
                 
-                <input class= "infoChange-type" type="radio" name="radio-changeInfor" id="radio-changePass"  <?php if (isset($_COOKIE['doimk'])) { echo 'checked="true"';}?>><span> Đổi mật khẩu </span>
                 <div class="div"></div>
                 <?php if (isset($_COOKIE['doimk'])) { ?>
                             <div class="alert alert-success">
