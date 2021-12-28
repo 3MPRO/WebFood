@@ -387,7 +387,7 @@ a.cart-content-inner__btn{
     color: #ffeb00;
 }
 
-.nav-list__item a:hover {
+.nav-list__item a:hover,.nav-item__down-item a:hover {
     color: #ffeb00;
     transition: 0.3s ease;
 }
@@ -407,6 +407,28 @@ a.cart-content-inner__btn{
 
 .nav-item__down-item {  
     border-bottom: 1px solid #c1c1c1;
+    position: relative;
+}
+.nav-item__down-item i.fas.fa-chevron-right {
+    position: absolute;
+    right: 15px;
+}
+.nav-item__down-item:hover .nav-list__down {
+    display: block;
+}
+
+.nav-item__down-item:hover > a {
+    color: #ffeb00;
+}
+
+.nav-list__down {
+    position: absolute;
+    right: -100%;
+    top: 0;
+    background: #fff;
+    width: 200px;
+    display: none;
+    box-shadow: 0px 0px 6px rgb(79 95 120 / 10%);
 }
 
 .nav-item__down-item a{
@@ -704,7 +726,7 @@ h2.tilte-name-product {
     display: flex;
     justify-content: space-between;
     position: relative;
-    top: -263px;
+    top: -253px;
 }
 #product-sale-slider .owl-nav {
     top: -210px;
@@ -1546,7 +1568,7 @@ span.pay-order__item-price {
     padding: 8px 0;
     display: flex;
     justify-content: space-between;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 span.pad-order__item-name {
@@ -1577,6 +1599,24 @@ button.pay-order__button-check {
 
 .pad-order__item-img {
     position: relative;
+}
+.form-group.address-wrapper {
+    display: flex;
+    align-items: center;
+}
+.address-default {
+    padding-left: 20px;
+}
+.btn-address {
+    color: #000;
+    padding: 5px 8px;
+    border-radius: 6px;
+    border: 1px solid #c1c1c1;
+}
+
+.btn-address-active {
+    background-color: var(--cl-orange);
+    color: #fff;
 }
 
 .count-product {
@@ -1773,4 +1813,9 @@ h2.title-head {
     text-transform: uppercase;
     font-size: 22px;
     padding-bottom: 15px;
+}
+
+
+.product-item__sale-off.product-item__sale-off--none {
+    display: none;
 }

@@ -196,13 +196,13 @@
                     <?php foreach($data_danhmuc as $row) { ?>
 
                             <li class="nav-item__down-item">
-                                <a href="?act=product&cate=<?=$row['MaDM'] ?>"><?=$row['TenDM']?>
+                                <a href="?act=product&cate=<?=$row['MaDM'] ?>">
+                                    <?=$row['TenDM']?>
+                                    <i class="fas fa-chevron-right"></i>
                                 </a>
+                                <?php recursiveMenu($data_loaisp,$row['MaDM']) ?>
                             </li>
-
                             <?php  } ?>
-                    
-                    
                 </ul>
             </li>
             <li class="nav-list__item"><a class="nav-list__item-link" href="?act=product&cate=2">Bánh kẹo</a></li>
@@ -212,3 +212,20 @@
         </ul>
     </div>
 </nav>
+
+<?php
+
+function recursiveMenu($data, $parent_id, $sub=true){
+    echo '<ul class="nav-list__down">';
+    foreach ($data as $key => $item) {
+         if($item['MaDM'] == $parent_id){
+            unset($data[$key]);
+          ?>    
+     <li>
+      <a href=""><?php echo $item['TenLSP']?></a>
+      
+     </li>
+        <?php }} 
+     echo "</ul>";
+}
+?>
