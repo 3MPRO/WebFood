@@ -6,7 +6,7 @@
         $name = $_POST['name'];
         $danhmuc = $_POST['danhmuc'];
         $query = "SELECT * FROM danhmuc, loaisanpham, sanpham, hinhanh,khuyenmai WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and khuyenmai.MaKM = sanpham.MaKM and danhmuc.TenDM = '{$danhmuc}' GROUP by sanpham.MaSP ORDER BY {$name} {$_POST['action']}";
-        echo $query;
+        
         $result = $mysqli->query($query);
         $row =  $result -> fetch_array(MYSQLI_ASSOC);
         $count = count($row);

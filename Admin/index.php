@@ -223,6 +223,6 @@ session_start();
                 }
             break;
         default:
-        header('location: ?mod=order');
+        header('location: ?mod=bill');
         }
 ?>
