@@ -9,15 +9,17 @@
 <hr>
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
   <thead>
-    <tr>
+    <tr style="
+    background-color: #4eb92d;
+    color: white;">
       <th scope="col">Mã danh mục</th>
       <th scope="col">Tên danh mục</th>
-      <th scope="col">#</th>
+      <th scope="col">Thao tác</th>
     </tr>
   </thead>
   <tbody>
     <?php foreach ($data as $row) { ?>
-      <tr>
+      <tr >
         <td><?= $row['MaDM'] ?></td>
         <td><?= $row['TenDM'] ?></td>
         <td>
