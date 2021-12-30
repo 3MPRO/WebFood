@@ -235,3 +235,11 @@
 .align-items-center {
     color: #6bc21a;
 }
+
+.head_table_tk th {
+    color: #fff;
+}
+
+.head_table_tk_ct th {
+    color: rgb(152, 99, 0);
+}

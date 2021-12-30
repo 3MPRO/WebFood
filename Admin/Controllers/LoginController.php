@@ -15,7 +15,7 @@
 
             $data_hd = $this->login_model->tk_thongbao();
 
-            $data_hd_cd = $this->login_model->tk_thongbao_dd();
+            // $data_hd_cd = $this->login_model->tk_thongbao_dd();
 
             $m = date("m");
 
