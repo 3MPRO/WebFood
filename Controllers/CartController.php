@@ -55,7 +55,9 @@ class CartController
         foreach ($_SESSION['product'] as $value) {
             $count += $value['ThanhTien'];
         }
-        $path = 'Location:?act=detail&sp=' .$id;
+        // $path = 'Location:?act=detail&sp=' .$id;
+        // header($path);
+        $path = 'Location:?act=cart';
         header($path);
     }
     function update_cart()
