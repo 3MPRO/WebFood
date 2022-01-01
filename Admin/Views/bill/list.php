@@ -8,7 +8,9 @@
 <hr>
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
   <thead>
-    <tr>
+    <tr style="
+    background-color: #4eb92d;
+    color: white;">
       <th scope="col">Tên Khách Hàng</th>
       <th scope="col">Ngày đặt hàng</th>
       <th scope="col">Tổng tiền</th>

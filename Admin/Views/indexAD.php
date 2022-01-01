@@ -24,6 +24,9 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    
+    <!-- CHART JS -->
+		<script	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
   
 </head>
 <body>
@@ -162,6 +165,16 @@
                                     break;
                                   default:
                                     require_once('Views/banner/list.php');
+                                    break;
+                                }
+                                break;
+                              case 'login':
+                                switch ($act) {
+                                  case 'admin':
+                                    require_once('Views/login/admin.php');
+                                    break;
+                                  default:
+                                    require_once('Views/login/admin.php');
                                     break;
                                 }
                                 break;

@@ -11,7 +11,9 @@
 
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
   <thead>
-    <tr>
+    <tr style="
+    background-color: #4eb92d;
+    color: white;">
       <th scope="col">Mã LSP</th>
       <th scope="col">Tên LSP</th>
       <th scope="col">Mô tả</th>

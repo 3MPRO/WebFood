@@ -9,7 +9,9 @@
 <hr>
 <table class="table table-bordered acountTable" id="dataTable" width="100%" cellspacing="0">
   <thead>
-    <tr>
+    <tr style="
+    background-color: #4eb92d;
+    color: white;">
       <th class="th-firt" scope="col">MaAD</th>
       <th scope="col">Tài khoản</th>
       <th scope="col">SDT</th>
