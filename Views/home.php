@@ -196,7 +196,7 @@
                                         <h2 class="poplator__product-content-title tilte-name-product">
                                             <?= $item['TenSP'] ?>
                                         </h2>
-                                        <p>Chuối tiêu xanh tại Dũng</p>
+                                        <!-- <p>Chuối tiêu xanh tại Dũng</p> -->
                                         <div class="price-box">
                                             <span class="price-text"><?= number_format($item['DonGia']) ?> đ</span>
                                             <a href="?act=cart&xuli=add&id=<?=$item['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
@@ -237,7 +237,7 @@
                                         <h2 class="poplator__product-content-title tilte-name-product">
                                             <?= $data_random2[0]['TenSP'] ?>
                                         </h2>
-                                        <p>Chuối tiêu xanh tại Dũng</p>
+                                        <!-- <p>Chuối tiêu xanh tại Dũng</p> -->
                                         <div class="price-box">
                                             <span class="price-text"><?= number_format($data_random2[0]['DonGia']) ?> đ</span>
                                             <a href="?act=cart&xuli=add&id=<?=$data_random2[0]['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
@@ -259,7 +259,7 @@
                                     <h2 class="poplator__product-content-title tilte-name-product">
                                         <?= $data_random3[0]['TenSP'] ?>
                                     </h2>
-                                    <p>Chuối tiêu xanh tại Dũng</p>
+                                    <!-- <p>Chuối tiêu xanh tại Dũng</p> -->
                                     <div class="price-box">
                                         <span class="price-text"><?= number_format($data_random3[0]['DonGia']) ?> đ</span>
                                         <a href="?act=cart&xuli=add&id=<?=$data_random3[0]['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
@@ -298,7 +298,7 @@
                                 <h2 class="poplator__product-content-title tilte-name-product">
                                 <?= $data_random5[0]['TenSP'] ?>
                                 </h2>
-                                <p>Chuối tiêu xanh tại Dũng</p>
+                                <!-- <p>Chuối tiêu xanh tại Dũng</p> -->
                                 <div class="price-box">
                                     <span class="price-text"><?= number_format($data_random5[0]['DonGia']) ?></span>
                                     <a href="?act=cart&xuli=add&id=<?=$data_random5[0]['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>

@@ -37,12 +37,6 @@
             require("result.php");
             return $data;
         }
-        public function loaisp_danhmuc()
-        {
-            $query ="SELECT * from loaisanpham";
-            require("result.php");
-            return $data; 
-        }
         function searchData($key) {
             $query = "SELECT * FROM sanpham, hinhanh WHERE sanpham.MaSP = hinhanh.masp and TenSP LIKE '$key%' GROUP by sanpham.MaSP";
             require("result.php");

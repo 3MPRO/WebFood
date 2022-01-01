@@ -85,7 +85,7 @@
 .product-img{
     position: relative;
     width: 100%;
-    border: 6px solid #ff8720;
+    border: 1px solid #ff8720;
     text-align: center;
     overflow: hidden;
 }

@@ -13,6 +13,7 @@ class PayController
     function list_cart()
     {
         $data_danhmuc = $this->pay_model->danhmuc();
+        $data_loaisp = $this->pay_model->loaisp_danhmuc();
         $data = $this->pay_model->getProvince();
         $data_address = $this->pay_model->getAddressDefault($_SESSION['login']['MaND']);
         require_once('Views/indexview.php');

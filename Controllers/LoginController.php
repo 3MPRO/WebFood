@@ -13,7 +13,7 @@ class LoginController
         {   
             // data_danhmuc để gọi lại thanh nav .  :v
             $data_danhmuc = $this->login_model->danhmuc();
-           
+            $data_loaisp = $this->login_model->loaisp_danhmuc();
             if(isset($_GET['iduser']))
             {   
                
@@ -97,6 +97,7 @@ class LoginController
     function account()
     {   
         $data_danhmuc = $this->login_model->danhmuc();
+        $data_loaisp = $this->login_model->loaisp_danhmuc();
         $data = $this->login_model->account();
         //$this->list();
         require_once('Views/indexview.php');

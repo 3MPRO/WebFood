@@ -194,7 +194,6 @@
                 <i class="fas fa-chevron-down"></i>
                 <ul class="nav-item__down">
                     <?php foreach($data_danhmuc as $row) { ?>
-
                             <li class="nav-item__down-item">
                                 <a href="?act=product&cate=<?=$row['MaDM'] ?>">
                                     <?=$row['TenDM']?>

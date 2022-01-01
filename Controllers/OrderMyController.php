@@ -11,6 +11,7 @@ class OrderMyController
     function list_order()
     {
         $data_danhmuc = $this->order_model->danhmuc();
+        $data_loaisp = $this->order_model->loaisp_danhmuc();
         $MaND = $_SESSION['login']['MaND'];
         $data_hoadon = $this->order_model->showHoaDon($MaND);
         require_once('Views/indexview.php');
