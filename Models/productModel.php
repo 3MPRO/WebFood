@@ -48,5 +48,21 @@
             require("result.php");
             return $data;
         }
+        function getTenLoaiSP($malsp) {
+            $query = "SELECT * from loaisanpham where MaLSP = $malsp";
+            require("result.php");
+            return $data;
+        }
+        function getChiTietSanPham($malsp) {
+            $query = "SELECT * from sanpham,loaisanpham,hinhanh,khuyenmai,danhmuc
+            WHERE sanpham.MaLSP = loaisanpham.MaLSP 
+                and khuyenmai.MaKM = sanpham.MaKM 
+                and hinhanh.masp = sanpham.MaSP 
+                and danhmuc.maDM = loaisanpham.maDM 
+                and loaisanpham.MaLSP = $malsp
+                GROUP by sanpham.MaSP";
+            require("result.php");
+            return $data;
+        }
     }
 ?>

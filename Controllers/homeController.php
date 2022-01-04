@@ -14,8 +14,14 @@ require_once("./Models/productModel.php");
             $data_loaisp = $this->product_model->loaisp_danhmuc();
             // print_r($data_loaisp);
             if(isset($_GET['cate']))
-            {   $category = $_GET['cate'];
-                $data_sanpham = $this->product_model->sanpham_danhmuc(0,100,$category);
+            {   if(isset($_GET['loai'])) {
+                    $category = $_GET['loai'];
+                    $data_tenLSP = $this->product_model->getTenLoaiSP($category);
+                    $data_sanpham = $this->product_model->getChiTietSanPham($category);
+                }else {
+                    $category = $_GET['cate'];
+                    $data_sanpham = $this->product_model->sanpham_danhmuc(0,100,$category);
+                }
             }
             $data_sanpham1 = $this->product_model->sanpham_danhmuc(0,10,1);
             $data_sanpham2 = $this->product_model->sanpham_danhmuc(0,10,3);

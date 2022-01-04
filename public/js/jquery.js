@@ -64,10 +64,14 @@ $(document).ready(function(){
     function ajaxFilter() {
         var listValue = JSON.parse(localStorage.getItem("listValuePrice"))
         var danhmuc = $("#danhmuc").text();
+        var loai = $("input[type=text][name=loaisp]").val();
+        if(loai === undefined) {
+            loai = 'null';
+        }
         $.ajax({
             url: "Models/get_data_price.php",
             method: "POST",
-            data: {listValue: listValue, danhmuc: danhmuc},
+            data: {listValue: listValue, danhmuc: danhmuc, loai: loai},
             success: function(data) {
                 $('#product-list-main').html(data)
             }
@@ -101,16 +105,20 @@ $(document).ready(function(){
     // }
 });
 // filter product 
-function filterProduct(action,name, danhmuc,limit) {
+function filterProduct(action,name, danhmuc) {
     var action = action
     var danhmuc = danhmuc
     var name = name
-    var limit = limit
+    var loai = $("input[type=text][name=loaisp]").val();
+    console.log(loai);
+    if(loai === undefined) {
+        loai = 'null';
+    }
     console.log('da click');
     $.ajax({
         url: "Models/get_data.php",
         method: 'POST',
-        data: {action: action,name: name, danhmuc: danhmuc,limit: limit},
+        data: {action: action,name: name, danhmuc: danhmuc,loai: loai},
         success: function(data) {
             $('#product-list-main').html(data)
         }

@@ -80,7 +80,7 @@
     /* max-height: 290px; */ 
 }
 .col-product__item.sale-home {
-    width: 212px;
+    width: 100%;
 }
 .product-img{
     position: relative;

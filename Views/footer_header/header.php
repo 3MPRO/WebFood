@@ -221,10 +221,10 @@ function recursiveMenu($data, $parent_id, $sub=true){
             unset($data[$key]);
           ?>    
      <li>
-      <a href=""><?php echo $item['TenLSP']?></a>
-      
+      <a href="?act=product&cate=<?=$item['MaDM']?>&loai=<?=$item['MaLSP']?>">
+          <?php echo $item['TenLSP']?>
+      </a>
      </li>
         <?php }} 
      echo "</ul>";
 }
-?>
