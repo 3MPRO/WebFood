@@ -8,7 +8,8 @@
         if(count($listValue) > 0){
             foreach ($listValue as $item){
                 if($loai == 'null') {
-                    $query = "SELECT * FROM danhmuc,khuyenmai, loaisanpham, sanpham, hinhanh WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and khuyenmai.MaKM = sanpham.MaKM and danhmuc.MaDM = '{$danhmuc}' and sanpham.DonGia between {$item} GROUP by sanpham.MaSP";
+                    $query = "SELECT * FROM danhmuc,khuyenmai, loaisanpham, sanpham, hinhanh WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and khuyenmai.MaKM = sanpham.MaKM and danhmuc.TenDM = '{$danhmuc}' and sanpham.DonGia between {$item} GROUP by sanpham.MaSP";
+                    // echo $query;
                 }else {
                     $query = "SELECT * FROM danhmuc,khuyenmai, loaisanpham, sanpham, hinhanh WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and khuyenmai.MaKM = sanpham.MaKM and loaisanpham.MaLSP = '{$loai}' and sanpham.DonGia between {$item} GROUP by sanpham.MaSP";
                 }
@@ -57,13 +58,13 @@
                         </div>';
                         }
                     }
-                    echo $output;
                 }
+                echo $output;
             }
         } 
     }else {
         if($loai == 'null') {
-            $query = "SELECT * FROM danhmuc, loaisanpham, sanpham, hinhanh,khuyenmai WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and khuyenmai.MaKM = sanpham.MaKM and danhmuc.MaDM = '{$danhmuc}' and sanpham.DonGia GROUP by sanpham.MaSP";
+            $query = "SELECT * FROM danhmuc, loaisanpham, sanpham, hinhanh,khuyenmai WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and khuyenmai.MaKM = sanpham.MaKM and danhmuc.TenDM = '{$danhmuc}' and sanpham.DonGia GROUP by sanpham.MaSP";
         }else {
             $query = "SELECT * FROM danhmuc, loaisanpham, sanpham, hinhanh,khuyenmai WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and khuyenmai.MaKM = sanpham.MaKM and loaisanpham.MaLSP = '{$loai}' and sanpham.DonGia GROUP by sanpham.MaSP";
         }

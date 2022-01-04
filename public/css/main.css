@@ -1908,10 +1908,10 @@ a.btn-usset-order__disble {
 }
 
 .pagination {
-    display: inline-block;
+    /* display: inline-block; */
     padding-top: 50px;
   }
-  
+  /*
   .pagination a {
     color: black;
     float: left;
@@ -1922,7 +1922,7 @@ a.btn-usset-order__disble {
   .pagination a.active {
     background-color: var(--cl-green);
     color: white;
-  }
+  } */
 
   .wrapper-pay__cod.wrapper-pay__cod--active {font-weight: 900;}
 

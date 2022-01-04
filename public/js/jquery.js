@@ -65,15 +65,18 @@ $(document).ready(function(){
         var listValue = JSON.parse(localStorage.getItem("listValuePrice"))
         var danhmuc = $("#danhmuc").text();
         var loai = $("input[type=text][name=loaisp]").val();
+        console.log(loai);
         if(loai === undefined) {
             loai = 'null';
         }
         $.ajax({
             url: "Models/get_data_price.php",
             method: "POST",
+            // dataType:"JSON",
             data: {listValue: listValue, danhmuc: danhmuc, loai: loai},
             success: function(data) {
                 $('#product-list-main').html(data)
+                console.log($("#product-list-main .col-product__item "));
             }
         })
     }
@@ -110,15 +113,20 @@ function filterProduct(action,name, danhmuc) {
     var danhmuc = danhmuc
     var name = name
     var loai = $("input[type=text][name=loaisp]").val();
-    console.log(loai);
+    var listValue = JSON.parse(localStorage.getItem("listValuePrice"))
     if(loai === undefined) {
         loai = 'null';
+    }
+    console.log(listValue);
+    if(listValue.length === 0) {
+        listValue = 'null';
+        console.log(listValue);
     }
     console.log('da click');
     $.ajax({
         url: "Models/get_data.php",
         method: 'POST',
-        data: {action: action,name: name, danhmuc: danhmuc,loai: loai},
+        data: {action: action,name: name, danhmuc: danhmuc,loai: loai,listValue:listValue},
         success: function(data) {
             $('#product-list-main').html(data)
         }
