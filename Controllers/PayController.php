@@ -31,6 +31,11 @@ class PayController
             foreach ($_SESSION['product'] as $value) {
                 $count += $value['ThanhTien'];
             }
+            if($count >=300000) {
+                $phiship = 0;
+            }else {
+                $phiship = 25000;
+            }
         }
         if(isset($_POST['submit'])) {
             // $diachi =  $_POST['diachi'];
@@ -47,6 +52,7 @@ class PayController
                 $_SESSION['login']['DiaChi'] = $diachi;
             }
             $ghichu = $_POST['ghichu'];
+            $httt = $_POST['httt'];
         }
         $data = array(
             'MaND' => $_SESSION['login']['MaND'],
@@ -54,6 +60,8 @@ class PayController
             'NguoiNhan' => $_SESSION['login']['Ho'].' '. $_SESSION['login']['Ten'],
             'SDT' => $_SESSION['login']['SDT'],
             'DiaChi' => $diachi,
+            'PhuongThucTT'=> $httt,
+            'phiShip' => $phiship,
             'TongTien' => $count,
             'GhiChu' => $ghichu,
             'TrangThai'  =>  '0',
@@ -65,6 +73,9 @@ class PayController
         $data_danhmuc = $this->pay_model->danhmuc();
 
         $data_chitietDM = array();
+        $data_loaisp = $this->pay_model->loaisp_danhmuc();
+
+        $data_hoadon = $this->pay_model->getHoaDon();
 
         for ($i = 1; $i <= count($data_danhmuc); $i++) {
             $data_chitietDM[$i] = $this->pay_model->chitietdanhmuc($i);
@@ -75,6 +86,7 @@ class PayController
                 $count += $value['ThanhTien'];
             }
         }
+        unset($_SESSION['product']);
         require_once('Views/indexview.php');
     }
 }

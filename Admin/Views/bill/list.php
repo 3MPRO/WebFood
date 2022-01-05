@@ -15,6 +15,7 @@
       <th scope="col">Ngày đặt hàng</th>
       <th scope="col">Tổng tiền</th>
       <th scope="col">Địa chỉ</th>
+      <!-- <th scope="col">Phương thức thanh toán</th> -->
       <th scope="col">SĐT</th>
       <th scope="col">Trạng thái</th>
       <th>#</th>
@@ -25,8 +26,9 @@
       <tr>
         <td><?= $row['NguoiNhan'] ?></td>
         <td><?= $row['NgayLap'] ?></td>
-        <td><?= number_format($row['TongTien']) ?>VNĐ</td>
+        <td><?= number_format($row['TongTien']+$row['phiShip']) ?> đ</td>
         <td><?= $row['DiaChi'] ?></td>
+        <!-- <td><?= $row['PhuongThucTT'] ?></td> -->
         <td><?= $row['SDT'] ?></td>
         <td><?php if($row['TrangThai']==0){
             echo 'Chưa xét duyệt';
