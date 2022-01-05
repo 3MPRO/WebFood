@@ -79,6 +79,7 @@ require_once("./Models/productModel.php");
             $data_arr = array($data_limit1,$data_limit2,$data_limit3,$data_limit4);
             $data_random = $this->product_model->random(2);
 
+            $data_sanphamnoibat = $this->product_model->sanphamnoibat(8);
             $data_banner = $this->product_model->getBanner();
             do{
                 $data_random1 = $this->product_model->random(1);
