@@ -25,6 +25,7 @@ class OrderMyController
     
     function orderDetail() {
         $data_danhmuc = $this->order_model->danhmuc();
+        $data_loaisp = $this->order_model->loaisp_danhmuc();
         $MaHD = $_GET['maHD'];
         $data_detail_order = $this->order_model->orderDetail($MaHD);
         $data_detail_order_product = $this->order_model->orderDetail_product($MaHD);
