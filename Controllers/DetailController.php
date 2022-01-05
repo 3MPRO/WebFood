@@ -19,18 +19,14 @@ require_once("./Models/productModel.php");
                     $data_lq = $this->product_model->sanpham_danhmuc(0,4,$data_sanpham[0]['MaDM']);
                 }
 
+                $this->product_model->clicksanpham($_GET['sp']);
+
                  //lấy đánh giá
                 $DataEvalute = $this->product_model->getEvalute($_GET['sp']);
                     
 
             }
             
-
-
-    
-
-           
-
             require_once('./Views/indexview.php');  
         }
 

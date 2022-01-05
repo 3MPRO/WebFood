@@ -28,8 +28,8 @@
                         <span class="note">Trạng thái thanh toán:</span> 
                         <i class="status_pending">	 
                             <em>
-                                <span class="span_pending" style="color: red"><strong><em>
-                                    <?php if ($data_detail_order[0]['TrangThaiDH'] == 1) {
+                            <span class="span_pending" style="color: red"><strong><em>
+                                    <?php if ($data_detail_order[0]['TrangThaiDH'] == 1 || $data_detail_order[0]['PhuongThucTT'] == 'Thanh toán PayPal') {
                                         echo 'Đã thanh toán';
                                     }else {echo 'Chưa thanh toán';}
                                     ?>
@@ -74,7 +74,7 @@
                             </h2>
                             <div class="box-des">
                                 <p>
-                                    Thanh toán khi giao hàng (COD)
+                                    <?php echo $data_detail_order[0]['PhuongThucTT'] ?>
                                 </p>
                             </div>
                         </div>

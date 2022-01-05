@@ -50,6 +50,30 @@
             require("result.php");
             return $data;
         }
+
+        public function clicksanpham($masp)
+        {
+            $query ="UPDATE sanpham SET Click=Click+1 where MASP = '$masp'";
+            $result = $this->conn->query($query);
+        }
+
+        
+        function sanphamnoibat($id)
+        {
+            $query = "SELECT * from sanpham , loaisanpham, danhmuc, hinhanh,khuyenmai
+            WHERE sanpham.trangThai = 1 
+                    and loaisanpham.MaDM = danhmuc.MaDM 
+                   and khuyenmai.MaKM = sanpham.MaKM 
+                    and sanpham.MaLSP = loaisanpham.MaLSP 
+                    and loaisanpham.MaDM = loaisanpham.MaDM 
+                   AND sanpham.MaSP = hinhanh.masp
+                   GROUP by sanpham.MaSP
+                    ORDER BY Click DESC limit $id";
+            require("result.php");
+            
+            return $data;
+        }
+
         function searchData($key) {
             $query = "SELECT * FROM sanpham, hinhanh WHERE sanpham.MaSP = hinhanh.masp and TenSP LIKE '$key%' GROUP by sanpham.MaSP";
             require("result.php");
@@ -90,6 +114,7 @@
             require("result.php");
             return $data;
         }
+
          function getEvalute($MaSP){
              $query = "SELECT  rate.*, nguoidung.Ho, nguoidung.ten ,DATE_FORMAT(rate.ngayDanhGia, '%d-%m-%Y')
              as ngay  FROM  sanpham as sp , danhgia as rate, nguoidung WHERE  
@@ -97,7 +122,6 @@
             require("result.php");
             return $data;
          }
-
 
     }
 ?>

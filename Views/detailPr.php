@@ -1,4 +1,10 @@
-
+<?php
+ $length = count($DataEvalute);
+ $tbSao = 0;
+ foreach($DataEvalute as $row){
+    $tbSao += $row['SoSao']/$length;
+ }
+?>
 <main id="main">
 <div class="container">
     <div class="break-crumb">
@@ -58,15 +64,25 @@
                 <h2 class="tilte-name-product-detail"><?php echo $data_sanpham[0]['TenSP']; ?></h2>
                 <div class="product-detail-main__flex">
                     <ul class="product-detail-main__vote">
-                        <span>5.0</span>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
+                        <span><?= $tbSao ?></span>
+                        <?php
+                            for ($i = 1; $i <= floor($tbSao); $i++){ 
+                            ?>
+                                <li><i class="fas fa-star active"></i></li>
+                            <?php } 
+                            if($tbSao > floor($tbSao)) {
+                                echo ' <li><i class="fas fa-star-half-alt active"></i></li>';
+                                for ($i = 1; $i < (5-floor($tbSao)); $i++)
+                                    echo '<li><i class="fas fa-star"></i></li>';
+                            }
+                            else {
+                                for ($i = 1; $i <= (5-floor($tbSao)); $i++)
+                                    echo '<li><i class="fas fa-star"></i></li>';
+                            }
+                        ?>
                     </ul>
                     <div class="count-vote">
-                        <span>3</span>
+                        <span><?= $data_sanpham[0]['SoDanhGia'] ?></span>
                         <div>Đánh giá</div>
                     </div>
                     <div class="count-producted">
@@ -246,17 +262,17 @@
     <!-- Đánh giá -->
     <div class="row md-5">
         <div class="box-rating col col-lg-8">
-            <div class="product-tab-title">
+            <div class="product-tab-title" id="count-vote">
                 <span>Đánh giá sản phẩm</span>
             </div>
             <div class="rating-box">
                 <div class="lrb">
                     <div class="average-rating orange">
                         <div>
-                            <b><?= $data_sanpham[0]['SoSao'] ?></b>
+                            <span id="total-star"><?= $tbSao ?></span>
                         </div>
-                        <div>
-                            <i class="fas fa-star"></i>
+                        <div class="rating-total__img">
+                            <div class="rating-overlay__img"></div>
                         </div>
                         <div>
                             <span> <?= $data_sanpham[0]['SoDanhGia'] ?> đánh giá</span>
@@ -277,8 +293,8 @@
                                 $numEvaluteTotal += 1;
                                 switch ($row['SoSao']){
                                     case 5 : 
-                                            $num5 += 1;
-                                            break;
+                                        $num5 += 1;
+                                        break;
                                     case 4: 
                                         $num4 += 1;
                                         break;
@@ -292,40 +308,78 @@
                                         $num1 += 1;
                                         break;
                             }
-                            }
-                        }?>
+                            
+                        }
+                        }
+                        
+                    ?>
                         <li>
                             <span>5 <i class="fas fa-star"></i></span>
                             <div class="rating-bar">
-                                <div class="rating-bar__default rating-bar__in"></div>
+                                <div class="rating-bar__default 
+                                    <?php if($num5 == 0) {
+                                        echo 'rating-bar__none';
+                                        } else {
+                                            echo 'rating-bar__in';
+                                        }
+                                    ?>
+                                "></div>
                             </div>
                             <span><?=  $num5 ?> đánh giá</span>
                         </li>
                         <li>
                             <span>4 <i class="fas fa-star"></i></span>
                             <div class="rating-bar">
-                                <div class="rating-bar__default rating-bar__none"></div>
+                                <div class="rating-bar__default
+                                    <?php if($num4 == 0) {
+                                        echo 'rating-bar__none';
+                                        } else {
+                                            echo 'rating-bar__in';
+                                        }
+                                    ?>
+                                "></div>
                             </div>
                             <span><?=  $num4 ?> đánh giá</span>
                         </li>
                         <li>
                             <span>3 <i class="fas fa-star"></i></span>
                             <div class="rating-bar">
-                                <div class="rating-bar__default rating-bar__none"></div>
+                                <div class="rating-bar__default
+                                <?php if($num3 == 0) {
+                                    echo 'rating-bar__none';
+                                    } else {
+                                        echo 'rating-bar__in';
+                                    }
+                                ?>
+                                "></div>
                             </div>
                             <span><?=  $num3 ?>  đánh giá</span>
                         </li>
                         <li>
                             <span>2 <i class="fas fa-star"></i></span>
                             <div class="rating-bar">
-                                <div class="rating-bar__default rating-bar__none"></div>
+                                <div class="rating-bar__default
+                                    <?php if($num2 == 0) {
+                                        echo 'rating-bar__none';
+                                        } else {
+                                            echo 'rating-bar__in';
+                                        }
+                                    ?>
+                                "></div>
                             </div>
                             <span><?=  $num2 ?>  đánh giá</span>
                         </li>
                         <li>
                             <span>1 <i class="fas fa-star"></i></span>
                             <div class="rating-bar">
-                                <div class="rating-bar__default rating-bar__none"></div>
+                                <div class="rating-bar__default
+                                <?php if($num1 == 0) {
+                                        echo 'rating-bar__none';
+                                        } else {
+                                            echo 'rating-bar__in';
+                                        }
+                                    ?>
+                                "></div>
                             </div>
                             <span><?=  $num1 ?> đánh giá</span>
                         </li>
@@ -344,9 +398,17 @@
                                 <ul>
                                     <?php for($i =1 ;$i<= $row['SoSao'];$i++){?>
                                     <li>
-                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star active"></i>
                                     </li>
-                                        <?php }?>
+                                    <?php }?>
+                                    <?php
+                                        if($row['SoSao'] < 5) {
+                                            for ($i=1; $i <=(5-$row['SoSao']); $i++) { ?>
+                                               <li>
+                                                    <i class="fas fa-star"></i>
+                                                </li>
+                                        <?php } }
+                                    ?>
                                 </ul>
                                 <span>
                                     <i class="fas fa-check"></i>
@@ -389,3 +451,12 @@
     </div>
 </div>
 </main>
+
+<script>
+
+    let totalStar = Number(document.getElementById('total-star').textContent)
+    let overlayImg = document.querySelector('.rating-overlay__img')
+    let leftPx = Math.ceil(((totalStar)/5)*120);
+    console.log(leftPx);
+    overlayImg.style.left = leftPx + 'px'
+</script>
