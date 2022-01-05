@@ -80,6 +80,21 @@ const App = {
               })
         })
 
+        // Click bar menu
+        let iconDown = document.getElementById('icon-down-mobile')
+        let listMenuDown = document.querySelector('.nav-item__down-mobile')
+        let barMenu = document.querySelector('.bar-menu.category-action')
+
+        iconDown.addEventListener("click", function() {
+            listMenuDown.classList.toggle('nav-item__down-mobile-active');
+            this.classList.toggle('icon-down-mobile-active')
+            
+        })
+
+        barMenu.addEventListener('click', function() {
+            item('.header-nav-mobile').classList.toggle('header-nav-mobile-active')
+        })
+
         // Active nav link
         const currentLocation = location.href
         const menuItems = items('.nav-list__item .nav-list__item-link')

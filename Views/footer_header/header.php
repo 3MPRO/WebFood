@@ -181,6 +181,35 @@
     </div>
 </header>
 
+<div class="header-nav-mobile">
+    <div class="header-nav-mobile__main">
+        <ul>
+            <li><a href="">Trang chủ</a></li>
+            <li>
+                <a href="" style="padding-right:12px;">
+                    Sản phẩm
+                </a>
+                <i class="fas fa-chevron-down" id="icon-down-mobile"></i>
+                <ul class="nav-item__down-mobile">
+                    <?php foreach($data_danhmuc as $row) { ?>
+                            <li class="nav-item__down-item-mobile">
+                                <a href="?act=product&cate=<?=$row['MaDM'] ?>" >
+                                    <?=$row['TenDM']?>
+                                    <i class="fas fa-chevron-down" style="padding-left:12px;"></i>
+                                </a>
+                                <?php recursiveMenuMobile($data_loaisp,$row['MaDM']) ?>
+                            </li>
+                            <?php  } ?>
+                </ul>
+            </li>
+            <li><a href="">Bánh kẹo</a></li>
+            <li><a href="">Đồ khô, gạo</a></li>
+            <li><a href="">Liên hệ</a></li>
+            <li><a href="">Tin tức</a></li>
+        </ul>
+    </div>
+</div>
+
 <nav id="nav">
     <div class="container">
         <ul class="nav-list">
@@ -216,6 +245,20 @@
 
 function recursiveMenu($data, $parent_id, $sub=true){
     echo '<ul class="nav-list__down">';
+    foreach ($data as $key => $item) {
+         if($item['MaDM'] == $parent_id){
+            unset($data[$key]);
+          ?>    
+     <li>
+      <a href="?act=product&cate=<?=$item['MaDM']?>&loai=<?=$item['MaLSP']?>&page=1">
+          <?php echo $item['TenLSP']?>
+      </a>
+     </li>
+        <?php }} 
+     echo "</ul>";
+}
+function recursiveMenuMobile($data, $parent_id, $sub=true){
+    echo '<ul class="nav-list__down-mobile">';
     foreach ($data as $key => $item) {
          if($item['MaDM'] == $parent_id){
             unset($data[$key]);

@@ -751,7 +751,7 @@ h2.tilte-name-product {
     /* flex-wrap: wrap; */
  }
 .product-main{
-    width: 212px;
+    /* width: 212px; */
     margin-right: 10px;
     overflow: hidden;
  }
@@ -955,6 +955,12 @@ input.seed-mail::placeholder {
 .box-button-top i {
     color: #fff;
     font-size: 20px;
+}
+.header-nav-mobile {
+  display: none;
+} 
+.bottom-nav-bar-mobile {
+    display: none;
 }
 
 /* DETAIL PRODUCT */
@@ -1682,42 +1688,6 @@ div.wrapper-count {
     fill: #fb6087;
   }
   
-  @media only screen and (max-width: 768px) {
-    body {
-      font-size: 8px;
-    }
-    main {
-      padding-top: 18vh;
-    }
-    h1 {
-      font-size: 2.2em;
-      margin: 24px 0 56px;
-      letter-spacing: 6px;
-      padding: 0 20px;
-      line-height: 22px;
-      text-align: center;
-    }
-    .countdown-block {
-      /* margin-right: 16px; */
-    }
-    .countdown-block:last-child {
-      margin-right: 0;
-    }
-    .title {
-      font-size: 0.9em;
-      letter-spacing: 3px;
-    }
-    .time-elem {
-      height: 66px;
-      width: 70px;
-      font-size: 4.5em;
-      line-height: 66px;
-      margin-bottom: 17px;
-    }
-    .social {
-      bottom: 39px;
-    }
-  }
 
   .product-sale-top {
     width: 50%;

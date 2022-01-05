@@ -137,7 +137,7 @@
 				<div class="icon">
                     <i class="fas fa-home"></i>
 				</div>
-				<a href="/">Trang chủ</a>
+				<a href="?act=home">Trang chủ</a>
 			</div>
 		</div>
 		<div class="itembar">
@@ -149,11 +149,11 @@
 			</div>
 		</div>
 		<div class="itembar center">
-			<div class="bar-menu cartbar-mobile" onclick="location.href='/cart';" data-count-pr="0">
+			<div class="bar-menu cartbar-mobile" data-count-pr="0">
 				<div class="icon">
                     <i class="fas fa-cart-plus"></i>
 				</div>
-				<a href="/cart">Giỏ hàng</a>
+				<a href="?act=cart">Giỏ hàng</a>
 			</div>
 		</div>
 		<div class="itembar" onclick="location.href='/account/login';">
