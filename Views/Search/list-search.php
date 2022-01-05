@@ -18,7 +18,7 @@
             if(isset($data) and $data != NULL){
                 for ($i = 0; $i < count($data); $i++) {
                     ?>
-            <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-sm-6">
                 <div class="product-main" style="margin-bottom: 20px;">
                     <form action="">
                         <div class="product-fruits__thumb">

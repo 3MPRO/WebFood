@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./public/css/style.css">
     <link rel="stylesheet" href="./public/css/reset.css">
     <link rel="stylesheet" href="./public/css/product.css">
+    <link rel="stylesheet" href="./public/css/responsive.css">
     <link rel="stylesheet" href="./public/css/login.css">
     <link rel="stylesheet" href="./public/css/news.css">
     
@@ -60,6 +61,12 @@
             autoplayTimeout:4000,
             responsive:{
                 1000:{
+                    items:1
+                },
+                768:{
+                    items:1
+                },
+                500:{
                     items:1
                 }
             }

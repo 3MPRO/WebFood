@@ -9,12 +9,12 @@
 <header id="header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-2 col col-md-4 col-ms-6">
+            <div class="col-lg-2 col col-md-4 col-ms-6 col-xs-12 col-logo__header">
                 <a href="?act=home" class="header__logo">
                     <img src="./public/images/logo.webp" alt="">
                 </a>
             </div>
-            <div class="col-lg-8 col col-md-4 col-ms-6">
+            <div class="col-lg-8 col col-md-4 col-sm-12">
                 <div class="search-box">
                     <div class="header__search">
                         <form action="?act=search" class="search-box-action" method="GET">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2 col col-md-4 col-ms-12">
+            <div class="col-lg-2 col col-md-4 col-sm-6">
                 <div class="group__account">
                     <ul class="group__account-list">
                         <li>

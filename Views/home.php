@@ -174,10 +174,6 @@
                 </h2>
                 <p class="populator__head-desc">Sản phẩm được khách hàng ưa chuộng nhất</p>
             </div>
-            <a href="" class="populator__head-all">
-                <p>Xem tất cả</p>
-                <i class="fas fa-long-arrow-alt-right"></i>
-            </a>
         </div>
         <div class="row">
             <div class="col-lg-8 col">
@@ -196,7 +192,6 @@
                                         <h2 class="poplator__product-content-title tilte-name-product">
                                             <?= $item['TenSP'] ?>
                                         </h2>
-                                        <!-- <p>Chuối tiêu xanh tại Dũng</p> -->
                                         <div class="price-box">
                                             <span class="price-text"><?= number_format($item['DonGia']) ?> đ</span>
                                             <a href="?act=cart&xuli=add&id=<?=$item['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
@@ -206,106 +201,6 @@
                             </div>
 
                     <?php } ?>
-                </div>
-                <!-- <div class="row">
-                    <div class="col col-6">
-                        <div class="populator__product-right">
-                            <a href="?act=detail&sp=<?=$data_random1[0]['MaSP']?>" class="populator__product-right-link">
-                                <img src="./public/images/<?= $data_random1[0]['hinhanh'] ?>" alt="">
-                                <h2 class="tilte-name-product">
-                                    <?= $data_random1[0]['TenSP'] ?>
-                                </h2>
-                            </a>
-                            <div class="product__price-box">
-                                <p class="price-new"><?= number_format($data_random1[0]['giaCu']) ?> đ</p>
-                                <p class="price-old"><?= number_format($data_random1[0]['DonGia']) ?> đ</p>
-                                <a href="?act=cart&xuli=add&id=<?=$data_random1[0]['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-6">
-                        <div class="row">
-                            <div class="col col-12">
-                                <div class="item_product_main">
-                                    <div class="populator__product">
-                                        <a href="?act=detail&sp=<?=$data_random2[0]['MaSP']?>" class="populator__product-link">
-                                            <img src="./public/images/<?= $data_random2[0]['hinhanh'] ?>" alt="">
-                                        </a>
-                                        <span><i data-heart="<?php echo $data_sanpham2[0]['MaSP'] ?>" class="far fa-heart icon-heart-element icon-heart-i"></i></span>
-                                    </div>
-                                    <div class="populator__product-content">
-                                        <h2 class="poplator__product-content-title tilte-name-product">
-                                            <?= $data_random2[0]['TenSP'] ?>
-                                        </h2> -->
-                                        <!-- <p>Chuối tiêu xanh tại Dũng</p> -->
-                                        <!-- <div class="price-box">
-                                            <span class="price-text"><?= number_format($data_random2[0]['DonGia']) ?> đ</span>
-                                            <a href="?act=cart&xuli=add&id=<?=$data_random2[0]['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col col-12">
-                            <div class="item_product_main">
-                                <div class="populator__product">
-                                    <a href="?act=detail&sp=<?=$data_random3[0]['MaSP']?>" class="populator__product-link">
-                                        <img src="./public/images/<?= $data_random3[0]['hinhanh'] ?>" alt="">
-                                    </a>
-                                    <span><i data-heart="<?php echo $data_sanpham3[0]['MaSP'] ?>" class="far fa-heart icon-heart-element icon-heart-i"></i></span>
-                                </div>
-                                <div class="populator__product-content">
-                                    <h2 class="poplator__product-content-title tilte-name-product">
-                                        <?= $data_random3[0]['TenSP'] ?>
-                                    </h2> -->
-                                    <!-- <p>Chuối tiêu xanh tại Dũng</p> -->
-                                    <!-- <div class="price-box">
-                                        <span class="price-text"><?= number_format($data_random3[0]['DonGia']) ?> đ</span>
-                                        <a href="?act=cart&xuli=add&id=<?=$data_random3[0]['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-            <div class="col-lg-4 col">
-                <div class="populator__product-right ">
-                    <a href="?act=detail&sp=<?=$data_random4[0]['MaSP']?>" class="populator__product-right-link">
-                        <img src="./public/images/<?= $data_random4[0]['hinhanh'] ?>" alt="">
-                        <h2 class="tilte-name-product">
-                            <?= $data_random4[0]['TenSP'] ?>
-                        </h2>
-                    </a>
-                    <div class="product__price-box">
-                        <p class="price-new"><?= number_format($data_random4[0]['giaCu']) ?> đ</p>
-                        <p class="price-old"><?= number_format($data_random4[0]['DonGia']) ?> đ</p>
-                        <a href="?act=cart&xuli=add&id=<?=$data_random4[0]['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col col-12">
-                        <div class="item_product_main">
-                            <div class="populator__product">
-                                <a href="?act=detail&sp=<?=$data_random5gi[0]['MaSP']?>" class="populator__product-link">
-                                    <img src="./public/images/<?= $data_random5[0]['hinhanh'] ?>" alt="">
-                                </a>
-                                <span><i data-heart="<?php echo $data_random5[0]['MaSP'] ?>" class="far fa-heart icon-heart-element icon-heart-i"></i></span>
-                            </div>
-                            <div class="populator__product-content">
-                                <h2 class="poplator__product-content-title tilte-name-product">
-                                <?= $data_random5[0]['TenSP'] ?>
-                                </h2>
-                                <!-- <p>Chuối tiêu xanh tại Dũng</p> -->
-                                <div class="price-box">
-                                    <span class="price-text"><?= number_format($data_random5[0]['DonGia']) ?></span>
-                                    <a href="?act=cart&xuli=add&id=<?=$data_random5[0]['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

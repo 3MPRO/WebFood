@@ -14,7 +14,7 @@
         }
         if($listValue == 'null'){
             $query = "SELECT * FROM danhmuc, loaisanpham, sanpham, hinhanh,khuyenmai WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and khuyenmai.MaKM = sanpham.MaKM and $param GROUP by sanpham.MaSP ORDER BY {$name} {$_POST['action']}";
-            echo $query;
+            // echo $query;
             $result = $mysqli->query($query);
             $row =  $result -> fetch_array(MYSQLI_ASSOC);
             $count = count($row);
@@ -30,7 +30,7 @@
                         $status = "";
                         $makm = "&km=" .$value['GiaTriKM'];
                     }
-                    $output .= '<div class="col-product__item col col-md-4 col-lg-4 '.$status.'">
+                    $output .= '<div class="col-product__item col col-md-4 col-lg-4 col-sm-6 '.$status.'">
                     <form action="" >
                         <div>
                     <div class="product-item__sale-off">
@@ -79,7 +79,7 @@
                             $status = "";
                             $makm = "&km=" .$value['GiaTriKM'];
                         }
-                        $output .= '<div class="col-product__item col col-md-4 col-lg-4 '.$status.'">
+                        $output .= '<div class="col-product__item col col-md-4 col-lg-4 col-sm-6 '.$status.'">
                         <form action="" >
                             <div>
                         <div class="product-item__sale-off">

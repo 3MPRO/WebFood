@@ -129,3 +129,40 @@
         </span>
     </div>
 </footer>
+
+<div class="bottom-nav-bar-mobile">
+	<div class="inner-group container">
+		<div class="itembar" onclick="location.href='/';">
+			<div class="bar-menu">
+				<div class="icon">
+                    <i class="fas fa-home"></i>
+				</div>
+				<a href="/">Trang chủ</a>
+			</div>
+		</div>
+		<div class="itembar">
+			<div class="bar-menu category-action">
+				<div class="icon">
+                    <i class="fas fa-bars"></i>
+				</div>
+				<span>Danh mục</span>
+			</div>
+		</div>
+		<div class="itembar center">
+			<div class="bar-menu cartbar-mobile" onclick="location.href='/cart';" data-count-pr="0">
+				<div class="icon">
+                    <i class="fas fa-cart-plus"></i>
+				</div>
+				<a href="/cart">Giỏ hàng</a>
+			</div>
+		</div>
+		<div class="itembar" onclick="location.href='/account/login';">
+			<div class="bar-menu">
+				<div class="icon">
+                    <i class="fas fa-user"></i>
+				</div>
+				<a href="/account/login">Tài khoản</a>
+			</div>
+		</div>
+	</div>
+</div>

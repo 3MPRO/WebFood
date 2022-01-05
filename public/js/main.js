@@ -29,11 +29,14 @@ const App = {
                 autoplayTimeout:5000,
                 autoplayHoverPause:true,
                 responsive:{
-                    0:{
-                        items:1
+                    400:{
+                        items:2
                     },
                     600:{
                         items:3
+                    },
+                    800: {
+                        item: 4
                     },
                     1000:{
                         items:5
@@ -44,15 +47,21 @@ const App = {
     },
     eventDom: function() {
         let _this = this;
-        window.addEventListener('scroll',()=> {
-            if (window.pageYOffset >= sticky) {
-                headerEl.classList.add("sticky")
-                item('.box-button-top').classList.add('show-back')
-            } else {
-                headerEl.classList.remove("sticky");
-                item('.box-button-top').classList.remove('show-back')
+        
+        window.addEventListener('resize', function(event){
+            if(window.screen.width > 750){
+                window.addEventListener('scroll',()=> {
+                    console.log(window.pageXOffset);
+                    if (window.pageYOffset >= sticky) {
+                        headerEl.classList.add("sticky")
+                        item('.box-button-top').classList.add('show-back')
+                    } else {
+                        headerEl.classList.remove("sticky");
+                        item('.box-button-top').classList.remove('show-back')
+                    }
+                })
             }
-        })
+        });
 
         // 
         const btnPaypal = item('.btn-paypel')

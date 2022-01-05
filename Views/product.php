@@ -232,7 +232,7 @@
                                         }
                                         ?>
                                     
-                                    <div class="col-product__item col col-md-4 col-lg-4 <?= $status ?>">
+                                    <div class="col-product__item col col-md-4 col-lg-4 col-sm-6 <?= $status ?>">
                                         <form action="" >
                                             <div>
                                         <div class="product-item__sale-off">
