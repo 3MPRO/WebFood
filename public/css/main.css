@@ -1246,6 +1246,41 @@ ul.product-detail-main__vote span ,.count-vote span,.count-producted span{
     display: flex;
     padding-right: 12px;
 }
+.Evalute-box{
+    border: 1px solid #c1c1c1;
+    border-radius: 5px;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.list-action-rating{
+    margin: 20px;
+}
+.Enter-Evaluate{
+    margin: 20px;
+    width: 100%;
+}
+.Enter-Evaluate input{
+    width: 90%;
+}
+.btn-rating{
+    padding: 5px;
+    border-radius: 2px;
+    background-color: var(--cl-green);
+    color: #fff;
+}
+.btn-rating:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.star-nomal.star-active{
+    color: var(--cl-green);
+}
+.star-nomal {
+    cursor: pointer;
+    color: #999;
+}
 .rating-box {
     border: 1px solid #c1c1c1;
     border-radius: 5px;

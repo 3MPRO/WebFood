@@ -104,6 +104,7 @@
                                             <th>Đơn giá</th>
                                             <th>Số lượng</th>
                                             <th>Tổng</th>
+                                            <th>Thao tác</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -130,7 +131,7 @@
                                             <td data-title="Giá" class="numeric"><?= number_format($row['DonGia']) ?>₫</td>
                                             <td data-title="Số lượng" class="numeric"><?= $row['SoLuong'] ?></td>
                                             <td data-title="Tổng" class="numeric"><?= number_format($row['DonGia']*$row['SoLuong']) ?>₫</td>
-                                            <td class="a action"></td>
+                                            <?php  if($data_detail_order[0]['TrangThaiDH'] == 1){ ?> <td class="numeric">  <a href="?act=orderMy&xuli=evaluate&sp=<?=$row['MaSP']?>&nd=<?= $data_detail_order[0]['MaND'] ?>&hd=<?= $data_detail_order[0]['MaHD'] ?> " class=" action">Đánh giá</a></td> <?php }?>
                                         </tr>
 
                                         <?php  } ?>

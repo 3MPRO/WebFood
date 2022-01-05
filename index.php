@@ -102,6 +102,11 @@ switch ($mod) {
             case 'order-detail':
                 $objOrder->orderDetail();
                 break;
+            case 'evaluate':
+                require_once('./Controllers/EvaluateController.php');
+                $objOrder = new EvaluateController();
+                $objOrder->list();
+                break;
         }break;
     case 'cart':
             $act = isset($_GET['xuli']) ? $_GET['xuli'] : "list";
