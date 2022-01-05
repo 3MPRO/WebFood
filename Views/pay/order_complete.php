@@ -1,15 +1,4 @@
 <main>
-<?php 
-    $soluong = 0;
-    $thanhtien = 0;
-    $countProduct = 0;
-    if(isset($_SESSION['product'])){
-    foreach ($_SESSION['product'] as $value) {
-        $countProduct++;
-        $soluong +=1;
-        $thanhtien +=$value['ThanhTien'];
-    }}
-?>
     <div class="container">
         <div class="row">
             <div class="col col-lg-7 col-md-7">
@@ -37,7 +26,9 @@
                         </div>
                         <div>
                             <h2>Phương thức thanh toán</h2>
-                            <span>Thanh toán khi giao hàng (COD)</span>
+                            <span>
+                                <?php echo $data_hoadon[0]['PhuongThucTT']; ?>
+                            </span>
                         </div>
                     </div>
                     <div class="order-complete__content-right">
@@ -62,17 +53,19 @@
                     <div class="order-summary__content">
                         <div>
                             <span class="total-line__name">Tạm tính</span>
-                            <span class="total-line__price"><?php echo number_format($thanhtien); ?>đ</span>
+                            <span class="total-line__price">
+                                <?php echo number_format($data_hoadon[0]['TongTien']); ?>đ
+                            </span>
                         </div>
                         <div>
                             <span class="total-line__name">Phí vận chuyển</span>
-                            <span class="total-line__price">40.000đ</span>
+                            <span class="total-line__price"><?= number_format($data_hoadon[0]['phiShip']);?>đ</span>
                         </div>
                     </div>
                     <div class="order-summary__footer">
                         <div>
                             <span>Tổng cộng</span>
-                            <p class="sum-price"><?php echo number_format($thanhtien + 40000)?>đ</p>
+                            <p class="sum-price"><?php echo number_format($data_hoadon[0]['TongTien']+$data_hoadon[0]['phiShip']); ?>đ</p>
                         </div>
                     </div>
                 </div>
@@ -80,11 +73,7 @@
         </div>
 
         <div class="button-back">
-            <a href="
-            <?php 
-              unset($_SESSION['product']);
-              echo '?act=home'
-            ?>" class="btn-back-home">Tiếp tục mua hàng</a>
+            <a href="?act=home" class="btn-back-home">Tiếp tục mua hàng</a>
         </div>
     </div>
 </main>

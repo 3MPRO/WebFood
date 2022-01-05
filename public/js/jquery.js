@@ -76,7 +76,20 @@ $(document).ready(function(){
             data: {listValue: listValue, danhmuc: danhmuc, loai: loai},
             success: function(data) {
                 $('#product-list-main').html(data)
-                console.log($("#product-list-main .col-product__item "));
+                
+                let length = $("#product-list-main .col-product__item ").length
+                let totals = Math.ceil(length/9)
+                console.log(totals);
+                let htmls = ''
+                for (var i = 1; i <= totals; i++) {
+                    htmls += `
+                    <li class="page-item">
+                    <a class="page-link" href="?act=product&cate=2&page=${i}">${i}</a></li>
+                    `;
+                }
+                console.log(htmls);
+                $('.pagination').html(htmls)
+                console.log();
             }
         })
     }

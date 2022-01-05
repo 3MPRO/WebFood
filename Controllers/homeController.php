@@ -2,7 +2,7 @@
 require_once("./Models/productModel.php");
     class homeController {
        
-        var $product_model;
+        var $product_model,$page;
         public function __construct()
         {
              $this->product_model = new productModel();  
@@ -12,17 +12,61 @@ require_once("./Models/productModel.php");
             $data_danhmuc = $this->product_model->danhmuc();
 
             $data_loaisp = $this->product_model->loaisp_danhmuc();
+
             // print_r($data_loaisp);
             if(isset($_GET['cate']))
             {   if(isset($_GET['loai'])) {
                     $category = $_GET['loai'];
                     $data_tenLSP = $this->product_model->getTenLoaiSP($category);
-                    $data_sanpham = $this->product_model->getChiTietSanPham($category);
+
+                    $lenghtData = $this->product_model->count_chitietLoai($category);
+                    $total_records = count($lenghtData);
+                    // BƯỚC 3: TÌM LIMIT VÀ CURRENT_PAGE
+                    $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+                    $limit = 9;
+                    // BƯỚC 4: TÍNH TOÁN TOTAL_PAGE VÀ START
+                    // tổng số trang
+                    $total_page = ceil($total_records / $limit);
+                    // Giới hạn current_page trong khoảng 1 đến total_page
+                    if ($current_page > $total_page){
+                        $current_page = $total_page;
+                    }
+                    else if ($current_page < 1){
+                        $current_page = 1;
+                    }
+                    // Tìm Start
+                    $start = ($current_page - 1) * $limit;
+                    $data_sanpham = $this->product_model->getChiTietSanPham($category,$start,$limit);
+
                 }else {
                     $category = $_GET['cate'];
-                    $data_sanpham = $this->product_model->sanpham_danhmuc(0,100,$category);
+                    $lenghtData = $this->product_model->count_sp($category);
+                    $total_records = count($lenghtData);
+                    // BƯỚC 3: TÌM LIMIT VÀ CURRENT_PAGE
+                    $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+                    $limit = 9;
+                    // BƯỚC 4: TÍNH TOÁN TOTAL_PAGE VÀ START
+                    // tổng số trang
+                    $total_page = ceil($total_records / $limit);
+                    // Giới hạn current_page trong khoảng 1 đến total_page
+                    if ($current_page > $total_page){
+                        $current_page = $total_page;
+                    }
+                    else if ($current_page < 1){
+                        $current_page = 1;
+                    }
+                    // Tìm Start
+                    $start = ($current_page - 1) * $limit;
+                    $data_sanpham = $this->product_model->getChiTietSanPham($category,$start,$limit);
+                    $data_sanpham = $this->product_model->sanpham_danhmuc($start,$limit,$category);
+
                 }
             }
+
+            
+
+
+
             $data_sanpham1 = $this->product_model->sanpham_danhmuc(0,10,1);
             $data_sanpham2 = $this->product_model->sanpham_danhmuc(0,10,3);
             $data_khuyenmai = $this->product_model->sanpham_khuyenmai();
