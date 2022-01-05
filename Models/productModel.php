@@ -64,5 +64,12 @@
             require("result.php");
             return $data;
         }
+         function getEvalute($MaSP){
+             $query = "SELECT  rate.*, nguoidung.Ho, nguoidung.ten ,DATE_FORMAT(rate.ngayDanhGia, '%d-%m-%Y')
+             as ngay  FROM  sanpham as sp , danhgia as rate, nguoidung WHERE  
+             sp.MaSP = rate.MaSP and rate.MaND = nguoidung.MaND and sp.MaSP = '$MaSP'";
+            require("result.php");
+            return $data;
+         }
     }
 ?>
