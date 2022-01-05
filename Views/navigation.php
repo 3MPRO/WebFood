@@ -74,6 +74,9 @@
                 case 'order-detail':
                     require_once("order/orderDetail.php");
                     break;
+                case 'evaluate':
+                    require_once("order/Evaluate.php");
+                    break;
             }break;
            
         case'cart':
