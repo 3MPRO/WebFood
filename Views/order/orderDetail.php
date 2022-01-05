@@ -130,7 +130,9 @@
                                             <td data-title="Giá" class="numeric"><?= number_format($row['DonGia']) ?>₫</td>
                                             <td data-title="Số lượng" class="numeric"><?= $row['SoLuong'] ?></td>
                                             <td data-title="Tổng" class="numeric"><?= number_format($row['DonGia']*$row['SoLuong']) ?>₫</td>
+                                            <td class="a action"></td>
                                         </tr>
+
                                         <?php  } ?>
                                     </tbody>
                                 </table>
