@@ -183,7 +183,7 @@
             <div class="col-lg-8 col">
                 <div class="row">
                     <?php 
-                        foreach ($data_random as $item) {?>
+                        foreach ($data_sanphamnoibat as $item) {?>
                             <div class="col col-lg-6">
                                 <div class="item_product_main">
                                     <div class="populator__product">
@@ -207,7 +207,7 @@
 
                     <?php } ?>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col col-6">
                         <div class="populator__product-right">
                             <a href="?act=detail&sp=<?=$data_random1[0]['MaSP']?>" class="populator__product-right-link">
@@ -236,9 +236,9 @@
                                     <div class="populator__product-content">
                                         <h2 class="poplator__product-content-title tilte-name-product">
                                             <?= $data_random2[0]['TenSP'] ?>
-                                        </h2>
+                                        </h2> -->
                                         <!-- <p>Chuối tiêu xanh tại Dũng</p> -->
-                                        <div class="price-box">
+                                        <!-- <div class="price-box">
                                             <span class="price-text"><?= number_format($data_random2[0]['DonGia']) ?> đ</span>
                                             <a href="?act=cart&xuli=add&id=<?=$data_random2[0]['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
                                         </div>
@@ -258,9 +258,9 @@
                                 <div class="populator__product-content">
                                     <h2 class="poplator__product-content-title tilte-name-product">
                                         <?= $data_random3[0]['TenSP'] ?>
-                                    </h2>
+                                    </h2> -->
                                     <!-- <p>Chuối tiêu xanh tại Dũng</p> -->
-                                    <div class="price-box">
+                                    <!-- <div class="price-box">
                                         <span class="price-text"><?= number_format($data_random3[0]['DonGia']) ?> đ</span>
                                         <a href="?act=cart&xuli=add&id=<?=$data_random3[0]['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
                                     </div>
@@ -269,7 +269,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="col-lg-4 col">
                 <div class="populator__product-right ">
