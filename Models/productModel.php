@@ -51,6 +51,11 @@
             return $data;
         }
 
+        public function clicksanpham($masp)
+        {
+            $query ="UPDATE sanpham SET Click=Click+1 where MASP = '$masp'";
+        }
+
         
         function sanphamnoibat($id)
         {
@@ -67,6 +72,7 @@
             
             return $data;
         }
+
         function searchData($key) {
             $query = "SELECT * FROM sanpham, hinhanh WHERE sanpham.MaSP = hinhanh.masp and TenSP LIKE '$key%' GROUP by sanpham.MaSP";
             require("result.php");
@@ -107,7 +113,7 @@
             require("result.php");
             return $data;
         }
-<<<<<<< HEAD
+
          function getEvalute($MaSP){
              $query = "SELECT  rate.*, nguoidung.Ho, nguoidung.ten ,DATE_FORMAT(rate.ngayDanhGia, '%d-%m-%Y')
              as ngay  FROM  sanpham as sp , danhgia as rate, nguoidung WHERE  
@@ -115,9 +121,5 @@
             require("result.php");
             return $data;
          }
-=======
-
-
->>>>>>> b2a22b003f605c44e7acdcd0e54fbccdbb37d6ea
     }
 ?>
