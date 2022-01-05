@@ -54,6 +54,7 @@
         public function clicksanpham($masp)
         {
             $query ="UPDATE sanpham SET Click=Click+1 where MASP = '$masp'";
+            $result = $this->conn->query($query);
         }
 
         
