@@ -119,7 +119,7 @@
 
     <script>
         var options1 = {
-            width: 350,
+            width: 437,
             height: 350,
             zoomWidth: 400,
             zoomHeight: 200,

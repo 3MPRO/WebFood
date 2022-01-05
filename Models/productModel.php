@@ -90,7 +90,6 @@
             require("result.php");
             return $data;
         }
-<<<<<<< HEAD
          function getEvalute($MaSP){
              $query = "SELECT  rate.*, nguoidung.Ho, nguoidung.ten ,DATE_FORMAT(rate.ngayDanhGia, '%d-%m-%Y')
              as ngay  FROM  sanpham as sp , danhgia as rate, nguoidung WHERE  
@@ -98,9 +97,7 @@
             require("result.php");
             return $data;
          }
-=======
 
 
->>>>>>> b2a22b003f605c44e7acdcd0e54fbccdbb37d6ea
     }
 ?>
