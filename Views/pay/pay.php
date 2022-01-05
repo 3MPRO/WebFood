@@ -2,15 +2,25 @@
     <div class="container">
     <div class="pay-head">
         <h2>
-            <a href="">
-            Fruity Fresh
+            <a href="?act=home">
+                Fruity Fresh
             </a>
         </h2>
         <div class="pay-head-bottom">
             <span>Thông tin nhận hàng</span>
         </div>
     </div>
-
+    <?php
+        if(isset($_GET['httt'])){
+            $class =  'wrapper-pay__cod--active';
+            $param = '&httt=paypal';
+            $httt = 'Thanh toán PayPal';
+        }else {
+            $httt = 'Thanh toán khi giao hàng(COD)';
+            $param = '';
+            $class = '';
+        }
+    ?>
     <form action="?act=pay&xuli=saved" method="POST">
         <div class="row">
             <div class="col-lg-4">
@@ -101,27 +111,40 @@
                     $soluong +=1;
                     $thanhtien +=$value['ThanhTien'];
                 }}
+                if($thanhtien >=300000) {
+                    $thanhtien = $thanhtien;
+                    $tongTien = $thanhtien;
+                    $phiship = 0;
+                }else {
+                    $phiship = 25000;
+                    $thanhtien = $thanhtien;
+                    $tongTien = $thanhtien + $phiship;
+                }
             ?>
                 <div class="layout-flex">
                     <h2>Vận chuyển</h2>
                     <div class="wrapper-transport">
                         <span>Giao hàng tận nơi</span>
-                        <span style="padding-right: 20px; color: red; font-weight: bold;">40.000đ</span>
+                        <span style="padding-right: 20px; color: red; font-weight: bold;"><?= number_format($phiship);?>đ</span>
                     </div>
                 </div>
                 <div class="layout-flex">
+                    <input type="text" hidden name="httt" 
+                    value="<?php echo $httt;?>">
                     <h2>Thanh toán</h2>
-                    <div class="wrapper-pay__cod wrapper-pay__cod--active">
+                    <div class="wrapper-pay__cod">
                         <span>Thanh toán khi giao hàng(COD)</span>
                         <i class="fas fa-hand-holding-usd"></i>
                     </div>
-                    <div class="wrapper-pay__cod">
-                        <a href="" class="btn-paypel">Thanh toán bằng paypal</a>
+                    <div class="wrapper-pay__cod <?= $class ?>">
+                        <div id="paypal-payment-button">
+
+                        </div>
                     </div>
-                    <div class="pay-error__note">
+                    <!-- <-- <div class="pay-error__note">
                         <p>*Xin lỗi tính năng này chưa hoàn thành</p>
                         
-                    </div>
+                    </div> --> 
                 </div>
             </div>
             <div class="col-lg-4">
@@ -134,12 +157,12 @@
                             <?php foreach ($_SESSION['product'] as $value) {?>
                             <li class="pad-order__item">
                                 <div class="pad-order__item-img">
-                                    <img src="./public/images/<?php echo $value['hinhanh']?>" alt="">
+                                    <img src="./public/images/<?php echo $value['hinhanh']?>" title="<?php echo $value['TenSP'] ?>">
                                     <span class="count-product">
                                         <?php echo number_format($value['soluong'])?>
                                     </span>
                                 </div>
-                                <span class="pad-order__item-name">
+                                <span class="pad-order__item-name" title="<?php echo $value['TenSP'] ?>">
                                     <?php echo $value['TenSP'] ?>
                                 </span>
                                 <span class="pay-order__item-price">
@@ -158,12 +181,12 @@
                         </div>
                         <div class="pay-order__total-wrapper">
                             <span>Phí vận chuyển</span>
-                            <span>40.000đ</span>
+                            <span><?= number_format($phiship);?>đ</span>
                         </div>
                         <div class="pay-order__total-wrapper" style="border-top: 1px solid #ccc;">
                             <span>Tổng cộng</span>
                             <h2 class="pay-total__sum">
-                            <?php echo number_format($thanhtien+40000); ?> đ
+                            <?php echo number_format($tongTien); ?> đ
                             </h2>
                         </div>
                     </div>
@@ -174,7 +197,14 @@
                             Quay lại giỏ hàng
                         </a>
                         <div class="pay-order__button">
-                            <button class="pay-order__button-check" type="submit" name="submit">Đặt hàng</button>
+                            <button class="pay-order__button-check" type="submit" name="submit">
+                                <?php
+                                    if(isset($_GET['httt']))
+                                        echo 'Tiếp tục';
+                                    else   
+                                        echo 'Đặt hàng';
+                                ?>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -238,5 +268,42 @@
             this.classList.add('btn-address-active');
             boxAddress.innerHTML = htmls
         })
+
+        let btnshipCode = document.querySelector('.wrapper-pay__cod')
+        btnshipCode.addEventListener('click',function(){
+            this.classList.toggle('wrapper-pay__cod--active')
+        })
+
     })()
+</script>
+
+<script src="https://www.paypal.com/sdk/js?client-id=ASeCL6z6pcwYPaH7prTwln5MPRgwnQW0UVXJFJ1-0_YYF24hTSIKWF87hqQxKC7LkYGxPVBwRUSn71_B&disable-funding=credit,card"></script>
+<script>
+    var thanhtien = '<?php echo $tongTien ?>';
+    var thanhtienviet = thanhtien/22855
+    var value = parseFloat(thanhtienviet).toFixed(2);
+
+    paypal.Buttons({
+        style : {
+            color: 'blue',
+            shape: 'pill'
+        },
+        createOrder: function (data, actions) {
+            return actions.order.create({
+                purchase_units : [{
+                    amount: {
+                        value: value
+                    }
+                }]
+            });
+        },
+        onApprove: function (data, actions) {
+            return actions.order.capture().then(function (details) {
+                window.location.replace("http://localhost/doancuoiky/WebFood/?act=pay&httt=paypal")
+            })
+        },
+        onCancel: function (data) {
+            window.location.replace("http://localhost/doancuoiky/WebFood/?act=pay")
+        }
+    }).render('#paypal-payment-button');
 </script>

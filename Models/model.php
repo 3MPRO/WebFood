@@ -47,6 +47,11 @@
             require("result.php");
             return $data; 
         }
+        function getHoaDon(){
+            $query ="select * from hoadon ORDER BY NgayLap DESC LIMIT 1";
+            require("result.php");
+            return $data;
+        }
 
     }
 ?>

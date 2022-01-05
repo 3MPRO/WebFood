@@ -204,8 +204,8 @@
                             <?php  } ?>
                 </ul>
             </li>
-            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=product&cate=2">Bánh kẹo</a></li>
-            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=product&cate=3">Đồ khô, gạo</a></li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=product&cate=2&page=1">Bánh kẹo</a></li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=product&cate=3&page=1">Đồ khô, gạo</a></li>
             <li class="nav-list__item"><a class="nav-list__item-link" href="?act=contact">Liên hệ</a></li>
             <li class="nav-list__item"><a class="nav-list__item-link" href="?act=news">Tin tức</a></li>
         </ul>
@@ -221,7 +221,7 @@ function recursiveMenu($data, $parent_id, $sub=true){
             unset($data[$key]);
           ?>    
      <li>
-      <a href="?act=product&cate=<?=$item['MaDM']?>&loai=<?=$item['MaLSP']?>">
+      <a href="?act=product&cate=<?=$item['MaDM']?>&loai=<?=$item['MaLSP']?>&page=1">
           <?php echo $item['TenLSP']?>
       </a>
      </li>
