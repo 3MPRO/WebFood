@@ -195,8 +195,8 @@
                             <li class="nav-item__down-item-mobile">
                                 <a href="?act=product&cate=<?=$row['MaDM'] ?>" >
                                     <?=$row['TenDM']?>
-                                    <i class="fas fa-chevron-down" style="padding-left:12px;"></i>
                                 </a>
+                                <i class="fas fa-chevron-down" style=""></i>
                                 <?php recursiveMenuMobile($data_loaisp,$row['MaDM']) ?>
                             </li>
                             <?php  } ?>

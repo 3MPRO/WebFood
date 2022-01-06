@@ -176,33 +176,29 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-8 col">
-                <div class="row">
-                    <?php 
-                        foreach ($data_sanphamnoibat as $item) {?>
-                            <div class="col col-lg-6">
-                                <div class="item_product_main">
-                                    <div class="populator__product">
-                                        <a href="?act=detail&sp=<?=$item['MaSP']?>" class="populator__product-link">
-                                            <img src="./public/images/<?= $item['hinhanh'];?>" alt="">
-                                        </a>
-                                        <span><i class=" data-heart="<?php echo $item['MaSP'] ?>" far fa-heart icon-heart-element icon-heart-i"></i></span>
-                                    </div>
-                                    <div class="populator__product-content">
-                                        <h2 class="poplator__product-content-title tilte-name-product">
-                                            <?= $item['TenSP'] ?>
-                                        </h2>
-                                        <div class="price-box">
-                                            <span class="price-text"><?= number_format($item['DonGia']) ?> đ</span>
-                                            <a href="?act=cart&xuli=add&id=<?=$item['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
-                                        </div>
-                                    </div>
+            <?php 
+                foreach ($data_sanphamnoibat as $item) {?>
+                    <div class="col col-lg-4 col-md-6 col-sm-6">
+                        <div class="item_product_main">
+                            <div class="populator__product">
+                                <a href="?act=detail&sp=<?=$item['MaSP']?>" class="populator__product-link">
+                                    <img src="./public/images/<?= $item['hinhanh'];?>" alt="">
+                                </a>
+                                <span><i class=" data-heart="<?php echo $item['MaSP'] ?>" far fa-heart icon-heart-element icon-heart-i"></i></span>
+                            </div>
+                            <div class="populator__product-content">
+                                <h2 class="poplator__product-content-title tilte-name-product">
+                                    <?= $item['TenSP'] ?>
+                                </h2>
+                                <div class="price-box">
+                                    <span class="price-text"><?= number_format($item['DonGia']) ?> đ</span>
+                                    <a href="?act=cart&xuli=add&id=<?=$item['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
                                 </div>
                             </div>
+                        </div>
+                    </div>
 
-                    <?php } ?>
-                </div>
-            </div>
+            <?php } ?>
         </div>
     </div>
 </section>

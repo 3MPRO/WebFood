@@ -84,7 +84,9 @@ const App = {
         let iconDown = document.getElementById('icon-down-mobile')
         let listMenuDown = document.querySelector('.nav-item__down-mobile')
         let barMenu = document.querySelector('.bar-menu.category-action')
-
+        let iconDonws = document.querySelectorAll('.nav-item__down-item-mobile .fa-chevron-down')
+        
+        let listMenuDownItem = document.querySelectorAll('.nav-list__down-mobile')
         iconDown.addEventListener("click", function() {
             listMenuDown.classList.toggle('nav-item__down-mobile-active');
             this.classList.toggle('icon-down-mobile-active')
@@ -94,6 +96,13 @@ const App = {
         barMenu.addEventListener('click', function() {
             item('.header-nav-mobile').classList.toggle('header-nav-mobile-active')
         })
+
+        iconDonws.forEach((iconDonw,index) => {
+            iconDonw.addEventListener('click', function() {
+                listMenuDownItem[index].classList.toggle('nav-item__down-item-mobile-active')
+                iconDonw.classList.toggle('icon-down-mobile-active')
+            })
+        });
 
         // Active nav link
         const currentLocation = location.href

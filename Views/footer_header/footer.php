@@ -150,8 +150,20 @@
 		</div>
 		<div class="itembar center">
 			<div class="bar-menu cartbar-mobile" data-count-pr="0">
+                <?php 
+                    $soluong = 0;
+                    $thanhtien = 0;
+                    $countProduct = 0;
+                    if(isset($_SESSION['product'])){
+                    foreach ($_SESSION['product'] as $value) {
+                        $countProduct++;
+                        $soluong +=1;
+                        $thanhtien +=$value['ThanhTien'];
+                    }}
+                ?>
 				<div class="icon">
                     <i class="fas fa-cart-plus"></i>
+                    <span class="cart-icon__count"><?php echo $countProduct ?></span>
 				</div>
 				<a href="?act=cart">Giỏ hàng</a>
 			</div>
