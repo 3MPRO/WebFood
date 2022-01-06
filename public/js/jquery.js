@@ -123,14 +123,15 @@ $(document).ready(function(){
 
 
     // rating 
+    var star = 1; 
+    $('.ratingResult').val(star);
     $('.star-nomal').each(function(i,element){
+        
         $(this).click(function(){
             star = (i +1);
             $('.ratingResult').val(star);
             console.log(star);
             updateRating(star);
-           
-
         })
     })
     function updateRating(a){
@@ -152,16 +153,25 @@ $(document).ready(function(){
         let MaHD = $('.rMaHD').val();
         let MaND = $('.rMaND').val();
         let MaSP = $('.rMaSP').val();
+        $('.ratingComment').val("");
         $.ajax({
             url: "Models/ajaxRating.php",
             method: 'POST',
             data: {action: "ok",ratingResult:ratingResult,comment:comment,MaHD:MaHD,MaSP:MaSP,MaND:MaND},
             success: function(data) {
-               $('.show-rating').html(data)
+               $('.show-rating').html(data);
+               loadrating();
             }
         })
 
     })
+    function loadrating(){
+        let totalStar = Number(document.getElementById('total-star').textContent)
+        let overlayImg = document.querySelector('.rating-overlay__img')
+        let leftPx = Math.ceil(((totalStar) / 5) * 120);
+        console.log(leftPx);
+        overlayImg.style.left = leftPx + 'px'
+    }
 
 });
 // filter product 

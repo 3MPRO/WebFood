@@ -4,7 +4,9 @@
          $BinhLuan = $_POST['comment'];
          $MaSP  = $_POST['MaSP'];
          $MaND = $_POST['MaND'];
+         $MaHD = $_POST['MaHD'];
          $data = array(
+             'MaHD' => $MaHD,
              'MaND' => $MaND,
              'MaSP' => $MaSP,
              'SoSao' => $SoSao,
@@ -12,24 +14,40 @@
          );
          require_once("EvaluateModel.php");
          $obj = new EvaluateModel();
-         $obj->store($data);
-         require_once("productModel.php");
-         $product_model = new productModel();
-         $data_sanpham  = $product_model->sanpham($_GET['sp']);
-              //lấy đánh giá
-         $DataEvalute = $product_model->getEvalute($_GET['sp']); 
+         if($obj->store($data) == true){
+            
+            
+         }
+         else{
+
+              // nếu chèn không thành công => đã đánh giá => update
+             $resutUpdate =  $obj->update($data) == true;
+            
+             
+         }
+            $data_sanpham  =  $obj->sanpham($MaSP);
+            //lấy đánh giá
+            $DataEvalute = $obj->getEvalute($MaSP); 
+            $length = count($DataEvalute);
+            $tbSao = 0;
+            $countrating = $length;
+            foreach ($DataEvalute as $row) {
+                $tbSao += $row['SoSao'] / $length;
+            }
+            
+         
 ?>       
 <div class="rating-box">
     <div class="lrb">
         <div class="average-rating orange">
             <div>
-                <b><?= $data_sanpham[0]['SoSao'] ?></b>
+                <span id="total-star"><?= $tbSao ?></span>
+            </div>
+            <div class="rating-total__img">
+                <div class="rating-overlay__img"></div>
             </div>
             <div>
-                <i class="fas fa-star"></i>
-            </div>
-            <div>
-                <span> <?= $data_sanpham[0]['SoDanhGia'] ?> đánh giá</span>
+                <span> <?= $countrating ?> đánh giá</span>
             </div>
         </div>
     </div>
@@ -63,39 +81,76 @@
                             break;
                     }
                 }
-            } ?>
+            }
+
+            ?>
             <li>
                 <span>5 <i class="fas fa-star"></i></span>
                 <div class="rating-bar">
-                    <div class="rating-bar__default rating-bar__in"></div>
+                    <div class="rating-bar__default 
+                <?php if ($num5 == 0) {
+                    echo 'rating-bar__none';
+                } else {
+                    echo 'rating-bar__in';
+                }
+                ?>
+            "></div>
                 </div>
                 <span><?= $num5 ?> đánh giá</span>
             </li>
             <li>
                 <span>4 <i class="fas fa-star"></i></span>
                 <div class="rating-bar">
-                    <div class="rating-bar__default rating-bar__none"></div>
+                    <div class="rating-bar__default
+                <?php if ($num4 == 0) {
+                    echo 'rating-bar__none';
+                } else {
+                    echo 'rating-bar__in';
+                }
+                ?>
+            "></div>
                 </div>
                 <span><?= $num4 ?> đánh giá</span>
             </li>
             <li>
                 <span>3 <i class="fas fa-star"></i></span>
                 <div class="rating-bar">
-                    <div class="rating-bar__default rating-bar__none"></div>
+                    <div class="rating-bar__default
+            <?php if ($num3 == 0) {
+                echo 'rating-bar__none';
+            } else {
+                echo 'rating-bar__in';
+            }
+            ?>
+            "></div>
                 </div>
                 <span><?= $num3 ?> đánh giá</span>
             </li>
             <li>
                 <span>2 <i class="fas fa-star"></i></span>
                 <div class="rating-bar">
-                    <div class="rating-bar__default rating-bar__none"></div>
+                    <div class="rating-bar__default
+                <?php if ($num2 == 0) {
+                    echo 'rating-bar__none';
+                } else {
+                    echo 'rating-bar__in';
+                }
+                ?>
+            "></div>
                 </div>
                 <span><?= $num2 ?> đánh giá</span>
             </li>
             <li>
                 <span>1 <i class="fas fa-star"></i></span>
                 <div class="rating-bar">
-                    <div class="rating-bar__default rating-bar__none"></div>
+                    <div class="rating-bar__default
+            <?php if ($num1 == 0) {
+                echo 'rating-bar__none';
+            } else {
+                echo 'rating-bar__in';
+            }
+            ?>
+            "></div>
                 </div>
                 <span><?= $num1 ?> đánh giá</span>
             </li>
@@ -114,9 +169,18 @@
                     <ul>
                         <?php for ($i = 1; $i <= $row['SoSao']; $i++) { ?>
                             <li>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star active"></i>
                             </li>
                         <?php } ?>
+                        <?php
+                        if ($row['SoSao'] < 5) {
+                            for ($i = 1; $i <= (5 - $row['SoSao']); $i++) { ?>
+                                <li>
+                                    <i class="fas fa-star"></i>
+                                </li>
+                        <?php }
+                        }
+                        ?>
                     </ul>
                     <span>
                         <i class="fas fa-check"></i>
@@ -145,4 +209,7 @@
         ?>
         </div>
 </div>
+
+
+
 
