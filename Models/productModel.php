@@ -123,5 +123,12 @@
             return $data;
          }
 
+         function getProductSold($MaSP){
+             $query = "SELECT MaSP,SUM(SoLuong) as 'soLuong'
+             FROM chitiethoadon WHERE MaSP = $MaSP";
+             require("result.php");
+             return $data;
+         }
+
     }
 ?>

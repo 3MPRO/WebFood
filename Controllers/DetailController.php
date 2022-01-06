@@ -24,6 +24,8 @@ require_once("./Models/productModel.php");
                  //lấy đánh giá
                 $DataEvalute = $this->product_model->getEvalute($_GET['sp']);
                     
+                // Lấy số lượng đã bán
+                $data_count_product = $this->product_model->getProductSold($_GET['sp']);
 
             }
             

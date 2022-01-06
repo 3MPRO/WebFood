@@ -51,8 +51,10 @@ class PayModel extends Model
             $DonGia = $value['DonGia'];
             $MaHD = $data_mahd['MaHD'];
             $query_ct = "INSERT INTO chitiethoadon(MaHD,MaSP,SoLuong,DonGia) VALUES ($MaHD,$MaSP,$SoLuong,$DonGia)";
-    
             $status_ct = $this->conn->query($query_ct);
+            $query_update_soLuong = "UPDATE sanpham SET SoLuong = SoLuong - $SoLuong WHERE MaSP = $MaSP";
+            $status_update = $this->conn->query($query_update_soLuong);
+
             echo $status_ct;
         }
         if ($status == true and $status_ct = true) {

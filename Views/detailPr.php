@@ -87,7 +87,7 @@
                         <div>Đánh giá</div>
                     </div>
                     <div class="count-producted">
-                        <span>3</span>
+                        <span><?= $data_count_product[0]['soLuong']?></span>
                         <div>Đã bán</div>
                     </div>
                 </div>
@@ -108,10 +108,17 @@
                     <a class="btn-plus" href="?act=cart&xuli=update&id=<?php echo $data_sanpham[0]['MaSP'];?>">
                         <i class="fas fa-plus"></i>
                     </a>
-                    <span style="padding-left: 12px;">1457 sản phẩm có sẵn</span>
+                    <span style="padding-left: 12px;"><?= $data_sanpham[0]['SoLuong']?> sản phẩm có sẵn</span>
+                    <span style="padding-top: 14px;color: red; font-size:14px; display:none;" id="number-over">Số lượng vượt quá giới hạn</span>
+                    <input type="text" hidden value="<?= $data_sanpham[0]['SoLuong']?>" id="so-luong-max">
                 </div>
                 <div class="group-button-add">
-                    <a href="?act=cart&xuli=add&id=<?php echo $data_sanpham[0]['MaSP']; ?>&sl=1" class="add-cart btn-add-cart" data-id="<?php echo $data_sanpham[0]['MaSP']; ?>">Cho vào giỏ hàng</a>
+                    <?php
+                        if($data_sanpham[0]['SoLuong'] <=1)
+                            echo '<button class="btn btn-secondary" disabled > Tạm thời hết hàng </button>';
+                        else {?>
+                        <a href="?act=cart&xuli=add&id=<?php echo $data_sanpham[0]['MaSP']; ?>&sl=1" class="add-cart btn-add-cart" data-id="<?php echo $data_sanpham[0]['MaSP']; ?>">Cho vào giỏ hàng</a>
+                    <?php } ?>
                 </div>
             </form>
         </div>
@@ -430,7 +437,7 @@
                         else{ ?>
                             <div class="list-comment-product__item">
                             <div class="cmt-heading">
-                                <span>Chưa có đánh giá nào</span> 
+                                <span style="width: 100%;">Chưa có đánh giá nào</span> 
                                
                             </div>
                             

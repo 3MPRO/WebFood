@@ -284,10 +284,18 @@ const App = {
         const listbtnAddCart = document.querySelectorAll('.add-cart')
         const _this = this
         let valueInput = qtyInputEl.value
+        
+        const soLuongMax = item('#so-luong-max').value
+        if(soLuongMax <=1) {
+            btnMinus.style.pointerEvents = 'none'
+            btnPlus.style.pointerEvents = 'none'
+        }
         btnMinus.addEventListener('click', function(e) {
             e.preventDefault()
             valueInput == 1 ? valueInput = 1 : valueInput--
-            console.log(valueInput);
+            if(valueInput < soLuongMax) {
+                item('#number-over').style.display = 'none'
+            }
             qtyInputEl.value = `${valueInput}`
             // console.log(_this.defaulthref + '' + valueInput);
             if(listbtnAddCart[0]) {
@@ -296,7 +304,10 @@ const App = {
         })
         btnPlus.addEventListener('click', function(e) {
             e.preventDefault()
-            valueInput == 10 ? valueInput = 10 : valueInput++
+            valueInput == soLuongMax ? valueInput = soLuongMax : valueInput++
+            if(valueInput === soLuongMax) {
+                item('#number-over').style.display = 'block'
+            }
             qtyInputEl.value = `${valueInput}`
             // console.log(_this.defaulthref + '' + valueInput);
             if(listbtnAddCart[0]) {

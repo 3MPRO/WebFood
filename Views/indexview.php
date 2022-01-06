@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="https://previews.123rf.com/images/marylia17/marylia171602/marylia17160200116/52748659-vector-organic-food-logo-fresh-fruit-logo-apple-logo-eco-natural-products-icon-isolated-identity.jpg" />
