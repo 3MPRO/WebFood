@@ -1,5 +1,6 @@
 <?php
  $length = count($DataEvalute);
+ $countrating = $length;
  $tbSao = 0;
  foreach($DataEvalute as $row){
     $tbSao += $row['SoSao']/$length;
@@ -82,7 +83,7 @@
                         ?>
                     </ul>
                     <div class="count-vote">
-                        <span><?= $data_sanpham[0]['SoDanhGia'] ?></span>
+                        <span><?= $countrating ?></span>
                         <div>Đánh giá</div>
                     </div>
                     <div class="count-producted">
@@ -275,7 +276,7 @@
                             <div class="rating-overlay__img"></div>
                         </div>
                         <div>
-                            <span> <?= $data_sanpham[0]['SoDanhGia'] ?> đánh giá</span>
+                            <span> <?= $countrating ?> đánh giá</span>
                         </div>
                     </div>
                 </div>
@@ -453,7 +454,6 @@
 </main>
 
 <script>
-
     let totalStar = Number(document.getElementById('total-star').textContent)
     let overlayImg = document.querySelector('.rating-overlay__img')
     let leftPx = Math.ceil(((totalStar)/5)*120);
