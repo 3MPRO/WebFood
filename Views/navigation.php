@@ -97,8 +97,16 @@
             }
             break;
         case "news":
-            require_once("News/news.php");
-            break;
+            $act = isset($_GET['chitiet']) ? $_GET['chitiet'] : 'list';
+            // echo $act;
+            switch ($act) {
+                case 'list':
+                    require_once("News/news.php");
+                    break;
+                case 'chitiettin':
+                    require_once("News/detailNews.php");
+                    break;
+            }break;
         case "contact":
                 require_once("contact.php");
                 break;

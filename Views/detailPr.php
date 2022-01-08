@@ -319,75 +319,45 @@
                             
                         }
                         }
+                        $num1 == 0 ? $widthNum1 = 0 : $widthNum1=ceil($num1/$countrating*100);
+                        $num2 == 0 ? $widthNum2 = 0 : $widthNum2=ceil($num2/$countrating*100);
+                        $num3 == 0 ? $widthNum3 = 0 : $widthNum3=ceil($num3/$countrating*100);
+                        $num4 == 0 ? $widthNum4 = 0 : $widthNum4=ceil($num4/$countrating*100);
+                        $num5 == 0 ? $widthNum5 = 0 : $widthNum5=ceil($num5/$countrating*100);
                         
                     ?>
                         <li>
                             <span>5 <i class="fas fa-star"></i></span>
                             <div class="rating-bar">
-                                <div class="rating-bar__default 
-                                    <?php if($num5 == 0) {
-                                        echo 'rating-bar__none';
-                                        } else {
-                                            echo 'rating-bar__in';
-                                        }
-                                    ?>
-                                "></div>
+                                <div class="rating-bar__default" style="background: var(--cl-green);width:<?= $widthNum5 ?>%;"></div>
                             </div>
                             <span><?=  $num5 ?> đánh giá</span>
                         </li>
                         <li>
                             <span>4 <i class="fas fa-star"></i></span>
                             <div class="rating-bar">
-                                <div class="rating-bar__default
-                                    <?php if($num4 == 0) {
-                                        echo 'rating-bar__none';
-                                        } else {
-                                            echo 'rating-bar__in';
-                                        }
-                                    ?>
-                                "></div>
+                                <div class="rating-bar__default" style="background: var(--cl-green);width:<?= $widthNum4 ?>%;"></div>
                             </div>
                             <span><?=  $num4 ?> đánh giá</span>
                         </li>
                         <li>
                             <span>3 <i class="fas fa-star"></i></span>
                             <div class="rating-bar">
-                                <div class="rating-bar__default
-                                <?php if($num3 == 0) {
-                                    echo 'rating-bar__none';
-                                    } else {
-                                        echo 'rating-bar__in';
-                                    }
-                                ?>
-                                "></div>
+                                <div class="rating-bar__default"style="background: var(--cl-green);width:<?= $widthNum3 ?>%;"></div>
                             </div>
                             <span><?=  $num3 ?>  đánh giá</span>
                         </li>
                         <li>
                             <span>2 <i class="fas fa-star"></i></span>
                             <div class="rating-bar">
-                                <div class="rating-bar__default
-                                    <?php if($num2 == 0) {
-                                        echo 'rating-bar__none';
-                                        } else {
-                                            echo 'rating-bar__in';
-                                        }
-                                    ?>
-                                "></div>
+                                <div class="rating-bar__default" style="background: var(--cl-green);width:<?= $widthNum2 ?>%;"></div>
                             </div>
                             <span><?=  $num2 ?>  đánh giá</span>
                         </li>
                         <li>
                             <span>1 <i class="fas fa-star"></i></span>
                             <div class="rating-bar">
-                                <div class="rating-bar__default
-                                <?php if($num1 == 0) {
-                                        echo 'rating-bar__none';
-                                        } else {
-                                            echo 'rating-bar__in';
-                                        }
-                                    ?>
-                                "></div>
+                                <div class="rating-bar__default" style="background: var(--cl-green);width:<?= $widthNum1 ?>%;"></div>
                             </div>
                             <span><?=  $num1 ?> đánh giá</span>
                         </li>

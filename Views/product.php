@@ -40,8 +40,8 @@
                             <ul class="nav-left-category__list">
                                 <li class="category__item"><a href="?act=home">Trang chủ</a> </li>
                                 <li class="category__item"><a href="">Sản phẩm</a></li>
-                                <li class="category__item"><a href="">Chăm sóc cá nhân</a></li>
-                                <li class="category__item"><a href="">Thiết bị y tế</a></li>
+                                <li class="category__item"><a href="">Kẹo</a></li>
+                                <li class="category__item"><a href="">Đồ khô, gạo</a></li>
                                 <li class="category__item"><a href="">Liên hệ</a></li>
                                 <li class="category__item"><a href="">Tin tức</a></li>
                                 <li class="category__item"><a href="">Hệ thống cửa hàng</a></li>
@@ -270,6 +270,7 @@
                             </div>
                       
                         </div>
+                        
                         <nav aria-label="Page navigation">
                           <ul class="pagination">
                               <?php 
@@ -279,11 +280,11 @@
                                     // ngược lại hiển thị thẻ a
                                     if ($i == $current_page){ ?>
                                         <li class="page-item <?php if($i == $_GET["page"]) echo 'active'; ?>">
-                                        <a class="page-link" href="?act=product&cate=2&page=<?php echo $i; ?>"><?= $i ?></a></li>
+                                        <a class="page-link" href="?act=product&cate=<?= $_GET["cate"]?>&page=<?php echo $i; ?>"><?= $i ?></a></li>
                                     <?php }
                                     else{ ?>
                                         <li class="page-item <?php if($i == $_GET["page"]) echo 'active'; ?>">
-                                        <a class="page-link" href="?act=product&cate=2&page=<?php echo $i; ?>"><?= $i ?></a></li>
+                                        <a class="page-link" href="?act=product&cate=<?= $_GET["cate"]?>&page=<?php echo $i; ?>"><?= $i ?></a></li>
                                     <?php } }?>
                           </ul>
                         </nav>

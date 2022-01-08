@@ -48,20 +48,16 @@ const App = {
     eventDom: function() {
         let _this = this;
         
-        window.addEventListener('resize', function(event){
-            if(window.screen.width > 750){
-                window.addEventListener('scroll',()=> {
-                    console.log(window.pageXOffset);
-                    if (window.pageYOffset >= sticky) {
-                        headerEl.classList.add("sticky")
-                        item('.box-button-top').classList.add('show-back')
-                    } else {
-                        headerEl.classList.remove("sticky");
-                        item('.box-button-top').classList.remove('show-back')
-                    }
-                })
+        window.addEventListener('scroll',()=> {
+            console.log(window.pageYOffset);
+            if (window.pageYOffset >= sticky) {
+                headerEl.classList.add("sticky")
+                item('.box-button-top').classList.add('show-back')
+            } else {
+                headerEl.classList.remove("sticky");
+                item('.box-button-top').classList.remove('show-back')
             }
-        });
+        })
 
         // 
         const btnPaypal = item('.btn-paypel')

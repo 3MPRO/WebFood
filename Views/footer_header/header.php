@@ -236,7 +236,7 @@
             <li class="nav-list__item"><a class="nav-list__item-link" href="?act=product&cate=2&page=1">Bánh kẹo</a></li>
             <li class="nav-list__item"><a class="nav-list__item-link" href="?act=product&cate=3&page=1">Đồ khô, gạo</a></li>
             <li class="nav-list__item"><a class="nav-list__item-link" href="?act=contact">Liên hệ</a></li>
-            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=news">Tin tức</a></li>
+            <li class="nav-list__item"><a class="nav-list__item-link" href="?act=news&page=1">Tin tức</a></li>
         </ul>
     </div>
 </nav>

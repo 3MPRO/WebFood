@@ -53,5 +53,16 @@
             return $data;
         }
 
+        function getTinTuc($a,$b){
+            $query = "SELECT idTinTuc,TieuDe,trichdan,hinhanh from tintuc ORDER BY ngayDang DESC limit $a,$b";
+            require("result.php");
+            return $data;
+        }
+        function getTinTucAll(){
+            $query = "SELECT idTinTuc,TieuDe,trichdan,hinhanh from tintuc ORDER BY ngayDang DESC";
+            require("result.php");
+            return $data;
+        }
+
     }
 ?>
