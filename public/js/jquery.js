@@ -76,20 +76,10 @@ $(document).ready(function(){
             data: {listValue: listValue, danhmuc: danhmuc, loai: loai},
             success: function(data) {
                 $('#product-list-main').html(data)
-                
-                let length = $("#product-list-main .col-product__item ").length
-                let totals = Math.ceil(length/9)
-                console.log(totals);
-                let htmls = ''
-                for (var i = 1; i <= totals; i++) {
-                    htmls += `
-                    <li class="page-item">
-                    <a class="page-link" href="?act=product&cate=2&page=${i}">${i}</a></li>
-                    `;
-                }
-                console.log(htmls);
-                $('.pagination').html(htmls)
-                console.log();
+                console.log(data);
+                // if(data!=null) {
+                    $('.pagination').css("display", "none");
+                // }
             }
         })
     }
@@ -160,7 +150,7 @@ $(document).ready(function(){
             data: {action: "ok",ratingResult:ratingResult,comment:comment,MaHD:MaHD,MaSP:MaSP,MaND:MaND},
             success: function(data) {
                $('.show-rating').html(data);
-               loadrating();
+            //    loadrating();
             }
         })
 
@@ -196,6 +186,7 @@ function filterProduct(action,name, danhmuc) {
         data: {action: action,name: name, danhmuc: danhmuc,loai: loai,listValue:listValue},
         success: function(data) {
             $('#product-list-main').html(data)
+            $('.pagination').css("display", "none");
         }
     })
 

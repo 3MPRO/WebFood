@@ -5,6 +5,7 @@
     $loai = $_POST['loai'];
     if(isset($_POST['listValue'])){
         $listValue = $_POST['listValue'];
+        // print_r($listValue);
         if(count($listValue) > 0){
             foreach ($listValue as $item){
                 if($loai == 'null') {
@@ -65,6 +66,7 @@
     }else {
         if($loai == 'null') {
             $query = "SELECT * FROM danhmuc, loaisanpham, sanpham, hinhanh,khuyenmai WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and khuyenmai.MaKM = sanpham.MaKM and danhmuc.TenDM = '{$danhmuc}' and sanpham.DonGia GROUP by sanpham.MaSP";
+            // echo $query;
         }else {
             $query = "SELECT * FROM danhmuc, loaisanpham, sanpham, hinhanh,khuyenmai WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and khuyenmai.MaKM = sanpham.MaKM and loaisanpham.MaLSP = '{$loai}' and sanpham.DonGia GROUP by sanpham.MaSP";
         }

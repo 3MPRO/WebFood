@@ -61,13 +61,15 @@
             }
             echo $output; 
         }else {
+            $output = '';
             foreach ($listValue as $item) {
                 $query = "SELECT * FROM danhmuc, loaisanpham, sanpham, hinhanh,khuyenmai WHERE danhmuc.MaDM = loaisanpham.MaDM and sanpham.MaLSP = loaisanpham.MaLSP and hinhanh.masp = sanpham.MaSP and khuyenmai.MaKM = sanpham.MaKM and $param and sanpham.DonGia between {$item} GROUP by sanpham.MaSP ORDER BY {$name} {$_POST['action']}";
-                // echo $query;
                 $result = $mysqli->query($query);
                 $row =  $result -> fetch_array(MYSQLI_ASSOC);
-                $count = count($row);
-                $output = '';
+                // print_r($result);
+                // echo $result->num_rows;
+                $count = $result->num_rows;
+                // echo $count;
                 if($count > 0) {
                     foreach($result as $value) {
                         if ($value['GiaTriKM'] == 0) {
@@ -108,8 +110,8 @@
                     </div>';
                     }
                 } 
-                echo $output;
             }
+            echo $output;
         }
        
     }

@@ -49,7 +49,7 @@ const App = {
         let _this = this;
         
         window.addEventListener('scroll',()=> {
-            console.log(window.pageYOffset);
+            // console.log(window.pageYOffset);
             if (window.pageYOffset >= sticky) {
                 headerEl.classList.add("sticky")
                 item('.box-button-top').classList.add('show-back')
@@ -170,6 +170,7 @@ const App = {
         const elRemoveAll = item('.filter__remove')
         if(elRemoveAll!==null) {
             elRemoveAll.addEventListener('click',() => {
+                // item('.pagination').style.display = 'block'
                 const listValue = []
                 const listValuePrice = []
                 localStorage.setItem('listValue', JSON.stringify(listValue))
