@@ -30,5 +30,14 @@
             require("result.php");
             return $data;
         }
+
+        function getDanhGiaSao($maHD){
+            $query = "SELECT danhgia.SoSao,danhgia.MaSP
+            FROM sanpham,danhgia,nguoidung,hoadon
+            WHERE sanpham.MaSP = danhgia.MaSP AND nguoidung.MaND = danhgia.MaND and hoadon.MaHD = danhgia.MaHD and danhgia.MaHD = $maHD";
+            // echo $query;
+            require("result.php");
+            return $data;
+        }
     }
 ?>

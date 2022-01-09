@@ -5,12 +5,14 @@
          $MaSP  = $_POST['MaSP'];
          $MaND = $_POST['MaND'];
          $MaHD = $_POST['MaHD'];
+         $hinhanh = $_POST['hinhanh'];
          $data = array(
              'MaHD' => $MaHD,
              'MaND' => $MaND,
              'MaSP' => $MaSP,
              'SoSao' => $SoSao,
-             'BinhLuan'=> $BinhLuan
+             'BinhLuan'=> $BinhLuan,
+             'hinhanh' => $hinhanh
          );
          require_once("EvaluateModel.php");
          $obj = new EvaluateModel();

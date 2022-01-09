@@ -25,7 +25,9 @@
     <link rel="stylesheet" href="./public/css/responsive.css">
     <link rel="stylesheet" href="./public/css/login.css">
     <link rel="stylesheet" href="./public/css/news.css">
-    
+
+    <!-- jquery-ui.min css -->
+    <link rel="stylesheet" href="./public/css/jquery-ui.min.css">
     
     <!-- Lib -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -46,6 +48,9 @@
      require_once("footer_header/footer.php");
     ?>
     <script src="./public/lib/owl.carousel.min.js"></script>
+
+    <script src="./public/lib/jquery-ui.min.js"></script>
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
         <!-- Swiper JS -->

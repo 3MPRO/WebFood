@@ -26,7 +26,13 @@ require_once("./Models/productModel.php");
                     
                 // Lấy số lượng đã bán
                 $data_count_product = $this->product_model->getProductSold($_GET['sp']);
-
+                
+                $data_sanPhamBanChay = $this->product_model->getSanPhamBanChay(4);
+                $data_arr_topsp = array();
+                for ($i = 0; $i < count($data_sanPhamBanChay); $i++) {
+                    $data_item_sp = $this->product_model->sanpham_km($data_sanPhamBanChay[$i]['MaSP']);
+                    array_push($data_arr_topsp, $data_item_sp);
+                }
             }
             
             require_once('./Views/indexview.php');  

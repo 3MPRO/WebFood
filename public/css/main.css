@@ -1165,7 +1165,7 @@ i.far.fa-heart.icon-heart-i {
     /* border-radius: 5px; */
  }
 .product-tab-title{
-    padding-bottom: 20px;
+    padding: 20px 0;
  }
  .product-tab-desc {
     height: 300px;
@@ -1287,21 +1287,48 @@ ul.product-detail-main__vote span ,.count-vote span,.count-producted span{
     width: 100%;
     margin-bottom: 20px;
 }
+.evalute-note {
+    background:var(--cl-orange); padding: 12px 15px; box-shadow: 0 0 1px 0 rgba(255,255,255,0.3); color: #fff; border-radius:5px; margin-bottom: 20px;
+}
+div#preview img {
+    margin-right: 10px;
+    border: 1px solid;
+}
 .list-action-rating{
-    margin: 20px;
+    margin: 40px 0;
+}
+.evalute-product-box {
+    display: flex;
+}
+
+.evalute-product-box__img {
+    margin-right: 20px;
+}
+
+.evalute-product-box__info span {
+    color: #6f6f6f;
+}
+
+.evalute-product-box__info h2 {
+    font-size: 20px;
+    padding-bottom: 5px;
 }
 .Enter-Evaluate{
-    margin: 20px;
+    margin: 20px 0;
     width: 100%;
 }
 .Enter-Evaluate input{
     width: 90%;
+    height: 80px;
+    padding-left: 8px;
+    padding-bottom: 40px;
 }
 .btn-rating{
-    padding: 5px;
+    padding: 8px 20px;
     border-radius: 2px;
     background-color: var(--cl-green);
     color: #fff;
+    border-radius: 5px;
 }
 .btn-rating:hover{
     cursor: pointer;
@@ -1314,6 +1341,7 @@ ul.product-detail-main__vote span ,.count-vote span,.count-producted span{
 .star-nomal {
     cursor: pointer;
     color: #999;
+    font-size: 50px;
 }
 .rating-box {
     border: 1px solid #c1c1c1;

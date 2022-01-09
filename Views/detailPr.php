@@ -186,7 +186,7 @@
         </div>
     </section>
     <div class="row mb-5">
-        <div class="col col-lg-8">
+        <div class="col col-lg-9">
             <div class="product_getcontent">
                 <div class="product-tab-title">
                     <span>Thông tin sản phẩm</span>
@@ -217,215 +217,222 @@
                     </li>
                 </ul>
             </div>
-        </div>
-        <div class="col col-lg-4">
-            <div class="group-type-product">
-                <h2>Nhóm hàng thường mua</h2>
-                <div class="list-group-type">
-                    <a href="">
-                        <img src="https://cdn.tgdd.vn/Products/Images/8686/bhx/thit-ca-hai-san-202112291138582954.png" alt="">
-                        <span>Thịt cá, hải sản</span>
-                    </a>
-                    <a href="">
-                        <img src="https://cdn.tgdd.vn/Products/Images/8686/bhx/thit-ca-hai-san-202112291138582954.png" alt="">
-                        <span>Thịt cá, hải sản</span>
-                    </a>
-                    <a href="">
-                        <img src="https://cdn.tgdd.vn/Products/Images/8686/bhx/thit-ca-hai-san-202112291138582954.png" alt="">
-                        <span>Thịt cá, hải sản</span>
-                    </a>
-                    <a href="">
-                        <img src="https://cdn.tgdd.vn/Products/Images/8686/bhx/thit-ca-hai-san-202112291138582954.png" alt="">
-                        <span>Thịt cá, hải sản</span>
-                    </a>
-                    <a href="">
-                        <img src="https://cdn.tgdd.vn/Products/Images/8686/bhx/thit-ca-hai-san-202112291138582954.png" alt="">
-                        <span>Thịt cá, hải sản</span>
-                    </a>
-                    <a href="">
-                        <img src="https://cdn.tgdd.vn/Products/Images/8686/bhx/thit-ca-hai-san-202112291138582954.png" alt="">
-                        <span>Thịt cá, hải sản</span>
-                    </a>
-                    <a href="">
-                        <img src="https://cdn.tgdd.vn/Products/Images/8686/bhx/thit-ca-hai-san-202112291138582954.png" alt="">
-                        <span>Thịt cá, hải sản</span>
-                    </a>
-                    <a href="">
-                        <img src="https://cdn.tgdd.vn/Products/Images/8686/bhx/thit-ca-hai-san-202112291138582954.png" alt="">
-                        <span>Thịt cá, hải sản</span>
-                    </a>
-                    <a href="">
-                        <img src="https://cdn.tgdd.vn/Products/Images/8686/bhx/thit-ca-hai-san-202112291138582954.png" alt="">
-                        <span>Thịt cá, hải sản</span>
-                    </a>
-                    <a href="">
-                        <img src="https://cdn.tgdd.vn/Products/Images/8686/bhx/thit-ca-hai-san-202112291138582954.png" alt="">
-                        <span>Thịt cá, hải sản</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Đánh giá -->
-    <div class="row md-5">
-        <div class="box-rating col col-lg-8">
-            <div class="product-tab-title" id="count-vote">
-                <span>Đánh giá sản phẩm</span>
-            </div>
-            <div class="rating-box">
-                <div class="lrb">
-                    <div class="average-rating orange">
-                        <div>
-                            <span id="total-star"><?= $tbSao ?></span>
+            <div class="row-md-5 md-5">
+                <div class="box-rating">
+                    <div class="product-tab-title" id="count-vote">
+                        <span>Đánh giá sản phẩm</span>
+                    </div>
+                    <div class="rating-box">
+                        <div class="lrb">
+                            <div class="average-rating orange">
+                                <div>
+                                    <span id="total-star"><?= $tbSao ?></span>
+                                </div>
+                                <div class="rating-total__img">
+                                    <div class="rating-overlay__img"></div>
+                                </div>
+                                <div>
+                                    <span> <?= $countrating ?> đánh giá</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="rating-total__img">
-                            <div class="rating-overlay__img"></div>
-                        </div>
-                        <div>
-                            <span> <?= $countrating ?> đánh giá</span>
+                        <div class="rrb">
+                            <ul class="list-star">
+                            <?php  
+                                $numEvaluteTotal = 0;
+                                $num5 = 0;
+                                $num4 = 0;
+                                $num3 = 0;
+                                $num2 = 0;
+                                $num1 = 0;
+                                if(count($DataEvalute)>0){
+                                    foreach($DataEvalute as $row){ 
+                                        $numEvaluteTotal += 1;
+                                        switch ($row['SoSao']){
+                                            case 5 : 
+                                                $num5 += 1;
+                                                break;
+                                            case 4: 
+                                                $num4 += 1;
+                                                break;
+                                            case 3: 
+                                                $num3 += 1;
+                                                break;
+                                            case 2: 
+                                                $num2 += 1;
+                                                break;
+                                            case 1: 
+                                                $num1 += 1;
+                                                break;
+                                    }
+                                    
+                                }
+                                }
+                                $num1 == 0 ? $widthNum1 = 0 : $widthNum1=ceil($num1/$countrating*100);
+                                $num2 == 0 ? $widthNum2 = 0 : $widthNum2=ceil($num2/$countrating*100);
+                                $num3 == 0 ? $widthNum3 = 0 : $widthNum3=ceil($num3/$countrating*100);
+                                $num4 == 0 ? $widthNum4 = 0 : $widthNum4=ceil($num4/$countrating*100);
+                                $num5 == 0 ? $widthNum5 = 0 : $widthNum5=ceil($num5/$countrating*100);
+                                
+                            ?>
+                                <li>
+                                    <span>5 <i class="fas fa-star"></i></span>
+                                    <div class="rating-bar">
+                                        <div class="rating-bar__default" style="background: var(--cl-green);width:<?= $widthNum5 ?>%;"></div>
+                                    </div>
+                                    <span><?=  $num5 ?> đánh giá</span>
+                                </li>
+                                <li>
+                                    <span>4 <i class="fas fa-star"></i></span>
+                                    <div class="rating-bar">
+                                        <div class="rating-bar__default" style="background: var(--cl-green);width:<?= $widthNum4 ?>%;"></div>
+                                    </div>
+                                    <span><?=  $num4 ?> đánh giá</span>
+                                </li>
+                                <li>
+                                    <span>3 <i class="fas fa-star"></i></span>
+                                    <div class="rating-bar">
+                                        <div class="rating-bar__default"style="background: var(--cl-green);width:<?= $widthNum3 ?>%;"></div>
+                                    </div>
+                                    <span><?=  $num3 ?>  đánh giá</span>
+                                </li>
+                                <li>
+                                    <span>2 <i class="fas fa-star"></i></span>
+                                    <div class="rating-bar">
+                                        <div class="rating-bar__default" style="background: var(--cl-green);width:<?= $widthNum2 ?>%;"></div>
+                                    </div>
+                                    <span><?=  $num2 ?>  đánh giá</span>
+                                </li>
+                                <li>
+                                    <span>1 <i class="fas fa-star"></i></span>
+                                    <div class="rating-bar">
+                                        <div class="rating-bar__default" style="background: var(--cl-green);width:<?= $widthNum1 ?>%;"></div>
+                                    </div>
+                                    <span><?=  $num1 ?> đánh giá</span>
+                                </li>
+                            
+                            </ul>
                         </div>
                     </div>
-                </div>
-                <div class="rrb">
-                    <ul class="list-star">
-                    <?php  
-                        $numEvaluteTotal = 0;
-                        $num5 = 0;
-                        $num4 = 0;
-                        $num3 = 0;
-                        $num2 = 0;
-                        $num1 = 0;
+                    <div class="list-comment-product">
+                        <?php 
                         if(count($DataEvalute)>0){
-                            foreach($DataEvalute as $row){ 
-                                $numEvaluteTotal += 1;
-                                switch ($row['SoSao']){
-                                    case 5 : 
-                                        $num5 += 1;
-                                        break;
-                                    case 4: 
-                                        $num4 += 1;
-                                        break;
-                                    case 3: 
-                                        $num3 += 1;
-                                        break;
-                                    case 2: 
-                                        $num2 += 1;
-                                        break;
-                                    case 1: 
-                                        $num1 += 1;
-                                        break;
-                            }
-                            
-                        }
-                        }
-                        $num1 == 0 ? $widthNum1 = 0 : $widthNum1=ceil($num1/$countrating*100);
-                        $num2 == 0 ? $widthNum2 = 0 : $widthNum2=ceil($num2/$countrating*100);
-                        $num3 == 0 ? $widthNum3 = 0 : $widthNum3=ceil($num3/$countrating*100);
-                        $num4 == 0 ? $widthNum4 = 0 : $widthNum4=ceil($num4/$countrating*100);
-                        $num5 == 0 ? $widthNum5 = 0 : $widthNum5=ceil($num5/$countrating*100);
-                        
-                    ?>
-                        <li>
-                            <span>5 <i class="fas fa-star"></i></span>
-                            <div class="rating-bar">
-                                <div class="rating-bar__default" style="background: var(--cl-green);width:<?= $widthNum5 ?>%;"></div>
-                            </div>
-                            <span><?=  $num5 ?> đánh giá</span>
-                        </li>
-                        <li>
-                            <span>4 <i class="fas fa-star"></i></span>
-                            <div class="rating-bar">
-                                <div class="rating-bar__default" style="background: var(--cl-green);width:<?= $widthNum4 ?>%;"></div>
-                            </div>
-                            <span><?=  $num4 ?> đánh giá</span>
-                        </li>
-                        <li>
-                            <span>3 <i class="fas fa-star"></i></span>
-                            <div class="rating-bar">
-                                <div class="rating-bar__default"style="background: var(--cl-green);width:<?= $widthNum3 ?>%;"></div>
-                            </div>
-                            <span><?=  $num3 ?>  đánh giá</span>
-                        </li>
-                        <li>
-                            <span>2 <i class="fas fa-star"></i></span>
-                            <div class="rating-bar">
-                                <div class="rating-bar__default" style="background: var(--cl-green);width:<?= $widthNum2 ?>%;"></div>
-                            </div>
-                            <span><?=  $num2 ?>  đánh giá</span>
-                        </li>
-                        <li>
-                            <span>1 <i class="fas fa-star"></i></span>
-                            <div class="rating-bar">
-                                <div class="rating-bar__default" style="background: var(--cl-green);width:<?= $widthNum1 ?>%;"></div>
-                            </div>
-                            <span><?=  $num1 ?> đánh giá</span>
-                        </li>
-                       
-                    </ul>
+                            foreach($DataEvalute as $row){?>
+                                <div class="list-comment-product__item">
+                                    <div class="cmt-heading">
+                                        <span><?= $row['Ho'] . " ". $row['ten'] ?></span> 
+                                        <ul>
+                                            <?php for($i =1 ;$i<= $row['SoSao'];$i++){?>
+                                            <li>
+                                                <i class="fas fa-star active"></i>
+                                            </li>
+                                            <?php }?>
+                                            <?php
+                                                if($row['SoSao'] < 5) {
+                                                    for ($i=1; $i <=(5-$row['SoSao']); $i++) { ?>
+                                                    <li>
+                                                            <i class="fas fa-star"></i>
+                                                        </li>
+                                                <?php } }
+                                            ?>
+                                        </ul>
+                                        <span>
+                                            <i class="fas fa-check"></i>
+                                            Đã mua
+                                        </span>
+                                    </div>
+                                    <div class="comment-text">
+                                    <?= $row['BinhLuan'] ?>
+                                    </div>
+                                    <div class="comment-image">
+                                        <?php if($row['hinhanh']!='') {?>
+                                        <img width="80" height="50" src="./public/images/comments/<?= $row['hinhanh']?>" alt="">
+                                        <?php }?>
+                                    </div>
+                                    <div class="comment-time">
+                                        <i class="far fa-calendar-times"></i>
+                                        <?= $row['ngay'] ?>
+                                    </div>
+                                </div>
+
+                                <?php }}
+                                else{ ?>
+                                    <div class="list-comment-product__item">
+                                    <div class="cmt-heading">
+                                        <span style="width: 100%;">Chưa có đánh giá nào</span> 
+                                    
+                                    </div>
+                                    
+                            <?php   }
+                                ?>
+                    </div>
                 </div>
             </div>
-            <div class="list-comment-product">
+            <!-- Đánh giá -->
 
-               <?php 
-                 if(count($DataEvalute)>0){
-                    foreach($DataEvalute as $row){?>
-                        <div class="list-comment-product__item">
-                            <div class="cmt-heading">
-                                <span><?= $row['Ho'] . " ". $row['ten'] ?></span> 
-                                <ul>
-                                    <?php for($i =1 ;$i<= $row['SoSao'];$i++){?>
-                                    <li>
-                                        <i class="fas fa-star active"></i>
-                                    </li>
-                                    <?php }?>
-                                    <?php
-                                        if($row['SoSao'] < 5) {
-                                            for ($i=1; $i <=(5-$row['SoSao']); $i++) { ?>
-                                               <li>
-                                                    <i class="fas fa-star"></i>
-                                                </li>
-                                        <?php } }
-                                    ?>
-                                </ul>
-                                <span>
-                                    <i class="fas fa-check"></i>
-                                    Đã mua
-                                </span>
-                            </div>
-                            <div class="comment-text">
-                            <?= $row['BinhLuan'] ?>
-                            </div>
-                            <div class="comment-time">
-                                <i class="far fa-calendar-times"></i>
+            <div class="about-author">
+                <!-- comments -->
+                <div class="post-comments">
+                    <!-- comment -->
+                    <div class="fb-comments" data-href="https://dxdbloger.000webhostapp.com?act=detail&id=<?= $data_sanpham[0]['TenSP']; ?>" data-numposts="5" data-width=""></div>
+                    <!-- /comment -->
+                </div>
+                <!-- /comments -->
+            </div>
+        </div>
 
-                                <?= $row['ngay'] ?>
-                            </div>
+        <!-- Sản phẩm bán chạy -->
+        <div class="col col-lg-3">
+            <div class="group-type-product">
+                <h2>Sản phẩm bán chạy</h2>
+                <div class="selling-products">
+                    <?php
+                        for($i=0;$i< count($data_arr_topsp); $i++) {
+                            if ($data_arr_topsp[$i][0]['GiaTriKM'] == 0) {
+                                $status = "product-item__sale-off--none";
+                                $km = "no";
+                                $makm = "";
+                            }
+                            else {
+                                $status = "";
+                                $makm = "&km=" .$data_arr_topsp[$i][0]['GiaTriKM'];
+                            }
+                            ?>
+                         <div class="col-product__item sale-home <?= $status?>">
+                            <form action="" >
+                                <div>
+                                <div class="product-item__sale-off <?= $status?>">
+                                    <span class="home-product-item__percent"><?php echo $data_arr_topsp[$i][0]['GiaTriKM'] ?>%</span>
+                                    <label class ="home-product-item__label" for="">Giảm</label>
+                                </div>
+                                <a href="">
+                                    <i data-heart="<?php echo $data_arr_topsp[$i][0]['MaSP'] ?>"  class="icon-heart-element product-item-icon far fa-heart"></i>
+                                </a>
+                                </div>
+                                <div class="product-img">
+                                    <a href="?act=detail&sp=<?=$data_arr_topsp[$i][0]['MaSP']?><?= $makm ?>" style="display: block;">
+                                        <span class ="img--hover"></span> 
+                                        <img src="./public/images/<?php echo $data_arr_topsp[$i][0]['hinhanh'] ?>" alt="">
+                                    </a>
+                                    <p class="text-sale">Sale</p>
+                                </div>
+                                <div class="product-fruits__infos">
+                                    <h2 class="tilte-name-product-t"><?= $data_arr_topsp[$i][0]['TenSP']?></h2>
+                                    <div>
+                                    <span class="price-new"><?= number_format( $data_arr_topsp[$i][0]['DonGia']) ?>đ</span>
+                                    <a href="?act=cart&xuli=add&id=<?=$data_arr_topsp[$i][0]['MaSP']?>" class="button-add-product button-add-product btn-add-cart button-add-product--view">Cho vào giỏ</a>
+                                    <span class="price-old"><?php echo number_format($data_arr_topsp[$i][0]['DonGia']+ 20000) ?>đ</span>
+    
+                                    </div>
+                                </div>
+                            </form>
                         </div>
 
-                        <?php }}
-                        else{ ?>
-                            <div class="list-comment-product__item">
-                            <div class="cmt-heading">
-                                <span style="width: 100%;">Chưa có đánh giá nào</span> 
-                               
-                            </div>
-                            
-                     <?php   }
-                        ?>
+                        <?php }
+                    ?>
+                </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="about-author">
-        <!-- comments -->
-        <div class="post-comments">
-            <!-- comment -->
-            <div class="fb-comments" data-href="https://dxdbloger.000webhostapp.com?act=detail&id=<?= $data_sanpham[0]['TenSP']; ?>" data-numposts="5" data-width=""></div>
-            <!-- /comment -->
-        </div>
-        <!-- /comments -->
     </div>
 </div>
 </main>

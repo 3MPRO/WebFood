@@ -131,7 +131,21 @@
                                             <td data-title="Giá" class="numeric"><?= number_format($row['DonGia']) ?>₫</td>
                                             <td data-title="Số lượng" class="numeric"><?= $row['SoLuong'] ?></td>
                                             <td data-title="Tổng" class="numeric"><?= number_format($row['DonGia']*$row['SoLuong']) ?>₫</td>
-                                            <?php  if($data_detail_order[0]['TrangThaiDH'] == 1){ ?> <td class="numeric">  <a href="?act=orderMy&xuli=evaluate&sp=<?=$row['MaSP']?>&nd=<?= $data_detail_order[0]['MaND'] ?>&hd=<?= $data_detail_order[0]['MaHD'] ?> " class=" action">Đánh giá</a></td> <?php }?>
+                                            <?php  if($data_detail_order[0]['TrangThaiDH'] == 1){ ?> 
+                                                <td class="numeric">  
+                                                    <?php 
+                                                        if(count($data_list_star) == 0){?>
+                                                            <a href="?act=orderMy&xuli=evaluate&sp=<?=$row['MaSP']?>&nd=<?= $data_detail_order[0]['MaND'] ?>&hd=<?= $data_detail_order[0]['MaHD'] ?> " 
+                                                            class=" action">Đánh giá</a>
+                                                        <?php } else { 
+                                                            for ($i=0; $i < count($data_list_star) ; $i++) { 
+                                                            // print_r($data_list_star[$i]);
+                                                            if($data_list_star[$i]['MaSP'] == $row['MaSP'] && $data_list_star[$i]['SoSao']>=1){
+                                                                echo '<p>Đã đánh giá</p>';
+                                                            }
+                                                        } }?> 
+                                                </td> 
+                                            <?php }?>
                                         </tr>
 
                                         <?php  } ?>

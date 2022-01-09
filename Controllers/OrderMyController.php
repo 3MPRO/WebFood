@@ -29,6 +29,13 @@ class OrderMyController
         $MaHD = $_GET['maHD'];
         $data_detail_order = $this->order_model->orderDetail($MaHD);
         $data_detail_order_product = $this->order_model->orderDetail_product($MaHD);
+        $data_list_star = $this->order_model->getDanhGiaSao($MaHD);
+        // print_r($data_list_star);
+        // $data_star = array();
+        // for($i = 0; $i < count($data_detail_order_product); $i++){
+        //     array_push($data_star, $data_list_star[$data_detail_order_product[$i]['MaSP']]);
+        // }
+        // print_r($data_star);
         require_once('Views/indexview.php');
     }
 }

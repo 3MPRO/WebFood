@@ -287,6 +287,41 @@ input[type="radio"]:checked {
 #radio-changeInfor ~ div{
     margin: 10px;
 }
+
+.ui-slider-horizontal {
+    border-radius: 0;
+    box-shadow: none;
+    background: #dcdcdc none repeat scroll 0 0;
+    height: 3px;
+    clear: both;
+    border: medium none;
+}
+.ui-slider-range.ui-widget-header.ui-corner-all {
+    background: var(--cl-green) none repeat scroll 0 0;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	background: #fff none repeat scroll 0 0;
+	border: 2px solid var(--cl-green)!important;
+	border-radius: 100%;
+	cursor: ew-resize!important;
+	height: 12px;
+	top: -4px;
+	transition: none 0s ease 0s ;
+	width: 12px;
+	z-index: 2;
+}
+div#slider-range {
+    width: 90%;
+    height: 10px;
+}
+.btn-search-product {
+    padding: 8px 10px;
+    background: var(--cl-green);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
 /* ----------------------- Trang ADMIN----------------------- */
 .main_content{
     width: 100%;

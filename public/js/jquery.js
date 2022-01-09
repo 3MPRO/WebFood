@@ -36,6 +36,19 @@ $(document).ready(function(){
             $(".thon").html(data);
         })
     })
+
+    $("#slider-range").slider({
+        range: true,
+        min: 0,
+        max: 500000,
+        values: [ 0, 50000 ],
+        slide: function( event, ui ) {
+        $( "#amount" ).val($("#slider-range").slider("values", 0) +	" đến " + $("#slider-range").slider("values", 1) + " đ");
+        $("#amount2").val(ui.values[0] + " and " + ui.values[1]);
+    }
+    });
+    $( "#amount" ).val($("#slider-range").slider("values", 0) + " đến " + $("#slider-range").slider("values", 1) + " đ");
+    $("#amount2").val($("#slider-range").slider("values", 0) +	" and " + $("#slider-range").slider("values", 1));
 });
 
 /// edit infor
@@ -61,33 +74,33 @@ $(document).ready(function(){
         $(this).parents(".name-login").find('input[type="text"]').val($(this).text());
         $(this).parent(".search-result").empty();
     });
+
+
     function ajaxFilter() {
-        var listValue = JSON.parse(localStorage.getItem("listValuePrice"))
         var danhmuc = $("#danhmuc").text();
         var loai = $("input[type=text][name=loaisp]").val();
-        console.log(loai);
+        var betweenPrice = $("#amount2").val();
+        console.log(betweenPrice);
         if(loai === undefined) {
             loai = 'null';
         }
         $.ajax({
             url: "Models/get_data_price.php",
             method: "POST",
-            // dataType:"JSON",
-            data: {listValue: listValue, danhmuc: danhmuc, loai: loai},
+            data: {danhmuc: danhmuc, loai: loai,betweenPrice: betweenPrice},
             success: function(data) {
                 $('#product-list-main').html(data)
-                console.log(data);
-                // if(data!=null) {
-                    $('.pagination').css("display", "none");
-                // }
+                $('.pagination').css("display", "none");
             }
         })
     }
 
-    $('input.toggle__input').each(function (index, value) {
-        console.log($(this));
-        $(this).on('click',ajaxFilter);
-    })
+    // $('input.toggle__input').each(function (index, value) {
+    //     console.log($(this));
+    //     $(this).on('click',ajaxFilter);
+    // })
+
+    $(".btn.btn-search-product").on('click',ajaxFilter);
 
     $(".filter__remove").on('click',ajaxFilter);
 
@@ -143,11 +156,13 @@ $(document).ready(function(){
         let MaHD = $('.rMaHD').val();
         let MaND = $('.rMaND').val();
         let MaSP = $('.rMaSP').val();
+        let hinhanh = $('#preview img').attr('title')
+        console.log(hinhanh);
         $('.ratingComment').val("");
         $.ajax({
             url: "Models/ajaxRating.php",
             method: 'POST',
-            data: {action: "ok",ratingResult:ratingResult,comment:comment,MaHD:MaHD,MaSP:MaSP,MaND:MaND},
+            data: {action: "ok",ratingResult:ratingResult,comment:comment,MaHD:MaHD,MaSP:MaSP,MaND:MaND,hinhanh: hinhanh},
             success: function(data) {
                $('.show-rating').html(data);
             //    loadrating();
@@ -170,28 +185,20 @@ function filterProduct(action,name, danhmuc) {
     var danhmuc = danhmuc
     var name = name
     var loai = $("input[type=text][name=loaisp]").val();
-    var listValue = JSON.parse(localStorage.getItem("listValuePrice"))
+    var betweenPrice = $("#amount2").val();
     if(loai === undefined) {
         loai = 'null';
     }
-    console.log(listValue);
-    if(listValue.length === 0) {
-        listValue = 'null';
-        console.log(listValue);
-    }
-    console.log('da click');
     $.ajax({
         url: "Models/get_data.php",
         method: 'POST',
-        data: {action: action,name: name, danhmuc: danhmuc,loai: loai,listValue:listValue},
+        data: {action: action,name: name, danhmuc: danhmuc,loai: loai,betweenPrice:betweenPrice},
         success: function(data) {
             $('#product-list-main').html(data)
+            // console.log(data);
             $('.pagination').css("display", "none");
         }
     })
-
-
-  
 }
 
 

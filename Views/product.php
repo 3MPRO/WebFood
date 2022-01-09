@@ -103,7 +103,7 @@
                         <div class="nav-left__filter-product">
                             <div class="filter-product__price">
                                 <h1>Theo mức giá</h1>
-                                <ul class="filter-product__price">
+                                <!-- <ul class="filter-product__price">
                                     <li class="filter-price__item">
                                         <label class="toggle" for="0 and 49000">
                                             <input type="checkbox" class="toggle__input" value="Dưới 50.000đ" id="0 and 49000" />
@@ -196,7 +196,12 @@
                                         Từ 400.000đ đến 600.000đ
                                     </label> 
                                     </li>
-                                </ul>
+                                </ul> -->
+                                <label style="padding: 15px 0;"><span>Giá: </span> 
+                                <input type="text" id="amount" readonly  style="border: none;"/></label>
+                                <input type="hidden" id="amount2" name="shop" />
+                                <div id="slider-range"></div></br>
+                                <button type="submit" class="btn btn-search-product">Tìm kiếm</button>
                             </div>
 
                         </div>
