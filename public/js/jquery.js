@@ -115,8 +115,7 @@ $(document).ready(function(){
     // rating 
     var star = 1; 
     $('.ratingResult').val(star);
-    $('.star-nomal').each(function(i,element){
-        
+    $('.star-nomal').each(function(i,element){  
         $(this).click(function(){
             star = (i +1);
             $('.ratingResult').val(star);
@@ -150,7 +149,7 @@ $(document).ready(function(){
             data: {action: "ok",ratingResult:ratingResult,comment:comment,MaHD:MaHD,MaSP:MaSP,MaND:MaND},
             success: function(data) {
                $('.show-rating').html(data);
-            //    loadrating();
+                loadrating();
             }
         })
 

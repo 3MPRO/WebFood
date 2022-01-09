@@ -21,7 +21,7 @@ class EvaluateModel extends Model
         if ($status == true) {
             return true;
         } else {
-            return false;
+            return $query;
         }
     }
     function update($data)

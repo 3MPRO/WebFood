@@ -1,10 +1,11 @@
 <?php 
-     
+        
          $SoSao = $_POST['ratingResult'] ;
          $BinhLuan = $_POST['comment'];
          $MaSP  = $_POST['MaSP'];
          $MaND = $_POST['MaND'];
          $MaHD = $_POST['MaHD'];
+         echo "<script>alert(' $MaSP + $MaND + $MaHD +  $BinhLuan  + $SoSao ') </script>";
          $data = array(
              'MaHD' => $MaHD,
              'MaND' => $MaND,
@@ -14,12 +15,12 @@
          );
          require_once("EvaluateModel.php");
          $obj = new EvaluateModel();
-         if($obj->store($data) == true){
-            
-            
+         $result = $obj->store($data);
+         if($result == true){
+           
          }
          else{
-
+           
               // nếu chèn không thành công => đã đánh giá => update
              $resutUpdate =  $obj->update($data) == true;
             
