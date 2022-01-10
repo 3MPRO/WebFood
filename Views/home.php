@@ -17,54 +17,15 @@
     <div class="container">
         <h2 class="category-title">Danh mục nổi bật</h2>
         <div class="category-list">
-            <div class="category-list__item">
-                <a href="" class="category-list__item-link">
-                    <img src="./public/images/icon1.webp" alt="">
-                </a>
-                <h3 class="category-item__name">Đồ khô, gạo</h3>
-            </div>
-            <div class="category-list__item">
-                <a href="" class="category-list__item-link">
-                    <img src="./public/images/icon2.webp" alt="">
-                </a>
-                <h3 class="category-item__name">Gia vị, dầu ăn</h3>
-            </div>
-            <div class="category-list__item">
-                <a href="" class="category-list__item-link">
-                    <img src="./public/images/icon3.png" alt="">
-                </a>
-                <h3 class="category-item__name">Bánh kẹo</h3>
-            </div>
-            <div class="category-list__item">
-                <a href="" class="category-list__item-link">
-                    <img src="./public/images/icon4.png" alt="">
-                </a>
-                <h3 class="category-item__name">Mì, cháo, phở</h3>
-            </div>
-            <div class="category-list__item">
-                <a href="" class="category-list__item-link">
-                    <img src="./public/images/icon5.png" alt="">
-                </a>
-                <h3 class="category-item__name">Nước giải khát</h3>
-            </div>
-            <div class="category-list__item">
-                <a href="" class="category-list__item-link">
-                    <img src="./public/images/icon6.png" alt="">
-                </a>
-                <h3 class="category-item__name">Mì, cháo, phở</h3>
-            </div>
-            <div class="category-list__item">
-                <a href="" class="category-list__item-link">
-                    <img src="./public/images/icon7.png" alt="">
-                </a>
-                <h3 class="category-item__name">Nước giải khát</h3>
-            </div>
-            <div class="category-list__item">
-                <a href="" class="category-list__item-link">
-                    <img src="./public/images/icon8.png" alt="">
-                </a>
-                <h3 class="category-item__name">Nước giải khát</h3>
-            </div>
+            <?php
+                foreach ($data_danhmuc as $item) {?>
+                    <div class="category-list__item">
+                        <a href="?act=product&cate=<?= $item['MaDM']?>&page=1" class="category-list__item-link">
+                            <img src="./public/images/<?= $item['hinhAnhDm'] ?>" alt="">
+                        </a>
+                        <h3 class="category-item__name"><?= $item['TenDM']?></h3>
+                    </div>
+                 <?php } ?>
         </div>
     </div>
 </section>

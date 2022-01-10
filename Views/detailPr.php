@@ -16,7 +16,7 @@
                 </a>
                 <span class="mr_lr">&nbsp;/ &nbsp;</span>
                 <a href="#">
-                    <span>Sản phẩm nổi bật</span>
+                    <span>Sản phẩm</span>
                 </a>
                 <span class="mr_lr">&nbsp;/ &nbsp;</span>
             </div>
@@ -192,20 +192,20 @@
                     <span>Thông tin sản phẩm</span>
                 </div>
                 <div class="product-short__desc">
-                    Với vị the mát, sảng khoái của hương bạc hà. Kẹo Icedrop siêu mát lạnh hũ 28g mang đến cho bạn sự tươi mát, kích thích vị giác và tinh thần làm việc. Kẹo Icedrop giúp bạn có hơi thở thơm mát, tự tin giao tiếp và thể hiện bản thân mình.
+                    <?= $data_sanpham[0]['desc']?>
                 </div>
                 <ul class="infor-product__detail">
                     <li>
-                        <span>Loại kẹo</span>
-                        <div>Siêu mát lạnh</div>
+                        <span>Loại</span>
+                        <div><?= $data_sanpham[0]['TenLSP']?></div>
                     </li>
                     <li>
                         <span>Khối lượng</span>
-                        <div>30g</div>
+                        <div><?= $data_sanpham[0]['KhoiLuong']?></div>
                     </li>
                     <li>
                         <span>Thành phần</span>
-                        <div>Sorbitol, Xylitol, chất tạo ngọt tổng hợp, màu thực phẩm tổng hợp,..</div>
+                        <div><?= $data_sanpham[0]['ThanhPhan']?></div>
                     </li>
                     <li>
                         <span>Hạn sử dụng</span>
@@ -213,7 +213,7 @@
                     </li>
                     <li>
                         <span>Nơi xuất xứ</span>
-                        <div>Trung Quốc</div>
+                        <div><?= $data_sanpham[0]['XuatXu']?></div>
                     </li>
                 </ul>
             </div>
@@ -379,6 +379,7 @@
                 </div>
                 <!-- /comments -->
             </div>
+        </div>
         </div>
 
         <!-- Sản phẩm bán chạy -->

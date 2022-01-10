@@ -41,7 +41,7 @@
                 
                 return $data;
             }
-        public function loaisp_danhmuc()
+        function loaisp_danhmuc()
         {
             $query ="SELECT * from loaisanpham";
             require("result.php");
