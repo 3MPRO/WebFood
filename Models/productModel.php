@@ -75,8 +75,9 @@
         }
 
         function searchData($key) {
-            $query = "SELECT * FROM sanpham, hinhanh WHERE sanpham.MaSP = hinhanh.masp and TenSP LIKE '$key%' GROUP by sanpham.MaSP";
+            $query = "SELECT * FROM sanpham, hinhanh,khuyenmai WHERE sanpham.MaSP = hinhanh.masp and sanpham.MaKM = khuyenmai.MaKM and TenSP LIKE '$key%' GROUP by sanpham.MaSP";
             require("result.php");
+            // echo $query;
             return $data;
         }
 

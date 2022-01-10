@@ -69,6 +69,7 @@ require_once("./Models/productModel.php");
 
             $data_sanpham1 = $this->product_model->sanpham_danhmuc(0,10,1);
             $data_sanpham2 = $this->product_model->sanpham_danhmuc(0,10,3);
+            $data_sanpham3 = $this->product_model->sanpham_danhmuc(0,10,2);
             $data_khuyenmai = $this->product_model->sanpham_khuyenmai();
             
             $data_tinTucNoiBat = $this->product_model->getTinTuc(0,4);

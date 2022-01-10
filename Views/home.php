@@ -116,7 +116,7 @@
                                 <div>
                                 <span class="price-new"><?= number_format( $data_khuyenmai[$i]['DonGia']) ?>đ</span>
                                 <a href="?act=cart&xuli=add&id=<?=$data_khuyenmai[$i]['MaSP']?>" class="button-add-product button-add-product btn-add-cart button-add-product--view">Cho vào giỏ</a>
-                                <span class="price-old"><?php echo number_format($data_khuyenmai[$i]['DonGia']+ 20000) ?>đ</span>
+                                <span class="price-old"><?php echo number_format($data_khuyenmai[$i]['giaCu']) ?>đ</span>
 
                                 </div>
                             </div>
@@ -213,7 +213,7 @@
                                 <div>
                                 <span class="price-new"><?= number_format( $data_sanpham1[$i]['DonGia']) ?>đ</span>
                                 <a href="?act=cart&xuli=add&id=<?=$data_sanpham1[$i]['MaSP']?>" class="button-add-product button-add-product btn-add-cart button-add-product--view">Cho vào giỏ</a>
-                                <span class="price-old"><?php echo number_format($data_sanpham1[$i]['DonGia']+ 20000) ?>đ</span>
+                                <span class="price-old"><?php echo number_format($data_sanpham1[$i]['giaCu']) ?>đ</span>
 
                                 </div>
                             </div>
@@ -273,7 +273,7 @@
                                 <div>
                                 <span class="price-new"><?= number_format( $data_sanpham2[$i]['DonGia']) ?>đ</span>
                                 <a href="?act=cart&xuli=add&id=<?=$data_sanpham2[$i]['MaSP']?>" class="button-add-product button-add-product btn-add-cart button-add-product--view">Cho vào giỏ</a>
-                                <span class="price-old"><?php echo number_format($data_sanpham2[$i]['DonGia']+ 20000) ?>đ</span>
+                                <span class="price-old"><?php echo number_format($data_sanpham2[$i]['giaCu']) ?>đ</span>
 
                                 </div>
                             </div>
@@ -283,6 +283,67 @@
         </div>
     </div>
 </section>
+<section id="product-cate">
+    <div class="container">
+        <div class="populator__head">
+            <div>
+                <h2 class="populator__head-title">
+                    <a href="?act=product&cate=3&page=1">Gian hàng bánh kẹo</a>
+                </h2>
+                <p class="populator__head-desc">Sản phẩm từ bánh chất lượng cao</p>
+            </div>
+            <a href="?act=product&cate=2&page=1" class="populator__head-all">
+                <p>Xem tất cả</p>
+                <i class="fas fa-long-arrow-alt-right"></i>
+            </a>
+        </div>
+        <div class="owl-carousel owl-theme" id="owl-slider-cate">
+        <?php 
+                for ($i = 0; $i < (count($data_sanpham3)); $i++) {
+                    if ($data_sanpham3[$i]['GiaTriKM'] == 0) {
+                        $status = "product-item__sale-off--none";
+                        $km = "no";
+                        $makm = "";
+                    }
+                    else {
+                        $status = "";
+                        $makm = "&km=" .$data_sanpham3[$i]['MaSP'];
+                    }
+                    ?>
+                     <div class="col-product__item sale-home <?= $status?>">
+                        <form action="" >
+                            <div>
+                            <div class="product-item__sale-off <?= $status?>">
+                                <span class="home-product-item__percent"><?php echo $data_sanpham3[$i]['GiaTriKM'] ?>%</span>
+                                <label class ="home-product-item__label" for="">Giảm</label>
+                            </div>
+                            <a href="">
+                                <i data-heart="<?php echo $data_sanpham3[$i]['MaSP'] ?>"  class="icon-heart-element product-item-icon far fa-heart"></i>
+                            </a>
+                            </div>
+                            <div class="product-img">
+                                <a href="?act=detail&sp=<?=$data_sanpham3[$i]['MaSP']?><?= $makm ?>" style="display: block;">
+                                    <span class ="img--hover"></span> 
+                                    <img src="./public/images/<?php echo $data_sanpham3[$i]['hinhanh'] ?>" alt="">
+                                </a>
+                                <p class="text-sale">Sale</p>
+                            </div>
+                            <div class="product-fruits__infos">
+                                <h2 class="tilte-name-product-t"><?= $data_sanpham3[$i]['TenSP']?></h2>
+                                <div>
+                                <span class="price-new"><?= number_format( $data_sanpham3[$i]['DonGia']) ?>đ</span>
+                                <a href="?act=cart&xuli=add&id=<?=$data_sanpham3[$i]['MaSP']?>" class="button-add-product button-add-product btn-add-cart button-add-product--view">Cho vào giỏ</a>
+                                <span class="price-old"><?php echo number_format($data_sanpham3[$i]['giaCu']) ?>đ</span>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+            <?php }?>
+        </div>
+    </div>
+</section>
+
 <section class="news">
     <div class="container">
         <div class="row">

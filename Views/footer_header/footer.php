@@ -178,3 +178,7 @@
 		</div>
 	</div>
 </div>
+
+<div class="zalo-chat-widget" data-oaid="3333736547818229512" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="1" data-width="" data-height=""></div>
+
+<script src="https://sp.zalo.me/plugins/sdk.js"></script>

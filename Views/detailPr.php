@@ -149,7 +149,7 @@
                             $status = "";
                             $makm = "&km=" .$row['MaSP'];
                         }?>
-                        <div class="col col-lg-3 col-md-3">
+                        <div class="col col-lg-3 col-md-3 col-sm-6">
                             <div class="col-product__item sale-home <?= $status?>">
                                 <form action="" >
                                     <div>

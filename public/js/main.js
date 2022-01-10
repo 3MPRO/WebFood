@@ -440,6 +440,7 @@ const App = {
         this.sliderProducts('#owl-fruilt-slider')
         this.sliderProducts('#owl-slider-dry')
         this.sliderProducts('#product-sale-slider')
+        this.sliderProducts('#owl-slider-cate')
         // this.addFavorite()
         this.eventDom()
         this.productDetailSlider()
