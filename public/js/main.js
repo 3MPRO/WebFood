@@ -130,6 +130,22 @@ const App = {
             }
         }
 
+        // Click tab order table
+        const listTab = items('.tab-order__item')
+        const listTab_table = items('.table.table-cart.table-order')
+        listTab.forEach((element,index) => {
+            element.addEventListener('click', function() {
+                listTab.forEach(element => {
+                    element.classList.remove('active');
+                });
+                this.classList.add('active');
+                listTab_table.forEach(element => {
+                    element.classList.remove('active');
+                });
+                listTab_table[index].classList.add('active');
+            })
+        });
+
         // Checkbox
         const listCheckbox = items('.toggle__input')
         

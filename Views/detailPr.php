@@ -87,7 +87,14 @@
                         <div>Đánh giá</div>
                     </div>
                     <div class="count-producted">
-                        <span><?= $data_count_product[0]['soLuong']?></span>
+                        <span>
+                            <?php 
+                            if($data_count_product[0]['soLuong'] == 0)
+                                echo '0';
+                            else 
+                                echo $data_count_product[0]['soLuong'];
+                            ?>
+                        </span>
                         <div>Đã bán</div>
                     </div>
                 </div>

@@ -180,5 +180,10 @@
 </div>
 
 <div class="zalo-chat-widget" data-oaid="3333736547818229512" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="1" data-width="" data-height=""></div>
-
+<div id="chat-mess">
+    <a href="https://www.facebook.com/messages/t/104735905436003" target="_blank">
+    <img src="https://img.icons8.com/color/48/000000/facebook-messenger--v5.png"/>
+    </a>
+</div>
 <script src="https://sp.zalo.me/plugins/sdk.js"></script>
+

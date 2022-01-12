@@ -9,7 +9,9 @@
                     <span class="mr_lr">&nbsp;/ &nbsp;</span>
                 </div>
                 <div>
-                    <span>Đơn hàng</span>
+                    <a href="?act=orderMy">
+                        <span>Đơn hàng</span>
+                    </a>
                     <span class="mr_lr">&nbsp;/ &nbsp;</span>
                     <strong>
                         <span>Đơn hàng # <?php echo $_GET['maHD']?></span>
@@ -104,7 +106,9 @@
                                             <th>Đơn giá</th>
                                             <th>Số lượng</th>
                                             <th>Tổng</th>
-                                            <th>Thao tác</th>
+                                            <?php  if($data_detail_order[0]['TrangThaiDH'] == 1)
+                                                echo '<th>Thao tác</th>';
+                                            ?>
                                         </tr>
                                     </thead>
                                     <tbody>

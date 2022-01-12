@@ -7,6 +7,16 @@
             require("result.php");
             return $data;
         }
+        function showHoaDonChoXN($maND,$trangThai) {
+            $query = "SELECT * FROM hoadon where maND = $maND and TrangThai = $trangThai";
+            require("result.php");
+            return $data;
+        }
+        function showHoaDonGiaoTC($maND,$trangThaiDH) {
+            $query = "SELECT * FROM hoadon where maND = $maND and TrangThaiDH = $trangThaiDH";
+            require("result.php");
+            return $data;
+        }
 
         function deleteHoaDon($maHD) {
             $query = "DELETE FROM hoadon WHERE hoadon.MaHD = $maHD";

@@ -187,7 +187,7 @@
                     }
                     else {
                         $status = "";
-                        $makm = "&km=" .$data_sanpham1[$i]['MaSP'];
+                        $makm = "&km=" .$data_sanpham1[$i]['GiaTriKM'];
                     }
                     ?>
                      <div class="col-product__item sale-home <?= $status?>">
@@ -247,7 +247,7 @@
                     }
                     else {
                         $status = "";
-                        $makm = "&km=" .$data_sanpham2[$i]['MaSP'];
+                        $makm = "&km=" .$data_sanpham2[$i]['GiaTriKM'];
                     }
                     ?>
                      <div class="col-product__item sale-home <?= $status?>">
@@ -307,7 +307,7 @@
                     }
                     else {
                         $status = "";
-                        $makm = "&km=" .$data_sanpham3[$i]['MaSP'];
+                        $makm = "&km=" .$data_sanpham3[$i]['GiaTriKM'];
                     }
                     ?>
                      <div class="col-product__item sale-home <?= $status?>">

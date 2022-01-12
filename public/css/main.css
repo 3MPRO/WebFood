@@ -1996,7 +1996,7 @@ a.btn-back-home {
     border: 1px solid #dee2e6;
     background: #f1975f;
     color: #fff;
-    padding: 10px;
+    padding: 10px 50px;
 }
 .table-order th {
     font-weight: 400;
@@ -2017,6 +2017,7 @@ a.btn-usset-order__disble {
     background: #c1c1c1;
     cursor: no-drop;
     pointer-events: none;
+    border-radius: 5px;
 }
 
 .pagination {
@@ -2098,4 +2099,49 @@ h2.title-head {
 
 .product-item__sale-off.product-item__sale-off--none {
     display: none;
+}
+
+div#chat-mess {
+    position: fixed;
+    bottom: 0;
+    right: 58px;
+}
+
+ul.tab-order__list {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 15px;
+    box-shadow: 1px 2px 16px -1px #c1c1c1;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+ul.tab-order__list span {
+    padding: 20px 10px;
+}
+li.tab-order__item.active {
+    border-bottom: 2px solid red;
+}
+
+/* .tab-table__order {
+    display: none;
+}
+.tab-table__order-active {
+    display: block;
+} */
+
+.table.table-cart.table-order {
+    display: none;
+}
+.table.table-cart.table-order.active {
+    display: block;
+}
+
+.btn-view__order {
+    background: var(--cl-green);
+    padding: 6px 18px;
+    color: #fff;
+    border-radius: 5px;
+}
+.btn-view__order:hover {
+    color: #fff
 }
