@@ -222,8 +222,8 @@
                         <div><?= $data_sanpham[0]['ThanhPhan']?></div>
                     </li>
                     <li>
-                        <span>Hạn sử dụng</span>
-                        <div>7 tháng</div>
+                        <span>Hạn sử dụng đến</span>
+                        <div><?= $data_sanpham[0]['Hansd']?></div>
                     </li>
                     <li>
                         <span>Nơi xuất xứ</span>
