@@ -7,8 +7,8 @@
             require("result.php");
             return $data;
         }
-        function showHoaDonChoXN($maND,$trangThai) {
-            $query = "SELECT * FROM hoadon where maND = $maND and TrangThai = $trangThai";
+        function showHoaDonChoXN($maND,$trangThai,$trangThaiDH) {
+            $query = "SELECT * FROM hoadon where maND = $maND and TrangThai = $trangThai and TrangThaiDH = $trangThaiDH";
             require("result.php");
             return $data;
         }

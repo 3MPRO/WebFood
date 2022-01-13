@@ -164,7 +164,7 @@ $(document).ready(function(){
             data: {action: "ok",ratingResult:ratingResult,comment:comment,MaHD:MaHD,MaSP:MaSP,MaND:MaND,hinhanh: hinhanh},
             success: function(data) {
                $('.show-rating').html(data);
-                loadrating();
+                // loadrating();
             }
         })
 

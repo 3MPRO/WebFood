@@ -103,7 +103,7 @@
 }
 
 .col-product__item.product-item__sale-off--none:hover .button-add-product {
-    top: -6px;
+    top: -2px;
 }
 
 .product-img::after {

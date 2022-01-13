@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2 col col-md-4 col-sm-6">
+            <div class="col-lg-2 col col-md-4 col-sm-6 col-none">
                 <div class="group__account">
                     <ul class="group__account-list">
                         <li>
@@ -241,6 +241,9 @@
     </div>
 </nav>
 
+<div class="overlay-nav-mobile">
+    
+</div>
 <?php
 
 function recursiveMenu($data, $parent_id, $sub=true){
