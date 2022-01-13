@@ -14,8 +14,8 @@ class OrderMyController
         $data_loaisp = $this->order_model->loaisp_danhmuc();
         $MaND = $_SESSION['login']['MaND'];
         $data_hoadon = $this->order_model->showHoaDon($MaND);
-        $data_hoadonChoXN = $this->order_model->showHoaDonChoXN($MaND,0);
-        $data_hoadonDaXN = $this->order_model->showHoaDonChoXN($MaND,1);
+        $data_hoadonChoXN = $this->order_model->showHoaDonChoXN($MaND,0,0);
+        $data_hoadonDaXN = $this->order_model->showHoaDonChoXN($MaND,1,0);
         $data_hoadonDaGiao = $this->order_model->showHoaDonGiaoTC($MaND,1);
         require_once('Views/indexview.php');
     }

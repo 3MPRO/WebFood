@@ -115,7 +115,7 @@
                     <a class="btn-plus" href="?act=cart&xuli=update&id=<?php echo $data_sanpham[0]['MaSP'];?>">
                         <i class="fas fa-plus"></i>
                     </a>
-                    <span style="padding-left: 12px;"><?= $data_sanpham[0]['SoLuong']?> sản phẩm có sẵn</span>
+                    <span style="padding-left: 12px;" class="count-product-item"><?= $data_sanpham[0]['SoLuong']?> sản phẩm có sẵn</span>
                     <span style="padding-top: 14px;color: red; font-size:14px; display:none;" id="number-over">Số lượng vượt quá giới hạn</span>
                     <input type="text" hidden value="<?= $data_sanpham[0]['SoLuong']?>" id="so-luong-max">
                 </div>
@@ -130,10 +130,17 @@
             </form>
         </div>
         <div class="col col-lg-2">
-            <a href="" class="product-detail-banner">
-                <img src="./public/images/banner_detail.webp" alt="">
-            </a>
-        </div>
+            <div class="delivery-method">
+                    <p>Các hình thức giao hàng</p>
+                    <p class="free-ship">
+                        <img src="https://www.pharmacity.vn/icons/star-green.svg" alt="">
+                        <span>Freeship cho đơn hàng từ 300k</span>
+                    </p>
+                </div>
+                <div>
+                    <img src="https://giamgiatructuyen.com/wp-content/uploads/2019/10/meo-mua-hang-mien-phi-ship-shopee-5.jpg" alt="" width="100%">
+                </div>
+            </div>
     </div>
     <section id="product-dry" class="product-related">
         <div class="container">
@@ -156,7 +163,7 @@
                             $status = "";
                             $makm = "&km=" .$row['MaSP'];
                         }?>
-                        <div class="col col-lg-3 col-md-3 col-sm-6">
+                        <div class="col col-lg-3 col-md-3 col-12 col-sm-6">
                             <div class="col-product__item sale-home <?= $status?>">
                                 <form action="" >
                                     <div>
@@ -365,16 +372,15 @@
                                 <?php }}
                                 else{ ?>
                                     <div class="list-comment-product__item">
-                                    <div class="cmt-heading">
-                                        <span style="width: 100%;">Chưa có đánh giá nào</span> 
-                                    
+                                        <div class="cmt-heading">
+                                            <span style="width: 100%;">Chưa có đánh giá nào</span> 
+                                        </div>
                                     </div>
-                                    
                             <?php   }
                                 ?>
                     </div>
                 </div>
-            </div>
+
             <!-- Đánh giá -->
 
             <div class="about-author">

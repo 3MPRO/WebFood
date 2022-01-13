@@ -94,6 +94,10 @@ const App = {
                     },
                     onClick: function(){} // Callback after click
                 }).showToast();
+
+                setTimeout(function(){
+                    window.location.href = 'http://localhost/doancuoiky/WebFood/?act=home'
+                },3000)
             })
         }
 
@@ -111,6 +115,11 @@ const App = {
         })
 
         barMenu.addEventListener('click', function() {
+            item('.header-nav-mobile').classList.toggle('header-nav-mobile-active')
+            item('.overlay-nav-mobile').classList.toggle('overlay-nav-mobile-active')
+        })
+        item('.overlay-nav-mobile').addEventListener("click", function(){
+            item('.overlay-nav-mobile').classList.toggle('overlay-nav-mobile-active')
             item('.header-nav-mobile').classList.toggle('header-nav-mobile-active')
         })
 

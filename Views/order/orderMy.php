@@ -74,7 +74,9 @@
                         <?php  }} else {?>
                             <tr>
                                 <td colspan="6">
-                                    <p style="text-align: center;">Không có đơn hàng nào.</p>
+                                    <div style="display: flex;justify-content: center;">
+                                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/5fafbb923393b712b96488590b8f781f.png" alt="">
+                                    </div>
                                 </td>
                             </tr>
                         <?php  } ?>
@@ -120,7 +122,9 @@
                         <?php  }} else {?>
                             <tr>
                                 <td colspan="6">
-                                    <p style="text-align: center;">Không có đơn hàng nào.</p>
+                                    <div style="display: flex;justify-content: center;">
+                                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/5fafbb923393b712b96488590b8f781f.png" alt="">
+                                    </div>
                                 </td>
                             </tr>
                         <?php  } ?>
@@ -166,7 +170,9 @@
                         <?php  }} else {?>
                             <tr>
                                 <td colspan="6">
-                                    <p style="text-align: center;">Không có đơn hàng nào.</p>
+                                    <div style="display: flex;justify-content: center;">
+                                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/5fafbb923393b712b96488590b8f781f.png" alt="">
+                                    </div>
                                 </td>
                             </tr>
                         <?php  } ?>
@@ -207,7 +213,9 @@
                         <?php  }} else {?>
                             <tr>
                                 <td colspan="6">
-                                    <p style="text-align: center;">Không có đơn hàng nào.</p>
+                                    <div style="display: flex;justify-content: center;">
+                                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/5fafbb923393b712b96488590b8f781f.png" alt="">
+                                    </div>
                                 </td>
                             </tr>
                         <?php  } ?>
