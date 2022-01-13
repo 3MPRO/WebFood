@@ -15,7 +15,7 @@
 </section>
 <section id="category">
     <div class="container">
-        <h2 class="category-title">Danh mục nổi bật</h2>
+        <h2 class="category-title">Danh mục</h2>
         <div class="category-list">
             <?php
                 foreach ($data_danhmuc as $item) {?>
@@ -347,7 +347,7 @@
 <section class="news">
     <div class="container">
         <div class="row">
-            <div class="col col-6">
+            <div class="col col-12 col-lg-6 col-md-6">
                 <div class="populator__head">
                     <div>
                         <h2 class="populator__head-title">
@@ -383,7 +383,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col col-6">
+            <div class="col col-12 col-lg-6 col-md-6">
                 <div class="populator__head">
                     <div>
                         <h2 class="populator__head-title">

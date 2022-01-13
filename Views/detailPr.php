@@ -161,7 +161,7 @@
                         }
                         else {
                             $status = "";
-                            $makm = "&km=" .$row['MaSP'];
+                            $makm = "&km=" .$row['GiaTriKM'];
                         }?>
                         <div class="col col-lg-3 col-md-3 col-12 col-sm-6">
                             <div class="col-product__item sale-home <?= $status?>">

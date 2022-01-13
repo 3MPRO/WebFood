@@ -237,7 +237,7 @@
                                         }
                                         ?>
                                     
-                                    <div class="col-product__item col col-md-4 col-lg-4 col-sm-6 <?= $status ?>">
+                                    <div class="col-product__item col col-6 col-md-4 col-lg-4 col-sm-6 <?= $status ?>">
                                         <form action="" >
                                             <div>
                                         <div class="product-item__sale-off">
@@ -266,7 +266,6 @@
                                         <div class="clear"></div>
                                     </div>
                                 <?php } }
-                                
                                 else 
                                     echo "Chưa có sản phẩm nào";
                                 

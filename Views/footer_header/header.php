@@ -224,7 +224,7 @@
                 <ul class="nav-item__down">
                     <?php foreach($data_danhmuc as $row) { ?>
                             <li class="nav-item__down-item">
-                                <a href="?act=product&cate=<?=$row['MaDM'] ?>">
+                                <a href="?act=product&cate=<?=$row['MaDM']?>&page=1">
                                     <?=$row['TenDM']?>
                                     <i class="fas fa-chevron-right"></i>
                                 </a>

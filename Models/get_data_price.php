@@ -28,7 +28,7 @@
                     $makm = "&km=" .$value['GiaTriKM'];
                 }
                 // echo $status;
-                $output .= '<div class="col-product__item col col-md-4 col-lg-4 col-sm-6 about-author '.$status.'">
+                $output .= '<div class="col-product__item col col-6 col-md-4 col-lg-4 col-sm-6 about-author '.$status.'">
                 <form action="" >
                     <div>
                 <div class="product-item__sale-off">

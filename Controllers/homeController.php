@@ -15,7 +15,8 @@ require_once("./Models/productModel.php");
 
             // print_r($data_loaisp);
             if(isset($_GET['cate']))
-            {   if(isset($_GET['loai'])) {
+            {   
+                if(isset($_GET['loai'])) {
                     $category = $_GET['loai'];
                     $data_tenLSP = $this->product_model->getTenLoaiSP($category);
 

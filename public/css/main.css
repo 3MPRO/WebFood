@@ -914,6 +914,7 @@ li.page-item.active .page-link {background: var(--cl-green);}
  /* FOOTER */
  #footer {
     border-top: 1px solid #c1c1c1;
+    padding-bottom: 30px;
  }
  .footer-top{
      border-bottom: 1px solid #c1c1c1;
@@ -1586,6 +1587,7 @@ ul.list-star li span{
 .enable-minus {
     cursor: no-drop;
     opacity: 0.5;
+    pointer-events: none
 }
 
 /* COUNT DOWN */
