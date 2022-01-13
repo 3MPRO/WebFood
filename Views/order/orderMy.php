@@ -19,16 +19,18 @@
         <div class="tab-order">
             <ul class="tab-order__list">
                 <li class="tab-order__item active">
-                    <span>Tất cả</span>
+                    <span>Tất cả (<?= count($data_hoadon); ?>)</span>
                 </li>
                 <li class="tab-order__item">
-                    Chờ xác nhận
+                    Chờ xác nhận (<?= count($data_hoadonChoXN); ?>)
                 </li>
                 <li class="tab-order__item">
-                    <span>Đã xác nhận</span>
+                    <span>Đã xác nhận (<?= count($data_hoadonDaXN); ?>)</span>
                 </li>
                 <li class="tab-order__item">
-                    <span>Đã giao thành công</span>
+                    <span>Đã giao thành công
+                        (<?= count($data_hoadonDaGiao); ?>)
+                    </span>
                 </li>
             </ul>
         </div>

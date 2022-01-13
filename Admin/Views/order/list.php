@@ -26,7 +26,7 @@
       <tr>
         <td><?= $row['NguoiNhan'] ?></td>
         <td><?= $row['NgayLap'] ?></td>
-        <td><?= number_format($row['TongTien']) ?>VNĐ</td>
+        <td><?= number_format($row['TongTien']+$row['phiShip']) ?>VNĐ</td>
         <td><?= $row['DiaChi'] ?></td>
         <td><?= $row['SDT'] ?></td>
         <td><?php if($row['TrangThaiDH']==0){

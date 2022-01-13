@@ -50,7 +50,7 @@
             <?php
                 if(isset($_SESSION['isLogin_Admin']) || isset($_SESSION['isLogin_Nhanvien'])){ ?>
                 <li>
-                    <a class="has-arrow" href="?mod=bill" aria-expanded="true">
+                    <a class="has-arrow" href="?mod=bill&id=1" aria-expanded="true">
                         <div class="icon_menu">
                             <i class="fas fa-money-bill-wave"></i>
                             <span>Quản lý hóa đơn</span>
@@ -98,6 +98,17 @@
                         <div class="icon_menu">
                             <i class="fas fa-balance-scale-left"></i>
                             <span>Quản lý đơn hàng</span>
+                        </div>
+                    </a>
+                </li>
+            <?php } ?>
+            <?php
+                if(isset($_SESSION['isLogin_Admin'])){ ?>
+                <li>
+                    <a class="has-arrow" href="?mod=news" aria-expanded="true">
+                        <div class="icon_menu">
+                            <i class="fas fa-balance-scale-left"></i>
+                            <span>Quản lý tin tức</span>
                         </div>
                     </a>
                 </li>

@@ -81,16 +81,24 @@ require_once("./Models/productModel.php");
             $data_limit4 = $this->product_model->limit(12,4);
             $data_arr = array($data_limit1,$data_limit2,$data_limit3,$data_limit4);
             $data_random = $this->product_model->random(2);
-
-            $data_sanphamnoibat = $this->product_model->sanphamnoibat(8);
             $data_banner = $this->product_model->getBanner();
-            do{
-                $data_random1 = $this->product_model->random(1);
-                $data_random2= $this->product_model->random(1);
-                $data_random3 = $this->product_model->random(1);
-                $data_random4 = $this->product_model->random(1);
-                $data_random5 = $this->product_model->random(1);
-            }while($data_random1 == $data_random2 || $data_random1 == $data_random3 || $data_random1 == $data_random4 || $data_random1 == $data_random5 ||$data_random2 == $data_random3 || $data_random2 == $data_random4 || $data_random2 == $data_random5 || $data_random3 == $data_random4 || $data_random3 == $data_random5 || $data_random4 == $data_random5);
+
+            // GET DATA SAN PHAM NOI BAT
+            $data_sanphamnoibat = $this->product_model->sanphamnoibat(8);
+            $data_arr_sanphamnoibat = array();
+            for ($i = 0; $i < count($data_sanphamnoibat); $i++) {
+                $data_item_sp = $this->product_model->sanpham_km($data_sanphamnoibat[$i]['MaSP']);
+                array_push($data_arr_sanphamnoibat, $data_item_sp);
+            }
+            
+
+            // GET DATA SAN PHAM TOP
+            $data_topsp = $this->product_model->getSanPhamBanChay(8);
+            $data_arr_topsp = array();
+            for ($i = 0; $i < count($data_topsp); $i++) {
+                $data_item_sp = $this->product_model->sanpham_km($data_topsp[$i]['MaSP']);
+                array_push($data_arr_topsp, $data_item_sp);
+            }
             require_once('./Views/indexview.php');  
             
         }
