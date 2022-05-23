@@ -38,7 +38,7 @@
             </div>
           </div>
         </div>
-        <div class="card mt-4 mb-4 col col-md-12">
+        <div class="card mt-4 mb-4 col col-md-6">
           <div class="card-header">Đơn hàng</div>
           <div class="card-body">
             <div class="chart-container pie-chart">
@@ -46,7 +46,7 @@
             </div>
           </div>
         </div>
-        <div class="card mt-4 mb-4 col col-md-12">
+        <div class="card mt-4 mb-4 col col-md-6">
           <div class="card-header">Top 5 sản phẩm bán chạy</div>
           <div class="card-body">
             <div class="chart-container pie-chart">

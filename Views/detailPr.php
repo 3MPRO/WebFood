@@ -161,7 +161,7 @@
                         }
                         else {
                             $status = "";
-                            $makm = "&km=" .$row['MaSP'];
+                            $makm = "&km=" .$row['GiaTriKM'];
                         }?>
                         <div class="col col-lg-3 col-md-3 col-12 col-sm-6">
                             <div class="col-product__item sale-home <?= $status?>">
@@ -222,8 +222,8 @@
                         <div><?= $data_sanpham[0]['ThanhPhan']?></div>
                     </li>
                     <li>
-                        <span>Hạn sử dụng</span>
-                        <div>7 tháng</div>
+                        <span>Hạn sử dụng đến</span>
+                        <div><?= $data_sanpham[0]['Hansd']?></div>
                     </li>
                     <li>
                         <span>Nơi xuất xứ</span>

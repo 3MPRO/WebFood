@@ -168,6 +168,25 @@
                                     break;
                                 }
                                 break;
+                              case 'news':
+                                switch ($act) {
+                                  case 'list':
+                                    require_once('Views/news/list.php');
+                                    break;
+                                  case 'add':
+                                    require_once('Views/news/add.php');
+                                    break;
+                                  case 'detail':
+                                    require_once('Views/news/detail.php');
+                                    break;
+                                  case 'edit':
+                                    require_once('Views/news/edit.php');
+                                    break;
+                                  default:
+                                    require_once('Views/news/list.php');
+                                    break;
+                                }
+                                break;
                               case 'login':
                                 switch ($act) {
                                   case 'admin':

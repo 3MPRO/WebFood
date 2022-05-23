@@ -58,7 +58,7 @@
         }
 
         
-        function sanphamnoibat($id)
+        function sanphamnoibat($limit)
         {
             $query = "SELECT * from sanpham , loaisanpham, danhmuc, hinhanh,khuyenmai
             WHERE sanpham.trangThai = 1 
@@ -68,7 +68,7 @@
                     and loaisanpham.MaDM = loaisanpham.MaDM 
                    AND sanpham.MaSP = hinhanh.masp
                    GROUP by sanpham.MaSP
-                    ORDER BY Click DESC limit $id";
+                    ORDER BY Click DESC limit $limit";
             require("result.php");
             
             return $data;
@@ -130,6 +130,5 @@
              require("result.php");
              return $data;
          }
-
     }
 ?>

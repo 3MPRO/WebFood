@@ -15,7 +15,7 @@
 </section>
 <section id="category">
     <div class="container">
-        <h2 class="category-title">Danh mục nổi bật</h2>
+        <h2 class="category-title">Danh mục</h2>
         <div class="category-list">
             <?php
                 foreach ($data_danhmuc as $item) {?>
@@ -137,29 +137,110 @@
             </div>
         </div>
         <div class="row">
-            <?php 
-                foreach ($data_sanphamnoibat as $item) {?>
-                    <div class="col col-lg-4 col-md-6 col-sm-6">
-                        <div class="item_product_main">
-                            <div class="populator__product">
-                                <a href="?act=detail&sp=<?=$item['MaSP']?>" class="populator__product-link">
-                                    <img src="./public/images/<?= $item['hinhanh'];?>" alt="">
-                                </a>
-                                <span><i class=" data-heart="<?php echo $item['MaSP'] ?>" far fa-heart icon-heart-element icon-heart-i"></i></span>
+        <?php 
+            for ($i = 0; $i < (count($data_arr_sanphamnoibat)); $i++) {
+                // print_r($data_arr_sanphamnoibat[$i][0]['TenSP']);
+                if ($data_arr_sanphamnoibat[$i][0]['GiaTriKM'] == 0) {
+                    $status = "product-item__sale-off--none";
+                    $km = "no";
+                    $makm = "";
+                }
+                else {
+                    $status = "";
+                    $makm = "&km=" .$data_arr_sanphamnoibat[$i][0]['GiaTriKM'];
+                }
+                ?>
+                <div class="col col-lg-3 col-md-6 col-sm-6 col-6">
+                    <div class="col-product__item sale-home <?= $status?>">
+                        <form action="" >
+                            <div>
+                            <div class="product-item__sale-off <?= $status?>">
+                                <span class="home-product-item__percent"><?php echo $data_arr_sanphamnoibat[$i][0]['GiaTriKM'] ?>%</span>
+                                <label class ="home-product-item__label" for="">Giảm</label>
                             </div>
-                            <div class="populator__product-content">
-                                <h2 class="poplator__product-content-title tilte-name-product">
-                                    <?= $item['TenSP'] ?>
-                                </h2>
-                                <div class="price-box">
-                                    <span class="price-text"><?= number_format($item['DonGia']) ?> đ</span>
-                                    <a href="?act=cart&xuli=add&id=<?=$item['MaSP']?>"class="button-add-product btn-add-cart">Cho vào giỏ</a>
+                            <a href="">
+                                <i data-heart="<?php echo $data_arr_sanphamnoibat[$i][0]['MaSP'] ?>"  class="icon-heart-element product-item-icon far fa-heart"></i>
+                            </a>
+                            </div>
+                            <div class="product-img">
+                                <a href="?act=detail&sp=<?=$data_arr_sanphamnoibat[$i][0]['MaSP']?><?= $makm ?>" style="display: block;">
+                                    <span class ="img--hover"></span> 
+                                    <img src="./public/images/<?php echo $data_arr_sanphamnoibat[$i][0]['hinhanh'] ?>" alt="">
+                                </a>
+                                <p class="text-sale">Sale</p>
+                            </div>
+                            <div class="product-fruits__infos">
+                                <h2 class="tilte-name-product"><?= $data_arr_sanphamnoibat[$i][0]['TenSP']?></h2>
+                                <div>
+                                <span class="price-new"><?= number_format( $data_arr_sanphamnoibat[$i][0]['DonGia']) ?>đ</span>
+                                <a href="?act=cart&xuli=add&id=<?=$data_arr_sanphamnoibat[$i][0]['MaSP']?>" class="button-add-product button-add-product btn-add-cart button-add-product--view">Cho vào giỏ</a>
+                                <span class="price-old"><?php echo number_format($data_arr_sanphamnoibat[$i][0]['giaCu']) ?>đ</span>
+
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
-
-            <?php } ?>
+                </div>
+        <?php }?>
+        </div>
+    </div>
+</section>
+<section id="product-top">
+    <div class="container">
+        <div class="populator__head">
+            <div>
+                <h2 class="populator__head-title">
+                    <a href="">Sản phẩm bán chạy</a>
+                </h2>
+                <p class="populator__head-desc">Sản phẩm được khách hàng ưa chuộng nhất</p>
+            </div>
+        </div>
+        <div class="row">
+        <?php 
+                for ($i = 0; $i < (count($data_arr_topsp)); $i++) {
+                    // print_r($data_arr_topsp[$i][0]['TenSP']);
+                    if ($data_arr_topsp[$i][0]['GiaTriKM'] == 0) {
+                        $status = "product-item__sale-off--none";
+                        $km = "no";
+                        $makm = "";
+                    }
+                    else {
+                        $status = "";
+                        $makm = "&km=" .$data_arr_topsp[$i][0]['GiaTriKM'];
+                    }
+                    ?>
+                    <div class="col col-lg-3 col-md-6 col-sm-6 col-6">
+                        <div class="col-product__item sale-home <?= $status?>">
+                           <form action="" >
+                               <div>
+                               <div class="product-item__sale-off <?= $status?>">
+                                   <span class="home-product-item__percent"><?php echo $data_arr_topsp[$i][0]['GiaTriKM'] ?>%</span>
+                                   <label class ="home-product-item__label" for="">Giảm</label>
+                               </div>
+                               <a href="">
+                                   <i data-heart="<?php echo $data_arr_topsp[$i][0]['MaSP'] ?>"  class="icon-heart-element product-item-icon far fa-heart"></i>
+                               </a>
+                               </div>
+                               <div class="product-img">
+                                   <a href="?act=detail&sp=<?=$data_arr_topsp[$i][0]['MaSP']?><?= $makm ?>" style="display: block;">
+                                       <span class ="img--hover"></span> 
+                                       <img src="./public/images/<?php echo $data_arr_topsp[$i][0]['hinhanh'] ?>" alt="">
+                                   </a>
+                                   <p class="text-sale">Sale</p>
+                               </div>
+                               <div class="product-fruits__infos">
+                                   <h2 class="tilte-name-product"><?= $data_arr_topsp[$i][0]['TenSP']?></h2>
+                                   <div>
+                                   <span class="price-new"><?= number_format( $data_arr_topsp[$i][0]['DonGia']) ?>đ</span>
+                                   <a href="?act=cart&xuli=add&id=<?=$data_arr_topsp[$i][0]['MaSP']?>" class="button-add-product button-add-product btn-add-cart button-add-product--view">Cho vào giỏ</a>
+                                   <span class="price-old"><?php echo number_format($data_arr_topsp[$i][0]['giaCu']) ?>đ</span>
+   
+                                   </div>
+                               </div>
+                           </form>
+                       </div>
+                    </div>
+            <?php }?>
         </div>
     </div>
 </section>
@@ -347,8 +428,8 @@
 <section class="news">
     <div class="container">
         <div class="row">
-            <div class="col col-6">
-                <div class="populator__head">
+            <div class="col col-12 col-lg-6 col-md-6 mb-4">
+                <div class="populator__head mb-4">
                     <div>
                         <h2 class="populator__head-title">
                             <a href="">Mẹo hữu ích</a>
@@ -383,8 +464,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col col-6">
-                <div class="populator__head">
+            <div class="col col-12 col-lg-6 col-md-6">
+                <div class="populator__head mb-4">
                     <div>
                         <h2 class="populator__head-title">
                             <a href="" class="text-hover">Tin tức cập nhật</a>
@@ -392,6 +473,12 @@
                         <p class="populator__head-desc">
                             Vòng quanh phố phường xem tin mới nhất
                         </p>
+                    </div>
+                    <div>
+                        <a href="?act=news&page=1" class="populator__head-all">
+                            <p>Xem tất cả</p>
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="blog-list-box">

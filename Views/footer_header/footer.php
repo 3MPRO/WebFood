@@ -1,12 +1,12 @@
 <footer id="footer">
     <div class="container">
         <div class="footer-top row">
-            <div class="col col-lg-3">
+            <div class="col col-6 col-lg-3">
                 <a href="" class="footer-top__logo">
                     <img src="./public/images/logo.webp" alt="">
                 </a>
             </div>
-            <div class="col col-lg-3">
+            <div class="col col-6 col-lg-3">
                 <div class="box-item-info">
                     <img src="./public/images/ser_1.webp" alt="">
                     <div class="content-info">
@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col col-lg-3">
+            <div class="col col-6 col-lg-3">
                 <div class="box-item-info">
                     <img src="./public/images/ser_2.png" alt="">
                     <div class="content-info">
@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col col-lg-3">
+            <div class="col col-6 col-lg-3">
                 <div class="box-item-info">
                     <img src="./public/images/ser_3.png" alt="">
                     <div class="content-info">
@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="footer-center row">
-            <div class="col col-lg-3">
+            <div class="col col-6 col-lg-3">
                 <h2 class="title-menu">Liên hệ với chúng tôi</h2>
                 <ul class="list-address">
                     <li>
@@ -58,7 +58,7 @@
                     <input type="text" class="seed-mail" placeholder="Nhập email của bạn...">
                 </form>
             </div>
-            <div class="col col-lg-2">
+            <div class="col col-6 col-lg-2">
                 <h2 class="title-menu">Dịch vụ 24/7</h2>
                 <ul class="list-service">
                     <li><a href="">Trang chủ</a></li>
@@ -70,7 +70,7 @@
                     <li><a href="">Tin tức</a></li>
                 </ul>
             </div>
-            <div class="col col-lg-2">
+            <div class="col col-4 col-lg-2">
                 <h2 class="title-menu">Dịch vụ 24/7</h2>
                 <ul class="list-service">
                     <li><a href="">Trang chủ</a></li>
@@ -82,7 +82,7 @@
                     <li><a href="">Tin tức</a></li>
                 </ul>
             </div>
-            <div class="col col-lg-2">
+            <div class="col col-4 col-lg-2">
                 <h2 class="title-menu">Dịch vụ 24/7</h2>
                 <ul class="list-service">
                     <li><a href="">Trang chủ</a></li>
@@ -94,7 +94,7 @@
                     <li><a href="">Tin tức</a></li>
                 </ul>
             </div>
-            <div class="col col-lg-3">
+            <div class="col col-4 col-lg-3">
                 <h2 class="title-menu">Dịch vụ 24/7</h2>
                 <ul class="list-service">
                     <li><a href="">Trang chủ</a></li>
@@ -110,9 +110,9 @@
     
         </div>
         <div class="row footer-bottom">
-            <div class="col col-lg-7">
+            <div class="col col-12 col-lg-7">
                 Bản quyền thuộc về <a href="" style="color:var(--cl-green);">Nhóm 3MPRO</a> Cung cấp bởi SAPA</div>
-            <div class="col col-lg-5 footer-nav">
+            <div class="col col-12 col-lg-5 footer-nav">
                 <ul>
                     <li><a href="">Trang chủ</a></li>
                     <li><a href="">Sản phẩm</a></li>
@@ -132,7 +132,7 @@
 
 <div class="bottom-nav-bar-mobile">
 	<div class="inner-group container">
-		<div class="itembar" onclick="location.href='/';">
+		<div class="itembar">
 			<div class="bar-menu">
 				<div class="icon">
                     <i class="fas fa-home"></i>
@@ -168,7 +168,7 @@
 				<a href="?act=cart">Giỏ hàng</a>
 			</div>
 		</div>
-		<div class="itembar" onclick="location.href='/account/login';">
+		<div class="itembar">
 			<div class="bar-menu">
 				<div class="icon">
                     <i class="fas fa-user"></i>

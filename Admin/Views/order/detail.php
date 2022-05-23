@@ -1,5 +1,5 @@
-<?php if(isset($data) and $data != null){ ?>
-<a href="?mod=order&act=xetduyet&id=<?= $data['0']['MaHD'] ?>" class="btn btn-success">Duyệt đơn hàng</a>
+<?php if(isset($data) and $data != null && $_GET['tt']==0){ ?>
+<a href="?mod=order&act=xetduyet&id=<?= $data['0']['MaHD'] ?>" class="btn btn-success">Giao Hàng</a>
 <a href="?mod=order&act=delete&id=<?= $data['0']['MaHD'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" class="btn btn-danger">Xóa</a>
 <?php } ?>
 <?php if (isset($_COOKIE['msg'])) { ?>

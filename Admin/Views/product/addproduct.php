@@ -61,8 +61,20 @@
         <input type="checkbox" id="" checked="true" placeholder="" value="1" name="TrangThai"><em>(Check cho phép hiện thị sản phẩm)</em>
     </fieldset>
     <fieldset class="add-product-item">
-        <label>Mô tả</label>
-        <input class="form-control" type="text" name="" id="">
+        <label>Khối lượng</label>
+        <input class="form-control" type="text" name="KhoiLuong" id="">
+    </fieldset>
+    <fieldset class="add-product-item">
+        <label>Thành phần</label>
+        <input class="form-control" type="text" name="ThanhPhan" id="">
+    </fieldset>
+    <fieldset class="add-product-item">
+        <label>Xuất xứ</label>
+        <input class="form-control" type="text" name="XuatXu" id="">
+    </fieldset>
+    <fieldset class="add-product-item">
+        <label>Hạn sử dụng</label>
+        <input class="form-control" type="text" name="Hansd" id="" placeholder="YYYY-MM-DD">
     </fieldset>
     <button  class ="btn-addproduct"> Thêm </button>
     

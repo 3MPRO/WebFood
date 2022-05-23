@@ -243,3 +243,11 @@
 .head_table_tk_ct th {
     color: rgb(152, 99, 0);
 }
+
+.btn-remove-none {
+    display: none;
+}
+
+.btn-success {
+    /* margin-bottom: 10px; */
+}
