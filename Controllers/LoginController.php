@@ -56,9 +56,6 @@ class LoginController
     
     function dangky_action()
     {
-        $data_danhmuc = $this->login_model->danhmuc();
-        $data_loaisp = $this->login_model->loaisp_danhmuc();
-
         $check1 = 0;
         $check2 = 0;
         $data_check = $this->login_model->check_account();

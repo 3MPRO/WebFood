@@ -23,7 +23,7 @@ class Login extends Model
             if($login['MaQuyen'] == 2){
                 $_SESSION['isLogin_Admin'] = true;
                 $_SESSION['login'] = $login;    
-            }else{
+            }else{  
                 if($login['MaQuyen'] == 3){
                 $_SESSION['isLogin_Nhanvien'] = true;
                 $_SESSION['login'] = $login;
@@ -77,7 +77,6 @@ class Login extends Model
     
     function dangky_action($data, $check1, $check2)
     {
-        echo 'aaaa';
         if ($check1 == 0) {
             if ($check2 == 0) {
                 $f = "";
@@ -102,7 +101,7 @@ class Login extends Model
         } else {
             setcookie('msg', 'Tên tài khoản hoặc Email  đã tồn tại', time() + 2);
         }
-        header('Location: ?act=taikhoan#dangky');
+        header('Location:?act=taikhoan#dangky_action');
     }
     function account()
     {

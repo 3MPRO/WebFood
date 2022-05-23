@@ -75,7 +75,7 @@ switch ($mod) {
                         $controller_obj->dangky_action();
                         break;
                     default:
-                         $controller_obj->login();
+                         $controller_obj->dangky();
                     break; 
                 }
                 break;
