@@ -1,7 +1,7 @@
 
     <?php 
     ?>
-    <form id ="table"c lass="add-product-form"action="?mod=sanpham&act=store" method="POST" enctype="multipart/form-data">
+    <form id ="table" class="add-product-form"action="?mod=sanpham&act=store" method="POST" enctype="multipart/form-data">
     <?php if (isset($_COOKIE['msg'])) { ?>
     <div class="alert alert-warning">
       <strong>Thông báo</strong> <?= $_COOKIE['msg'] ?>
