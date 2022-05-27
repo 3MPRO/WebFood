@@ -35,8 +35,8 @@
         }
         ?></td>
         <td>
-          <a href="?mod=bill&act=chitiet&id=<?= $row['maCV'] ?>&tt=<?=$row['tinhTrang']?>" class="btn btn-success" >Xem chi tiết</a>
-          <a href="?mod=bill&act=delete&id=<?= $row['maCV'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" 
+          <a href="?mod=bill&act=chitiet&id=<?= $row['MaHD'] ?>&tt=<?=$row['TrangThai']?>" class="btn btn-success" >Xem chi tiết</a>
+          <a href="?mod=bill&act=delete&id=<?= $row['MaHD'] ?>" onclick="return confirm('Bạn có thật sự muốn xóa ?');" type="button" 
           class="btn btn-danger <?php if($row['TrangThai']!=0) echo 'btn-remove-none';?>">Xóa</a>
         </td>
       </tr>
